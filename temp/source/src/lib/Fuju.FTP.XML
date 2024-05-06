@@ -1,0 +1,825 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Fuju.FTP</name>
+    </assembly>
+    <members>
+        <member name="T:Fuju.FTP.FTPClient">
+            <summary>
+            FTP 客端處理類別
+            </summary>
+        </member>
+        <member name="F:Fuju.FTP.FTPClient._HostConfig">
+            <summary>
+            遠端主機設定資料物件
+            </summary>
+        </member>
+        <member name="F:Fuju.FTP.FTPClient._SFTPClient">
+            <summary>
+            SFTP 客端物件
+            </summary>
+        </member>
+        <member name="F:Fuju.FTP.FTPClient._FTPRequest">
+            <summary>
+            FTP 用戶端請求物件
+            </summary>
+        </member>
+        <member name="P:Fuju.FTP.FTPClient.Config">
+            <summary>
+            取得遠端主機設定資料
+            </summary>
+        </member>
+        <member name="P:Fuju.FTP.FTPClient.WorkingDirectory">
+            <summary>
+            取得遠端工作目錄路徑
+            </summary>
+        </member>
+        <member name="P:Fuju.FTP.FTPClient.IsConnected">
+            <summary>
+            取得是否已連線（已連線不表示目前還連線）
+            </summary>
+        </member>
+        <member name="M:Fuju.FTP.FTPClient.#ctor(Fuju.FTP.HostConfig)">
+            <summary>
+            建立 FTP 客端處理 物件
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="M:Fuju.FTP.FTPClient.Finalize">
+            <summary>
+            解構 FTP 客端處理 物件
+            </summary>
+        </member>
+        <member name="M:Fuju.FTP.FTPClient.Dispose">
+            <summary>
+            Dispose
+            </summary>
+        </member>
+        <member name="M:Fuju.FTP.FTPClient.Dispose(System.Boolean)">
+            <summary>
+            實際處理 Dispose 的方法
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:Fuju.FTP.FTPClient.CheckRemoteFile(System.String)">
+            <summary>
+            檢查指定檔案是否符合遠端檔案路徑限制
+            </summary>
+            <param name="remoteFile">指定檔案（可使用相對路徑）</param>
+            <returns>不符合則傳回錯誤訊息，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPClient.CheckLocalFile(System.String,System.Nullable{System.Boolean})">
+            <summary>
+            檢查指定檔案是否符合本地檔案路徑限制
+            </summary>
+            <param name="localFile">指定檔案（可使用相對路徑）</param>
+            <param name="mustExists">指定檢查是否存在，預設 null 表示不檢查，true 表示必須存在， false  表示不可存在</param>
+            <returns>不符合則傳回錯誤訊息，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPClient.CheckRemoteDirectory(System.String)">
+            <summary>
+            檢查指定目錄是否符合遠端目錄路徑限制
+            </summary>
+            <param name="remoteDirectory">指定目錄（可使用相對路徑）</param>
+            <returns>不符合則傳回錯誤訊息，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPClient.CheckLocalDirectory(System.String,System.Nullable{System.Boolean})">
+            <summary>
+            檢查指定目錄是否符合本地目錄路徑限制
+            </summary>
+            <param name="localDirectory">指定目錄（可使用相對路徑）</param>
+            <param name="checkExists">指定檢查是否存在，預設 null 表示不檢查，true 表示必須存在， false  表示不可存在</param>
+            <returns>不符合則傳回錯誤訊息，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPClient.GetConnectionInfo">
+            <summary>
+            取得 SFTP 用的 ConnectionInfo
+            </summary>
+            <returns>傳回 ConnectionInfo</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPClient.OpenSFTP">
+            <summary>
+            開啟 SftpClient 物件
+            </summary>
+            <returns>傳回 SftpClient 物件</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPClient.OpenFTPx">
+            <summary>
+            開啟 FTPRequest 物件
+            </summary>
+            <returns>傳回 FTPRequest 物件</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPClient.Connect">
+            <summary>
+            連線
+            </summary>
+        </member>
+        <member name="M:Fuju.FTP.FTPClient.Disconnect">
+            <summary>
+            離線
+            </summary>
+        </member>
+        <member name="M:Fuju.FTP.FTPClient.DownloadFile(System.String,System.IO.Stream,System.Action{System.UInt64})">
+            <summary>
+            下載指定遠端檔案，寫入指定串流
+            </summary>
+            <param name="remoteFile">指定遠端檔案（可使用相對路徑）</param>
+            <param name="writerStream">指定串流</param>
+            <param name="callback">指定 callback 處理</param>
+        </member>
+        <member name="M:Fuju.FTP.FTPClient.DownloadFile(System.String,System.String,System.Boolean,System.Action{System.UInt64})">
+            <summary>
+            下載指定遠端檔案，寫入指定本地路徑
+            </summary>
+            <param name="remoteFile">指定遠端檔案（可使用相對路徑）</param>
+            <param name="localPath">指定本地路徑（必須為絕對路徑。可為檔案或目錄，如為目錄則下載檔名與遠端檔案名稱相同）（目綠須以 \ 結尾）</param>
+            <param name="overwritten">指定本地檔案已存在時是否覆寫，false 表示檔案已存在時丟出例外</param>
+            <param name="callback">指定 callback 處理</param>
+        </member>
+        <member name="M:Fuju.FTP.FTPClient.UploadFile(System.IO.Stream,System.String,System.Action{System.UInt64})">
+            <summary>
+            讀取指定串流，上傳至指定遠端檔案
+            </summary>
+            <param name="readerStream">指定串流</param>
+            <param name="remoteFile">指定遠端檔案（可使用相對路徑）</param>
+            <param name="callback">指定 callback 處理</param>
+        </member>
+        <member name="M:Fuju.FTP.FTPClient.UploadFile(System.String,System.String,System.Action{System.UInt64})">
+            <summary>
+            讀取指定本地檔案，上傳至指定遠端檔案
+            </summary>
+            <param name="localFile">指定本地檔案（必須為絕對路徑檔名）</param>
+            <param name="remotePath">指定遠端路徑（可為檔案或目錄，如為目錄則上傳檔名與本地檔案名稱相同）（可使用相對路徑）（目綠須以 / 結尾）</param>
+            <param name="callback">指定 callback 處理</param>
+        </member>
+        <member name="M:Fuju.FTP.FTPClient.ChangeDirectory(System.String)">
+            <summary>
+            改變遠端工作目錄
+            </summary>
+            <param name="remoteDirectory">指定遠端目錄（可使用相對路徑）（目綠須以 / 結尾）</param>
+        </member>
+        <member name="M:Fuju.FTP.FTPClient.CreateDirectory(System.String)">
+            <summary>
+            建立指定遠端目錄
+            </summary>
+            <param name="remoteDirectory">指定遠端目錄（可使用相對路徑）（目綠須以 / 結尾）</param>
+        </member>
+        <member name="M:Fuju.FTP.FTPClient.DeleteDirectory(System.String)">
+            <summary>
+            刪除指定遠端目錄
+            </summary>
+            <param name="remoteDirectory">指定遠端目錄（可使用相對路徑）（目綠須以 / 結尾）</param>
+        </member>
+        <member name="M:Fuju.FTP.FTPClient.RenameFile(System.String,System.String)">
+            <summary>
+            更名／移動 指定遠端來源檔案 成/至 指定遠端目的檔案
+            </summary>
+            <param name="remoteSFile">指定遠端來源檔案（可使用相對路徑）</param>
+            <param name="remoteTPath">指定遠端目的路徑（可為檔案或目錄，如為目錄則移動後檔名不變）（可使用相對路徑）（目綠須以 / 結尾）</param>
+            <remarks>
+            1. 來源與目的的路徑相同則為更名，不同則為移動
+            2. FTP 傳輸協定的 Rename 支援目錄，當目錄的路徑不以 "/" 結尾，就會被視為檔案，躲過限制檔案的檢查，且被伺服器 Rename 目錄
+            </remarks>
+        </member>
+        <member name="M:Fuju.FTP.FTPClient.DeleteFile(System.String)">
+            <summary>
+            刪除指定遠端檔案
+            </summary>
+            <param name="remoteFile">指定遠端檔案（可使用相對路徑）</param>
+        </member>
+        <member name="M:Fuju.FTP.FTPClient.ListDirectory(System.String,Fuju.FTP.FTPItemKind,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            取得指定遠端目錄下符合指定過濾條件的項目清單（不含 . 及 .. 目錄）
+            </summary>
+            <param name="remoteDirectory">指定指定遠端目錄（可使用相對路徑）（目綠須以 / 結尾）</param>
+            <param name="kindFilter">指定項目種類過濾條件，FTPItemKind.Unknown 表示不過濾</param>
+            <param name="nameFilter">指定項目名稱過濾條件，Null、Empty 或 WhiteSpace 表示不過濾（名稱必須完全一致，但忽略大小寫）</param>
+            <param name="writeUTCDateFilter">指定項目修改時間的UTC日期過濾條件，Null 表示不過濾（只比對日期）</param>
+            <returns>傳回符合條件的項目集合或空集合</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPClient.Exists(System.String)">
+            <summary>
+            取得指定遠端路徑是否存在（可為檔案或目錄）
+            </summary>
+            <param name="remotePath">指定遠端路徑（可為檔案或目錄）（可使用相對路徑）（目綠須以 / 結尾）</param>
+            <returns>存在則傳回 true，否則傳回 false</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPClient.GetItem(System.String)">
+            <summary>
+            取得指定遠端項目（可為檔案或目錄）
+            </summary>
+            <param name="remotePath">指定遠端路徑（可為檔案或目錄）（可使用相對路徑）（目綠須以 / 結尾）</param>
+            <returns>,找到則傳回 FTP 項目物件，否則傳回 null</returns>
+        </member>
+        <member name="T:Fuju.FTP.FTPHelper">
+            <summary>
+            FTP 小幫手類別
+            </summary>
+            <remarks>
+            實做 FTP 指令處理方法，例如單一方法下載檔案、單一方法上傳檔案、執行命令檔
+            </remarks>
+        </member>
+        <member name="M:Fuju.FTP.FTPHelper.#ctor">
+            <summary>
+            建構 FTP 小幫手 物件
+            </summary>
+        </member>
+        <member name="M:Fuju.FTP.FTPHelper.DownloadFile(System.String,System.Int32,System.String,System.String,System.String,System.IO.Stream,System.Boolean)">
+            <summary>
+            下載指定 FTP 伺服器上的指定遠端檔案，至指定串流
+            </summary>
+            <param name="host"></param>
+            <param name="port"></param>
+            <param name="username"></param>
+            <param name="password"></param>
+            <param name="remoteFile"></param>
+            <param name="writerStream"></param>
+            <param name="overwritten"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPHelper.CheckLocalDirectory(System.String,System.Nullable{System.Boolean})">
+            <summary>
+            檢查指定目錄是否符合本地目錄路徑限制
+            </summary>
+            <param name="localDirectory">指定目錄（可使用相對路徑）</param>
+            <param name="checkExists">指定檢查是否存在，預設 null 表示不檢查，true 表示必須存在， false  表示不可存在</param>
+            <returns>不符合則傳回錯誤訊息，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPHelper.CheckLocalFile(System.String,System.Nullable{System.Boolean},System.Boolean)">
+            <summary>
+            檢查指定檔案是否符合本地檔案路徑限制
+            </summary>
+            <param name="localFile">指定檔案（可使用相對路徑）</param>
+            <param name="mustExists">指定檢查是否存在，預設 null 表示不檢查，true 表示必須存在， false 表示不可存在</param>
+            <param name="pureFileName">指定 localFile 是否必須為純檔名，預設 false</param>
+            <returns>不符合則傳回錯誤訊息，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPHelper.CheckRemoteDirectory(System.String)">
+            <summary>
+            檢查指定目錄是否符合遠端目錄路徑限制
+            </summary>
+            <param name="remoteDirectory">指定目錄（可使用相對路徑）</param>
+            <returns>不符合則傳回錯誤訊息，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPHelper.CheckRemoteFile(System.String,System.Boolean)">
+            <summary>
+            檢查指定檔案是否符合遠端檔案路徑限制
+            </summary>
+            <param name="remoteFile">指定檔案（可使用相對路徑）</param>
+            <param name="pureFileName">指定 localFile 是否必須為純檔名，預設 false</param>
+            <returns>不符合則傳回錯誤訊息，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPHelper.GetLogTime(Fuju.FTP.ILogger)">
+            <summary>
+            取得日誌時間
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPHelper.WriteLog(Fuju.FTP.ILogger,System.String)">
+            <summary>
+            寫入指定日誌訊息
+            </summary>
+            <param name="logger">指定日誌處理物件</param>
+            <param name="log">指定日誌訊息</param>
+        </member>
+        <member name="M:Fuju.FTP.FTPHelper.WriteLog(Fuju.FTP.ILogger,System.String,System.Object[])">
+            <summary>
+            寫入指定日誌訊息
+            </summary>
+            <param name="logger">指定日誌處理物件</param>
+            <param name="format">指定字串格式</param>
+            <param name="args">指定字串參數</param>
+        </member>
+        <member name="M:Fuju.FTP.FTPHelper.WriteLog(Fuju.FTP.ILogger,System.String,System.Exception)">
+            <summary>
+            寫入指定例外的日誌訊息
+            </summary>
+            <param name="logger">指定日誌處理物件</param>
+            <param name="msg">指定訊息</param>
+            <param name="ex">指定例外</param>
+        </member>
+        <member name="M:Fuju.FTP.FTPHelper.GenIndentExceptionLog(System.Exception,System.Int32)">
+            <summary>
+            產生指定例外的內縮日誌訊息
+            </summary>
+            <param name="ex">指定例外</param>
+            <param name="indentLevel">內縮次數，預設 1 次表示內縮 4 個空白</param>
+            <returns>傳回日誌訊息</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPHelper.GetFiles(Fuju.FTP.HostConfig,System.Collections.Generic.ICollection{System.String},System.Nullable{System.DateTime},System.Collections.Generic.List{Fuju.FTP.FTPItem}@)">
+            <summary>
+            取得指定遠端主機上符合指定檔名清單或/且指定最小檔案日期限制的項目集合
+            </summary>
+            <param name="config">指定遠端主機設定資料</param>
+            <param name="fileNames">指定檔名清單集合（比較時不分大小寫）</param>
+            <param name="minDate">指定最小檔案日期限制（比較時轉成本地時間且只比日期部份）</param>
+            <param name="items">成功則傳回項目集合（可能空集合），否則傳回 null</param>
+            <returns>失敗則傳回錯誤訊息，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPHelper.DownloadFile(Fuju.FTP.HostConfig,System.String,System.String,System.Boolean)">
+            <summary>
+            下載指定遠端主機上指定遠端檔案至指定本地檔案（本地檔案必須為絕對路徑）
+            </summary>
+            <param name="config">指定遠端主機設定資料</param>
+            <param name="remoteFile">指定下載遠端檔案</param>
+            <param name="localFile">指定儲存本地檔案（必須為絕對路徑）</param>
+            <param name="overwritten">指定本地檔案存在時是否複寫，指定 false 且檔案存在則下載失敗</param>
+            <returns>失敗則傳回錯誤訊息，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPHelper.DownloadFile(Fuju.FTP.HostConfig,System.String,System.IO.Stream)">
+            <summary>
+            下載指定遠端主機上指定遠端檔案至指定寫入串流
+            </summary>
+            <param name="config">指定遠端主機設定資料</param>
+            <param name="remoteFile">指定下載遠端檔案</param>
+            <param name="writerStream">指定寫入串流</param>
+            <returns>失敗則傳回錯誤訊息，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPHelper.DownloadFiles(Fuju.FTP.HostConfig,System.Collections.Generic.ICollection{System.String},System.Nullable{System.DateTime},System.String,System.Collections.Generic.List{System.String}@,System.String,System.Boolean,Fuju.FTP.ILogger)">
+            <summary>
+            下載指定遠端主機上指定檔案名稱清單且符合最小檔案日期限制的檔案至指定本地目錄路徑（本地目錄必須為絕對路徑）
+            </summary>
+            <param name="config">指定遠端主機設定資料</param>
+            <param name="fileNames">指定下載檔案名稱清單（比較時不分大小寫）</param>
+            <param name="minDate">指定最小檔案日期限制（比較時轉成本地時間且只比日期部份）</param>
+            <param name="localPath">指定儲存本地檔案（必須為絕對路徑）</param>
+            <param name="okFiles">傳回下載成功的檔案名稱集合</param>
+            <param name="tempPath">指定下載檔案暫存目錄（必須為絕對路徑），有指定則先下載到此目錄再移至 localPath</param>
+            <param name="overwritten">指定本地目錄檔案存在時是否複寫，指定 false 且 tempPath 或 localPath 檔案存在則下載失敗</param>
+            <param name="logger">指定日誌處理物件</param>
+            <returns>失敗則傳回錯誤訊息，否則傳回 null。（僅下載檔案失敗不算失敗）</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPHelper.DownloadFiles(Fuju.FTP.HostConfig,System.Collections.Generic.ICollection{System.String},System.String,System.Collections.Generic.List{System.String}@,System.String,System.Boolean,Fuju.FTP.ILogger)">
+            <summary>
+            下載指定遠端主機上指定遠端檔案清單至指定本地目錄路徑（本地目錄必須為絕對路徑）
+            </summary>
+            <param name="config">指定遠端主機設定資料</param>
+            <param name="remoteFiles">指定下載遠端檔案清單</param>
+            <param name="localPath">指定儲存檔案本地目錄（必須為絕對路徑）</param>
+            <param name="results">傳回每個檔案的處理結果集合，失敗則存放錯誤訊息，否則存放 null。（注意，這個集合是逐檔紀錄，如果只處理部份檔案就中斷，這此集合數量會小於 remoteFiles 數量）</param>
+            <param name="tempPath">指定下載檔案暫存目錄（必須為絕對路徑），有指定則先下載到此目錄再移至 localPath</param>
+            <param name="overwritten">指定本地目錄檔案存在時是否複寫，指定 false 且 tempPath 或 localPath 檔案存在則下載失敗</param>
+            <param name="logger">指定日誌處理物件</param>
+            <returns>失敗則傳回錯誤訊息，否則傳回 null。（所有檔案都失敗才算失敗）</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPHelper.UploadFile(Fuju.FTP.HostConfig,System.String,System.String)">
+            <summary>
+            上傳指定本地檔案至指定遠端主機上，存成指定遠端檔名（本地檔案必須為絕對路徑）
+            </summary>
+            <param name="config">指定遠端主機設定資料</param>
+            <param name="localFile">指定上傳本地檔案（必須為絕對路徑）</param>
+            <param name="remoteFile">指定儲存遠端檔名（不能包含路徑）。不指定則與本地檔案同名</param>
+            <returns>失敗則傳回錯誤訊息，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPHelper.UploadFile(Fuju.FTP.HostConfig,System.IO.Stream,System.String)">
+            <summary>
+            上傳指定讀出串流至指定遠端主機上，存成指定遠端檔名
+            </summary>
+            <param name="config">指定遠端主機設定資料</param>
+            <param name="readerStream">指定讀出串流</param>
+            <param name="remoteFile">指定儲存遠端檔名 （不能包含路徑）</param>
+            <returns>失敗則傳回錯誤訊息，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPHelper.UploadFiles(Fuju.FTP.HostConfig,System.Collections.Generic.ICollection{System.String},System.Collections.Generic.List{System.String}@,Fuju.FTP.ILogger)">
+            <summary>
+            上傳指定本地檔案清單至指定遠端主機上（本地檔案必須為絕對路徑）（遠端檔名與與本地檔名相同）
+            </summary>
+            <param name="config">指定遠端主機設定資料</param>
+            <param name="localFiles">指定本地檔案清單（必須為絕對路徑）</param>
+            <param name="results">傳回每個檔案的處理結果集合，失敗則存放錯誤訊息，否則存放 null。（注意，這個集合是逐檔紀錄，如果只處理部份檔案就中斷，這此集合數量會小於 localFiles 數量）</param>
+            <param name="logger">指定日誌處理物件</param>
+            <returns>失敗則傳回錯誤訊息，否則傳回 null。（所有檔案都失敗才算失敗）</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPHelper.ExecCommand(System.String,System.Collections.Generic.List{System.String}@,System.Collections.Generic.List{System.String}@,Fuju.FTP.ILogger)">
+            <summary>
+            執行指定命令列
+            </summary>
+            <param name="commandLine">指定執行的單一命令列</param>
+            <param name="okFiles">傳回成功的檔案名稱集合</param>
+            <param name="failures">傳回失敗的檔案名稱與錯誤訊息集合</param>
+            <param name="logger">指定日誌處理物件（只紀錄上傳或下載每個檔案的結果）</param>
+            <returns>失敗則傳回錯誤訊息，否則傳回 null</returns>
+        </member>
+        <member name="T:Fuju.FTP.FTPItem">
+            <summary>
+            FTP 項目資料承載類別
+            </summary>
+        </member>
+        <member name="P:Fuju.FTP.FTPItem.Kind">
+            <summary>
+            項目種類
+            </summary>
+        </member>
+        <member name="P:Fuju.FTP.FTPItem.Name">
+            <summary>
+            名稱
+            </summary>
+        </member>
+        <member name="P:Fuju.FTP.FTPItem.FullName">
+            <summary>
+            完整路徑名稱（目錄會以 "/" 結尾）
+            </summary>
+        </member>
+        <member name="P:Fuju.FTP.FTPItem.Length">
+            <summary>
+            檔案大小 (byte)
+            </summary>
+        </member>
+        <member name="P:Fuju.FTP.FTPItem.WriteUTCTime">
+            <summary>
+            最後修改UTC時間
+            </summary>
+        </member>
+        <member name="M:Fuju.FTP.FTPItem.#ctor(Fuju.FTP.FTPItemKind,System.String,System.String,System.Int64,System.DateTime)">
+            <summary>
+            建構 FTP 項目資料承載 物件
+            </summary>
+            <param name="kind">指定項目種類</param>
+            <param name="name">指定名稱</param>
+            <param name="fullName">指定完整路徑名稱</param>
+            <param name="length">指定檔案大小</param>
+            <param name="writeUTCTime">指定最後修改UTC時間</param>
+        </member>
+        <member name="M:Fuju.FTP.FTPItem.Create(Renci.SshNet.Sftp.SftpFile)">
+            <summary>
+            建立以指定 SftpFile 資料的 FTP 項目資料承載 物件
+            </summary>
+            <param name="sftpFile">指定 SftpFile 資料物件</param>
+            <returns>傳回 FTP 項目資料承載 物件</returns>
+        </member>
+        <member name="T:Fuju.FTP.FTPItemKind">
+            <summary>
+            FTP 項目種類列舉
+            </summary>
+        </member>
+        <member name="F:Fuju.FTP.FTPItemKind.Unknown">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:Fuju.FTP.FTPItemKind.Directory">
+            <summary>
+            目錄
+            </summary>
+        </member>
+        <member name="F:Fuju.FTP.FTPItemKind.File">
+            <summary>
+            檔案
+            </summary>
+        </member>
+        <member name="F:Fuju.FTP.FTPItemKind.Other">
+            <summary>
+            其他
+            </summary>
+        </member>
+        <member name="T:Fuju.FTP.FTPRequest">
+            <summary>
+            FTP 用戶端請求處理類別（使用 FtpWebRequest 實做，不支援 SFTP）
+            </summary>
+        </member>
+        <member name="F:Fuju.FTP.FTPRequest._CurrentUri">
+            <summary>
+            目前連線網址
+            </summary>
+        </member>
+        <member name="P:Fuju.FTP.FTPRequest.Config">
+            <summary>
+            取得遠端主機設定資料
+            </summary>
+        </member>
+        <member name="P:Fuju.FTP.FTPRequest.WorkingDirectory">
+            <summary>
+            取得遠端工作目錄路徑
+            </summary>
+        </member>
+        <member name="P:Fuju.FTP.FTPRequest.IsConnected">
+            <summary>
+            取得是否已連線（此物件永遠傳回 false）
+            </summary>
+        </member>
+        <member name="M:Fuju.FTP.FTPRequest.Finalize">
+            <summary>
+            解構 FTP、FTPS 用戶端處理 物件
+            </summary>
+        </member>
+        <member name="M:Fuju.FTP.FTPRequest.Dispose">
+            <summary>
+            Dispose
+            </summary>
+        </member>
+        <member name="M:Fuju.FTP.FTPRequest.Dispose(System.Boolean)">
+            <summary>
+            實際處理 Dispose 的方法
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:Fuju.FTP.FTPRequest.GetFtpWebRequest(System.Uri)">
+            <summary>
+            取得 FtpWebRequest 物件
+            </summary>
+            <param name="uri">指定遠端目標 Uri</param>
+            <returns>傳回 FtpWebRequest 物件</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPRequest.GetRemoteUri(System.String)">
+            <summary>
+            取得指定路徑的絕對 Uri
+            </summary>
+            <param name="relativePath">指定路徑</param>
+            <returns>成功則傳回 Uri，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPRequest.ExecuteAction(System.Action{System.UInt64},System.Int64)">
+            <summary>
+            執行指定的 Action
+            </summary>
+            <param name="action">指定的 Action</param>
+            <param name="byteSize">指定目前處理資料的 byte 數</param>
+        </member>
+        <member name="T:Fuju.FTP.FTPRequest.ParseItem">
+            <summary>
+            解析項目文字的委派定義
+            </summary>
+            <param name="match"></param>
+            <param name="fullRemotePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPRequest.ParseItem1(System.Text.RegularExpressions.Match,System.String)">
+            <summary>
+            For Linux Format
+            </summary>
+            <param name="match">指定符合規則算式的 Match</param>
+            <param name="fullRemotePath">指定完整的遠端路徑</param>
+            <returns>傳回 FTP 項目</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPRequest.ParseItem2(System.Text.RegularExpressions.Match,System.String)">
+            <summary>
+            For DOS/Windows Format
+            </summary>
+            <param name="match">指定符合規則算式的 Match</param>
+            <param name="fullRemotePath">指定完整的遠端路徑</param>
+            <returns>傳回 FTP 項目</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPRequest.IsFilterOK(Fuju.FTP.FTPItem,Fuju.FTP.FTPItemKind,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            取得是否符合過濾條件
+            </summary>
+            <param name="item">指定要檢查的 FTP 項目</param>
+            <param name="kindFilter">指定項目種類過濾條件</param>
+            <param name="nameFilter">指定項目名稱過濾條件</param>
+            <param name="writeUTCDateFilter">指定項目 UTC 時間過濾條件</param>
+            <returns>是則傳回 true，否則傳回 false</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPRequest.ParseDirectoryDetails(System.IO.StreamReader,System.String,Fuju.FTP.FTPItemKind,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            解析指定讀取串流內容，轉成 FTP 項目集合
+            </summary>
+            <param name="reader">指定讀取串流</param>
+            <param name="fullRemotePath">指定完整的遠端路徑</param>
+            <param name="kindFilter">指定項目種類過濾條件</param>
+            <param name="nameFilter">指定項目名稱過濾條件</param>
+            <param name="writeUTCDateFilter">指定項目 UTC 時間過濾條件</param>
+            <returns>傳回FTP 項目集合</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPRequest.DownloadFile(System.String,System.IO.Stream,System.Action{System.UInt64})">
+            <summary>
+            下載指定遠端檔案，寫入指定串流
+            </summary>
+            <param name="remoteFile">指定遠端檔案（可使用相對路徑）</param>
+            <param name="writerStream">指定寫入串流</param>
+            <param name="callback">指定 callback 的 Action</param>
+        </member>
+        <member name="M:Fuju.FTP.FTPRequest.UploadFile(System.IO.Stream,System.String,System.Action{System.UInt64})">
+            <summary>
+            讀取指定串流，上傳至指定遠端檔案
+            </summary>
+            <param name="readerStream">指定讀取串流</param>
+            <param name="remoteFile">指定遠端檔案（可使用相對路徑）</param>
+            <param name="callback">指定 callback 的 Action</param>
+        </member>
+        <member name="M:Fuju.FTP.FTPRequest.ChangeDirectory(System.String)">
+            <summary>
+            改變遠端工作目錄
+            </summary>
+            <param name="remoteDirectory">指定遠端目錄（可使用相對路徑）</param>
+        </member>
+        <member name="M:Fuju.FTP.FTPRequest.CreateDirectory(System.String)">
+            <summary>
+            建立指定遠端目錄
+            </summary>
+            <param name="remoteDirectory">指定遠端目錄（可使用相對路徑）</param>
+        </member>
+        <member name="M:Fuju.FTP.FTPRequest.DeleteDirectory(System.String)">
+            <summary>
+            刪除指定遠端目錄
+            </summary>
+            <param name="remoteDirectory">指定遠端目錄（可使用相對路徑）</param>
+        </member>
+        <member name="M:Fuju.FTP.FTPRequest.Rename(System.String,System.String)">
+            <summary>
+            更名／移動 指定遠端來源路徑（可為檔案或目錄） 成/至 指定遠端目的路徑（可為目錄或檔案但須與來源一致）
+            </summary>
+            <param name="remoteSPath">指定遠端來源路徑（可為目錄或檔案）（可使用相對路徑）</param>
+            <param name="remoteTPath">指定遠端目的路徑（可為目錄或檔案但須與來源一致）（可使用相對路徑）</param>
+            <remarks>來源與目的的路徑相同則為更名，不同則為移動</remarks>
+        </member>
+        <member name="M:Fuju.FTP.FTPRequest.DeleteFile(System.String)">
+            <summary>
+            刪除指定遠端檔案
+            </summary>
+            <param name="remoteFile">指定遠端檔案（可使用相對路徑）</param>
+        </member>
+        <member name="M:Fuju.FTP.FTPRequest.List(System.String,Fuju.FTP.FTPItemKind,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            取得指定遠端路徑（指定目錄下或指定檔案）且符合指定過濾條件的項目清單（不含 . 及 .. 目錄）
+            </summary>
+            <param name="remotePath">指定指定遠端路徑（可使用相對路徑）</param>
+            <param name="kindFilter">指定項目種類過濾條件，FTPItemKind.Unknown 表示不過濾</param>
+            <param name="nameFilter">指定項目名稱過濾條件，Null、Empty 或 WhiteSpace 表示不過濾（名稱必須完全一致，但忽略大小寫）</param>
+            <param name="writeUTCDateFilter">指定項目修改時間的UTC日期過濾條件，Null 表示不過濾（只比對日期）</param>
+            <returns>傳回符合條件的項目集合或空集合</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPRequest.Exists(System.String)">
+            <summary>
+            取得指定遠端路徑是否存在（可為檔案或目錄）
+            </summary>
+            <param name="remotePath">指定遠端路徑（可為檔案或目錄）（可使用相對路徑）</param>
+            <returns>存在則傳回 true，否則傳回 false</returns>
+        </member>
+        <member name="M:Fuju.FTP.FTPRequest.GetItem(System.String)">
+            <summary>
+            取得指定遠端項目（可為檔案或目錄）
+            </summary>
+            <param name="remotePath">指定遠端路徑（可為檔案或目錄）（可使用相對路徑）</param>
+            <returns>,找到則傳回 FTP 項目物件，否則傳回 null</returns>
+        </member>
+        <member name="T:Fuju.FTP.HostConfig">
+            <summary>
+            遠端主機設定資料承載類別
+            </summary>
+        </member>
+        <member name="F:Fuju.FTP.HostConfig.TimeZone">
+            <summary>
+            遠端主機時區資訊（FTP 傳輸協定才可能有值）
+            </summary>
+        </member>
+        <member name="P:Fuju.FTP.HostConfig.Kind">
+            <summary>
+            使用傳輸協定種類
+            </summary>
+        </member>
+        <member name="P:Fuju.FTP.HostConfig.Host">
+            <summary>
+            遠端主機（IP 或 Domain）
+            </summary>
+        </member>
+        <member name="P:Fuju.FTP.HostConfig.Port">
+            <summary>
+            通訊埠
+            </summary>
+        </member>
+        <member name="P:Fuju.FTP.HostConfig.Username">
+            <summary>
+            連線帳號
+            </summary>
+        </member>
+        <member name="P:Fuju.FTP.HostConfig.Password">
+            <summary>
+            連線密碼
+            </summary>
+        </member>
+        <member name="P:Fuju.FTP.HostConfig.Timeout">
+            <summary>
+            連線超時秒數
+            </summary>
+        </member>
+        <member name="P:Fuju.FTP.HostConfig.Encoding">
+            <summary>
+            字集編碼
+            </summary>
+        </member>
+        <member name="P:Fuju.FTP.HostConfig.EnableSsl">
+            <summary>
+            啟用 SSL (FTP 傳輸協定才有效)
+            </summary>
+        </member>
+        <member name="P:Fuju.FTP.HostConfig.UsePassive">
+            <summary>
+            使用被動模式 （FTP 傳輸協定才有效）
+            </summary>
+        </member>
+        <member name="P:Fuju.FTP.HostConfig.WorkingDirectory">
+            <summary>
+            預設遠端工作目錄路徑
+            </summary>
+        </member>
+        <member name="M:Fuju.FTP.HostConfig.#ctor(Fuju.FTP.Protocol,System.String,System.Nullable{System.Int32},System.String,System.String,System.Nullable{System.Int32},System.Text.Encoding,System.Boolean,System.Boolean,System.String,System.TimeZoneInfo)">
+            <summary>
+            建構 遠端主機設定資料承載 物件
+            </summary>
+            <param name="kind">指定使用傳輸協定種類</param>
+            <param name="host">指定遠端主機（IP 或 Domain）</param>
+            <param name="port">指定通訊埠，不指定則使用預設</param>
+            <param name="username">指定連線帳號</param>
+            <param name="password">指定連線密碼</param>
+            <param name="timeout">指定連線超時秒數</param>
+            <param name="encoding">指定使用字集編碼</param>
+            <param name="enableSsl">指定是否啟用 SSL （FTP 協定才有效）</param>
+            <param name="usePassive">指定是否使用被動模式（FTP 協定才有效）</param>
+            <param name="workingDirectory">指定預設遠端工作目錄路徑</param>
+            <param name="timeZone">指定遠端主機時區資訊</param>
+        </member>
+        <member name="M:Fuju.FTP.HostConfig.Update(System.Int32,System.Int32,System.Text.Encoding)">
+            <summary>
+            更新未設定的屬性，以便取得 FTP 客端處理物件的預設值
+            </summary>
+            <param name="port">通訊埠</param>
+            <param name="timeout">連線超時秒數</param>
+            <param name="encoding">字集編碼</param>
+        </member>
+        <member name="M:Fuju.FTP.HostConfig.IsReady">
+            <summary>
+            取得必要設定是否有值（有不表示正確）
+            </summary>
+            <returns>皆有值則傳回 true，否則傳回 false</returns>
+        </member>
+        <member name="M:Fuju.FTP.HostConfig.CreateBySFTP(System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Text.Encoding,System.String)">
+            <summary>
+            建立 SFTP 傳輸協定的 遠端主機設定資料承載 物件
+            </summary>
+            <param name="host">指定遠端主機（IP 或 Domain）</param>
+            <param name="username">指定連線帳號</param>
+            <param name="password">指定連線密碼</param>
+            <param name="port">指定通訊埠，不指定則使用預設</param>
+            <param name="timeout">指定連線超時秒數</param>
+            <param name="encoding">指定使用字集編碼</param>
+            <param name="workingDirectory">指定預設遠端工作目錄路徑</param>
+            <returns>傳回遠端主機設定資料承載物件</returns>
+        </member>
+        <member name="M:Fuju.FTP.HostConfig.CreateByFTPx(System.String,System.String,System.String,System.Nullable{System.Int32},System.Boolean,System.Boolean,System.Nullable{System.Int32},System.Text.Encoding,System.String,System.TimeZoneInfo)">
+            <summary>
+            建立 FTP 傳輸協定的 遠端主機設定資料承載 物件
+            </summary>
+            <param name="host">指定遠端主機（IP 或 Domain）</param>
+            <param name="username">指定連線帳號</param>
+            <param name="password">指定連線密碼</param>
+            <param name="port">指定通訊埠，不指定則使用預設</param>
+            <param name="enableSsl">指定啟用 SSL （FTP 協定才有效）</param>
+            <param name="usePassive">指定使用被動模式（FTP 協定才有效）</param>
+            <param name="timeout">指定連線超時秒數</param>
+            <param name="encoding">指定使用字集編碼</param>
+            <param name="workingDirectory">指定預設遠端工作目錄路徑</param>
+            <param name="timeZone">指定遠端主機時區資訊</param>
+            <returns>傳回遠端主機設定資料承載物件</returns>
+        </member>
+        <member name="T:Fuju.FTP.ILogger">
+            <summary>
+            日誌處理類別
+            </summary>
+        </member>
+        <member name="P:Fuju.FTP.ILogger.TimeStyle">
+            <summary>
+            日誌時間格式 （不設定表示不紀錄時間）
+            </summary>
+        </member>
+        <member name="M:Fuju.FTP.ILogger.WriteLog(System.String)">
+            <summary>
+            寫入指定日誌訊息
+            </summary>
+            <param name="log">指定日誌訊息</param>
+        </member>
+        <member name="T:Fuju.FTP.LogTimeStyle">
+            <summary>
+            日誌時間樣式列舉
+            </summary>
+        </member>
+        <member name="F:Fuju.FTP.LogTimeStyle.Empty">
+            <summary>
+            空白（不紀錄日誌時間）
+            </summary>
+        </member>
+        <member name="F:Fuju.FTP.LogTimeStyle.DateTime">
+            <summary>
+            日期與時間（yyyy/MM/dd HH:mm:ss）
+            </summary>
+        </member>
+        <member name="F:Fuju.FTP.LogTimeStyle.Time">
+            <summary>
+            僅時間（HH:mm:ss）
+            </summary>
+        </member>
+        <member name="T:Fuju.FTP.Protocol">
+            <summary>
+            傳輸協定列舉
+            </summary>
+        </member>
+        <member name="F:Fuju.FTP.Protocol.FTP">
+            <summary>
+            FTP - 檔案傳輸協定
+            </summary>
+        </member>
+        <member name="F:Fuju.FTP.Protocol.SFTP">
+            <summary>
+            SFTP - SSH 檔案傳輸協定
+            </summary>
+        </member>
+    </members>
+</doc>

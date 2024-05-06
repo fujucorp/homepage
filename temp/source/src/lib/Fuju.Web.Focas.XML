@@ -1,0 +1,878 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Fuju.Web.Focas</name>
+    </assembly>
+    <members>
+        <member name="T:Fuju.Web.Focas.AuthTxnReqData">
+            <summary>
+            授權交易請求(輸入)資料 參數資料承載類別
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnReqData.TxnId">
+            <summary>
+            授權交易編號 (行內交易編號)(必要)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnReqData.ActionUrl">
+            <summary>
+            授權交易請求網址 (財金的網址)(必要)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnReqData.MerId">
+            <summary>
+            特店編號 (網站特店自訂代碼) (參數名稱：merID / 型態：N, 最大長度10位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnReqData.MerchantId">
+            <summary>
+            收單行特店代號 (收單銀行授權使用的特店代號，由收單銀行編製提供)(必要) (參數名稱：MerchantID / 型態：AN, 固定長度15位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnReqData.TerminalId">
+            <summary>
+            收單行端末代號 (收單銀行授權使用的機台代號，由收單銀行編製提供)(必要) (參數名稱：TerminalID / 型態：AN, 固定長度8位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnReqData.MerchantName">
+            <summary>
+            特店名稱 (特店網站或公司名稱，僅供顯示) (參數名稱：MerchantName / 型態：ANS, 最大長度60位)
+            </summary>
+            <remarks>行動支付交易，最大長度12位。銀聯交易限定僅能為英、數字、空白及『-』，最大長度25位。</remarks>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnReqData.Customize">
+            <summary>
+            客製化付款授權網頁辨識碼，預設 Ver1 (繁體中文化) (參數名稱：customize / 型態：AN, 固定長度1位)
+            </summary>
+            <remarks>0=不使用客製化授權頁; 1=使用第一個版本; 2=使用第二個版本; 3=使用第三個版本; 4=使用第四個版本</remarks>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnReqData.Lidm">
+            <summary>
+            交易訂單編號，建議訂單編號不可重複編號 (參數名稱：lidm / 型態：AN, 長度說明參考 remarks)(必要)
+            </summary>
+            <remarks>信用卡交易，最大長度19位。銀聯卡交易，最小長度8位，最大長度19位。消費扣款交易，最大長度16位</remarks>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnReqData.PurchAmount">
+            <summary>
+            交易金額 (臺幣金額整數) (參數名稱：purchAmt / 型態：N, 最大長度10位)(必要)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnReqData.CurrencyNote">
+            <summary>
+            註記說明，僅供顯示 (參數名稱：CurrencyNote / 型態：AN, 最大長度50位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnReqData.AutoCap">
+            <summary>
+            是否自動轉入請款檔作業，預設 Yes (自動轉入請款檔) (參數名稱：AutoCap / 型態：AN, 固定長度1位)
+            </summary>
+            <remarks>0=否(預設); 1=是</remarks>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnReqData.AuthResUrl">
+            <summary>
+            授權交易回應網址 (土銀的網址)(參數名稱：AuthResURL / 型態：ANS, 最大長度512位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnReqData.PayType">
+            <summary>
+            交易類別碼 (參數名稱：PayType / 型態：AN, 固定長度1位)
+            </summary>
+            <remarks>0=一般交易(預設); 1=分期交易; 2=紅利交易</remarks>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnReqData.PeriodNum">
+            <summary>
+            分期交易之期數 (參數名稱：PeriodNum / 型態：N, 最大長度2位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnReqData.BonusActionCode">
+            <summary>
+            紅利交易活動代碼 (參數名稱：BonusActionCode / 型態：AN, 固定長度6位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnReqData.LocalDateTime">
+            <summary>
+            購買地交易日期時間 (參數名稱：LocalDate / 型態：N, 固定長度8位 [yyyymmdd] | 參數名稱：LocalTime / 型態：N, 固定長度6位 [HHMMSS])
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnReqData.ReqToken">
+            <summary>
+            交易驗證碼 (參數名稱：reqToken  / 型態：AN, 最大長度64位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnReqData.SubMerchantID">
+            <summary>
+            次特店代號 (參數名稱：subMerchID  / 型態：AN, 固定長度8位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnReqData.EncodeType">
+            <summary>
+            網頁編碼格式，預設 BIG5 (參數名稱：enCodeType / 型態：ANS, 最大長度10位)
+            </summary>
+            <remarks>若使用UTF-8進行編碼，請再傳送的頁面中增加一輸入欄位enCodeType，值設定為UTF-8</remarks>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnReqData.TimeoutDateTime">
+            <summary>
+            設定交易逾時日期時間 (參數名稱：timeoutDate / 型態：N, 固定長度8位 [yyyymmdd] | 參數名稱：timeoutTime / 型態：N, 固定長度6位 [HHMMSS])
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnReqData.TimeoutSeconds">
+            <summary>
+            交易逾時秒數，最大值為600秒 (參數名稱：timeoutSecs / 型態：N, 最大長度3位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnReqData.MobileNbr">
+            <summary>
+            電話號碼 (參數名稱：mobileNbr / 型態：N, 固定長度10位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnReqData.WalletVerifyCode">
+            <summary>
+            網路交易驗證碼 (參數名稱：walletVerifyCode / 型態：N, 最大長度4~6位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnReqData.IsSynchronism">
+            <summary>
+            同步/非同步標記 (參數名稱：isSynchronism / 型態：N, 固定長度1位 [0=同步; 1=非同步])
+            </summary>
+            <remarks>0=同步交易; 1=非同步交易</remarks>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnReqData.Language">
+            <summary>
+            預設顯示語系。(參數名稱：lagSelect / 型態：N, 固定長度1位 [0或其他=中文(繁); 1=中文(简); 2=English; 3=日本語;])
+            </summary>
+            <remarks>0或其他=中文(繁); 1=中文(简); 2=English; 3=日本語;</remarks>
+        </member>
+        <member name="M:Fuju.Web.Focas.AuthTxnReqData.#ctor">
+            <summary>
+            建構 授權交易請求資料 承載類別 物件
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Focas.AuthTxnReqData.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,System.String)">
+            <summary>
+            建構 授權交易請求資料 承載類別 物件，並指定部份屬性 (For 信用卡授權交易)
+            </summary>
+            <param name="txnId">指定授權交易編號</param>
+            <param name="actionUrl">指定授權交易請求網址</param>
+            <param name="merId">指定特店編號</param>
+            <param name="merchantId">指定收單行特店代號</param>
+            <param name="terminalId">指定收單行端末代號</param>
+            <param name="merchantName">指定特店名稱</param>
+            <param name="lidm">指定交易訂單編號</param>
+            <param name="purchAmount">指定交易金額</param>
+            <param name="authResUrl">指定授權交易回應網址</param>
+        </member>
+        <member name="M:Fuju.Web.Focas.AuthTxnReqData.ToString">
+            <summary>
+            傳回此物件的字串表示 (各項屬性)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Fuju.Web.Focas.AuthTxnRspData">
+            <summary>
+            授權交易回應(輸出)資料 參數資料承載類別
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.TxnId">
+            <summary>
+            授權交易編號 (行內交易編號)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.CheckCode">
+            <summary>
+            TxnId 網頁參數驗證碼
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.Status">
+            <summary>
+            授權結果狀態 (0 表示成功) (參數名稱：status / 型態：N, 固定長度1位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.ErrCode">
+            <summary>
+            錯誤代碼 (參數名稱：errcode / 型態：N, 固定長度2位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.AuthCode">
+            <summary>
+            交易授權碼 (參數名稱：authCode / 型態：N, 固定長度6位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.MerchantId">
+            <summary>
+            收單行特店代號 (收單銀行授權使用的特店代號，由收單銀行編製提供) (參數名稱：MerchantID / 型態：AN, 固定長度15位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.TerminalId">
+            <summary>
+            收單行端末代號 (收單銀行授權使用的機台代號，由收單銀行編製提供) (參數名稱：TerminalID / 型態：AN, 固定長度8位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.AuthAmt">
+            <summary>
+            授權金額 (臺幣金額整數) (參數名稱：authAmt / 型態：N, 最大長度10位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.Lidm">
+            <summary>
+            交易訂單編號 (參數名稱：lidm / 型態：AN, 長度說明參考 remarks)
+            </summary>
+            <remarks>信用卡交易，最大長度19位。銀聯卡交易，最小長度8位，最大長度19位。消費扣款交易，最大長度16位</remarks>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.Xid">
+            <summary>
+            3D網路交易序號 (參數名稱：xid / 型態：ANS, 最大長度40位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.Currency">
+            <summary>
+            幣別(901) (參數名稱：currency / 型態：AN, 固定長度3位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.AmtExp">
+            <summary>
+            幣值指數(小數點三位) (參數名稱：amtExp / 型態：N, 最大長度10位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.MerId">
+            <summary>
+            特店編號 (網站特店自訂代碼) (參數名稱：merID / 型態：N, 最大長度10位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.ErrDesc">
+            <summary>
+            授權失敗原因說明 (參數名稱：errDesc / 型態：AN, 最大長度512位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.LastPan4">
+            <summary>
+            持卡者交易的信用卡號末四碼 (參數名稱：lastPan4 / 型態：AN, 固定長度4位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.CardBrand">
+            <summary>
+            持卡者交易的信用卡別，如VISA、MasterCard、JCB (參數名稱：cardBrand / 型態：AN, 長度3~10位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.Pan">
+            <summary>
+            遮罩後之信用卡卡號 (參數名稱：pan / 型態：AN, 最大長度16位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.AuthRespTime">
+            <summary>
+            授權處理回應時間(YYYYMMDDHHMMSS) (參數名稱：authRespTime / 型態：N, 固定長度14位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.PayType">
+            <summary>
+            交易類別碼 (參數名稱：PayType / 型態：AN, 固定長度1位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.PeriodNum">
+            <summary>
+            分期交易之期數 (參數名稱：PeriodNum / 型態：N, 最大長度2位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.DownPayments">
+            <summary>
+            分期交易之首期分期金額，含2位小數 (參數名稱：DownPayments / 型態：N, 最大長度10位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.InstallmentPayments">
+            <summary>
+            分期交易之每期金額，含2位小數 (參數名稱：InstallmentPayments / 型態：N, 最大長度10位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.BonusActionCode">
+            <summary>
+            紅利交易活動代碼 (參數名稱：BonusActionCode / 型態：AN, 固定長度6位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.BonusDesc">
+            <summary>
+            紅利折抵方式 (參數名稱：BonusDesc / 型態：AN, 固定長度1位)
+            </summary>
+            <remarks>0 表示依發卡行決定(預設)、1 表示不折抵、2 表示全數折抵、3 表示部份折抵</remarks>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.BonusRespCode">
+            <summary>
+            紅利交易授權結果 (00為成功) (參數名稱：BonusRespCode / 型態：AN, 固定長度2位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.BonusSign">
+            <summary>
+            紅利剩餘點數註記 (P=紅利餘額點數為正數; N=紅利餘額點數為負數) (參數名稱：BonusSign / 型態：AN, 固定長度1位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.BonusBalance">
+            <summary>
+            紅利餘額點數 (參數名稱：BonusBalance / 型態：AN, 固定長度10位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.BonusDeduct">
+            <summary>
+            扣抵紅利點數 (參數名稱：BonusDeduct / 型態：AN, 固定長度10位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.BonusDebuctAmt">
+            <summary>
+            紅利扣抵後交易金額，含2位小數 (參數名稱：BonusDebuctAmt / 型態：AN, 固定長度12位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.RespToken">
+            <summary>
+            交易驗證碼 (參數名稱：respToken / 型態：AN, 最大長度64位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.TxnDateLocal">
+            <summary>
+            交易日期 (參數名稱：txnDateLocal / 型態：AN, 最大長度8位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.TxnTimeLocal">
+            <summary>
+            交易時間 (參數名稱：txnTimeLocal / 型態：AN, 最大長度6位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.Srrn">
+            <summary>
+            系統追蹤號碼 (參數名稱：Srrn / 型態：N, 最大長度12位)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnRspData.RespCode">
+            <summary>
+            回應碼 (參數名稱：respCode / 型態：N, 固定長度4位)
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Focas.AuthTxnRspData.ToString">
+            <summary>
+            傳回此物件的字串表示 (各項屬性)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Web.Focas.AuthTxnRspData.GetAuthRespTime">
+            <summary>
+            取得 DateTime? 型別的 授權處理回應時間
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Fuju.Web.Focas.AuthTxnRspData._NumberRegex">
+            <summary>
+            儲存驗證「全數字字元」的規則運算式 的變數
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Focas.AuthTxnRspData.GetNumberRegex">
+            <summary>
+            取得驗證「全數字字元」的規則運算式
+            </summary>
+            <returns>傳回「全數字字元」的規則運算式。</returns>
+        </member>
+        <member name="M:Fuju.Web.Focas.AuthTxnRspData.IsNumber(System.String,System.Int32)">
+            <summary>
+            驗證是否為「全數字字元」的字串，且指定字串長度
+            </summary>
+            <param name="text">指定要驗證的字串。</param>
+            <param name="length">指定限制長度，小於 1 表示不限制且允許 null 與空字串。</param>
+            <returns>是則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="T:Fuju.Web.Focas.AuthTxnKind">
+            <summary>
+            授權交易類別代碼 常數定義類別
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Focas.AuthTxnKind.CCard">
+            <summary>
+            0 : 信用卡授權交易
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Focas.AuthTxnKind.All">
+            <summary>
+            所有 AutoCapFlag 物件陣列
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AuthTxnKind.Value">
+            <summary>
+            代碼 (CCard=信用卡授權交易)
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Focas.AuthTxnKind.#ctor(System.String)">
+            <summary>
+            建構 授權交易類別代碼 定義類別 物件
+            </summary>
+            <param name="value">代碼</param>
+        </member>
+        <member name="M:Fuju.Web.Focas.AuthTxnKind.ToString">
+            <summary>
+            傳回此物件的字串表示 (代碼)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Web.Focas.AuthTxnKind.Find(System.String,Fuju.Web.Focas.AuthTxnKind)">
+            <summary>
+            找出指定代碼對應的 AuthTxnKind 物件
+            </summary>
+            <param name="value">指定代碼</param>
+            <param name="defaultValue">指定找不到時預設傳回的 AuthTxnKind 物件</param>
+            <returns>找到則傳回 AuthTxnKind 物件，否則傳回 defaultValue 參數指定物件</returns>
+        </member>
+        <member name="T:Fuju.Web.Focas.AutoCapFlag">
+            <summary>
+            自動轉入請款檔作業旗標 常數定義類別
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Focas.AutoCapFlag.No">
+            <summary>
+            0 : 不轉入請款檔
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Focas.AutoCapFlag.Yes">
+            <summary>
+            1 : 自動轉入請款檔
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Focas.AutoCapFlag.All">
+            <summary>
+            所有 AutoCapFlag 物件陣列
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.AutoCapFlag.Value">
+            <summary>
+            旗標值 (0=不轉入請款檔; 1=自動轉入請款檔)
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Focas.AutoCapFlag.#ctor(System.String)">
+            <summary>
+            建構 自動轉入請款檔作業旗標 定義類別 物件
+            </summary>
+            <param name="value">旗標值</param>
+        </member>
+        <member name="M:Fuju.Web.Focas.AutoCapFlag.ToString">
+            <summary>
+            傳回此物件的字串表示 (旗標值)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Web.Focas.AutoCapFlag.Find(System.String,Fuju.Web.Focas.AutoCapFlag)">
+            <summary>
+            找出指定旗標值對應的 AutoCapFlag 物件
+            </summary>
+            <param name="value">指定旗標值</param>
+            <param name="defaultValue">指定找不到時預設傳回的 AutoCapFlag 物件</param>
+            <returns>找到則傳回 AutoCapFlag 物件，否則傳回 defaultValue 參數指定物件</returns>
+        </member>
+        <member name="T:Fuju.Web.Focas.CustomizeVersion">
+            <summary>
+            客製化付款授權網頁辨識碼 常數定義類別
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Focas.CustomizeVersion.Ver0">
+            <summary>
+            0 : 不使用客製化授權頁
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Focas.CustomizeVersion.Ver1">
+            <summary>
+            1 : 使用第一個版本 (繁體中文化)
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Focas.CustomizeVersion.Ver2">
+            <summary>
+            2 : 使用第二個版本
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Focas.CustomizeVersion.Ver3">
+            <summary>
+            3: 使用第三個版本
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Focas.CustomizeVersion.Ver4">
+            <summary>
+            4 : 使用第四個版本
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Focas.CustomizeVersion.All">
+            <summary>
+            所有 CustomizeVersion 物件陣列
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.CustomizeVersion.Value">
+            <summary>
+            辨識碼 (版本代碼)
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Focas.CustomizeVersion.#ctor(System.String)">
+            <summary>
+            建構 客製化付款授權網頁辨識碼 定義類別 物件
+            </summary>
+            <param name="value">辨識碼</param>
+        </member>
+        <member name="M:Fuju.Web.Focas.CustomizeVersion.ToString">
+            <summary>
+            傳回此物件的字串表示 (辨識碼)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Web.Focas.CustomizeVersion.Find(System.String,Fuju.Web.Focas.CustomizeVersion)">
+            <summary>
+            找出指定識別碼對應的 CustomizeVersion 物件
+            </summary>
+            <param name="value">指定識別碼</param>
+            <param name="defaultValue">指定找不到時預設傳回的 CustomizeVersion 物件</param>
+            <returns>找到則傳回 CustomizeVersion 物件，否則傳回 defaultValue 參數指定物件</returns>
+        </member>
+        <member name="T:Fuju.Web.Focas.EncodeTypeCode">
+            <summary>
+            網頁編碼代碼 常數定義類別
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Focas.EncodeTypeCode.BIG5">
+            <summary>
+            BIG5 : BIG 5
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Focas.EncodeTypeCode.UTF8">
+            <summary>
+            UTF-8 : UTF 8
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Focas.EncodeTypeCode.All">
+            <summary>
+            所有 AutoCapFlag 物件陣列
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.EncodeTypeCode.Value">
+            <summary>
+            代碼 (BIG5=BIG 5; UTF-8=UTF 8)
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Focas.EncodeTypeCode.#ctor(System.String)">
+            <summary>
+            建構 網頁編碼代碼 定義類別 物件
+            </summary>
+            <param name="value">代碼</param>
+        </member>
+        <member name="M:Fuju.Web.Focas.EncodeTypeCode.ToString">
+            <summary>
+            傳回此物件的字串表示 (代碼)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Web.Focas.EncodeTypeCode.Find(System.String,Fuju.Web.Focas.EncodeTypeCode)">
+            <summary>
+            找出指定代碼對應的 EncodeTypeCode 物件
+            </summary>
+            <param name="value">指定代碼</param>
+            <param name="defaultValue">指定找不到時預設傳回的 EncodeTypeCode 物件</param>
+            <returns>找到則傳回 EncodeTypeCode 物件，否則傳回 defaultValue 參數指定物件</returns>
+        </member>
+        <member name="T:Fuju.Web.Focas.AlipayHelper">
+            <summary>
+            財金支付寶共用方法類別
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Focas.AlipayHelper._FiscService_ChecksumCodes">
+            <summary>
+            支付寶服務 (FiscService) Checksum 對照碼清單
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Focas.AlipayHelper.GenFiscServiceCheckCode(System.Int32,System.String)">
+            <summary>
+            產生指定數值的支付寶服務的檢查碼
+            </summary>
+            <param name="value">指定數值</param>
+            <param name="key">驗證碼</param>
+            <returns>傳回驗證碼</returns>
+        </member>
+        <member name="M:Fuju.Web.Focas.AlipayHelper.Decrypt3DES(System.Byte[],System.Byte[],System.String@)">
+            <summary>
+            3DES ECB 解密
+            </summary>
+            <param name="valueBytes"></param>
+            <param name="keyBytes"></param>
+            <param name="decodedText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Web.Focas.AlipayHelper.Encrypt3DES(System.Byte[],System.Byte[],System.String@)">
+            <summary>
+            3DES ECB 加密
+            </summary>
+            <param name="valueBytes"></param>
+            <param name="keyBytes"></param>
+            <param name="encodedText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Web.Focas.AlipayHelper.GetHexString(System.Byte[],System.Boolean)">
+            <summary>
+            Byte 陣列轉成16進位字串
+            </summary>
+            <param name="bytes">指定 Byte 陣列</param>
+            <param name="toUpper">是否使用大寫，預設 true</param>
+            <returns></returns>
+        </member>
+        <member name="F:Fuju.Web.Focas.AlipayHelper.HexStringRegex">
+            <summary>
+            16進位字串規則運算式
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Focas.AlipayHelper.GetHexBytes(System.String,System.Byte[]@)">
+            <summary>
+            16進位字串轉成 Byte 陣列
+            </summary>
+            <param name="hexString">指定16進位字串</param>
+            <param name="bytes">傳回 Byte 陣列</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Web.Focas.AlipayHelper.GetBase64Encode(System.Text.Encoding,System.String)">
+            <summary>
+            取得指定字串的 Base64 加密後字串，並可指定編碼方式
+            </summary>
+            <param name="encoding">指定字串編碼方式。(不指定則使用 Encoding.Default)</param>
+            <param name="text">指定要加密的字串。(不指定則結果傳回空字串)</param>
+            <returns>傳回加密後的字串。</returns>
+        </member>
+        <member name="M:Fuju.Web.Focas.AlipayHelper.GetBase64Encode(System.String)">
+            <summary>
+            取得指定字串的 Base64 加密後字串，並使用 ASCII 編碼方式
+            </summary>
+            <param name="text">指定要加密的字串。</param>
+            <returns>傳回加密後的字串。(不指定則結果傳回空字串)</returns>
+        </member>
+        <member name="T:Fuju.Web.Focas.FocasHelper">
+            <summary>
+            財金網路收單處理共用方法類別 (僅支援信用卡網路收單)
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Focas.FocasHelper._KeySeparator">
+            <summary>
+            AuthResUrl Key 的分隔字串 (Join 用)
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Focas.FocasHelper._KeySeparators">
+            <summary>
+            AuthResUrl Key 的分隔字串 (Split 用)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.FocasHelper.FiscVersion">
+            <summary>
+            財金網路特店收單規格版本
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.FocasHelper.LogPath">
+            <summary>
+            日誌檔路徑
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.FocasHelper.LogName">
+            <summary>
+            日誌檔名稱
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.FocasHelper.LogFile">
+            <summary>
+            日誌檔
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Focas.FocasHelper.#ctor">
+            <summary>
+            建構 財金網路收單處理共用方法類別 物件
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Focas.FocasHelper.#ctor(System.String,System.String,System.String)">
+            <summary>
+            建構 財金網路收單處理共用方法類別 物件，並指定日誌檔路徑、日誌檔名稱
+            </summary>
+            <param name="logPath">指定日誌檔路徑</param>
+            <param name="logName">指定日誌檔名稱</param>
+            <param name="timePattern">指定日誌檔時間 Pattern，不指定則使用 yyyyMMdd 格式</param>
+        </member>
+        <member name="M:Fuju.Web.Focas.FocasHelper.SetLog(System.String,System.String,System.String)">
+            <summary>
+            設定日誌檔相關參數
+            </summary>
+            <param name="logPath"></param>
+            <param name="logName"></param>
+            <param name="timePattern"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Web.Focas.FocasHelper.GenAuthTxnReqHtml(Fuju.Web.Focas.AuthTxnReqData,Fuju.Web.Focas.AuthTxnKind,System.String)">
+            <summary>
+            產生授權交易請求的 Html
+            </summary>
+            <param name="data">指定授權交易請求資料</param>
+            <param name="kind">指定授權交易類別</param>
+            <param name="formName">指定 Form 物件 ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Web.Focas.FocasHelper.GenTxnIdCheckCode(System.String,System.String)">
+            <summary>
+            產生 TxnId 網頁參數的驗證 HashCode
+            </summary>
+            <param name="txnId"></param>
+            <param name="lidm"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Web.Focas.FocasHelper.GenCCardAuthTxnRequest(System.Web.UI.HtmlControls.HtmlGenericControl,Fuju.Web.Focas.AuthTxnReqData,System.String)">
+            <summary>
+            產生信用卡授權交易請求 Form
+            </summary>
+            <param name="control">指定 Html 控制項，必須為 div、span 等</param>
+            <param name="data">指定授權交易請求資料</param>
+            <param name="formId">指定 Form 物件 ID</param>
+            <returns>成功則傳回 true，否怎傳回 false</returns>
+        </member>
+        <member name="M:Fuju.Web.Focas.FocasHelper.GenCCardAuthTxnRequest(System.Web.UI.LiteralControl,Fuju.Web.Focas.AuthTxnReqData,System.String)">
+            <summary>
+            產生信用卡授權交易請求 Form
+            </summary>
+            <param name="control">指定 Literal 控制項</param>
+            <param name="data">指定授權交易請求資料</param>
+            <param name="formId">指定 Form 物件 ID</param>
+            <returns>成功則傳回 true，否怎傳回 false</returns>
+        </member>
+        <member name="M:Fuju.Web.Focas.FocasHelper.GenAuthTxnReqData(System.String,System.String,System.String,System.String,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            產生授權交易請求資料
+            </summary>
+            <param name="merId">特店編號</param>
+            <param name="merchantId">收單行特店代號</param>
+            <param name="terminalId">收單行端末代號</param>
+            <param name="merchantName">特店名稱</param>
+            <param name="lidm">交易訂單編號</param>
+            <param name="purchAmt">交易金額</param>
+            <param name="actionUrl">授權交易請求網址</param>
+            <param name="authResUrl">授權交易回應網址</param>
+            <returns>傳回產生授權交易請求資料物件</returns>
+        </member>
+        <member name="M:Fuju.Web.Focas.FocasHelper.GetAuthTxnRspData">
+            <summary>
+            讀取目前頁面 Request.Form 的授權交易回應資料
+            </summary>
+            <returns>成功則傳回授權交易回應資料物件，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.Web.Focas.FocasHelper.WriteLog(System.String,System.Boolean)">
+            <summary>
+            寫入日誌檔訊息
+            </summary>
+            <param name="log">指定日誌訊息</param>
+            <param name="fgNewLineEnd">指定是否在訊息後面加換行</param>
+        </member>
+        <member name="M:Fuju.Web.Focas.FocasHelper.WriteLog(System.String,System.Object[])">
+            <summary>
+            寫入日誌檔訊息
+            </summary>
+            <param name="format">指定格式化字串</param>
+            <param name="args">指定格式化參數</param>
+        </member>
+        <member name="M:Fuju.Web.Focas.FocasHelper.GenTxnId">
+            <summary>
+            產生 TxnId
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Fuju.Web.Focas.LanguageCode">
+            <summary>
+            語系代碼 常數定義類別
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Focas.LanguageCode.TW">
+            <summary>
+            0 : 繁體中文
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Focas.LanguageCode.CN">
+            <summary>
+            1 : 簡體中文
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Focas.LanguageCode.EN">
+            <summary>
+            2 : 英文
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Focas.LanguageCode.JP">
+            <summary>
+            3 : 日文
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Focas.LanguageCode.All">
+            <summary>
+            所有 AutoCapFlag 物件陣列
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.LanguageCode.Value">
+            <summary>
+            代碼 (0=繁體中文; 1=簡體中文; 2=英文; 3=日文)
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Focas.LanguageCode.#ctor(System.String)">
+            <summary>
+            建構 語系代碼 定義類別 物件
+            </summary>
+            <param name="value">代碼</param>
+        </member>
+        <member name="M:Fuju.Web.Focas.LanguageCode.ToString">
+            <summary>
+            傳回此物件的字串表示 (代碼)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Web.Focas.LanguageCode.Find(System.String,Fuju.Web.Focas.LanguageCode)">
+            <summary>
+            找出指定代碼對應的 LanguageCode 物件
+            </summary>
+            <param name="value">指定代碼</param>
+            <param name="defaultValue">指定找不到時預設傳回的 LanguageCode 物件</param>
+            <returns>找到則傳回 EncodeTypeCode 物件，否則傳回 defaultValue 參數指定物件</returns>
+        </member>
+        <member name="T:Fuju.Web.Focas.PayTypeCode">
+            <summary>
+            交易類別代碼 常數定義類別
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Focas.PayTypeCode.Normal">
+            <summary>
+            0 : 一般交易
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Focas.PayTypeCode.Period">
+            <summary>
+            1 : 分期交易
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Focas.PayTypeCode.Bonus">
+            <summary>
+            2 : 紅利交易
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Focas.PayTypeCode.All">
+            <summary>
+            所有 AutoCapFlag 物件陣列
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Focas.PayTypeCode.Value">
+            <summary>
+            代碼 (0=一般交易; 1=分期交易; 2=紅利交易)
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Focas.PayTypeCode.#ctor(System.String)">
+            <summary>
+            建構 交易類別代碼 定義類別 物件
+            </summary>
+            <param name="value">代碼</param>
+        </member>
+        <member name="M:Fuju.Web.Focas.PayTypeCode.ToString">
+            <summary>
+            傳回此物件的字串表示 (代碼)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Web.Focas.PayTypeCode.Find(System.String,Fuju.Web.Focas.PayTypeCode)">
+            <summary>
+            找出指定代碼對應的 PayTypeCode 物件
+            </summary>
+            <param name="value">指定代碼</param>
+            <param name="defaultValue">指定找不到時預設傳回的 PayTypeCode 物件</param>
+            <returns>找到則傳回 PayTypeCode 物件，否則傳回 defaultValue 參數指定物件</returns>
+        </member>
+    </members>
+</doc>

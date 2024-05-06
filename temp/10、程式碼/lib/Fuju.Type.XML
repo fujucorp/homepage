@@ -1,0 +1,1480 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Fuju.Type</name>
+    </assembly>
+    <members>
+        <member name="T:Fuju.CodeText">
+            <summary>
+            代碼與文字對照類別
+            </summary>
+        </member>
+        <member name="P:Fuju.CodeText.Code">
+            <summary>
+            取得或指定代碼 (指定時不可為 null，且自動去頭尾空白)
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Code 屬性為 null 時。</exception>
+        </member>
+        <member name="P:Fuju.CodeText.Text">
+            <summary>
+            取得或指定文字 (指定 null 時自動轉成空字串，否則自動去頭尾空白)
+            </summary>
+        </member>
+        <member name="M:Fuju.CodeText.#ctor">
+            <summary>
+            建構代碼名稱對照類別
+            </summary>
+        </member>
+        <member name="M:Fuju.CodeText.#ctor(System.String,System.String)">
+            <summary>
+            建構代碼名稱對照類別，並指定代碼與文字
+            </summary>
+            <param name="code">指定代碼。</param>
+            <param name="text">指定文字。</param>
+            <exception cref="T:System.ArgumentNullException">Code 參數為 null 時。</exception>
+        </member>
+        <member name="M:Fuju.CodeText.ToString">
+            <summary>
+            取得字串表示
+            </summary>
+            <returns>傳回字串表示。</returns>
+        </member>
+        <member name="M:Fuju.CodeText.Equals(System.Object)">
+            <summary>
+            取得自己是否與指定的實體物件相等
+            </summary>
+            <param name="obj">指定比較的實體物件。</param>
+            <returns>代碼與文字皆相同傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.CodeText.GetHashCode">
+            <summary>
+            取得 HashCode
+            </summary>
+            <returns>傳回 HashCode。</returns>
+        </member>
+        <member name="M:Fuju.CodeText.ToString(System.String)">
+            <summary>
+            取得字串表示 (格式為：[Code][separator][Text])
+            </summary>
+            <param name="separator">指定代碼與文字的分隔字串。傳入 null 時，預設為 " - "。</param>
+            <returns>傳回字串表示。</returns>
+        </member>
+        <member name="M:Fuju.CodeText.ToString(System.String,System.String)">
+            <summary>
+            取得字串表示
+            </summary>
+            <param name="leftBraces">指定代碼與文字的左括號字串。傳入 null 時，預設為 "("。</param>
+            <param name="rightBraces">指定代碼與文字的右括號字串。傳入 null 時，預設為 ")"。</param>
+            <returns>傳回字串表示。</returns>
+        </member>
+        <member name="M:Fuju.CodeText.Equals(Fuju.CodeText)">
+            <summary>
+            取得自己是否與指定的實體物件相等
+            </summary>
+            <param name="other">指定比較的實體物件。</param>
+            <returns>代碼與文字皆相同傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.CodeText.Copy">
+            <summary>
+            取得自己的複製實體物件
+            </summary>
+            <returns>傳回複製後的實體物件。</returns>
+        </member>
+        <member name="M:Fuju.CodeText.IsEmpty">
+            <summary>
+            取得此物件是否為空的
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.CodeText.op_Equality(Fuju.CodeText,Fuju.CodeText)">
+            <summary>
+            等於運算子
+            </summary>
+            <param name="a">指定比較的運算元 a。</param>
+            <param name="b">指定比較的運算元 b。</param>
+            <returns>相等傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.CodeText.op_Inequality(Fuju.CodeText,Fuju.CodeText)">
+            <summary>
+            不等於運算子
+            </summary>
+            <param name="a">指定比較的運算元 a。</param>
+            <param name="b">指定比較的運算元 a。</param>
+            <returns>不相等傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.CodeText.FindCodeIndexOf(Fuju.CodeText[],System.String)">
+            <summary>
+            取得指定代碼在指定代碼名稱對照陣列中的索引值
+            </summary>
+            <param name="some">指定代碼名稱對照陣列。</param>
+            <param name="code">指定要找尋的代碼。(指定 null 則傳回 -1)</param>
+            <returns>找到該代碼則傳回該索引值，否則傳回 -1。</returns>
+        </member>
+        <member name="T:Fuju.CodeTextList">
+            <summary>
+            代碼名稱對照集合類別
+            </summary>
+        </member>
+        <member name="M:Fuju.CodeTextList.#ctor">
+            <summary>
+            建構代碼名稱對照集合類別
+            </summary>
+        </member>
+        <member name="M:Fuju.CodeTextList.#ctor(System.Int32)">
+            <summary>
+            建構代碼名稱對照集合類別
+            </summary>
+            <param name="capacity">指定初始的集合大小。</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">capacity 小於 0。</exception>
+        </member>
+        <member name="M:Fuju.CodeTextList.#ctor(System.Collections.Generic.IEnumerable{Fuju.CodeText})">
+            <summary>
+            建構代碼名稱對照集合類別
+            </summary>
+            <param name="collection">指定初始的集合元素。</param>
+            <exception cref="T:System.ArgumentNullException">collection 為 null。</exception>
+        </member>
+        <member name="P:Fuju.CodeTextList.Item(System.String)">
+            <summary>
+            取得第一個符合指定代碼的 CodeText
+            </summary>
+            <param name="code">指定代碼。</param>
+            <returns>存在指定代碼則傳回 CodeText，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.CodeTextList.CodeIndexOf(System.String)">
+            <summary>
+            取得第一個符合指定代碼的索引值
+            </summary>
+            <param name="code">指定代碼。</param>
+            <returns>存在指定代碼則傳回索引值，否則傳回 -1。</returns>
+        </member>
+        <member name="M:Fuju.CodeTextList.Add(System.String,System.String)">
+            <summary>
+            新增指定代碼與文字至集合結尾
+            </summary>
+            <param name="code">指定代碼。不可傳入 null。</param>
+            <param name="text">指定文字。</param>
+            <returns>成功傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.CodeTextList.AddRange(Fuju.CodeText[])">
+            <summary>
+            新增指定元素陣列至集合結尾
+            </summary>
+            <param name="items">指定元素陣列。</param>
+            <returns>傳回新增成功筆數。</returns>
+        </member>
+        <member name="M:Fuju.CodeTextList.AddRange(System.String[],System.String[])">
+            <summary>
+            新增指定代碼與文字陣列至集合結尾
+            </summary>
+            <param name="codes">指定代碼陣列。不可傳入 null，陣列大小不可與 texts 參數不同。</param>
+            <param name="texts">指定文字陣列。不可傳入 null，陣列大小不可與 codes 參數不同。</param>
+            <returns>成功傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.CodeTextList.Copy">
+            <summary>
+            取得自己的複製元素實體物件
+            </summary>
+            <returns>傳回複製後的實體物件。</returns>
+        </member>
+        <member name="M:Fuju.CodeTextList.GetAllCodes">
+            <summary>
+            取得所有代碼
+            </summary>
+        </member>
+        <member name="M:Fuju.CodeTextList.GetAllTexts">
+            <summary>
+            取得所有文字
+            </summary>
+        </member>
+        <member name="T:Fuju.ConstCodeText`1">
+            <summary>
+            常數代碼名稱對照基底泛型抽象類別
+            </summary>
+            <typeparam name="T">指定泛型型別，限繼承 IConstCodeText 的型別。</typeparam>
+        </member>
+        <member name="F:Fuju.ConstCodeText`1._Category">
+            <summary>
+            儲存類別的 readonly 成員變數
+            </summary>
+        </member>
+        <member name="P:Fuju.ConstCodeText`1.Category">
+            <summary>
+            取得類別
+            </summary>
+        </member>
+        <member name="F:Fuju.ConstCodeText`1._Code">
+            <summary>
+            儲存代碼的 readonly 成員變數
+            </summary>
+        </member>
+        <member name="P:Fuju.ConstCodeText`1.Code">
+            <summary>
+            取得代碼
+            </summary>
+        </member>
+        <member name="F:Fuju.ConstCodeText`1._Text">
+            <summary>
+            儲存文字的 readonly 成員變數
+            </summary>
+        </member>
+        <member name="P:Fuju.ConstCodeText`1.Text">
+            <summary>
+            取得文字
+            </summary>
+        </member>
+        <member name="M:Fuju.ConstCodeText`1.#ctor(System.String,System.String,System.String)">
+            <summary>
+            建構常數代碼名稱對照泛型抽象類別
+            </summary>
+            <param name="category">指定類別。不可指定 null，且指定字串自動去頭尾空白。</param>
+            <param name="code">指定代碼。不可指定 null，且指定字串自動去頭尾空白。</param>
+            <param name="text">指定文字。指定 null 時自動轉成空字串，否則指定字串自動去頭尾空白。</param>
+            <exception cref="T:System.ArgumentNullException">category 或 code 參數為 null 時。</exception>
+        </member>
+        <member name="M:Fuju.ConstCodeText`1.GetFullCode">
+            <summary>
+            取得完整代碼 (格式：[類別][:][代碼])
+            </summary>
+            <returns>傳回完整代碼。</returns>
+        </member>
+        <member name="M:Fuju.ConstCodeText`1.Equals(`0)">
+            <summary>
+            取得自己是否與指定的實體物件相等
+            </summary>
+            <param name="other">指定比較的實體物件。</param>
+            <returns>類別、代碼與文字皆相同則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.ConstCodeText`1.ToString">
+            <summary>
+            取得字串表示 (格式：[類別][:][代碼][-][文字])
+            </summary>
+            <returns>傳回字串表示。</returns>
+        </member>
+        <member name="M:Fuju.ConstCodeText`1.Equals(System.Object)">
+            <summary>
+            取得自己是否與指定的實體物件相等
+            </summary>
+            <param name="obj">指定比較的實體物件。</param>
+            <returns>類別、代碼與文字皆相同則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.ConstCodeText`1.GetHashCode">
+            <summary>
+            取得 HashCode
+            </summary>
+            <returns>傳回 HashCode。</returns>
+        </member>
+        <member name="M:Fuju.ConstCodeText`1.ToString(System.String)">
+            <summary>
+            取得字串表示 (格式：[代碼][separator][文字])
+            </summary>
+            <param name="separator">指定代碼與文字的分隔字串。傳入 null 時，預設為 " - "。</param>
+            <returns>傳回字串表示。代碼空字串則傳回文字，文字為空字串則傳回代碼，否則格式化後的字串。</returns>
+        </member>
+        <member name="M:Fuju.ConstCodeText`1.ToString(System.String,System.String)">
+            <summary>
+            取得字串表示 (格式：[代碼][leftBraces][文字][rightBraces])
+            </summary>
+            <param name="leftBraces">指定代碼與文字的左括號字串。傳入 null 時，預設為 "("。</param>
+            <param name="rightBraces">指定代碼與文字的右括號字串。傳入 null 時，預設為 ")"。</param>
+            <returns>傳回字串表示。代碼空字串則傳回文字，文字為空字串則傳回代碼，否則格式化後的字串。</returns>
+        </member>
+        <member name="M:Fuju.ConstCodeText`1.op_Equality(Fuju.ConstCodeText{`0},Fuju.ConstCodeText{`0})">
+            <summary>
+            等於運算子
+            </summary>
+            <param name="a">指定比較的運算元 a。</param>
+            <param name="b">指定比較的運算元 b。</param>
+            <returns>相等傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.ConstCodeText`1.op_Inequality(Fuju.ConstCodeText{`0},Fuju.ConstCodeText{`0})">
+            <summary>
+            不等於運算子
+            </summary>
+            <param name="a">指定比較的運算元 a。</param>
+            <param name="b">指定比較的運算元 a。</param>
+            <returns>不相等傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="T:Fuju.ConstCodeTextList`2">
+            <summary>
+            泛型(常數代碼名稱對照)基底集合抽象類別
+            </summary>
+            <typeparam name="T">指定項目的泛型型別，限制繼承 IConstCodeText 的型別。</typeparam>
+            <typeparam name="KList">指定集合的泛型型別，限制繼承 IConstCodeTextList 的型別。</typeparam>
+        </member>
+        <member name="F:Fuju.ConstCodeTextList`2._TCache">
+            <summary>
+            常數代碼名稱對照項目快取
+            </summary>
+        </member>
+        <member name="M:Fuju.ConstCodeTextList`2.#ctor(System.Collections.Generic.IList{`0})">
+            <summary>
+            建構泛型(常數代碼名稱對照)基底集合類別
+            </summary>
+            <param name="list">指定項目集合。</param>
+        </member>
+        <member name="P:Fuju.ConstCodeTextList`2.Item(System.Int32)">
+            <summary>
+            取得指定索引值的項目
+            </summary>
+            <param name="index">指定索引值。</param>
+            <returns>存在指定索引值則傳回該項目，否則傳回 null。</returns>
+        </member>
+        <member name="P:Fuju.ConstCodeTextList`2.Item(System.String)">
+            <summary>
+            取得第一個符合指定項目代碼的項目
+            </summary>
+            <param name="code">指定項目代碼。</param>
+            <returns>找到指定項目代碼則傳回該項目，否則傳回 null。</returns>
+        </member>
+        <member name="P:Fuju.ConstCodeTextList`2.Count">
+            <summary>
+            取得集合中的項目數目
+            </summary>
+        </member>
+        <member name="M:Fuju.ConstCodeTextList`2.IndexOf(`0)">
+            <summary>
+            取得集合中第一個相符指定項目的索引值
+            </summary>
+            <param name="item">指定項目。</param>
+            <returns>找到指定項目則傳回索引值，否則傳回 -1。</returns>
+        </member>
+        <member name="M:Fuju.ConstCodeTextList`2.CodeIndexOf(System.String)">
+            <summary>
+            取得集合中第一個相符指定項目代碼的索引值
+            </summary>
+            <param name="code">指定項目代碼。</param>
+            <returns>找到指定項目代碼則傳回索引值，否則傳回 -1。</returns>
+        </member>
+        <member name="M:Fuju.ConstCodeTextList`2.Contains(`0)">
+            <summary>
+            取得集合中是否包含指定項目
+            </summary>
+            <param name="item">指定項目。</param>
+            <returns>找到指定項目則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.ConstCodeTextList`2.CodeContains(System.String)">
+            <summary>
+            取得集合中是否包含指定項目代碼
+            </summary>
+            <param name="code">指定項目代碼。</param>
+            <returns>找到指定項目代碼則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.ConstCodeTextList`2.GetItems">
+            <summary>
+            取得集合中所有項目
+            </summary>
+            <returns>傳回所有項目，無項目時傳回空的 IList。</returns>
+        </member>
+        <member name="M:Fuju.ConstCodeTextList`2.GetItem(System.String)">
+            <summary>
+            取得集合中第一個符合指定項目代碼的項目
+            </summary>
+            <param name="code">指定項目代碼。</param>
+            <returns>找到指定項目代碼則傳回該項目，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.ConstCodeTextList`2.GetAllCodes">
+            <summary>
+            取得集合中所有項目的代碼
+            </summary>
+            <returns>傳回所有項目的代碼，無項目時傳回 new string[0]。</returns>
+        </member>
+        <member name="M:Fuju.ConstCodeTextList`2.GetAllTexts">
+            <summary>
+            取得集合中所有項目的文字
+            </summary>
+            <returns>傳回所有項目的文字，無項目時傳回 new string[0]。</returns>
+        </member>
+        <member name="M:Fuju.ConstCodeTextList`2.GetEnumerator">
+            <summary>
+            取得在集合中逐一查看的列舉值
+            </summary>
+            <returns>傳回 System.Collections.IEnumerator 物件，可用於逐一查看集合。</returns>
+        </member>
+        <member name="M:Fuju.ConstCodeTextList`2.GetOne(System.String)">
+            <summary>
+            取得集合中第一個符合指定項目代碼的項目
+            </summary>
+            <param name="code">指定項目代碼。</param>
+            <returns>找到指定項目代碼則傳回該項目，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.ConstCodeTextList`2.IsDefine(System.String)">
+            <summary>
+            取得指定代碼是否為定義的代碼
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.ConstCodeTextList`2.GetCodes">
+            <summary>
+            取得集合中所有項目的代碼
+            </summary>
+            <returns>傳回所有項目的代碼，無項目時傳回 new string[0]。</returns>
+        </member>
+        <member name="T:Fuju.Date">
+            <summary>
+            日期結構
+            </summary>
+        </member>
+        <member name="F:Fuju.Date.MaxValue">
+            <summary>
+            取得.Date 的最大可能值。
+            </summary>
+        </member>
+        <member name="F:Fuju.Date.MinValue">
+            <summary>
+            取得.Date 的最小可能值。
+            </summary>
+        </member>
+        <member name="F:Fuju.Date._Date8FRegex">
+            <summary>
+            Date8 格式的規則表示式
+            </summary>
+        </member>
+        <member name="F:Fuju.Date._DateTime">
+            <summary>
+            實際儲存日期資料的變數
+            </summary>
+        </member>
+        <member name="P:Fuju.Date.Year">
+            <summary>
+            取得日期的年資料
+            </summary>
+        </member>
+        <member name="P:Fuju.Date.Month">
+            <summary>
+            取得日期的月資料
+            </summary>
+        </member>
+        <member name="P:Fuju.Date.Day">
+            <summary>
+            取得日期的日資料
+            </summary>
+        </member>
+        <member name="P:Fuju.Date.DayOfWeek">
+            <summary>
+            取得日期的星期資料
+            </summary>
+        </member>
+        <member name="P:Fuju.Date.DayOfYear">
+            <summary>
+            取得日期表示的一年天數
+            </summary>
+        </member>
+        <member name="P:Fuju.Date.Ticks">
+            <summary>
+            取得日期表示的 ticks
+            </summary>
+        </member>
+        <member name="M:Fuju.Date.#ctor(System.DateTime)">
+            <summary>
+            建構日期結構
+            </summary>
+            <param name="datetime">以 DateTime 的 Date 表示的日期。</param>
+        </member>
+        <member name="M:Fuju.Date.#ctor(System.Int64)">
+            <summary>
+            建構日期結構
+            </summary>
+            <param name="ticks">以 100 毫微秒單位表示的日期。</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">ticks 小於 DateTime.MinValue 或大於 DateTime.MaxValue。</exception>
+        </member>
+        <member name="M:Fuju.Date.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            建構日期結構
+            </summary>
+            <param name="year">指定日期的年資料 (1 到 9999)。</param>
+            <param name="month">指定日期的月資料 (1 到 12)。</param>
+            <param name="day">指定日期的日資料 (1 到 month 中的天數)。</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">year 小於 1 或大於 9999。 -或- month 小於 1 或大於 12。 -或- day 小於 1 或大於 month 中的天數。</exception>
+            <exception cref="T:System.ArgumentException">指定的參數會判定為小於 System.DateTime.MinValue 或大於 System.DateTime.MaxValue。</exception>
+        </member>
+        <member name="M:Fuju.Date.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            特別的建構日期結構，用於反序列化
+            </summary>
+            <param name="info">序列化與反序列化的資訊物件。</param>
+            <param name="context">序列化資料流內容物件。</param>
+        </member>
+        <member name="M:Fuju.Date.op_Subtraction(Fuju.Date,Fuju.Date)">
+            <summary>
+            取得指定日期1 減去 指定日期2 後的時間間隔
+            </summary>
+            <param name="d1">指定日期 1 (被減數)。</param>
+            <param name="d2">指定日期 2 (減數)。</param>
+            <returns>傳回相減後的時間間隔。</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">結果小於 System.TimeSpan.MinValue 或大於 System.TimeSpan.MaxValue。</exception>
+        </member>
+        <member name="M:Fuju.Date.op_Subtraction(Fuju.Date,System.TimeSpan)">
+            <summary>
+            取得指定日期減去指定時間間隔後的日期
+            </summary>
+            <param name="d">指定日期 (被減數)。</param>
+            <param name="t">指定時間間隔 (減數)。</param>
+            <returns>傳回相減後的日期。</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">相減結果小於 Date.MinValue 或大於 Date.MaxValue。</exception>
+        </member>
+        <member name="M:Fuju.Date.op_Inequality(Fuju.Date,Fuju.Date)">
+            <summary>
+            取得兩個指定日期是否不相等
+            </summary>
+            <param name="d1">指定日期 1。</param>
+            <param name="d2">指定日期 2。</param>
+            <returns>不相等則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Date.op_Addition(Fuju.Date,System.TimeSpan)">
+            <summary>
+            取得指定日期加上指定時間間隔後的日期。
+            </summary>
+            <param name="d">指定日期。</param>
+            <param name="t">指定時間間隔。</param>
+            <returns>傳回相加後的日期。</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">指定時間間隔包含時分秒，或結果小於 Date.MinValue 或大於 Date.MaxValue。</exception>
+        </member>
+        <member name="M:Fuju.Date.op_LessThan(Fuju.Date,Fuju.Date)">
+            <summary>
+            取得 指定日期1 是否小於 指定日期2。
+            </summary>
+            <param name="d1">指定日期 1。</param>
+            <param name="d2">指定日期 2。</param>
+            <returns>指定日期1 小於 指定日期2 則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Date.op_LessThanOrEqual(Fuju.Date,Fuju.Date)">
+            <summary>
+            取得 指定日期1 是否小於等於 指定日期2。
+            </summary>
+            <param name="d1">指定日期 1。</param>
+            <param name="d2">指定日期 2。</param>
+            <returns>指定日期1 小於等於 指定日期2 則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Date.op_Equality(Fuju.Date,Fuju.Date)">
+            <summary>
+            取得 指定日期1 是否等於 指定日期2。
+            </summary>
+            <param name="d1">指定日期 1。</param>
+            <param name="d2">指定日期 2。</param>
+            <returns>指定日期1 等於 指定日期2 則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Date.op_GreaterThan(Fuju.Date,Fuju.Date)">
+            <summary>
+            取得 指定日期1 是否大於 指定日期2。
+            </summary>
+            <param name="d1">指定日期 1。</param>
+            <param name="d2">指定日期 2。</param>
+            <returns>指定日期1 大於 指定日期2 則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Date.op_GreaterThanOrEqual(Fuju.Date,Fuju.Date)">
+            <summary>
+            取得 指定日期1 是否大於等於 指定日期2。
+            </summary>
+            <param name="d1">指定日期 1。</param>
+            <param name="d2">指定日期 2。</param>
+            <returns>指定日期1 大於等於 指定日期2 則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Date.Add(System.TimeSpan)">
+            <summary>
+            取得此日期加上指定時間間隔後的日期
+            </summary>
+            <param name="value">指定時間間隔。</param>
+            <returns>傳回加上後的日期。</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">指定時間間隔包含時分秒，或結果小於 System.Date.MinValue 或大於 System.Date.MaxValue。</exception>
+        </member>
+        <member name="M:Fuju.Date.AddDays(System.Int32)">
+            <summary>
+            取得此日期加上指定天數後的日期
+            </summary>
+            <param name="value">指定天數。</param>
+            <returns>傳回加上後的日期。</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">結果小於 Date.MinValue 或大於 Date.MaxValue。</exception>
+        </member>
+        <member name="M:Fuju.Date.AddMonths(System.Int32)">
+            <summary>
+            取得此日期加上指定月數後的日期
+            </summary>
+            <param name="value">指定月數。</param>
+            <returns>傳回加上後的日期。</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">結果小於 Date.MinValue 或大於 Date.MaxValue。</exception>
+        </member>
+        <member name="M:Fuju.Date.AddTicks(System.Int64)">
+            <summary>
+            取得此日期加上指定刻度數後的日期
+            </summary>
+            <param name="value">指定刻度數。</param>
+            <returns>傳回加上後的日期。</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">指定刻度數包含時分秒，或結果小於 Date.MinValue 或大於 Date.MaxValue。</exception>
+        </member>
+        <member name="M:Fuju.Date.AddYears(System.Int32)">
+            <summary>
+            取得此日期加上指定年數後的日期
+            </summary>
+            <param name="value">指定年數。</param>
+            <returns>傳回加上後的日期。</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">結果小於 Date.MinValue 或大於 Date.MaxValue。</exception>
+        </member>
+        <member name="M:Fuju.Date.Subtract(Fuju.Date)">
+            <summary>
+            取得此日期減去指定日期後的時間間隔
+            </summary>
+            <param name="value">指定日期。</param>
+            <returns>傳回減去後的時間間隔。</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">結果小於 System.TimeSpan.MinValue 或大於 System.TimeSpan.MaxValue。</exception>
+        </member>
+        <member name="M:Fuju.Date.Subtract(System.TimeSpan)">
+            <summary>
+            取得此日期減去指定時間間隔後的日期
+            </summary>
+            <param name="value">指定時間間隔。</param>
+            <returns>傳回減去後的日期。</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">指定時間間隔包含時分秒，或結果小於 System.Date.MinValue 或大於 System.Date.MaxValue。</exception>
+        </member>
+        <member name="M:Fuju.Date.ToBinary">
+            <summary>
+            取得此日期的序列化 64 位元的二進位值
+            </summary>
+            <returns>傳回 64 位元帶正負號的整數。</returns>
+        </member>
+        <member name="M:Fuju.Date.ToDateTime">
+            <summary>
+            取得此日期的日期時間型別
+            </summary>
+            <returns>傳回日期時間型別。</returns>
+        </member>
+        <member name="M:Fuju.Date.ToString(System.String)">
+            <summary>
+            取得此日期的指定字串格式的日期字串表示
+            </summary>
+            <param name="format">指定字串格式。</param>
+            <returns>傳回日期字串表示。</returns>
+            <exception cref="T:System.FormatException">未指定字串格式或包含無效的格式模式。</exception>
+        </member>
+        <member name="M:Fuju.Date.ToDate8">
+            <summary>
+            取得此日期的 8碼的西元年月日 的日期字串表示 (4碼年+2碼月+2碼日)
+            </summary>
+            <returns>傳回日期字串表示。</returns>
+        </member>
+        <member name="M:Fuju.Date.ToDate7">
+            <summary>
+            取得此日期的 7碼的西元年月日 的日期字串表示 (3碼年+2碼月+2碼日)
+            </summary>
+            <returns>傳回日期字串表示。</returns>
+        </member>
+        <member name="M:Fuju.Date.ToDate6">
+            <summary>
+            取得此日期的 6碼的西元年月日 的日期字串表示 (2碼年+2碼月+2碼日)
+            </summary>
+            <returns>傳回日期字串表示。</returns>
+        </member>
+        <member name="M:Fuju.Date.ToTWDate8">
+            <summary>
+            取得此日期的 8碼的民國年月日 的日期字串表示 (4碼年+2碼月+2碼日)
+            </summary>
+            <returns>傳回日期字串表示。</returns>
+        </member>
+        <member name="M:Fuju.Date.ToTWDate7">
+            <summary>
+            取得此日期的 7碼的民國年月日 的日期字串表示 (3碼年+2碼月+2碼日)
+            </summary>
+            <returns>傳回日期字串表示。</returns>
+        </member>
+        <member name="M:Fuju.Date.ToTWDate6">
+            <summary>
+            取得此日期的 6碼的民國年月日 的日期字串表示 (2碼年+2碼月+2碼日)
+            </summary>
+            <returns>傳回日期字串表示。</returns>
+        </member>
+        <member name="M:Fuju.Date.Equals(System.Object)">
+            <summary>
+            取得此日期與指定物件是否相等
+            </summary>
+            <param name="value">指定物件。</param>
+            <returns>相等則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Date.GetHashCode">
+            <summary>
+            取得此日期的雜湊程式碼
+            </summary>
+            <returns>傳回 32 位元帶正負號的整數雜湊程式碼。</returns>
+        </member>
+        <member name="M:Fuju.Date.ToString">
+            <summary>
+            取得此日期的字串表示。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Date.CompareTo(Fuju.Date)">
+            <summary>
+            比較此日期與指定日期，並且傳回一個整數，指出此日期是小於、等於或大於指定日期
+            </summary>
+            <param name="value">指定日期。</param>
+            <returns>傳回帶正負號的數字。小於零表示此日期小於指定日期。等於零表示此日期等於指定日期。大於零表示此日期大於指定日期。</returns>
+        </member>
+        <member name="M:Fuju.Date.CompareTo(System.Object)">
+            <summary>
+            比較此日期與指定物件，並且傳回一個整數，指出此日期是小於、等於或大於指定物件
+            </summary>
+            <param name="value">指定物件。</param>
+            <returns>傳回帶正負號的數字。小於零表示此日期小於指定日期。等於零表示此日期等於指定日期。大於零表示此日期大於指定日期，或者指定日期是 null。</returns>
+            <exception cref="T:System.ArgumentException">指定物件不是 Date 或 DateTime 型別。</exception>
+        </member>
+        <member name="M:Fuju.Date.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            取得此日期的指定字串格式與特定文化特性格式資訊的日期字串表示
+            </summary>
+            <param name="format">指定字串格式。</param>
+            <param name="formatProvider">指定特定文化特性格式資訊。</param>
+            <returns>傳回日期字串表示。</returns>
+            <exception cref="T:System.FormatException">未指定字串格式或包含無效的格式模式。</exception>
+        </member>
+        <member name="M:Fuju.Date.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            實作 ISerializable 介面 GetObjectData 方法，此方法在序列化時被呼叫
+            </summary>
+            <param name="info">序列化與反序列化的資訊物件。</param>
+            <param name="context">序列化資料流內容物件。</param>
+        </member>
+        <member name="M:Fuju.Date.GetSchema">
+            <summary>
+            實作 IXmlSerializable 介面的 GetSchema 方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Date.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            實作 IXmlSerializable 介面的 WriteXml 方法，此方法在 XML 序列化時被呼叫
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Fuju.Date.ReadXml(System.Xml.XmlReader)">
+            <summary>
+            實作 IXmlSerializable 介面的 ReadXml 方法，此方法在反 XML 序列化時被呼叫
+            </summary>
+            <param name="reader"></param>
+        </member>
+        <member name="M:Fuju.Date.Equals(Fuju.Date)">
+            <summary>
+            取得此日期與指定日期是否相等
+            </summary>
+            <param name="value">指定日期。</param>
+            <returns>相等則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Date.GetToday">
+            <summary>
+            取得今日的日期
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Date.Compare(Fuju.Date,Fuju.Date)">
+            <summary>
+            比較指定日期1 與 指定日期2，並且傳回一個整數，指出指定日期1 是小於、等於或大於指定日期2
+            </summary>
+            <param name="d1">指定日期 1。</param>
+            <param name="d2">指定日期 2。</param>
+            <returns>傳回帶正負號的數字。小於零表示指定日期1小於指定日期2。等於零表示指定日期1等於指定日期2。大於零表示指定日期1大於指定日期2。</returns>
+        </member>
+        <member name="M:Fuju.Date.DaysInMonth(System.Int32,System.Int32)">
+            <summary>
+            取得指定年份與指定月份的該月天數
+            </summary>
+            <param name="year">指定年份 (範圍從 1 到 9999 的數字)。</param>
+            <param name="month">指定月份 (範圍從 1 到 12 的數字)。</param>
+            <returns>傳回該月天數。例如指定的年分為閏年，指定月份為二月，則傳回 29。</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">指定月份小於 1 或大於 12，或指定年份小於 1 或大於 9999。</exception>
+        </member>
+        <member name="M:Fuju.Date.Equals(Fuju.Date,Fuju.Date)">
+            <summary>
+            取得指定日期1 與 指定日期2 是否相等
+            </summary>
+            <param name="d1">指定日期 1。</param>
+            <param name="d2">指定日期 2。</param>
+            <returns>相等則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Date.FromBinary(System.Int64)">
+            <summary>
+            取得反序列化指定 64 位元的二進位值後的日期
+            </summary>
+            <param name="dateData">要還原的 64 位元帶正負號的整數。</param>
+            <returns>傳回反序列化後的日期。</returns>
+            <exception cref="T:System.ArgumentException">dateData 小於 Date.MinValue 或大於 Date..MaxValue。或 dateData 包含時分秒。</exception>
+        </member>
+        <member name="M:Fuju.Date.IsLeapYear(System.Int32)">
+            <summary>
+            取得指定年份是否為閏年
+            </summary>
+            <param name="year">指定年份。</param>
+            <returns>閏年傳回 true，否則傳回 fasle。</returns>
+        </member>
+        <member name="M:Fuju.Date.Parse(System.String)">
+            <summary>
+            取得指定日期字串表示轉換後的日期型別
+            </summary>
+            <param name="s">指定日期字串表示 (可 Date8 格式)。</param>
+            <returns>傳回日期型別。</returns>
+            <exception cref="T:System.ArgumentNullException">指定日期字串表示參數為空字串或 null reference。</exception>
+            <exception cref="T:System.FormatException">包含無效的日期字串表示或包含時間字串表示。</exception>
+        </member>
+        <member name="T:Fuju.IConstCodeText">
+            <summary>
+            常數代碼名稱對照介面
+            </summary>
+        </member>
+        <member name="P:Fuju.IConstCodeText.Category">
+            <summary>
+            取得類別
+            </summary>
+        </member>
+        <member name="P:Fuju.IConstCodeText.Code">
+            <summary>
+            取得代碼
+            </summary>
+        </member>
+        <member name="P:Fuju.IConstCodeText.Text">
+            <summary>
+            取得文字
+            </summary>
+        </member>
+        <member name="M:Fuju.IConstCodeText.GetFullCode">
+            <summary>
+            取得完整代碼
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Fuju.IConstCodeTextList`1">
+            <summary>
+            泛型(常數代碼名稱對照)集合介面
+            </summary>
+            <typeparam name="T">指定項目的泛型型別，限制繼承 IConstCodeText 的型別。</typeparam>
+        </member>
+        <member name="P:Fuju.IConstCodeTextList`1.Item(System.Int32)">
+            <summary>
+            取得指定索引值的項目
+            </summary>
+            <param name="index">指定索引值。</param>
+            <returns>存在指定索引值則傳回該項目，否則傳回 null。</returns>
+        </member>
+        <member name="P:Fuju.IConstCodeTextList`1.Item(System.String)">
+            <summary>
+            取得第一個符合指定項目代碼的項目
+            </summary>
+            <param name="code">指定項目代碼。</param>
+            <returns>找到指定項目代碼則傳回該項目，否則傳回 null。</returns>
+        </member>
+        <member name="P:Fuju.IConstCodeTextList`1.Count">
+            <summary>
+            取得集合中的項目數目
+            </summary>
+        </member>
+        <member name="M:Fuju.IConstCodeTextList`1.IndexOf(`0)">
+            <summary>
+            取得集合中第一個相符指定項目的索引值
+            </summary>
+            <param name="item">指定項目。</param>
+            <returns>找到指定項目則傳回索引值，否則傳回 -1。</returns>
+        </member>
+        <member name="M:Fuju.IConstCodeTextList`1.CodeIndexOf(System.String)">
+            <summary>
+            取得集合中第一個相符指定項目代碼的索引值
+            </summary>
+            <param name="code">指定項目代碼。</param>
+            <returns>找到指定項目代碼則傳回索引值，否則傳回 -1。</returns>
+        </member>
+        <member name="M:Fuju.IConstCodeTextList`1.Contains(`0)">
+            <summary>
+            取得集合中是否包含指定項目
+            </summary>
+            <param name="item">指定項目。</param>
+            <returns>找到指定項目則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.IConstCodeTextList`1.CodeContains(System.String)">
+            <summary>
+            取得集合中是否包含指定項目代碼
+            </summary>
+            <param name="code">指定項目代碼。</param>
+            <returns>找到指定項目代碼則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.IConstCodeTextList`1.GetItems">
+            <summary>
+            取得集合中所有項目
+            </summary>
+            <returns>傳回所有項目，無項目時傳回空的 IList。</returns>
+        </member>
+        <member name="M:Fuju.IConstCodeTextList`1.GetItem(System.String)">
+            <summary>
+            取得集合中第一個符合指定項目代碼的項目
+            </summary>
+            <param name="code">指定項目代碼。</param>
+            <returns>找到指定項目代碼則傳回該項目，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.IConstCodeTextList`1.GetAllCodes">
+            <summary>
+            取得集合中所有項目的代碼
+            </summary>
+            <returns>傳回所有項目的代碼，無項目時傳回 new string[0]。</returns>
+        </member>
+        <member name="M:Fuju.IConstCodeTextList`1.GetAllTexts">
+            <summary>
+            取得集合中所有項目的文字
+            </summary>
+            <returns>傳回所有項目的文字，無項目時傳回 new string[0]。</returns>
+        </member>
+        <member name="T:Fuju.KeyValue`1">
+            <summary>
+            索引鍵與值泛型類別，紀錄 Key 與 Value 關係
+            </summary>
+            <typeparam name="T">指定值的泛型型別。</typeparam>
+        </member>
+        <member name="F:Fuju.KeyValue`1.DefaultSeparator">
+            <summary>
+            預設字串表示時索引鍵與值的分隔字串
+            </summary>
+        </member>
+        <member name="P:Fuju.KeyValue`1.Key">
+            <summary>
+            索引鍵
+            </summary>
+        </member>
+        <member name="P:Fuju.KeyValue`1.Value">
+            <summary>
+            值 (泛型)
+            </summary>
+        </member>
+        <member name="M:Fuju.KeyValue`1.#ctor">
+            <summary>
+            建構索引鍵與值泛型類別
+            </summary>
+        </member>
+        <member name="M:Fuju.KeyValue`1.#ctor(System.String,`0)">
+            <summary>
+            建構索引鍵與值泛型類別，並指定索引鍵與值
+            </summary>
+            <param name="key">指定索引鍵。</param>
+            <param name="value">指定值。</param>
+        </member>
+        <member name="M:Fuju.KeyValue`1.IsEmpty">
+            <summary>
+            取得此物件是否無資料
+            </summary>
+            <returns>索引鍵未設定則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.KeyValue`1.ToString">
+            <summary>
+            取得字串表示 (格式：[key][=][value]) (請注意此方法不會特別處理索引鍵或值中包含分隔符號的問題)
+            </summary>
+            <returns>傳回字串表示。</returns>
+        </member>
+        <member name="M:Fuju.KeyValue`1.ToString(System.String)">
+            <summary>
+            取得字串表示 (格式：[key][separator][value]) (請注意此方法不會特別處理索引鍵或值中包含分隔符號的問題)
+            </summary>
+            <param name="separator">索引鍵與值的分隔字串，傳入 null 或空字串則使用 "=" 等於符號。</param>
+            <returns>傳回字串表示。</returns>
+        </member>
+        <member name="M:Fuju.KeyValue`1.Split(System.String)">
+            <summary>
+            取得指定字串表示的索引鍵與值(字串)物件 (依 [key][=][value] 格式， value 為字串型別拆解成 KeyValue&lt;string&gt; 物件，請注意此方法不會特別處理索引鍵或值中包含分隔符號的問題)
+            </summary>
+            <param name="text">指定字串表示。</param>
+            <returns>成功(格式完全正確)傳回 KeyValue&lt;string&gt; 物件，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.KeyValue`1.Split(System.String,System.String)">
+            <summary>
+            取得指定字串表示的索引鍵與值(字串)物件 (依 [key][separator][value] 格式， value 為字串型別拆解成 KeyValue&lt;string&gt; 物件，請注意此方法不會特別處理索引鍵或值中包含分隔符號的問題)
+            </summary>
+            <param name="text">指定字串表示。</param>
+            <param name="separator">索引鍵與值的分隔字串，傳入 null 或空字串則使用 "=" 等於符號。</param>
+            <returns>成功(格式完全正確)傳回 KeyValue&lt;string&gt; 物件，否則傳回 null。</returns>
+        </member>
+        <member name="T:Fuju.KeyValue">
+            <summary>
+            索引鍵與值類別，紀錄 Key 與 Value 關係
+            </summary>
+        </member>
+        <member name="M:Fuju.KeyValue.#ctor">
+            <summary>
+            建構索引鍵與值類別
+            </summary>
+        </member>
+        <member name="M:Fuju.KeyValue.#ctor(System.String,System.Object)">
+            <summary>
+            建構索引鍵與值類別，並指定索引鍵與值
+            </summary>
+            <param name="key">指定索引鍵。</param>
+            <param name="value">指定值。</param>
+        </member>
+        <member name="M:Fuju.KeyValue.Split(System.String)">
+            <summary>
+            取得指定字串表示的索引鍵與值(字串)物件 (依 [key][=][value] 格式， value 為字串型別拆解成 KeyValue&lt;string&gt; 物件，請注意此方法不會特別處理索引鍵或值中包含分隔符號的問題)
+            </summary>
+            <param name="text">指定字串表示。</param>
+            <returns>成功(格式完全正確)傳回 KeyValue&lt;string&gt; 物件，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.KeyValue.Split(System.String,System.String)">
+            <summary>
+            取得指定字串表示的索引鍵與值(字串)物件 (依 [key][separator][value] 格式， value 為字串型別拆解成 KeyValue&lt;string&gt; 物件，請注意此方法不會特別處理索引鍵或值中包含分隔符號的問題)
+            </summary>
+            <param name="text">指定字串表示。</param>
+            <param name="separator">索引鍵與值的分隔字串，傳入 null 或空字串則使用 "=" 等於符號。</param>
+            <returns>成功(格式完全正確)傳回 KeyValue&lt;string&gt; 物件，否則傳回 null。</returns>
+        </member>
+        <member name="T:Fuju.KeyValueList`1">
+            <summary>
+            索引鍵與值泛型集合類別
+            </summary>
+            <typeparam name="T">指定值的泛型型別。</typeparam>
+        </member>
+        <member name="F:Fuju.KeyValueList`1.DefaultSeparator">
+            <summary>
+            預設字串表示時各元素的分隔字串
+            </summary>
+        </member>
+        <member name="M:Fuju.KeyValueList`1.#ctor">
+            <summary>
+            建構索引鍵與值泛型集合
+            </summary>
+        </member>
+        <member name="M:Fuju.KeyValueList`1.#ctor(System.Int32)">
+            <summary>
+            建構索引鍵與值泛型集合，並指定集合初始容量大小
+            </summary>
+            <param name="capacity">指定集合初始容量大小。</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">capacity 小於 0。</exception>
+        </member>
+        <member name="M:Fuju.KeyValueList`1.#ctor(System.Collections.Generic.IEnumerable{Fuju.KeyValue{`0}})">
+            <summary>
+            建構索引鍵與值泛型集合，並指定集合包含的元素
+            </summary>
+            <param name="collection">指定集合包含的元素。</param>
+            <exception cref="T:System.ArgumentNullException">collection 為 null。</exception>
+        </member>
+        <member name="P:Fuju.KeyValueList`1.Item(System.String)">
+            <summary>
+            取得索引鍵的值
+            </summary>
+            <param name="key">指定索引鍵。</param>
+            <returns>如有該索引鍵則傳回值，否則傳回 default(T)。</returns>
+        </member>
+        <member name="P:Fuju.KeyValueList`1.Keys">
+            <summary>
+            取得所有索引鍵 (請注意避免在迴圈中直接使用)
+            </summary>
+        </member>
+        <member name="P:Fuju.KeyValueList`1.Values">
+            <summary>
+            取得所有值 (請注意避免在迴圈中直接使用)
+            </summary>
+        </member>
+        <member name="M:Fuju.KeyValueList`1.GetKeyFirstIndex(System.String)">
+            <summary>
+            取得符合指定索引鍵的第一個索引值
+            </summary>
+            <param name="key">指定索引鍵。</param>
+            <returns>如有該索引鍵則傳回索引值，否則傳回 -1。</returns>
+        </member>
+        <member name="M:Fuju.KeyValueList`1.GetKeyFirstIndex(System.String,System.StringComparison)">
+            <summary>
+            取得符合指定索引鍵的第一個索引值
+            </summary>
+            <param name="key">指定索引鍵。</param>
+            <param name="comparisonType">指定比較方式。</param>
+            <returns>如有該索引鍵則傳回索引值，否則傳回 -1。</returns>
+        </member>
+        <member name="M:Fuju.KeyValueList`1.Add(System.String,`0)">
+            <summary>
+            新增索引鍵與值的資料至集合結尾
+            </summary>
+            <param name="key">指定索引鍵。</param>
+            <param name="value">指定值。</param>
+            <returns>傳回索引鍵與值泛型集合自己。</returns>
+        </member>
+        <member name="M:Fuju.KeyValueList`1.AddRange(System.String[],`0[])">
+            <summary>
+            新增索引鍵與值的資料陣列至集合結尾
+            </summary>
+            <param name="keys">指定索引鍵陣列。</param>
+            <param name="values">指定值陣列。</param>
+            <returns>傳回索引鍵與值泛型集合自己。</returns>
+        </member>
+        <member name="M:Fuju.KeyValueList`1.TryGetValue(System.String,`0)">
+            <summary>
+            取得指定索引鍵的值，如無該索引鍵則傳回指定的預設值
+            </summary>
+            <param name="key">指定索引鍵。</param>
+            <param name="defaultValue">指定預設值，如果無該索引鍵則傳回此參數。</param>
+            <returns>成功傳回指定索引鍵的值，否則傳回指定預設值。</returns>
+        </member>
+        <member name="M:Fuju.KeyValueList`1.Join">
+            <summary>
+            將集合的每個元素組成字串 (格式：{[key][=][value]}{&amp;}{...}) (請注意此方法不會特別處理索引鍵或值中包含分隔符號的問題)
+            </summary>
+            <returns>傳回組成字串。</returns>
+        </member>
+        <member name="M:Fuju.KeyValueList`1.Join(System.String,System.String)">
+            <summary>
+            將集合的每個元素組成字串 (格式：{[key][itemSeparator][value]}{listSeparator}{...}) (請注意此方法不會特別處理索引鍵或值中包含分隔符號的問題)
+            </summary>
+            <param name="itemSeparator">索引鍵與值的分隔字串，傳入 null 或空字串則使用 "=" 等於符號。</param>
+            <param name="listSeparator">集合元素的分隔字串，傳入 null 或空字串則使用 "&amp;" And符號。</param>
+            <returns>傳回組成字串。</returns>
+        </member>
+        <member name="M:Fuju.KeyValueList`1.ToString">
+            <summary>
+            將此物件轉成字串表示 (同 Join 方法)
+            </summary>
+            <returns>傳回字串。</returns>
+        </member>
+        <member name="M:Fuju.KeyValueList`1.ToString(System.String,System.String)">
+            <summary>
+            將此物件轉成字串表示 (同 Join 方法)
+            </summary>
+            <param name="itemSeparator">索引鍵與值的分隔字串，傳入 null 或空字串則使用 "=" 等於符號。</param>
+            <param name="listSeparator">集合元素的分隔字串，傳入 null 或空字串則使用 "&amp;" And符號。</param>
+            <returns>傳回字串。</returns>
+        </member>
+        <member name="M:Fuju.KeyValueList`1.Split(System.String)">
+            <summary>
+            將指定字串依 {[key][=][value]}{&amp;}{...} 格式拆解成 KeyValueList (請注意值為字串型別，此方法不會特別處理索引鍵或值中包含分隔符號的問題)
+            </summary>
+            <param name="text">指定拆解的字串。</param>
+            <returns>成功(格式完全正確)傳回 KeyValueList 物件，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.KeyValueList`1.Split(System.String,System.String,System.String)">
+            <summary>
+            將指定字串依 {[key][itemSeparator][value]}{listSeparator}{...} 格式拆解成 KeyValueList (請注意值為字串型別，此方法不會特別處理索引鍵或值中包含分隔符號的問題)
+            </summary>
+            <param name="text">指定拆解的字串。</param>
+            <param name="itemSeparator">索引鍵與值的分隔字串，傳入 null 或空字串則使用 "=" 等於符號。</param>
+            <param name="listSeparator">集合元素的分隔字串，傳入 null 或空字串則使用 "&amp;" And符號。</param>
+            <returns>成功(格式完全正確)傳回 KeyValueList 物件，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.KeyValueList`1.Join(Fuju.KeyValue{`0}[])">
+            <summary>
+            將指定索引鍵與值類別陣列組成字串 (格式：{[key][=][value]}{&amp;}{...}) (請注意此方法不會特別處理索引鍵或值中包含分隔符號的問題)
+            </summary>
+            <param name="items">要組合的索引鍵與值物件陣列。</param>
+            <returns>傳回組成字串。</returns>
+        </member>
+        <member name="M:Fuju.KeyValueList`1.Join(Fuju.KeyValue{`0}[],System.String,System.String)">
+            <summary>
+            將指定索引鍵與值類別陣列組成字串 (格式：{[key][itemSeparator][value]}{listSeparator}{...}) (請注意此方法不會特別處理索引鍵或值中包含分隔符號的問題)
+            </summary>
+            <param name="items">要組合的索引鍵與值物件陣列。</param>
+            <param name="itemSeparator">索引鍵與值的分隔字串，傳入 null 或空字串則使用 "=" 等於符號。</param>
+            <param name="listSeparator">集合元素的分隔字串，傳入 null 或空字串則使用 "&amp;" And符號。</param>
+            <returns>傳回組成字串。</returns>
+        </member>
+        <member name="T:Fuju.KeyValueList">
+            <summary>
+            索引鍵與值集合類別
+            </summary>
+        </member>
+        <member name="F:Fuju.KeyValueList.DefaultSeparator">
+            <summary>
+            儲存預設分隔符號的靜態 readonly 成員變數
+            </summary>
+        </member>
+        <member name="M:Fuju.KeyValueList.#ctor">
+            <summary>
+            建構索引鍵與值集合
+            </summary>
+        </member>
+        <member name="M:Fuju.KeyValueList.#ctor(System.Int32)">
+            <summary>
+            建構索引鍵與值集合，並指定集合初始容量大小
+            </summary>
+            <param name="capacity">指定集合初始容量大小。</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">capacity 小於 0。</exception>
+        </member>
+        <member name="M:Fuju.KeyValueList.#ctor(System.Collections.Generic.IEnumerable{Fuju.KeyValue})">
+            <summary>
+            建構索引鍵與值集合，並指定集合包含的元素
+            </summary>
+            <param name="collection">指定集合包含的元素。</param>
+            <exception cref="T:System.ArgumentNullException">collection 為 null。</exception>
+        </member>
+        <member name="P:Fuju.KeyValueList.Item(System.String)">
+            <summary>
+            取得指定索引鍵的值
+            </summary>
+            <param name="key">指定索引鍵</param>
+            <returns>如有該索引鍵則傳回值，否則傳回 null。</returns>
+        </member>
+        <member name="P:Fuju.KeyValueList.Keys">
+            <summary>
+            取得所有索引鍵 (請注意避免在迴圈中直接使用)
+            </summary>
+        </member>
+        <member name="P:Fuju.KeyValueList.Values">
+            <summary>
+            取得所有值 (請注意避免在迴圈中直接使用)
+            </summary>
+        </member>
+        <member name="M:Fuju.KeyValueList.GetKeyFirstIndex(System.String)">
+            <summary>
+            取得符合指定索引鍵的第一個索引值
+            </summary>
+            <param name="key">指定索引鍵。</param>
+            <returns>如有該索引鍵則傳回索引值，否則傳回 -1。</returns>
+        </member>
+        <member name="M:Fuju.KeyValueList.GetKeyFirstIndex(System.String,System.StringComparison)">
+            <summary>
+            取得符合指定索引鍵的第一個索引值
+            </summary>
+            <param name="key">指定索引鍵。</param>
+            <param name="comparisonType">比較索引鍵的規則。</param>
+            <returns>如有該索引鍵則傳回索引值，否則傳回 -1。</returns>
+        </member>
+        <member name="M:Fuju.KeyValueList.Add(System.String,System.Object)">
+            <summary>
+            加入指定索引鍵與值至集合結尾
+            </summary>
+            <param name="key">指定索引鍵。</param>
+            <param name="value">指定值。</param>
+            <returns>傳回集合自己。</returns>
+        </member>
+        <member name="M:Fuju.KeyValueList.AddRange(System.String[],System.Object[])">
+            <summary>
+            加入指定索引鍵陣列與值陣列至集合結尾 (索引鍵陣列與值陣列必須相同大小)
+            </summary>
+            <param name="keys">指定索引鍵陣列。</param>
+            <param name="values">指定值陣列。</param>
+            <returns>傳回集合自己。</returns>
+        </member>
+        <member name="M:Fuju.KeyValueList.TryGetValue(System.String,System.Object)">
+            <summary>
+            嘗試取得指定索引鍵的值
+            </summary>
+            <param name="key">指定索引鍵。</param>
+            <param name="defaultValue">指定預設值，如果無該索引鍵則傳回此參數。</param>
+            <returns>成功傳回指定索引鍵的值，否則傳回指定預設值。</returns>
+        </member>
+        <member name="M:Fuju.KeyValueList.TryGetValue``1(System.String,``0)">
+            <summary>
+            嘗試取得指定索引鍵的值，並轉成指定型別
+            </summary>
+            <typeparam name="T">指定轉成型別。</typeparam>
+            <param name="key">指定索引鍵</param>
+            <param name="defaultValue">指定預設值，如果無該索引鍵或其值無法轉成指定型別，則傳回此參數。</param>
+            <returns>成功傳回指定索引鍵的值，否則傳回指定預設值。</returns>
+        </member>
+        <member name="M:Fuju.KeyValueList.Join">
+            <summary>
+            將集合的每個元素組成字串 (格式：{[key][=][value]}{&amp;}{...}) (請注意此方法不會特別處理索引鍵或值中包含分隔符號的問題)
+            </summary>
+            <returns>傳回組成字串。</returns>
+        </member>
+        <member name="M:Fuju.KeyValueList.Join(System.String,System.String)">
+            <summary>
+            將集合的每個元素組成字串 (格式：{[key][itemSeparator][value]}{listSeparator}{...}) (請注意此方法不會特別處理索引鍵或值中包含分隔符號的問題)
+            </summary>
+            <param name="itemSeparator">索引鍵與值的分隔字串，傳入 null 或空字串則使用 "=" 等於符號。</param>
+            <param name="listSeparator">集合元素的分隔字串，傳入 null 或空字串則使用 "&amp;" And符號。</param>
+            <returns>傳回組成字串。</returns>
+        </member>
+        <member name="M:Fuju.KeyValueList.ToString">
+            <summary>
+            將此物件轉成字串表示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.KeyValueList.ToString(System.String,System.String)">
+            <summary>
+            將此物件轉成字串表示
+            </summary>
+            <param name="itemSeparator"></param>
+            <param name="listSeparator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.KeyValueList.Split(System.String)">
+            <summary>
+            將指定字串依 {[key][=][value]}{&amp;}{...} 格式拆解成 KeyValueList (請注意值為字串型別，此方法不會特別處理索引鍵或值中包含分隔符號的問題)
+            </summary>
+            <param name="text">指定拆解的字串。</param>
+            <returns>成功(格式完全正確)傳回 KeyValueList 物件，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.KeyValueList.Split(System.String,System.String,System.String)">
+            <summary>
+            將指定字串依 {[key][itemSeparator][value]}{listSeparator}{...} 格式拆解成 KeyValueList (請注意值為字串型別，此方法不會特別處理索引鍵或值中包含分隔符號的問題)
+            </summary>
+            <param name="text">指定拆解的字串。</param>
+            <param name="itemSeparator">索引鍵與值的分隔字串，傳入 null 或空字串則使用 "=" 等於符號。</param>
+            <param name="listSeparator">集合元素的分隔字串，傳入 null 或空字串則使用 "&amp;" And符號。</param>
+            <returns>成功(格式完全正確)傳回 KeyValueList 物件，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.KeyValueList.Join(Fuju.KeyValue[])">
+            <summary>
+            將指定索引鍵與值類別陣列組成字串 (格式：{[key][=][value]}{&amp;}{...}) (請注意此方法不會特別處理索引鍵或值中包含分隔符號的問題)
+            </summary>
+            <param name="items">要組合的索引鍵與值物件陣列。</param>
+            <returns>傳回組成字串。</returns>
+        </member>
+        <member name="M:Fuju.KeyValueList.Join(Fuju.KeyValue[],System.String,System.String)">
+            <summary>
+            將指定索引鍵與值類別陣列組成字串 (格式：{[key][itemSeparator][value]}{listSeparator}{...}) (請注意此方法不會特別處理索引鍵或值中包含分隔符號的問題)
+            </summary>
+            <param name="items">要組合的索引鍵與值物件陣列。</param>
+            <param name="itemSeparator">索引鍵與值的分隔字串，傳入 null 或空字串則使用 "=" 等於符號。</param>
+            <param name="listSeparator">集合元素的分隔字串，傳入 null 或空字串則使用 "&amp;" And符號。</param>
+            <returns>傳回組成字串。</returns>
+        </member>
+        <member name="T:Fuju.ReadOnlyConstCodeTextList`1">
+            <summary>
+            唯讀的泛型(常數代碼名稱對照)集合基底類別
+            </summary>
+            <typeparam name="T">指定項目的泛型型別，限制繼承 IConstCodeText 的型別。</typeparam>
+        </member>
+        <member name="M:Fuju.ReadOnlyConstCodeTextList`1.#ctor(System.Collections.Generic.IList{`0})">
+            <summary>
+            建構唯讀的泛型(常數代碼名稱對照)集合基底類別
+            </summary>
+            <param name="list">指定項目集合。</param>
+        </member>
+        <member name="M:Fuju.ReadOnlyConstCodeTextList`1.GetItems">
+            <summary>
+            取得所有項目
+            </summary>
+            <returns>傳回所有項目。</returns>
+        </member>
+        <member name="M:Fuju.ReadOnlyConstCodeTextList`1.GetItem(System.String)">
+            <summary>
+            取得集合中第一個符合指定項目代碼的項目
+            </summary>
+            <param name="code">指定項目代碼。</param>
+            <returns>找到指定項目代碼則傳回該項目，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.ReadOnlyConstCodeTextList`1.CodeIndexOf(System.String)">
+            <summary>
+            取得集合中第一個相符指定項目代碼的索引值
+            </summary>
+            <param name="code">指定項目代碼。</param>
+            <returns>找到指定項目代碼則傳回索引值，否則傳回 -1。</returns>
+        </member>
+        <member name="M:Fuju.ReadOnlyConstCodeTextList`1.CodeContains(System.String)">
+            <summary>
+            取得集合中是否包含指定項目代碼
+            </summary>
+            <param name="code">指定項目代碼。</param>
+            <returns>找到指定項目代碼則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.ReadOnlyConstCodeTextList`1.GetAllCodes">
+            <summary>
+            取得集合中所有項目的代碼
+            </summary>
+            <returns>傳回所有項目的代碼，無項目時傳回 new string[0]。</returns>
+        </member>
+        <member name="M:Fuju.ReadOnlyConstCodeTextList`1.GetAllTexts">
+            <summary>
+            取得集合中所有項目的文字
+            </summary>
+            <returns>傳回所有項目的文字，無項目時傳回 new string[0]。</returns>
+        </member>
+        <member name="T:Fuju.ValueText`1">
+            <summary>
+            代碼數值與代碼文字對照泛型類別，紀錄 Value 與 Text 關係
+            </summary>
+            <typeparam name="T">指定代碼數值的泛型型別。</typeparam>
+        </member>
+        <member name="F:Fuju.ValueText`1.DefaultSeparator">
+            <summary>
+            預設字串表示時代碼數值與代碼文字的分隔字串
+            </summary>
+        </member>
+        <member name="P:Fuju.ValueText`1.Value">
+            <summary>
+            取得或指定代碼數值 (泛型)
+            </summary>
+        </member>
+        <member name="P:Fuju.ValueText`1.Text">
+            <summary>
+            取得或指定代碼文字 指定 null 時自動轉成空字串，否則自動去頭尾空白)
+            </summary>
+        </member>
+        <member name="M:Fuju.ValueText`1.#ctor">
+            <summary>
+            建構代碼數值與代碼文字對照泛型類別
+            </summary>
+        </member>
+        <member name="M:Fuju.ValueText`1.#ctor(`0,System.String)">
+            <summary>
+            建構代碼數值與代碼文字對照泛型類別，並代碼數值與代碼文字
+            </summary>
+            <param name="value">指定代碼數值。</param>
+            <param name="text">指代碼文字。</param>
+        </member>
+        <member name="M:Fuju.ValueText`1.ToString">
+            <summary>
+            取得字串表示 (格式：[value][=][text]) (請注意此方法不會特別處理代碼數值或代碼文字中包含分隔符號的問題)
+            </summary>
+            <returns>傳回字串表示。</returns>
+        </member>
+        <member name="M:Fuju.ValueText`1.Equals(System.Object)">
+            <summary>
+            取得自己是否與指定的實體物件相等
+            </summary>
+            <param name="obj">指定比較的實體物件。</param>
+            <returns>代碼數值與代碼文字皆相同傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.ValueText`1.GetHashCode">
+            <summary>
+            取得 HashCode
+            </summary>
+            <returns>傳回 HashCode。</returns>
+        </member>
+        <member name="M:Fuju.ValueText`1.ToString(System.String)">
+            <summary>
+            取得字串表示 (格式：[value][separator][text]) (請注意此方法不會特別處理代碼數值或代碼文字中包含分隔符號的問題)
+            </summary>
+            <param name="separator">代碼數值與代碼文字的分隔字串，傳入 null 或空字串則使用 "=" 等於符號。</param>
+            <returns>傳回字串表示。</returns>
+        </member>
+        <member name="M:Fuju.ValueText`1.Equals(Fuju.ValueText{`0})">
+            <summary>
+            取得自己是否與指定的實體物件相等
+            </summary>
+            <param name="other">指定比較的實體物件。</param>
+            <returns>代碼數值與代碼文字皆相同傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.ValueText`1.op_Equality(Fuju.ValueText{`0},Fuju.ValueText{`0})">
+            <summary>
+            等於運算子
+            </summary>
+            <param name="a">指定比較的運算元 a。</param>
+            <param name="b">指定比較的運算元 b。</param>
+            <returns>相等傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.ValueText`1.op_Inequality(Fuju.ValueText{`0},Fuju.ValueText{`0})">
+            <summary>
+            不等於運算子
+            </summary>
+            <param name="a">指定比較的運算元 a。</param>
+            <param name="b">指定比較的運算元 a。</param>
+            <returns>不相等傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.ValueText`1.Copy">
+            <summary>
+            取得自己的複製實體物件
+            </summary>
+            <returns>傳回複製後的實體物件。</returns>
+        </member>
+        <member name="M:Fuju.ValueText`1.IsEmpty">
+            <summary>
+            取得此物件是否無資料
+            </summary>
+            <returns>代碼數值與代碼文字未設定則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.ValueText`1.Split(System.String)">
+            <summary>
+            取得指定字串表示的代碼數值與代碼文字對照泛型類別物件 (依 [value][=][text] 格式拆解成 ValueText&lt;int&gt; 物件，請注意此方法不會特別處理代碼數值與代碼文字中包含分隔符號的問題)
+            </summary>
+            <param name="text">指定字串表示。</param>
+            <returns>成功(格式完全正確)傳回 ValueText&lt;int&gt; 物件，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.ValueText`1.Split(System.String,System.String)">
+            <summary>
+            取得指定字串表示的代碼數值與代碼文字對照泛型類別物件 (依 [value][separator][text] 格式拆解成 ValueText&lt;int&gt; 物件，請注意此方法不會特別處理代碼數值與代碼文字中包含分隔符號的問題)
+            </summary>
+            <param name="text">指定字串表示。</param>
+            <param name="separator">代碼數值與代碼文字的分隔字串，傳入 null 或空字串則使用 "=" 等於符號。</param>
+            <returns>成功(格式完全正確)傳回 ValueText&lt;int&gt; 物件，否則傳回 null。</returns>
+        </member>
+    </members>
+</doc>

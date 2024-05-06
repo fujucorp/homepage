@@ -1,0 +1,2446 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{957CEFAF-7102-4A5B-B3E0-3490625679BE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>eSchoolWeb</RootNamespace>
+    <AssemblyName>eSchoolWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44300</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Fuju.Core">
+      <HintPath>..\lib\Fuju.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Fuju.DB">
+      <HintPath>..\lib\Fuju.DB.dll</HintPath>
+    </Reference>
+    <Reference Include="Fuju.Log">
+      <HintPath>..\lib\Fuju.Log.dll</HintPath>
+    </Reference>
+    <Reference Include="Fuju.Type">
+      <HintPath>..\lib\Fuju.Type.dll</HintPath>
+    </Reference>
+    <Reference Include="Fuju.Web">
+      <HintPath>..\lib\Fuju.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Fuju.Web.Focas">
+      <HintPath>..\lib\Fuju.Web.Focas.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.5.452, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\NPOI2\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NPOI, Version=1.2.1.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\NPOI2\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\lib\NPOI2\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\lib\NPOI2\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\lib\NPOI2\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="alipay.aspx" />
+    <Content Include="alipay_d.aspx" />
+    <Content Include="App_Data\ChtMessage.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\SchoolMenus.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="BankService.asmx" />
+    <Content Include="bank_login.aspx" />
+    <Content Include="B\B2100000.aspx" />
+    <Content Include="B\B2100001.aspx" />
+    <Content Include="B\B2100002.aspx" />
+    <Content Include="B\B2100002M.aspx" />
+    <Content Include="B\B2100003.aspx" />
+    <Content Include="B\B2100004.aspx" />
+    <Content Include="B\B2100005.aspx" />
+    <Content Include="B\B2100006.aspx" />
+    <Content Include="B\B2100007.aspx" />
+    <Content Include="B\B2100008.aspx" />
+    <Content Include="B\B2100008M.aspx" />
+    <Content Include="B\B2200000.aspx" />
+    <Content Include="B\B2200001.aspx" />
+    <Content Include="B\B2200001D.aspx" />
+    <Content Include="B\B2200002.aspx" />
+    <Content Include="B\B2200002D.aspx" />
+    <Content Include="B\B2200003.aspx" />
+    <Content Include="B\B2200003D.aspx" />
+    <Content Include="B\B2200004.aspx" />
+    <Content Include="B\B2300000.aspx" />
+    <Content Include="B\B2300001.aspx" />
+    <Content Include="B\B2300001D.aspx" />
+    <Content Include="B\B2300003.aspx" />
+    <Content Include="B\B2400000.aspx" />
+    <Content Include="B\B2400001.aspx" />
+    <Content Include="ChangePWD.aspx" />
+    <Content Include="check_bill_status.aspx" />
+    <Content Include="contact.aspx" />
+    <Content Include="creditcard.aspx" />
+    <Content Include="creditcard2.aspx" />
+    <Content Include="creditcard_d.aspx" />
+    <Content Include="css\content.css" />
+    <Content Include="css\flora.datepicker.css" />
+    <Content Include="css\index.css" />
+    <Content Include="css\jquery-ui.css" />
+    <Content Include="css\login_success.css" />
+    <Content Include="css\slidermenu.css" />
+    <Content Include="css\student.css" />
+    <Content Include="css\student_login.css" />
+    <Content Include="css\verticalmenu.css" />
+    <Content Include="css\whole.css" />
+    <Content Include="css\whole_m.css" />
+    <Content Include="C\C3100001.aspx" />
+    <Content Include="C\C3200000.aspx" />
+    <Content Include="C\C3200001.aspx" />
+    <Content Include="C\C3200002.aspx" />
+    <Content Include="C\C3200003.aspx" />
+    <Content Include="C\C3300001.aspx" />
+    <Content Include="C\C3300001M.aspx" />
+    <Content Include="C\C3400000.aspx" />
+    <Content Include="C\C3400001.aspx" />
+    <Content Include="C\C3500000.aspx" />
+    <Content Include="C\C3500001.aspx" />
+    <Content Include="C\C3500002.aspx" />
+    <Content Include="C\C3600000.aspx" />
+    <Content Include="C\C3600001.aspx" />
+    <Content Include="C\C3600002.aspx" />
+    <Content Include="C\C3600003.aspx" />
+    <Content Include="C\C3700000.aspx" />
+    <Content Include="C\C3700001.aspx" />
+    <Content Include="C\C3700001D.aspx" />
+    <Content Include="C\C3700002.aspx" />
+    <Content Include="C\C3700002M.aspx" />
+    <Content Include="C\C3700004.aspx" />
+    <Content Include="C\C3700005.aspx" />
+    <Content Include="C\C3700005M.aspx" />
+    <Content Include="C\C3700006.aspx" />
+    <Content Include="C\C3700007.aspx" />
+    <Content Include="C\C3700008.aspx" />
+    <Content Include="C\C3700009.aspx" />
+    <Content Include="C\C3700009D.aspx" />
+    <Content Include="D\D1100000.aspx" />
+    <Content Include="D\D1100001.aspx" />
+    <Content Include="D\D1100001M.aspx" />
+    <Content Include="D\D1100002.aspx" />
+    <Content Include="D\D1100002M.aspx" />
+    <Content Include="D\D1100003.aspx" />
+    <Content Include="D\D1100003M.aspx" />
+    <Content Include="D\D1100004.aspx" />
+    <Content Include="D\D1100004M.aspx" />
+    <Content Include="D\D1100005.aspx" />
+    <Content Include="D\D1100005M.aspx" />
+    <Content Include="D\D1100006.aspx" />
+    <Content Include="D\D1100006M.aspx" />
+    <Content Include="D\D1100007.aspx" />
+    <Content Include="D\D1100007M.aspx" />
+    <Content Include="D\D1100008.aspx" />
+    <Content Include="D\D1100008M.aspx" />
+    <Content Include="D\D1100009.aspx" />
+    <Content Include="D\D1100009M.aspx" />
+    <Content Include="D\D1100010.aspx" />
+    <Content Include="D\D1100010M.aspx" />
+    <Content Include="D\D1100011.aspx" />
+    <Content Include="D\D1100011M.aspx" />
+    <Content Include="D\D1200000.aspx" />
+    <Content Include="D\D1200001.aspx" />
+    <Content Include="D\D1200001M.aspx" />
+    <Content Include="D\D1200002.aspx" />
+    <Content Include="D\D1200002M.aspx" />
+    <Content Include="D\D1300000.aspx" />
+    <Content Include="D\D1300001.aspx" />
+    <Content Include="D\D1300001M.aspx" />
+    <Content Include="D\D1300002.aspx" />
+    <Content Include="D\D1300002M.aspx" />
+    <Content Include="D\D1300003.aspx" />
+    <Content Include="D\D1300003M.aspx" />
+    <Content Include="D\D1300004.aspx" />
+    <Content Include="D\D1300005.aspx" />
+    <Content Include="D\D1300005M.aspx" />
+    <Content Include="D\D1300006.aspx" />
+    <Content Include="D\D1300006M.aspx" />
+    <Content Include="D\D1300007.aspx" />
+    <Content Include="D\D1300007M.aspx" />
+    <Content Include="D\D1300008.aspx" />
+    <Content Include="D\D1300008M.aspx" />
+    <Content Include="D\D1300009.aspx" />
+    <Content Include="D\D1300009M.aspx" />
+    <Content Include="D\D1300010.aspx" />
+    <Content Include="D\D1300010M.aspx" />
+    <Content Include="D\D1400000.aspx" />
+    <Content Include="D\D1400001.aspx" />
+    <Content Include="D\D1400001M.aspx" />
+    <Content Include="D\D1400002.aspx" />
+    <Content Include="D\D1400002M.aspx" />
+    <Content Include="D\D1400003.aspx" />
+    <Content Include="D\D1400003M.aspx" />
+    <Content Include="D\D1400004.aspx" />
+    <Content Include="D\D1400004M.aspx" />
+    <Content Include="D\D1400005.aspx" />
+    <Content Include="D\D1400005M.aspx" />
+    <Content Include="D\D1500000.aspx" />
+    <Content Include="D\D1500001.aspx" />
+    <Content Include="D\D1500002.aspx" />
+    <Content Include="D\D1500003.aspx" />
+    <Content Include="D\D1500004.aspx" />
+    <Content Include="D\D1500005.aspx" />
+    <Content Include="D\D1500006.aspx" />
+    <Content Include="D\D1500007.aspx" />
+    <Content Include="D\D1500007D.aspx" />
+    <Content Include="D\D1500008.aspx" />
+    <Content Include="D\D1600000.aspx" />
+    <Content Include="D\D1600001.aspx" />
+    <Content Include="D\D1600002.aspx" />
+    <Content Include="D\D1600003.aspx" />
+    <Content Include="D\D1700001.aspx" />
+    <Content Include="D\D1800001.aspx" />
+    <Content Include="ErrorPage.aspx" />
+    <Content Include="EZPosEntry.aspx" />
+    <Content Include="EZPosEntry2.aspx" />
+    <Content Include="EZPosResponse.aspx" />
+    <Content Include="EZPosResponse2.aspx" />
+    <Content Include="FileService.asmx" />
+    <Content Include="file_download.aspx" />
+    <Content Include="FiscService.asmx" />
+    <Content Include="fisc_inbound_request.aspx" />
+    <Content Include="fisc_inbound_response.aspx" />
+    <Content Include="img\ad\ad001.jpg" />
+    <Content Include="img\ad\ad002.gif" />
+    <Content Include="img\ad\ad003.gif" />
+    <Content Include="img\ad\ad004.gif" />
+    <Content Include="img\ad\ad005.gif" />
+    <Content Include="img\ad\ad_01.gif" />
+    <Content Include="img\ad\ad_02.gif" />
+    <Content Include="img\ad\ad_03.gif" />
+    <Content Include="img\ad\ad_04.gif" />
+    <Content Include="img\ad\ad_05.gif" />
+    <Content Include="img\ad\ad_1.gif" />
+    <Content Include="img\ad\ad_2.gif" />
+    <Content Include="img\ad\ad_3.gif" />
+    <Content Include="img\ad\ad_big.gif" />
+    <Content Include="img\ad\ad_big_01.gif" />
+    <Content Include="img\ad\ad_big_02.gif" />
+    <Content Include="img\ad\ad_big_03.gif" />
+    <Content Include="img\banner\homepage.jpg" />
+    <Content Include="img\bg\container.gif" />
+    <Content Include="img\bg\container.jpg" />
+    <Content Include="img\bg\footer.gif" />
+    <Content Include="img\bg\footer2.gif" />
+    <Content Include="img\bg\login_success.jpg" />
+    <Content Include="img\bg\student_login.jpg" />
+    <Content Include="img\button\add_off.gif" />
+    <Content Include="img\button\add_on.gif" />
+    <Content Include="img\button\buttonBg_off.gif" />
+    <Content Include="img\button\buttonBg_on.gif" />
+    <Content Include="img\button\facebook_off.gif" />
+    <Content Include="img\button\facebook_on.gif" />
+    <Content Include="img\button\fb-share-40.png" />
+    <Content Include="img\button\firstPage_off.gif" />
+    <Content Include="img\button\firstPage_on.gif" />
+    <Content Include="img\button\forwardPage_off.gif" />
+    <Content Include="img\button\forwardPage_on.gif" />
+    <Content Include="img\button\lastPage_off.gif" />
+    <Content Include="img\button\lastPage_on.gif" />
+    <Content Include="img\button\line-share-40.png" />
+    <Content Include="img\button\magnifier.gif" />
+    <Content Include="img\button\more_off.gif" />
+    <Content Include="img\button\more_on.gif" />
+    <Content Include="img\button\nextPage_off.gif" />
+    <Content Include="img\button\nextPage_on.gif" />
+    <Content Include="img\button\printer_off.gif" />
+    <Content Include="img\button\printer_on.gif" />
+    <Content Include="img\button\stopwatch_off.gif" />
+    <Content Include="img\button\stopwatch_on.gif" />
+    <Content Include="img\button\top_off.gif" />
+    <Content Include="img\button\top_on.gif" />
+    <Content Include="img\icon\arrow_index.gif" />
+    <Content Include="img\icon\arrow_language.gif" />
+    <Content Include="img\icon\circle.gif" />
+    <Content Include="img\icon\loginID.gif" />
+    <Content Include="img\icon\masthead.gif" />
+    <Content Include="img\icon\masthead_s.gif" />
+    <Content Include="img\icon\menu_off.gif" />
+    <Content Include="img\icon\menu_on.gif" />
+    <Content Include="img\logo.gif" />
+    <Content Include="img\menu\arrow_sub.gif" />
+    <Content Include="img\Oops.png" />
+    <Content Include="img\other\checkCode.jpg" />
+    <Content Include="img\SheetName.JPG" />
+    <Content Include="index.aspx" />
+    <Content Include="index_m.aspx" />
+    <Content Include="js\common.js" />
+    <Content Include="js\datepicker-zh-TW.js" />
+    <Content Include="js\jquery-3.5.1.min.js" />
+    <Content Include="js\jquery-ui.js" />
+    <Content Include="js\jquery.blockUI.js" />
+    <Content Include="js\ui-datepicker-1.6rc2.packed.js" />
+    <Content Include="js\ui.datepicker-zh-TW.js" />
+    <Content Include="Logout.aspx" />
+    <Content Include="M0001.aspx" />
+    <Content Include="M0002.aspx" />
+    <Content Include="M0003.aspx" />
+    <Content Include="Main.aspx" />
+    <Content Include="Oops.aspx" />
+    <Content Include="Popup.html" />
+    <Content Include="PrintBox.aspx" />
+    <Content Include="print_bill.aspx" />
+    <Content Include="print_receipt.aspx" />
+    <Content Include="P\P7100001.aspx" />
+    <Content Include="QandA.aspx" />
+    <Content Include="R\R4100001.aspx" />
+    <Content Include="R\R4100001M.aspx" />
+    <Content Include="R\R4200000.aspx" />
+    <Content Include="R\R4200001.aspx" />
+    <Content Include="R\R4300000.aspx" />
+    <Content Include="R\R4300001.aspx" />
+    <Content Include="SchoolService.asmx" />
+    <Content Include="school_login.aspx" />
+    <Content Include="Sitemap.aspx" />
+    <Content Include="Sitemap.xml" />
+    <Content Include="student\SMMBarcode.aspx" />
+    <Content Include="student\student001.aspx" />
+    <Content Include="student\student001m.aspx" />
+    <Content Include="student\student002.aspx" />
+    <Content Include="student\student002m.aspx" />
+    <Content Include="student_login.aspx" />
+    <Content Include="S\S5100001.aspx" />
+    <Content Include="S\S5100001D.aspx" />
+    <Content Include="S\S5100001M.aspx" />
+    <Content Include="S\S5200000.aspx" />
+    <Content Include="S\S5200001.aspx" />
+    <Content Include="S\S5200001M.aspx" />
+    <Content Include="S\S5200002.aspx" />
+    <Content Include="S\S5200003.aspx" />
+    <Content Include="S\S5200003M.aspx" />
+    <Content Include="S\S5200004.aspx" />
+    <Content Include="S\S5300001.aspx" />
+    <Content Include="S\S5300001M.aspx" />
+    <Content Include="S\S5400000.aspx" />
+    <Content Include="S\S5400001.aspx" />
+    <Content Include="S\S5400002.aspx" />
+    <Content Include="S\S5400003.aspx" />
+    <Content Include="S\S5400004.aspx" />
+    <Content Include="S\S5400004D.aspx" />
+    <Content Include="S\S5400006.aspx" />
+    <Content Include="S\S5400007.aspx" />
+    <Content Include="S\S5400008.aspx" />
+    <Content Include="S\S5400009.aspx" />
+    <Content Include="S\S5400011.aspx" />
+    <Content Include="S\S5400012.aspx" />
+    <Content Include="S\S5400014.aspx" />
+    <Content Include="S\S5400015.aspx" />
+    <Content Include="S\S5400015D.aspx" />
+    <Content Include="S\S5500000.aspx" />
+    <Content Include="S\S5500001.aspx" />
+    <Content Include="S\S5500005.aspx" />
+    <Content Include="S\S5500006.aspx" />
+    <Content Include="S\S5600000.aspx" />
+    <Content Include="S\S5600001.aspx" />
+    <Content Include="S\S5600001M.aspx" />
+    <Content Include="S\S5600002.aspx" />
+    <Content Include="S\S5600002M.aspx" />
+    <Content Include="S\S5600004.aspx" />
+    <Content Include="S\S5600004M.aspx" />
+    <Content Include="S\S5600004M1.aspx" />
+    <Content Include="S\S5600004M2.aspx" />
+    <Content Include="S\S5600006.aspx" />
+    <Content Include="S\S5600006M.aspx" />
+    <Content Include="S\S5600007.aspx" />
+    <Content Include="S\S5600007M.aspx" />
+    <Content Include="S\S5600008.aspx" />
+    <Content Include="S\S5600008M.aspx" />
+    <Content Include="S\S5600009.aspx" />
+    <Content Include="S\S5600009M.aspx" />
+    <Content Include="S\S5600010.aspx" />
+    <Content Include="S\S5600010M.aspx" />
+    <Content Include="S\S5600011.aspx" />
+    <Content Include="S\S5600011M.aspx" />
+    <Content Include="S\S5600012.aspx" />
+    <Content Include="S\S5600012M.aspx" />
+    <Content Include="S\S5600013.aspx" />
+    <Content Include="S\S5600013M.aspx" />
+    <Content Include="S\S5600014.aspx" />
+    <Content Include="S\S5600014M.aspx" />
+    <Content Include="S\S5600015.aspx" />
+    <Content Include="S\S5600016.aspx" />
+    <Content Include="S\S5600017.aspx" />
+    <Content Include="S\S5600018.aspx" />
+    <Content Include="S\S5600019.aspx" />
+    <Content Include="S\S5700001.aspx" />
+    <Content Include="S\S5700001M.aspx" />
+    <Content Include="S\S5800000.aspx" />
+    <Content Include="S\S5900000.aspx" />
+    <Content Include="S\S6100001.aspx" />
+    <Content Include="S\S6200001.aspx" />
+    <Content Include="Unionpay.aspx" />
+    <Content Include="UserControl\Filter1.ascx" />
+    <Content Include="UserControl\Filter2.ascx" />
+    <Content Include="UserControl\Paging.ascx" />
+    <Content Include="UserControl\SchoolList.ascx" />
+    <Content Include="UserControl\SubMenu.ascx" />
+    <Content Include="UserControl\UCContact.ascx" />
+    <Content Include="UserControl\UCEntryPageAD.ascx" />
+    <Content Include="UserControl\UCEntryPageHeader.ascx" />
+    <Content Include="UserControl\UCEntryPageMenu.ascx" />
+    <Content Include="UserControl\UCEntryPageNews.ascx" />
+    <Content Include="UserControl\UCFooter.ascx" />
+    <Content Include="UserControl\UCLoginBox.ascx" />
+    <Content Include="UserControl\UCPageHeader.ascx" />
+    <Content Include="UserControl\UCPageMasthead.ascx" />
+    <Content Include="UserControl\UCPageMenu.ascx" />
+    <Content Include="MasterPage\Mobile.Master" />
+    <Content Include="api\AD.ashx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="UserControl\UCPageNews.ascx" />
+    <Content Include="UserControl\UCQA.ascx" />
+    <Content Include="ValidatePicPage.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="alipay.aspx.cs">
+      <DependentUpon>alipay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="alipay.aspx.designer.cs">
+      <DependentUpon>alipay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="alipay_d.aspx.cs">
+      <DependentUpon>alipay_d.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="alipay_d.aspx.designer.cs">
+      <DependentUpon>alipay_d.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\AD.ashx.cs">
+      <DependentUpon>AD.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="api\CheckLogon.ashx.cs">
+      <DependentUpon>CheckLogon.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="api\DownloadHandler.ashx.cs">
+      <DependentUpon>DownloadHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Localized.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localized.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Localized.en-us.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localized.en-us.resx</DependentUpon>
+    </Compile>
+    <Compile Include="BankService.asmx.cs">
+      <DependentUpon>BankService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bank_login.aspx.cs">
+      <DependentUpon>bank_login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bank_login.aspx.designer.cs">
+      <DependentUpon>bank_login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="B\B2100000.aspx.cs">
+      <DependentUpon>B2100000.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="B\B2100000.aspx.designer.cs">
+      <DependentUpon>B2100000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="B\B2100001.aspx.cs">
+      <DependentUpon>B2100001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="B\B2100001.aspx.designer.cs">
+      <DependentUpon>B2100001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="B\B2100002.aspx.cs">
+      <DependentUpon>B2100002.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="B\B2100002.aspx.designer.cs">
+      <DependentUpon>B2100002.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="B\B2100002M.aspx.cs">
+      <DependentUpon>B2100002M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="B\B2100002M.aspx.designer.cs">
+      <DependentUpon>B2100002M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="B\B2100003.aspx.cs">
+      <DependentUpon>B2100003.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="B\B2100003.aspx.designer.cs">
+      <DependentUpon>B2100003.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="B\B2100004.aspx.cs">
+      <DependentUpon>B2100004.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="B\B2100004.aspx.designer.cs">
+      <DependentUpon>B2100004.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="B\B2100005.aspx.cs">
+      <DependentUpon>B2100005.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="B\B2100005.aspx.designer.cs">
+      <DependentUpon>B2100005.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="B\B2100006.aspx.cs">
+      <DependentUpon>B2100006.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="B\B2100006.aspx.designer.cs">
+      <DependentUpon>B2100006.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="B\B2100007.aspx.cs">
+      <DependentUpon>B2100007.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="B\B2100007.aspx.designer.cs">
+      <DependentUpon>B2100007.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="B\B2100008.aspx.cs">
+      <DependentUpon>B2100008.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="B\B2100008.aspx.designer.cs">
+      <DependentUpon>B2100008.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="B\B2100008M.aspx.cs">
+      <DependentUpon>B2100008M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="B\B2100008M.aspx.designer.cs">
+      <DependentUpon>B2100008M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="B\B2200000.aspx.cs">
+      <DependentUpon>B2200000.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="B\B2200000.aspx.designer.cs">
+      <DependentUpon>B2200000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="B\B2200001.aspx.cs">
+      <DependentUpon>B2200001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="B\B2200001.aspx.designer.cs">
+      <DependentUpon>B2200001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="B\B2200001D.aspx.cs">
+      <DependentUpon>B2200001D.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="B\B2200001D.aspx.designer.cs">
+      <DependentUpon>B2200001D.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="B\B2200002.aspx.cs">
+      <DependentUpon>B2200002.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="B\B2200002.aspx.designer.cs">
+      <DependentUpon>B2200002.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="B\B2200002D.aspx.cs">
+      <DependentUpon>B2200002D.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="B\B2200002D.aspx.designer.cs">
+      <DependentUpon>B2200002D.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="B\B2200003.aspx.cs">
+      <DependentUpon>B2200003.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="B\B2200003.aspx.designer.cs">
+      <DependentUpon>B2200003.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="B\B2200003D.aspx.cs">
+      <DependentUpon>B2200003D.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="B\B2200003D.aspx.designer.cs">
+      <DependentUpon>B2200003D.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="B\B2200004.aspx.cs">
+      <DependentUpon>B2200004.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="B\B2200004.aspx.designer.cs">
+      <DependentUpon>B2200004.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="B\B2300000.aspx.cs">
+      <DependentUpon>B2300000.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="B\B2300000.aspx.designer.cs">
+      <DependentUpon>B2300000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="B\B2300001.aspx.cs">
+      <DependentUpon>B2300001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="B\B2300001.aspx.designer.cs">
+      <DependentUpon>B2300001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="B\B2300001D.aspx.cs">
+      <DependentUpon>B2300001D.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="B\B2300001D.aspx.designer.cs">
+      <DependentUpon>B2300001D.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="B\B2300003.aspx.cs">
+      <DependentUpon>B2300003.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="B\B2300003.aspx.designer.cs">
+      <DependentUpon>B2300003.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="B\B2400000.aspx.cs">
+      <DependentUpon>B2400000.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="B\B2400000.aspx.designer.cs">
+      <DependentUpon>B2400000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="B\B2400001.aspx.cs">
+      <DependentUpon>B2400001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="B\B2400001.aspx.designer.cs">
+      <DependentUpon>B2400001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePWD.aspx.cs">
+      <DependentUpon>ChangePWD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePWD.aspx.designer.cs">
+      <DependentUpon>ChangePWD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="check_bill_status.aspx.cs">
+      <DependentUpon>check_bill_status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="check_bill_status.aspx.designer.cs">
+      <DependentUpon>check_bill_status.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="contact.aspx.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contact.aspx.designer.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="creditcard.aspx.cs">
+      <DependentUpon>creditcard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="creditcard.aspx.designer.cs">
+      <DependentUpon>creditcard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="creditcard2.aspx.cs">
+      <DependentUpon>creditcard2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="creditcard2.aspx.designer.cs">
+      <DependentUpon>creditcard2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="creditcard_d.aspx.cs">
+      <DependentUpon>creditcard_d.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="creditcard_d.aspx.designer.cs">
+      <DependentUpon>creditcard_d.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3100001.aspx.cs">
+      <DependentUpon>C3100001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3100001.aspx.designer.cs">
+      <DependentUpon>C3100001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3200000.aspx.cs">
+      <DependentUpon>C3200000.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3200000.aspx.designer.cs">
+      <DependentUpon>C3200000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3200001.aspx.cs">
+      <DependentUpon>C3200001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3200001.aspx.designer.cs">
+      <DependentUpon>C3200001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3200002.aspx.cs">
+      <DependentUpon>C3200002.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3200002.aspx.designer.cs">
+      <DependentUpon>C3200002.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3200003.aspx.cs">
+      <DependentUpon>C3200003.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3200003.aspx.designer.cs">
+      <DependentUpon>C3200003.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3300001.aspx.cs">
+      <DependentUpon>C3300001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3300001.aspx.designer.cs">
+      <DependentUpon>C3300001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3300001M.aspx.cs">
+      <DependentUpon>C3300001M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3300001M.aspx.designer.cs">
+      <DependentUpon>C3300001M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3400000.aspx.cs">
+      <DependentUpon>C3400000.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3400000.aspx.designer.cs">
+      <DependentUpon>C3400000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3400001.aspx.cs">
+      <DependentUpon>C3400001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3400001.aspx.designer.cs">
+      <DependentUpon>C3400001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3500000.aspx.cs">
+      <DependentUpon>C3500000.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3500000.aspx.designer.cs">
+      <DependentUpon>C3500000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3500001.aspx.cs">
+      <DependentUpon>C3500001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3500001.aspx.designer.cs">
+      <DependentUpon>C3500001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3500002.aspx.cs">
+      <DependentUpon>C3500002.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3500002.aspx.designer.cs">
+      <DependentUpon>C3500002.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3600000.aspx.cs">
+      <DependentUpon>C3600000.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3600000.aspx.designer.cs">
+      <DependentUpon>C3600000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3600001.aspx.cs">
+      <DependentUpon>C3600001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3600001.aspx.designer.cs">
+      <DependentUpon>C3600001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3600002.aspx.cs">
+      <DependentUpon>C3600002.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3600002.aspx.designer.cs">
+      <DependentUpon>C3600002.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3600003.aspx.cs">
+      <DependentUpon>C3600003.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3600003.aspx.designer.cs">
+      <DependentUpon>C3600003.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3700000.aspx.cs">
+      <DependentUpon>C3700000.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3700000.aspx.designer.cs">
+      <DependentUpon>C3700000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3700001.aspx.cs">
+      <DependentUpon>C3700001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3700001.aspx.designer.cs">
+      <DependentUpon>C3700001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3700001D.aspx.cs">
+      <DependentUpon>C3700001D.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3700001D.aspx.designer.cs">
+      <DependentUpon>C3700001D.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3700002.aspx.cs">
+      <DependentUpon>C3700002.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3700002.aspx.designer.cs">
+      <DependentUpon>C3700002.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3700002M.aspx.cs">
+      <DependentUpon>C3700002M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3700002M.aspx.designer.cs">
+      <DependentUpon>C3700002M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3700004.aspx.cs">
+      <DependentUpon>C3700004.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3700004.aspx.designer.cs">
+      <DependentUpon>C3700004.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3700005.aspx.cs">
+      <DependentUpon>C3700005.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3700005.aspx.designer.cs">
+      <DependentUpon>C3700005.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3700005M.aspx.cs">
+      <DependentUpon>C3700005M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3700005M.aspx.designer.cs">
+      <DependentUpon>C3700005M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3700006.aspx.cs">
+      <DependentUpon>C3700006.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3700006.aspx.designer.cs">
+      <DependentUpon>C3700006.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3700007.aspx.cs">
+      <DependentUpon>C3700007.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3700007.aspx.designer.cs">
+      <DependentUpon>C3700007.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3700008.aspx.cs">
+      <DependentUpon>C3700008.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3700008.aspx.designer.cs">
+      <DependentUpon>C3700008.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3700009.aspx.cs">
+      <DependentUpon>C3700009.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3700009.aspx.designer.cs">
+      <DependentUpon>C3700009.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C\C3700009D.aspx.cs">
+      <DependentUpon>C3700009D.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\C3700009D.aspx.designer.cs">
+      <DependentUpon>C3700009D.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1100000.aspx.cs">
+      <DependentUpon>D1100000.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1100000.aspx.designer.cs">
+      <DependentUpon>D1100000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1100001.aspx.cs">
+      <DependentUpon>D1100001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1100001.aspx.designer.cs">
+      <DependentUpon>D1100001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1100001M.aspx.cs">
+      <DependentUpon>D1100001M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1100001M.aspx.designer.cs">
+      <DependentUpon>D1100001M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1100002.aspx.cs">
+      <DependentUpon>D1100002.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1100002.aspx.designer.cs">
+      <DependentUpon>D1100002.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1100002M.aspx.cs">
+      <DependentUpon>D1100002M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1100002M.aspx.designer.cs">
+      <DependentUpon>D1100002M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1100003.aspx.cs">
+      <DependentUpon>D1100003.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1100003.aspx.designer.cs">
+      <DependentUpon>D1100003.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1100003M.aspx.cs">
+      <DependentUpon>D1100003M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1100003M.aspx.designer.cs">
+      <DependentUpon>D1100003M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1100004.aspx.cs">
+      <DependentUpon>D1100004.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1100004.aspx.designer.cs">
+      <DependentUpon>D1100004.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1100004M.aspx.cs">
+      <DependentUpon>D1100004M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1100004M.aspx.designer.cs">
+      <DependentUpon>D1100004M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1100005.aspx.cs">
+      <DependentUpon>D1100005.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1100005.aspx.designer.cs">
+      <DependentUpon>D1100005.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1100005M.aspx.cs">
+      <DependentUpon>D1100005M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1100005M.aspx.designer.cs">
+      <DependentUpon>D1100005M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1100006.aspx.cs">
+      <DependentUpon>D1100006.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1100006.aspx.designer.cs">
+      <DependentUpon>D1100006.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1100006M.aspx.cs">
+      <DependentUpon>D1100006M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1100006M.aspx.designer.cs">
+      <DependentUpon>D1100006M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1100007.aspx.cs">
+      <DependentUpon>D1100007.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1100007.aspx.designer.cs">
+      <DependentUpon>D1100007.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1100007M.aspx.cs">
+      <DependentUpon>D1100007M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1100007M.aspx.designer.cs">
+      <DependentUpon>D1100007M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1100008.aspx.cs">
+      <DependentUpon>D1100008.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1100008.aspx.designer.cs">
+      <DependentUpon>D1100008.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1100008M.aspx.cs">
+      <DependentUpon>D1100008M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1100008M.aspx.designer.cs">
+      <DependentUpon>D1100008M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1100009.aspx.cs">
+      <DependentUpon>D1100009.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1100009.aspx.designer.cs">
+      <DependentUpon>D1100009.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1100009M.aspx.cs">
+      <DependentUpon>D1100009M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1100009M.aspx.designer.cs">
+      <DependentUpon>D1100009M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1100010.aspx.cs">
+      <DependentUpon>D1100010.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1100010.aspx.designer.cs">
+      <DependentUpon>D1100010.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1100010M.aspx.cs">
+      <DependentUpon>D1100010M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1100010M.aspx.designer.cs">
+      <DependentUpon>D1100010M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1100011.aspx.cs">
+      <DependentUpon>D1100011.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1100011.aspx.designer.cs">
+      <DependentUpon>D1100011.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1100011M.aspx.cs">
+      <DependentUpon>D1100011M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1100011M.aspx.designer.cs">
+      <DependentUpon>D1100011M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1200000.aspx.cs">
+      <DependentUpon>D1200000.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1200000.aspx.designer.cs">
+      <DependentUpon>D1200000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1200001.aspx.cs">
+      <DependentUpon>D1200001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1200001.aspx.designer.cs">
+      <DependentUpon>D1200001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1200001M.aspx.cs">
+      <DependentUpon>D1200001M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1200001M.aspx.designer.cs">
+      <DependentUpon>D1200001M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1200002.aspx.cs">
+      <DependentUpon>D1200002.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1200002.aspx.designer.cs">
+      <DependentUpon>D1200002.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1200002M.aspx.cs">
+      <DependentUpon>D1200002M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1200002M.aspx.designer.cs">
+      <DependentUpon>D1200002M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1300000.aspx.cs">
+      <DependentUpon>D1300000.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1300000.aspx.designer.cs">
+      <DependentUpon>D1300000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1300001.aspx.cs">
+      <DependentUpon>D1300001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1300001.aspx.designer.cs">
+      <DependentUpon>D1300001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1300001M.aspx.cs">
+      <DependentUpon>D1300001M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1300001M.aspx.designer.cs">
+      <DependentUpon>D1300001M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1300002.aspx.cs">
+      <DependentUpon>D1300002.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1300002.aspx.designer.cs">
+      <DependentUpon>D1300002.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1300002M.aspx.cs">
+      <DependentUpon>D1300002M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1300002M.aspx.designer.cs">
+      <DependentUpon>D1300002M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1300003.aspx.cs">
+      <DependentUpon>D1300003.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1300003.aspx.designer.cs">
+      <DependentUpon>D1300003.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1300003M.aspx.cs">
+      <DependentUpon>D1300003M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1300003M.aspx.designer.cs">
+      <DependentUpon>D1300003M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1300004.aspx.cs">
+      <DependentUpon>D1300004.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1300004.aspx.designer.cs">
+      <DependentUpon>D1300004.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1300005.aspx.cs">
+      <DependentUpon>D1300005.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1300005.aspx.designer.cs">
+      <DependentUpon>D1300005.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1300005M.aspx.cs">
+      <DependentUpon>D1300005M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1300005M.aspx.designer.cs">
+      <DependentUpon>D1300005M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1300006.aspx.cs">
+      <DependentUpon>D1300006.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1300006.aspx.designer.cs">
+      <DependentUpon>D1300006.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1300006M.aspx.cs">
+      <DependentUpon>D1300006M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1300006M.aspx.designer.cs">
+      <DependentUpon>D1300006M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1300007.aspx.cs">
+      <DependentUpon>D1300007.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1300007.aspx.designer.cs">
+      <DependentUpon>D1300007.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1300007M.aspx.cs">
+      <DependentUpon>D1300007M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1300007M.aspx.designer.cs">
+      <DependentUpon>D1300007M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1300008.aspx.cs">
+      <DependentUpon>D1300008.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1300008.aspx.designer.cs">
+      <DependentUpon>D1300008.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1300008M.aspx.cs">
+      <DependentUpon>D1300008M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1300008M.aspx.designer.cs">
+      <DependentUpon>D1300008M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1300009.aspx.cs">
+      <DependentUpon>D1300009.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1300009.aspx.designer.cs">
+      <DependentUpon>D1300009.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1300009M.aspx.cs">
+      <DependentUpon>D1300009M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1300009M.aspx.designer.cs">
+      <DependentUpon>D1300009M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1300010.aspx.cs">
+      <DependentUpon>D1300010.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1300010.aspx.designer.cs">
+      <DependentUpon>D1300010.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1300010M.aspx.cs">
+      <DependentUpon>D1300010M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1300010M.aspx.designer.cs">
+      <DependentUpon>D1300010M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1400000.aspx.cs">
+      <DependentUpon>D1400000.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1400000.aspx.designer.cs">
+      <DependentUpon>D1400000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1400001.aspx.cs">
+      <DependentUpon>D1400001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1400001.aspx.designer.cs">
+      <DependentUpon>D1400001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1400001M.aspx.cs">
+      <DependentUpon>D1400001M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1400001M.aspx.designer.cs">
+      <DependentUpon>D1400001M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1400002.aspx.cs">
+      <DependentUpon>D1400002.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1400002.aspx.designer.cs">
+      <DependentUpon>D1400002.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1400002M.aspx.cs">
+      <DependentUpon>D1400002M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1400002M.aspx.designer.cs">
+      <DependentUpon>D1400002M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1400003.aspx.cs">
+      <DependentUpon>D1400003.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1400003.aspx.designer.cs">
+      <DependentUpon>D1400003.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1400003M.aspx.cs">
+      <DependentUpon>D1400003M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1400003M.aspx.designer.cs">
+      <DependentUpon>D1400003M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1400004.aspx.cs">
+      <DependentUpon>D1400004.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1400004.aspx.designer.cs">
+      <DependentUpon>D1400004.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1400004M.aspx.cs">
+      <DependentUpon>D1400004M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1400004M.aspx.designer.cs">
+      <DependentUpon>D1400004M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1400005.aspx.cs">
+      <DependentUpon>D1400005.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1400005.aspx.designer.cs">
+      <DependentUpon>D1400005.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1400005M.aspx.cs">
+      <DependentUpon>D1400005M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1400005M.aspx.designer.cs">
+      <DependentUpon>D1400005M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1500000.aspx.cs">
+      <DependentUpon>D1500000.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1500000.aspx.designer.cs">
+      <DependentUpon>D1500000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1500001.aspx.cs">
+      <DependentUpon>D1500001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1500001.aspx.designer.cs">
+      <DependentUpon>D1500001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1500002.aspx.cs">
+      <DependentUpon>D1500002.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1500002.aspx.designer.cs">
+      <DependentUpon>D1500002.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1500003.aspx.cs">
+      <DependentUpon>D1500003.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1500003.aspx.designer.cs">
+      <DependentUpon>D1500003.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1500004.aspx.cs">
+      <DependentUpon>D1500004.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1500004.aspx.designer.cs">
+      <DependentUpon>D1500004.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1500005.aspx.cs">
+      <DependentUpon>D1500005.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1500005.aspx.designer.cs">
+      <DependentUpon>D1500005.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1500006.aspx.cs">
+      <DependentUpon>D1500006.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1500006.aspx.designer.cs">
+      <DependentUpon>D1500006.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1500007.aspx.cs">
+      <DependentUpon>D1500007.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1500007.aspx.designer.cs">
+      <DependentUpon>D1500007.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1500007D.aspx.cs">
+      <DependentUpon>D1500007D.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1500007D.aspx.designer.cs">
+      <DependentUpon>D1500007D.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1500008.aspx.cs">
+      <DependentUpon>D1500008.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1500008.aspx.designer.cs">
+      <DependentUpon>D1500008.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1600000.aspx.cs">
+      <DependentUpon>D1600000.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1600000.aspx.designer.cs">
+      <DependentUpon>D1600000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1600001.aspx.cs">
+      <DependentUpon>D1600001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1600001.aspx.designer.cs">
+      <DependentUpon>D1600001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1600002.aspx.cs">
+      <DependentUpon>D1600002.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1600002.aspx.designer.cs">
+      <DependentUpon>D1600002.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1600003.aspx.cs">
+      <DependentUpon>D1600003.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1600003.aspx.designer.cs">
+      <DependentUpon>D1600003.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1700001.aspx.cs">
+      <DependentUpon>D1700001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1700001.aspx.designer.cs">
+      <DependentUpon>D1700001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D\D1800001.aspx.cs">
+      <DependentUpon>D1800001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D\D1800001.aspx.designer.cs">
+      <DependentUpon>D1800001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EZPosEntry.aspx.cs">
+      <DependentUpon>EZPosEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EZPosEntry.aspx.designer.cs">
+      <DependentUpon>EZPosEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EZPosEntry2.aspx.cs">
+      <DependentUpon>EZPosEntry2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EZPosEntry2.aspx.designer.cs">
+      <DependentUpon>EZPosEntry2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EZPosResponse.aspx.cs">
+      <DependentUpon>EZPosResponse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EZPosResponse.aspx.designer.cs">
+      <DependentUpon>EZPosResponse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EZPosResponse2.aspx.cs">
+      <DependentUpon>EZPosResponse2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EZPosResponse2.aspx.designer.cs">
+      <DependentUpon>EZPosResponse2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FileService.asmx.cs">
+      <DependentUpon>FileService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="file_download.aspx.cs">
+      <DependentUpon>file_download.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="file_download.aspx.designer.cs">
+      <DependentUpon>file_download.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fisc.cs" />
+    <Compile Include="FiscService.asmx.cs">
+      <DependentUpon>FiscService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="fisc_inbound_request.aspx.cs">
+      <DependentUpon>fisc_inbound_request.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fisc_inbound_request.aspx.designer.cs">
+      <DependentUpon>fisc_inbound_request.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="fisc_inbound_response.aspx.cs">
+      <DependentUpon>fisc_inbound_response.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fisc_inbound_response.aspx.designer.cs">
+      <DependentUpon>fisc_inbound_response.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DataFormat.cs" />
+    <Compile Include="Helpers\DataProxy.cs" />
+    <Compile Include="Helpers\MenuHelper.cs" />
+    <Compile Include="Helpers\Misc.cs" />
+    <Compile Include="Helpers\WebHelper.cs" />
+    <Compile Include="Helpers\WebLogRequestItem.cs" />
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index_m.aspx.cs">
+      <DependentUpon>index_m.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index_m.aspx.designer.cs">
+      <DependentUpon>index_m.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizedPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="M0001.aspx.cs">
+      <DependentUpon>M0001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="M0001.aspx.designer.cs">
+      <DependentUpon>M0001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="M0002.aspx.cs">
+      <DependentUpon>M0002.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="M0002.aspx.designer.cs">
+      <DependentUpon>M0002.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="M0003.aspx.cs">
+      <DependentUpon>M0003.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="M0003.aspx.designer.cs">
+      <DependentUpon>M0003.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage\Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage\Main2.Master.cs">
+      <DependentUpon>Main2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\Main2.Master.designer.cs">
+      <DependentUpon>Main2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage\Mobile.Master.cs">
+      <DependentUpon>Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\Mobile.Master.designer.cs">
+      <DependentUpon>Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MyResourceProviderFactory.cs" />
+    <Compile Include="Oops.aspx.cs">
+      <DependentUpon>Oops.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Oops.aspx.designer.cs">
+      <DependentUpon>Oops.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagingBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrintBox.aspx.cs">
+      <DependentUpon>PrintBox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrintBox.aspx.designer.cs">
+      <DependentUpon>PrintBox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="print_bill.aspx.cs">
+      <DependentUpon>print_bill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="print_bill.aspx.designer.cs">
+      <DependentUpon>print_bill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="print_receipt.aspx.cs">
+      <DependentUpon>print_receipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="print_receipt.aspx.designer.cs">
+      <DependentUpon>print_receipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="P\P7100001.aspx.cs">
+      <DependentUpon>P7100001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="P\P7100001.aspx.designer.cs">
+      <DependentUpon>P7100001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QandA.aspx.cs">
+      <DependentUpon>QandA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QandA.aspx.designer.cs">
+      <DependentUpon>QandA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="R\R4100001.aspx.cs">
+      <DependentUpon>R4100001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="R\R4100001.aspx.designer.cs">
+      <DependentUpon>R4100001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="R\R4100001M.aspx.cs">
+      <DependentUpon>R4100001M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="R\R4100001M.aspx.designer.cs">
+      <DependentUpon>R4100001M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="R\R4200000.aspx.cs">
+      <DependentUpon>R4200000.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="R\R4200000.aspx.designer.cs">
+      <DependentUpon>R4200000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="R\R4200001.aspx.cs">
+      <DependentUpon>R4200001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="R\R4200001.aspx.designer.cs">
+      <DependentUpon>R4200001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="R\R4300000.aspx.cs">
+      <DependentUpon>R4300000.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="R\R4300000.aspx.designer.cs">
+      <DependentUpon>R4300000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="R\R4300001.aspx.cs">
+      <DependentUpon>R4300001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="R\R4300001.aspx.designer.cs">
+      <DependentUpon>R4300001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SchoolService.asmx.cs">
+      <DependentUpon>SchoolService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="school_login.aspx.cs">
+      <DependentUpon>school_login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="school_login.aspx.designer.cs">
+      <DependentUpon>school_login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sitemap.aspx.cs">
+      <DependentUpon>Sitemap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sitemap.aspx.designer.cs">
+      <DependentUpon>Sitemap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\SMMBarcode.aspx.cs">
+      <DependentUpon>SMMBarcode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\SMMBarcode.aspx.designer.cs">
+      <DependentUpon>SMMBarcode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\student001.aspx.cs">
+      <DependentUpon>student001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\student001.aspx.designer.cs">
+      <DependentUpon>student001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\student001m.aspx.cs">
+      <DependentUpon>student001m.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\student001m.aspx.designer.cs">
+      <DependentUpon>student001m.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\student002.aspx.cs">
+      <DependentUpon>student002.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\student002.aspx.designer.cs">
+      <DependentUpon>student002.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\student002m.aspx.cs">
+      <DependentUpon>student002m.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\student002m.aspx.designer.cs">
+      <DependentUpon>student002m.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student_login.aspx.cs">
+      <DependentUpon>student_login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student_login.aspx.designer.cs">
+      <DependentUpon>student_login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5100001.aspx.cs">
+      <DependentUpon>S5100001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5100001.aspx.designer.cs">
+      <DependentUpon>S5100001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5100001D.aspx.cs">
+      <DependentUpon>S5100001D.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5100001D.aspx.designer.cs">
+      <DependentUpon>S5100001D.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5100001M.aspx.cs">
+      <DependentUpon>S5100001M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5100001M.aspx.designer.cs">
+      <DependentUpon>S5100001M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5200000.aspx.cs">
+      <DependentUpon>S5200000.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5200000.aspx.designer.cs">
+      <DependentUpon>S5200000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5200001.aspx.cs">
+      <DependentUpon>S5200001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5200001.aspx.designer.cs">
+      <DependentUpon>S5200001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5200001M.aspx.cs">
+      <DependentUpon>S5200001M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5200001M.aspx.designer.cs">
+      <DependentUpon>S5200001M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5200002.aspx.cs">
+      <DependentUpon>S5200002.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5200002.aspx.designer.cs">
+      <DependentUpon>S5200002.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5200003.aspx.cs">
+      <DependentUpon>S5200003.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5200003.aspx.designer.cs">
+      <DependentUpon>S5200003.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5200003M.aspx.cs">
+      <DependentUpon>S5200003M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5200003M.aspx.designer.cs">
+      <DependentUpon>S5200003M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5200004.aspx.cs">
+      <DependentUpon>S5200004.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5200004.aspx.designer.cs">
+      <DependentUpon>S5200004.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5300001.aspx.cs">
+      <DependentUpon>S5300001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5300001.aspx.designer.cs">
+      <DependentUpon>S5300001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5300001M.aspx.cs">
+      <DependentUpon>S5300001M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5300001M.aspx.designer.cs">
+      <DependentUpon>S5300001M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5400000.aspx.cs">
+      <DependentUpon>S5400000.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5400000.aspx.designer.cs">
+      <DependentUpon>S5400000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5400001.aspx.cs">
+      <DependentUpon>S5400001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5400001.aspx.designer.cs">
+      <DependentUpon>S5400001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5400002.aspx.cs">
+      <DependentUpon>S5400002.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5400002.aspx.designer.cs">
+      <DependentUpon>S5400002.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5400003.aspx.cs">
+      <DependentUpon>S5400003.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5400003.aspx.designer.cs">
+      <DependentUpon>S5400003.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5400004.aspx.cs">
+      <DependentUpon>S5400004.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5400004.aspx.designer.cs">
+      <DependentUpon>S5400004.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5400004D.aspx.cs">
+      <DependentUpon>S5400004D.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5400004D.aspx.designer.cs">
+      <DependentUpon>S5400004D.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5400006.aspx.cs">
+      <DependentUpon>S5400006.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5400006.aspx.designer.cs">
+      <DependentUpon>S5400006.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5400007.aspx.cs">
+      <DependentUpon>S5400007.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5400007.aspx.designer.cs">
+      <DependentUpon>S5400007.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5400008.aspx.cs">
+      <DependentUpon>S5400008.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5400008.aspx.designer.cs">
+      <DependentUpon>S5400008.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5400009.aspx.cs">
+      <DependentUpon>S5400009.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5400009.aspx.designer.cs">
+      <DependentUpon>S5400009.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5400011.aspx.cs">
+      <DependentUpon>S5400011.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5400011.aspx.designer.cs">
+      <DependentUpon>S5400011.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5400012.aspx.cs">
+      <DependentUpon>S5400012.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5400012.aspx.designer.cs">
+      <DependentUpon>S5400012.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5400014.aspx.cs">
+      <DependentUpon>S5400014.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5400014.aspx.designer.cs">
+      <DependentUpon>S5400014.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5400015.aspx.cs">
+      <DependentUpon>S5400015.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5400015.aspx.designer.cs">
+      <DependentUpon>S5400015.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5400015D.aspx.cs">
+      <DependentUpon>S5400015D.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5400015D.aspx.designer.cs">
+      <DependentUpon>S5400015D.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5500000.aspx.cs">
+      <DependentUpon>S5500000.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5500000.aspx.designer.cs">
+      <DependentUpon>S5500000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5500001.aspx.cs">
+      <DependentUpon>S5500001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5500001.aspx.designer.cs">
+      <DependentUpon>S5500001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5500005.aspx.cs">
+      <DependentUpon>S5500005.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5500005.aspx.designer.cs">
+      <DependentUpon>S5500005.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5500006.aspx.cs">
+      <DependentUpon>S5500006.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5500006.aspx.designer.cs">
+      <DependentUpon>S5500006.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600000.aspx.cs">
+      <DependentUpon>S5600000.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600000.aspx.designer.cs">
+      <DependentUpon>S5600000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600001.aspx.cs">
+      <DependentUpon>S5600001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600001.aspx.designer.cs">
+      <DependentUpon>S5600001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600001M.aspx.cs">
+      <DependentUpon>S5600001M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600001M.aspx.designer.cs">
+      <DependentUpon>S5600001M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600002.aspx.cs">
+      <DependentUpon>S5600002.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600002.aspx.designer.cs">
+      <DependentUpon>S5600002.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600002M.aspx.cs">
+      <DependentUpon>S5600002M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600002M.aspx.designer.cs">
+      <DependentUpon>S5600002M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600004.aspx.cs">
+      <DependentUpon>S5600004.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600004.aspx.designer.cs">
+      <DependentUpon>S5600004.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600004M.aspx.cs">
+      <DependentUpon>S5600004M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600004M.aspx.designer.cs">
+      <DependentUpon>S5600004M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600004M1.aspx.cs">
+      <DependentUpon>S5600004M1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600004M1.aspx.designer.cs">
+      <DependentUpon>S5600004M1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600004M2.aspx.cs">
+      <DependentUpon>S5600004M2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600004M2.aspx.designer.cs">
+      <DependentUpon>S5600004M2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600006.aspx.cs">
+      <DependentUpon>S5600006.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600006.aspx.designer.cs">
+      <DependentUpon>S5600006.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600006M.aspx.cs">
+      <DependentUpon>S5600006M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600006M.aspx.designer.cs">
+      <DependentUpon>S5600006M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600007.aspx.cs">
+      <DependentUpon>S5600007.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600007.aspx.designer.cs">
+      <DependentUpon>S5600007.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600007M.aspx.cs">
+      <DependentUpon>S5600007M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600007M.aspx.designer.cs">
+      <DependentUpon>S5600007M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600008.aspx.cs">
+      <DependentUpon>S5600008.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600008.aspx.designer.cs">
+      <DependentUpon>S5600008.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600008M.aspx.cs">
+      <DependentUpon>S5600008M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600008M.aspx.designer.cs">
+      <DependentUpon>S5600008M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600009.aspx.cs">
+      <DependentUpon>S5600009.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600009.aspx.designer.cs">
+      <DependentUpon>S5600009.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600009M.aspx.cs">
+      <DependentUpon>S5600009M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600009M.aspx.designer.cs">
+      <DependentUpon>S5600009M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600010.aspx.cs">
+      <DependentUpon>S5600010.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600010.aspx.designer.cs">
+      <DependentUpon>S5600010.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600010M.aspx.cs">
+      <DependentUpon>S5600010M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600010M.aspx.designer.cs">
+      <DependentUpon>S5600010M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600011.aspx.cs">
+      <DependentUpon>S5600011.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600011.aspx.designer.cs">
+      <DependentUpon>S5600011.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600011M.aspx.cs">
+      <DependentUpon>S5600011M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600011M.aspx.designer.cs">
+      <DependentUpon>S5600011M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600012.aspx.cs">
+      <DependentUpon>S5600012.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600012.aspx.designer.cs">
+      <DependentUpon>S5600012.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600012M.aspx.cs">
+      <DependentUpon>S5600012M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600012M.aspx.designer.cs">
+      <DependentUpon>S5600012M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600013.aspx.cs">
+      <DependentUpon>S5600013.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600013.aspx.designer.cs">
+      <DependentUpon>S5600013.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600013M.aspx.cs">
+      <DependentUpon>S5600013M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600013M.aspx.designer.cs">
+      <DependentUpon>S5600013M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600014.aspx.cs">
+      <DependentUpon>S5600014.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600014.aspx.designer.cs">
+      <DependentUpon>S5600014.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600014M.aspx.cs">
+      <DependentUpon>S5600014M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600014M.aspx.designer.cs">
+      <DependentUpon>S5600014M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600015.aspx.cs">
+      <DependentUpon>S5600015.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600015.aspx.designer.cs">
+      <DependentUpon>S5600015.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600016.aspx.cs">
+      <DependentUpon>S5600016.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600016.aspx.designer.cs">
+      <DependentUpon>S5600016.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600017.aspx.cs">
+      <DependentUpon>S5600017.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600017.aspx.designer.cs">
+      <DependentUpon>S5600017.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600018.aspx.cs">
+      <DependentUpon>S5600018.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600018.aspx.designer.cs">
+      <DependentUpon>S5600018.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5600019.aspx.cs">
+      <DependentUpon>S5600019.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5600019.aspx.designer.cs">
+      <DependentUpon>S5600019.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5700001.aspx.cs">
+      <DependentUpon>S5700001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5700001.aspx.designer.cs">
+      <DependentUpon>S5700001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5700001M.aspx.cs">
+      <DependentUpon>S5700001M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5700001M.aspx.designer.cs">
+      <DependentUpon>S5700001M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5800000.aspx.cs">
+      <DependentUpon>S5800000.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5800000.aspx.designer.cs">
+      <DependentUpon>S5800000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S5900000.aspx.cs">
+      <DependentUpon>S5900000.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S5900000.aspx.designer.cs">
+      <DependentUpon>S5900000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S6100001.aspx.cs">
+      <DependentUpon>S6100001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S6100001.aspx.designer.cs">
+      <DependentUpon>S6100001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S\S6200001.aspx.cs">
+      <DependentUpon>S6200001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S\S6200001.aspx.designer.cs">
+      <DependentUpon>S6200001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Unionpay.aspx.cs">
+      <DependentUpon>Unionpay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Unionpay.aspx.designer.cs">
+      <DependentUpon>Unionpay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\BaseUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Filter1.ascx.cs">
+      <DependentUpon>Filter1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Filter1.ascx.designer.cs">
+      <DependentUpon>Filter1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Filter2.ascx.cs">
+      <DependentUpon>Filter2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Filter2.ascx.designer.cs">
+      <DependentUpon>Filter2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Paging.ascx.cs">
+      <DependentUpon>Paging.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Paging.ascx.designer.cs">
+      <DependentUpon>Paging.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\SchoolList.ascx.cs">
+      <DependentUpon>SchoolList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\SchoolList.ascx.designer.cs">
+      <DependentUpon>SchoolList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\SubMenu.ascx.cs">
+      <DependentUpon>SubMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\SubMenu.ascx.designer.cs">
+      <DependentUpon>SubMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UCContact.ascx.cs">
+      <DependentUpon>UCContact.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\UCContact.ascx.designer.cs">
+      <DependentUpon>UCContact.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UCEntryPageAD.ascx.cs">
+      <DependentUpon>UCEntryPageAD.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\UCEntryPageAD.ascx.designer.cs">
+      <DependentUpon>UCEntryPageAD.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UCEntryPageHeader.ascx.cs">
+      <DependentUpon>UCEntryPageHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\UCEntryPageHeader.ascx.designer.cs">
+      <DependentUpon>UCEntryPageHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UCEntryPageMenu.ascx.cs">
+      <DependentUpon>UCEntryPageMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\UCEntryPageMenu.ascx.designer.cs">
+      <DependentUpon>UCEntryPageMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UCEntryPageNews.ascx.cs">
+      <DependentUpon>UCEntryPageNews.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\UCEntryPageNews.ascx.designer.cs">
+      <DependentUpon>UCEntryPageNews.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UCFooter.ascx.cs">
+      <DependentUpon>UCFooter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\UCFooter.ascx.designer.cs">
+      <DependentUpon>UCFooter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UCLoginBox.ascx.cs">
+      <DependentUpon>UCLoginBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\UCLoginBox.ascx.designer.cs">
+      <DependentUpon>UCLoginBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UCPageHeader.ascx.cs">
+      <DependentUpon>UCPageHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\UCPageHeader.ascx.designer.cs">
+      <DependentUpon>UCPageHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UCPageMasthead.ascx.cs">
+      <DependentUpon>UCPageMasthead.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\UCPageMasthead.ascx.designer.cs">
+      <DependentUpon>UCPageMasthead.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UCPageMenu.ascx.cs">
+      <DependentUpon>UCPageMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\UCPageMenu.ascx.designer.cs">
+      <DependentUpon>UCPageMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UCPageNews.ascx.cs">
+      <DependentUpon>UCPageNews.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\UCPageNews.ascx.designer.cs">
+      <DependentUpon>UCPageNews.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UCQA.ascx.cs">
+      <DependentUpon>UCQA.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\UCQA.ascx.designer.cs">
+      <DependentUpon>UCQA.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ValidatePic.cs" />
+    <Compile Include="ValidatePicPage.aspx.cs">
+      <DependentUpon>ValidatePicPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ValidatePicPage.aspx.designer.cs">
+      <DependentUpon>ValidatePicPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControl\MyBoundField.cs" />
+    <Compile Include="WebControl\MyLabel.cs" />
+    <Compile Include="WebControl\MyLinkButton.cs" />
+    <Compile Include="WebControl\MyLiteral.cs" />
+    <Compile Include="WebControl\MyTemplateField.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MasterPage\Main.Master" />
+    <Content Include="MasterPage\Main2.Master" />
+    <Content Include="api\CheckLogon.ashx" />
+    <Content Include="api\DownloadHandler.ashx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Localized.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Localized.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{06cf4155-e863-4c98-916e-0e8a1c838df5}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Helpers\Helpers.csproj">
+      <Project>{3c031141-839d-4aa3-8942-50e52e3ca000}</Project>
+      <Name>Helpers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Localized.en-us.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Localized.en-us.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1647</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44300/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,200 @@
+/* Define the body style */
+/*
+body {
+    font-family:Arial;
+    font-size:12px;
+}
+*/
+
+#verticalmenu {
+	/*
+	float: left;
+	position: relative;
+	width: 180px;
+	height:500px;
+	border: 0px solid #000000;
+	*/
+	
+	/*
+    float: left;
+	margin: 20px 0 30px 0;
+	width: 200px;
+	height:480px;
+	background: transparent url(../img/menu/menu_top.jpg) no-repeat top left;
+	border: 0px solid #000000;
+	*/
+	
+	float: left;
+	margin: 80px 0 30px 0;
+	padding: 10px 10px 30px 10px;
+	width: 180px;
+	height:520px;
+	/*background: transparent url(../img/menu/menu_top.jpg) no-repeat top left;*/
+	background: transparent url(../img/button/buttonBg_on.gif) repeat-x 100% 100%;
+	border: 1px solid #e2f6f3;
+	border-radius:20px;
+}
+	
+/* We remove the margin, padding, and list style of UL and LI components */
+#verticalmenu ul, #verticalmenu ul li{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+/* We apply background color and border bottom white and width to 150px */
+
+#verticalmenu ul li{
+    /*background-color:#7f95db;*/
+    border-bottom:solid 1px white;
+    /*width:180px;*/  /*寬度*/
+	cursor:pointer;
+}
+
+
+/* We apply the background hover color when user hover the mouse over of the li component */
+/* for IE < 9 we using class .iehover */
+#verticalmenu ul li:hover,
+#verticalmenu ul li.iehover{
+    /*
+    background-color:#89e5d9;
+    position:relative;
+    */
+	
+	color:#FFFFFF;
+	background-color: #89e5d9;
+	position:relative;
+}
+
+/* We apply the link style */
+#verticalmenu ul li a{
+    /*padding:5px 15px;*/
+    /*color:#ffffff;*/
+    /*display:inline-block;*/
+    /*text-decoration:none;*/
+	
+	/*
+	display: block;
+	margin: 0px 0px 8px 0px;
+	padding: 5px 5px 6px 30px;
+	text-indent: 0px;
+	font-size: 11pt;
+	line-height: 18px;
+	color:#3D3C2C;
+	font-weight: bold;
+	text-decoration: none;
+	background: transparent url(../img/menu/menu_off.gif) no-repeat top left;
+	border: 1px solid #d9d9d9;
+	*/
+	
+	display: block;
+	margin: 0px 15px 0px 10px;
+	padding: 12px 5px 12px 12px;
+	text-indent: 0px;
+	font-size: 12pt;
+	line-height: 18px;
+	color:#3D3C2C;
+	font-weight: bold;
+	text-decoration: none;
+	border-bottom: 1px dashed #d6d6d6;
+	
+}
+
+#verticalmenu ul li a:hover {
+    /*
+	color:#cc0000;
+	background: transparent url(../img/menu/menu_on.gif) no-repeat top left;
+	border: 1px solid #d9d9d9;
+	*/
+	
+	color:#FFFFFF;
+	background-color: #89e5d9;
+}
+	
+/**** SECOND LEVEL MENU ****/
+/* We make the position to absolute for flyout menu and hidden the ul until the user hover the parent li item */
+#verticalmenu ul li ul{
+    position:absolute;
+    display:none;
+}
+
+/* When user has hovered the li item, we show the ul list by applying display:block, note: 150px is the individual menu width.  */
+/* for IE < 9 we using class .iehover */
+#verticalmenu ul li:hover ul, 
+#verticalmenu ul li.iehover ul{
+    left:150px;
+    top:0px;
+    display:block;
+	z-index:2;
+	#89e5d9
+}
+
+/* we apply different background color to 2nd level menu items*/
+#verticalmenu ul li ul li{
+    /*background-color:#cae25a;*/
+}
+
+/* We change the background color for the level 2 submenu when hovering the menu */
+/* for IE < 9 we using class .iehover */
+#verticalmenu ul li:hover ul li:hover,
+#verticalmenu ul li.iehover ul li.iehover{
+    /*background-color:#b1b536;*/
+}
+
+/* We style the color of level 2 links */
+#verticalmenu ul li ul li a{
+    color:#454444;
+    display:inline-block;
+    /*width:120px;*/
+    width:160px;
+	margin: 0px 0px 0px 0px;/*間隔*/
+	background: #ffcbbc;
+}
+
+#verticalmenu ul li ul li a:hover{
+    background-color: #89e5d9;
+}
+
+/**** THIRD LEVEL MENU ****/
+/* We need to hide the 3rd menu, when hovering the first level menu */
+/* for IE < 9 we using class .iehover */
+#verticalmenu ul li:hover ul li ul,
+#verticalmenu ul li.iehover ul li ul{
+    position:absolute;
+    display:none;
+}
+
+/* We show the third level menu only when they hover the second level menu parent */
+/* for IE < 9 we using class .iehover */
+#verticalmenu ul li:hover ul li:hover ul,
+#verticalmenu ul li.iehover ul li.iehover ul{
+    display:block;
+    left:180px;/*相關寬度*/
+    top:0;
+}
+
+/* We change the background color for the level 3 submenu*/
+/* for IE < 9 we using class .iehover */
+#verticalmenu ul li:hover ul li:hover ul li,
+#verticalmenu ul li.iehover ul li.iehover ul li{
+    /*background:#86d3fa;*/
+}
+
+/* We change the background color for the level 3 submenu when hovering the menu */
+/* for IE < 9 we using class .iehover */
+#verticalmenu ul li:hover ul li:hover ul li:hover,
+#verticalmenu ul li.iehover ul li.iehover ul li.iehover{
+    /*background:#358ebc;*/
+}
+
+/* We change the level 3 link color */
+/* for IE < 9 we using class .iehover */
+#verticalmenu ul li:hover ul li:hover ul li a,
+#verticalmenu ul li.iehover ul li.iehover ul li a{
+    color:#3D3C2C;
+}
+
+/* Clear float */
+.clear{
+    clear:both;
+}

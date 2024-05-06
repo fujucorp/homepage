@@ -1,0 +1,17 @@
+#content {
+	clear:both;
+	background: transparent url(../img/bg/login_success.jpg) no-repeat bottom right;
+	}
+
+#main {
+	padding: 80px 100px 20px 40px;
+		border: 0px solid #FF0000;
+	}
+
+
+/*公告事項--------------------------------------------------------------------------*/
+#bulletin  {
+	padding: 15px 0 0 35px;
+	border: 0px solid #000000;
+	}
+	

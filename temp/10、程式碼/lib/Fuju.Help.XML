@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Fuju.Help</name>
+    </assembly>
+    <members>
+        <member name="T:Fuju.Help.PackageUtil">
+            <summary>
+            Package 公用方法類別
+            </summary>
+        </member>
+        <member name="F:Fuju.Help.PackageUtil.memory">
+            <summary>
+            儲存 MemoryStream 的成員變數
+            </summary>
+        </member>
+        <member name="F:Fuju.Help.PackageUtil.zip">
+            <summary>
+            儲存 ZipPackage 的成員變數
+            </summary>
+        </member>
+        <member name="M:Fuju.Help.PackageUtil.#ctor">
+            <summary>
+            建構 Package 公用方法類別
+            </summary>
+        </member>
+        <member name="M:Fuju.Help.PackageUtil.AddContent(System.String,System.Byte[])">
+            <summary>
+            增加 Package 的內容
+            </summary>
+            <param name="fileUri"></param>
+            <param name="contents"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Help.PackageUtil.Save(System.String,System.Boolean)">
+            <summary>
+            儲存至指定檔案
+            </summary>
+            <param name="fileFullName"></param>
+            <param name="overWrite"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Help.PackageUtil.GetContent">
+            <summary>
+            取得 Package 的內容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Help.PackageUtil.Dispose">
+            <summary>
+            釋放資源
+            </summary>
+        </member>
+        <member name="M:Fuju.Help.PackageUtil.CreatePackage">
+            <summary>
+            建立 Package 公用方法類別
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

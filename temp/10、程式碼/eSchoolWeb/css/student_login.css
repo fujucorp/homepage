@@ -1,0 +1,17 @@
+#main {
+	margin: 20px 0 0 0;
+	padding: 60px 100px 20px 40px;
+	background: transparent url(../img/bg/student_login.jpg) no-repeat top right;
+	}
+
+#language {
+	float: right;
+	margin: 6px 30px 0px 30px;
+	}
+
+/*公告事項--------------------------------------------------------------------------*/
+#bulletin  {
+	padding: 15px 0 0 35px;
+	border: 0px solid #000000;
+	}
+	

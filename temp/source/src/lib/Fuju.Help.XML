@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Fuju.Help</name>
+    </assembly>
+    <members>
+        <member name="T:Fuju.Help.LBHelper">
+            <summary>
+            土銀 checkmarx 專用方法類別
+            </summary>
+        </member>
+        <member name="F:Fuju.Help.LBHelper.HexStringRegex">
+            <summary>
+            16進位字串規則運算式
+            </summary>
+        </member>
+        <member name="M:Fuju.Help.LBHelper.GetBankServiceMAC(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            取得 BankService 的 MAC
+            </summary>
+            <param name="seqno"></param>
+            <param name="orgid"></param>
+            <param name="rid"></param>
+            <param name="amount"></param>
+            <param name="paydate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Help.LBHelper.GetTextDESEncode(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            取得指定文字的 DES 加密後 Hex 字串
+            </summary>
+            <param name="text">指定要加密的文字</param>
+            <param name="key">指定加密的金鑰</param>
+            <param name="encoding">指定編碼，未指定則使用 Encoding.Default</param>
+            <returns>傳回加密後 Hex 字串或 null</returns>
+        </member>
+        <member name="M:Fuju.Help.LBHelper.GetTextDESDecode(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            取得指定加密後 Hex 文字的 DES 解密後字串
+            </summary>
+            <param name="hexText">指定加密後 Hex 文字</param>
+            <param name="key">指定解密的金鑰</param>
+            <param name="encoding">指定編碼，未指定則使用 Encoding.Default</param>
+            <returns>傳回解密後 Hex 字串或 null</returns>
+        </member>
+        <member name="M:Fuju.Help.LBHelper.GetDESEncrypt(System.String,System.String)">
+            <summary>
+            取得 EAI 的 Hex 字串資料的 DES 加密後字串 (iv 為 { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 })
+            </summary>
+            <param name="hexData">指定要加密的 Hex 字串</param>
+            <param name="hexIKey">指定加密的 Hex 金鑰</param>
+            <returns>傳回加密後的 Hex 字串</returns>
+        </member>
+        <member name="M:Fuju.Help.LBHelper.GetDESDecrypt(System.String,System.String)">
+            <summary>
+            取得 EAI 的 Hex 資料的 DES 解密後的 Hex 字串資料 (iv 為 { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 })
+            </summary>
+            <param name="hexData">指定要解密的 Hex 字串</param>
+            <param name="hexIKey">指定解密的 Hex 金鑰</param>
+            <returns>傳回解密後的 Hex 字串</returns>
+        </member>
+        <member name="M:Fuju.Help.LBHelper.HexStringToBytes(System.String)">
+            <summary>
+            將指定的16進位字串轉成 Byte 陣列
+            </summary>
+            <param name="hex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Help.LBHelper.Bytes2HexString(System.Byte[],System.Boolean)">
+            <summary>
+            將指定的 Byte 陣列轉成16進位字串
+            </summary>
+            <param name="bytes">指定的 Byte 陣列</param>
+            <param name="toUpper">指定使否將英文字母轉成大寫</param>
+            <returns>成功則傳回16進位字串，否則傳回 null</returns>
+        </member>
+        <member name="T:Fuju.Help.PackageUtil">
+            <summary>
+            Package 公用方法類別
+            </summary>
+        </member>
+        <member name="F:Fuju.Help.PackageUtil.memory">
+            <summary>
+            儲存 MemoryStream 的成員變數
+            </summary>
+        </member>
+        <member name="F:Fuju.Help.PackageUtil.zip">
+            <summary>
+            儲存 ZipPackage 的成員變數
+            </summary>
+        </member>
+        <member name="M:Fuju.Help.PackageUtil.#ctor">
+            <summary>
+            建構 Package 公用方法類別
+            </summary>
+        </member>
+        <member name="M:Fuju.Help.PackageUtil.AddContent(System.String,System.Byte[])">
+            <summary>
+            增加 Package 的內容
+            </summary>
+            <param name="fileUri"></param>
+            <param name="contents"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Help.PackageUtil.Save(System.String,System.Boolean)">
+            <summary>
+            儲存至指定檔案
+            </summary>
+            <param name="fileFullName"></param>
+            <param name="overWrite"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Help.PackageUtil.GetContent">
+            <summary>
+            取得 Package 的內容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Help.PackageUtil.Dispose">
+            <summary>
+            釋放資源
+            </summary>
+        </member>
+        <member name="M:Fuju.Help.PackageUtil.CreatePackage">
+            <summary>
+            建立 Package 公用方法類別
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

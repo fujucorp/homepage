@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root id="SCHOOL">
+	<menu id="D1" name="基本資料作業" url="" sortNo="1000" cssClass="partner">
+		<menu id="D11" name="維護代碼檔" url="D/D1100000.aspx" sortNo="1100">
+			<menu id="D1100001" name="學期代碼"       url="D/D1100001.aspx" sortNo="1101"></menu>
+			<menu id="D1100002" name="部別代碼"       url="D/D1100002.aspx" sortNo="1102"></menu>
+			<menu id="D1100003" name="代收費用別代碼" url="D/D1100003.aspx" sortNo="1103"></menu>
+			<menu id="D1100004" name="院別代碼"       url="D/D1100004.aspx" sortNo="1104"></menu>
+			<menu id="D1100005" name="科系代碼"       url="D/D1100005.aspx" sortNo="1105"></menu>
+			<menu id="D1100006" name="班別代碼"       url="D/D1100006.aspx" sortNo="1106"></menu>
+			<menu id="D1100007" name="減免類別代碼"   url="D/D1100007.aspx" sortNo="1107"></menu>
+			<menu id="D1100008" name="住宿代碼"       url="D/D1100008.aspx" sortNo="1108"></menu>
+			<menu id="D1100009" name="身分註記代碼"   url="D/D1100009.aspx" sortNo="1109"></menu>
+			<menu id="D1100010" name="就貸代碼"       url="D/D1100010.aspx" sortNo="1110"></menu>
+			<menu id="D1100011" name="退費代碼"       url="D/D1100011.aspx" sortNo="1111"></menu>
+			<menu id="D1100012" name="複製代碼檔"     url="D/D1700001.aspx?t=1" sortNo="1112"></menu>
+			<menu id="D1100013" name="刪除代碼檔"     url="D/D1800001.aspx?t=1" sortNo="1113"></menu>
+		</menu>
+		<menu id="D12" name="維護代收費用檔" url="D/D1200000.aspx" sortNo="1200">
+			<menu id="D1200001" name="維護代收費用檔"         url="D/D1200001.aspx" sortNo="1201"></menu>
+			<menu id="D1200002" name="商家代號費用小計定義檔" url="D/D1200002.aspx" sortNo="1202"></menu>
+		</menu>
+		<menu id="D13" name="維護標準檔" url="D/D1300000.aspx" sortNo="1300">
+			<menu id="D1300001" name="一般收費標準"         url="D/D1300001.aspx" sortNo="1301"></menu>
+			<menu id="D1300002" name="學分費收費標準"       url="D/D1300002.aspx" sortNo="1302"></menu>
+			<menu id="D1300003" name="學分基準收費標準"     url="D/D1300003.aspx" sortNo="1303"></menu>
+			<menu id="D1300004" name="課程收費標準"         url="D/D1300004.aspx" sortNo="1304"></menu>
+			<menu id="D1300005" name="就貸收費標準"         url="D/D1300005.aspx" sortNo="1305"></menu>
+			<menu id="D1300006" name="小於基準其他收費標準" url="D/D1300006.aspx" sortNo="1306"></menu>
+			<menu id="D1300007" name="住宿收費標準"         url="D/D1300007.aspx" sortNo="1307"></menu>
+			<menu id="D1300008" name="身分註記收費標準"     url="D/D1300008.aspx" sortNo="1308"></menu>
+			<menu id="D1300009" name="減免類別標準"         url="D/D1300009.aspx" sortNo="1309"></menu>
+			<menu id="D1300010" name="退費標準"             url="D/D1300010.aspx" sortNo="1310"></menu>
+			<menu id="D1300011" name="複製標準檔"           url="D/D1700001.aspx?t=3" sortNo="1311"></menu>
+			<menu id="D1300012" name="刪除標準檔"           url="D/D1800001.aspx?t=3" sortNo="1312"></menu>
+		</menu>
+		<menu id="D14" name="維護上傳對照檔" url="D/D1400000.aspx" sortNo="1400">
+			<menu id="D1400001" name="上傳繳費資料對照表"               url="D/D1400001.aspx" sortNo="1401"></menu>
+			<menu id="D1400002" name="上傳學分費退費資料對照表"         url="D/D1400002.aspx" sortNo="1402"></menu>
+			<menu id="D1400003" name="上傳課程收費標準對照表"           url="D/D1400003.aspx" sortNo="1403"></menu>
+			<menu id="D1400004" name="上傳已產生虛擬帳號就貸資料對照表" url="D/D1400004.aspx" sortNo="1404"></menu>
+			<menu id="D1400005" name="上傳已產生虛擬帳號減免資料對照表" url="D/D1400005.aspx" sortNo="1405"></menu>
+		</menu>
+		<menu id="D15" name="檔案上傳匯入" url="D/D1500000.aspx" sortNo="1500">
+			<menu id="D1500001" name="簡易上傳"                   url="D/D1500001.aspx" sortNo="1501"></menu>
+			<menu id="D1500002" name="上傳學生繳費資料"           url="D/D1500002.aspx" sortNo="1502"></menu>
+			<menu id="D1500003" name="上傳學分費退費資料"         url="D/D1500003.aspx" sortNo="1503"></menu>
+			<menu id="D1500004" name="上傳課程收費標準"           url="D/D1500004.aspx" sortNo="1504"></menu>
+			<menu id="D1500005" name="上傳已產生虛擬帳號就貸資料" url="D/D1500005.aspx" sortNo="1505"></menu>
+			<menu id="D1500006" name="上傳已產生虛擬帳號減免資料" url="D/D1500006.aspx" sortNo="1506"></menu>
+			<menu id="D1500008" name="上傳學生基本資料"           url="D/D1500008.aspx" sortNo="1508"></menu>
+			<!--<menu id="D1500009" name="上傳中國信託"               url="D/D1500009.aspx" sortNo="1509"></menu>-->
+			<menu id="D1500007" name="查閱檔案上傳結果"           url="D/D1500007.aspx" sortNo="1510"></menu>
+		</menu>
+		<menu id="D16" name="上傳中國信託" url="D/D1600000.aspx" sortNo="1600">
+			<menu id="D1600001" name="上傳中國信託繳費單資料"         url="D/D1600001.aspx" sortNo="1601"></menu>
+			<menu id="D1600002" name="查詢上傳中國信託繳費單資料"     url="D/D1600002.aspx" sortNo="1602"></menu>
+		</menu>
+		<menu id="D1600003" name="查詢中國信託繳費資料" url="D/D1600003.aspx" sortNo="1603"></menu>
+		<menu id="D1700001" name="複製代碼檔及標準檔"  url="D/D1700001.aspx" sortNo="1701"></menu>
+		<menu id="D1800001" name="刪除代碼檔及標準檔"  url="D/D1800001.aspx" sortNo="1801"></menu>
+	</menu>
+	<menu id="B2" name="繳費作業" url="" sortNo="2000" cssClass="school">
+		<menu id="B21" name="維護學生資料" url="B/B2100000.aspx" sortNo="2100">
+			<menu id="B2100001" name="單筆新增學生繳費資料"           url="B/B2100001.aspx" sortNo="2101"></menu>
+			<menu id="B2100002" name="維護學生繳費資料"               url="B/B2100002.aspx" sortNo="2102"></menu>
+			<menu id="B2100003" name="下載學生繳費資料媒體檔"         url="B/B2100003.aspx" sortNo="2103"></menu>
+			<menu id="B2100004" name="整批刪除學生資料"               url="B/B2100004.aspx" sortNo="2104"></menu>
+			<menu id="B2100005" name="產生委扣資料"                   url="B/B2100005.aspx" sortNo="2105"></menu>
+			<menu id="B2100006" name="產生學生繳費資料媒體檔(跨學年)" url="B/B2100006.aspx" sortNo="2106"></menu>
+			<menu id="B2100007" name="匯入委扣回復資料"               url="B/B2100007.aspx" sortNo="2107"></menu>
+			<menu id="B2100008" name="維護就貸資料"                   url="B/B2100008.aspx" sortNo="2108"></menu>
+		</menu>
+		<menu id="B22" name="產生金額及虛擬帳號" url="B/B2200000.aspx" sortNo="2200">
+			<menu id="B2200001" name="產生繳費金額"                 url="B/B2200001.aspx" sortNo="2201"></menu>
+			<menu id="B2200002" name="產生虛擬帳號"                 url="B/B2200002.aspx" sortNo="2202"></menu>
+			<menu id="B2200003" name="查詢繳費金額及虛擬帳號之結果" url="B/B2200003.aspx" sortNo="2203"></menu>
+			<menu id="B2200004" name="清除虛擬帳號"                 url="B/B2200004.aspx" sortNo="2204"></menu>
+		</menu>
+		<menu id="B23" name="產生繳費單" url="B/B2300000.aspx" sortNo="2300">
+			<menu id="B2300001" name="產生繳費單"        url="B/B2300001.aspx" sortNo="2301"></menu>
+			<menu id="B2300003" name="產生email繳費通知" url="B/B2300003.aspx" sortNo="2303"></menu>
+		</menu>
+		<menu id="B24" name="產生繳費收據" url="B/B2400000.aspx" sortNo="2400">
+			<menu id="B2400001" name="產生繳費收據" url="B/B2400001.aspx" sortNo="2401"></menu>
+		</menu>
+	</menu>
+	<menu id="C3" name="銷帳作業" url="" sortNo="3000">
+		<menu id="C3100001" name="自收單筆銷帳" url="C/C3100001.aspx" sortNo="3101"></menu>
+		<menu id="C32" name="自收多筆銷帳" url="C/C3200000.aspx" sortNo="3200">
+			<menu id="C3200001" name="使用條碼閱讀機"   url="C/C3200001.aspx" sortNo="3201"></menu>
+			<menu id="C3200002" name="學校自收整批上傳" url="C/C3200002.aspx" sortNo="3202"></menu>
+			<menu id="C3200003" name="學校自收整批上傳結果查詢" url="C/C3200003.aspx" sortNo="3203"></menu>
+		</menu>
+		<menu id="C3300001" name="人工銷帳" url="C/C3300001.aspx" sortNo="3301"></menu>
+		<menu id="C34" name="每日銷帳結果查詢" url="C/C3400000.aspx" sortNo="3400">
+			<menu id="C3400001" name="每日銷帳結果查詢"   url="C/C3400001.aspx" sortNo="3401"></menu>
+		</menu>
+		<menu id="C35" name="各式報表" url="C/C3500000.aspx" sortNo="3500">
+			<menu id="C3500001" name="繳費銷帳報表" url="C/C3500001.aspx" sortNo="3501"></menu>
+			<menu id="C3500002" name="學生繳費名冊" url="C/C3500002.aspx" sortNo="3502"></menu>
+		</menu>
+		<menu id="C36" name="問題資料處理" url="C/C3600000.aspx" sortNo="3600">
+			<menu id="C3600001" name="查詢問題檔"       url="C/C3600001.aspx" sortNo="3601"></menu>
+			<menu id="C3600002" name="問題檔資料刪除"   url="C/C3600002.aspx" sortNo="3602"></menu>
+			<menu id="C3600003" name="產生及下載媒體"   url="C/C3600003.aspx" sortNo="3603"></menu>
+		</menu>
+		<menu id="C37" name="查詢及下載資料" url="C/C3700000.aspx" sortNo="3700">
+			<menu id="C3700001" name="查詢繳費資料"            url="C/C3700001.aspx" sortNo="3701"></menu>
+			<menu id="C3700002" name="取消銷帳註記"            url="C/C3700002.aspx" sortNo="3702"></menu>
+			<menu id="C3700004" name="下載銷帳資料"            url="C/C3700004.aspx" sortNo="3704"></menu>
+			<menu id="C3700005" name="還原銷帳註記"            url="C/C3700005.aspx" sortNo="3705"></menu>
+			<menu id="C3700006" name="中心入帳資料查詢"        url="C/C3700006.aspx" sortNo="3706"></menu>
+			<menu id="C3700007" name="下載銷帳資料(固定格式)"  url="C/C3700007.aspx" sortNo="3707"></menu>
+			<menu id="C3700008" name="產生銷帳資料檔(跨學年)"  url="C/C3700008.aspx" sortNo="3708"></menu>
+			<menu id="C3700009" name="查詢歷史(繳費)資料"      url="C/C3700009.aspx" sortNo="3709"></menu>
+		</menu>
+	</menu>
+	<menu id="R4" name="退費作業" url="" sortNo="4000">
+		<menu id="R4100001" name="退費處理" url="R/R4100001.aspx" sortNo="4100"></menu>
+		<menu id="R42" name="退費清冊" url="R/R4200000.aspx" sortNo="4200">
+			<menu id="R4200001" name="產生退費清冊" url="R/R4200001.aspx" sortNo="4201"></menu>
+			<!-- menu id="R4200002" name="下載退費清冊" url="R/R4200002.aspx" sortNo="4202"></menu -->
+		</menu>
+		<menu id="R43" name="產生退費媒體檔" url="R/R4300000.aspx" sortNo="4300">
+			<menu id="R4300001" name="產生退費媒體檔" url="R/R4300001.aspx" sortNo="4301"></menu>
+		</menu>
+	</menu>
+	<menu id="S5" name="系統管理作業" url="" sortNo="5000">
+		<menu id="S5100001" name="學校資料管理" url="S/S5100001.aspx" sortNo="5100"></menu>
+		<menu id="S52" name="功能權限管理" url="S/S5200000.aspx" sortNo="5200">
+			<menu id="S5200001" name="功能管理" url="S/S5200001.aspx" sortNo="5201"></menu>
+			<menu id="S5200002" name="權限管理" url="S/S5200002.aspx" sortNo="5202"></menu>
+			<menu id="S5200003" name="群組管理" url="S/S5200003.aspx" sortNo="5203"></menu>
+			<menu id="S5200004" name="待辦事項" url="S/S5200004.aspx" sortNo="5204"></menu>
+		</menu>
+		<menu id="S5300001" name="使用者管理" url="S/S5300001.aspx" sortNo="5300"></menu>
+		<menu id="S54" name="系統查詢"     url="S/S5400000.aspx" sortNo="5400">
+			<menu id="S5400001" name="使用者操作記錄查詢"    url="S/S5400001.aspx" sortNo="5401"></menu>
+			<menu id="S5400002" name="交易紀錄查詢"          url="S/S5400002.aspx" sortNo="5402"></menu>
+			<menu id="S5400003" name="排程作業查詢"          url="S/S5400003.aspx" sortNo="5403"></menu>
+			<menu id="S5400004" name="繳費資料查詢"          url="S/S5400004.aspx" sortNo="5404"></menu>
+			<!--<menu id="S5400006" name="D38資料上傳"           url="S/S5400006.aspx" sortNo="5406"></menu>-->
+			<menu id="S5400007" name="D38資料查詢"           url="S/S5400007.aspx" sortNo="5407"></menu>
+			<!--<menu id="S5400008" name="手續費統計報表"        url="S/S5400008.aspx" sortNo="5408"></menu>-->
+
+			<!--<menu id="S5400009" name="上傳D00I70檔案"        url="S/S5400009.aspx" sortNo="5409"></menu>-->
+			<!--<menu id="S5400010" name="取得D00I70資料"        url="S/S5400010.aspx" sortNo="5410"></menu>-->
+			<!--<menu id="S5400011" name="代收單位交易資訊統計表" url="S/S5400011.aspx" sortNo="5411"></menu>-->
+			<!--<menu id="S5400012" name="繳款通道交易資訊統計表" url="S/S5400012.aspx" sortNo="5412"></menu>-->
+			<!--<menu id="S5400013" name="中心(D00I70)與系統銷帳資料比對表" url="S/S5400013.aspx" sortNo="5413"></menu>-->
+
+			<menu id="S5400014" name="電文日誌查詢"          url="S/S5400014.aspx" sortNo="5414"></menu>
+			<menu id="S5400015" name="首頁功能日誌查詢"      url="S/S5400015.aspx" sortNo="5415"></menu>
+		</menu>
+		<menu id="S55" name="一般設定管理" url="S/S5500000.aspx" sortNo="5500">
+			<menu id="S5500001" name="學校設定檔管理"       url="S/S5500001.aspx" sortNo="5501"></menu>
+			<menu id="S5500005" name="報稅資料產生"         url="S/S5500005.aspx" sortNo="5505"></menu>
+			<menu id="S5500006" name="報稅資料下載"         url="S/S5500006.aspx" sortNo="5506"></menu>
+		</menu>
+		<menu id="S56" name="系統設定管理"   url="S/S5600000.aspx" sortNo="5600">
+			<menu id="S5600001" name="學年代碼"               url="S/S5600001.aspx" sortNo="5601"></menu>
+			<menu id="S5600002" name="金融機構代碼管理"       url="S/S5600002.aspx" sortNo="5602"></menu>
+			<menu id="S5600004" name="代收管道管理"           url="S/S5600004.aspx" sortNo="5604"></menu>
+			<menu id="S5600006" name="廣告管理"               url="S/S5600006.aspx" sortNo="5606"></menu>
+			<menu id="S5600007" name="系統訊息公告(最新消息)" url="S/S5600007.aspx" sortNo="5607"></menu>
+			<menu id="S5600008" name="信用卡服務銀行管理"     url="S/S5600008.aspx" sortNo="5608"></menu>
+			<menu id="S5600009" name="排程作業管理"           url="S/S5600009.aspx" sortNo="5609"></menu>
+			<menu id="S5600010" name="繳費單模板管理"         url="S/S5600010.aspx" sortNo="5610"></menu>
+			<menu id="S5600011" name="手續費管理"             url="S/S5600011.aspx" sortNo="5611"></menu>
+			<menu id="S5600012" name="檔案下載管理"           url="S/S5600012.aspx" sortNo="5612"></menu>
+			<menu id="S5600013" name="QA管理"                 url="S/S5600013.aspx" sortNo="5613"></menu>
+			<menu id="S5600014" name="連動製單帳號管理"       url="S/S5600014.aspx" sortNo="5614"></menu>
+			<menu id="S5600015" name="支付寶相關設定"         url="S/S5600015.aspx" sortNo="5615"></menu>
+			<menu id="S5600016" name="系統參數設定"           url="S/S5600016.aspx" sortNo="5616"></menu>
+			<menu id="S5600017" name="財金QRCode支付相關設定" url="S/S5600017.aspx" sortNo="5617"></menu>
+			<menu id="S5600018" name="資料保留年限設定"       url="S/S5600018.aspx" sortNo="5618"></menu>
+			<menu id="S5600019" name="產生測試繳款單"         url="S/S5600019.aspx" sortNo="5619"></menu>
+		</menu>
+		<menu id="S5700001" name="繳費單模板管理" url="S/S5700001.aspx" sortNo="5701"></menu>
+		<menu id="S58" name="系統報表" url="S/S5800000.aspx" sortNo="5800">
+			<menu id="S5400008" name="手續費統計報表"        url="S/S5400008.aspx" sortNo="5408"></menu>
+			<menu id="S5400011" name="代收單位交易資訊統計表" url="S/S5400011.aspx" sortNo="5411"></menu>
+			<menu id="S5400012" name="繳款通道交易資訊統計表" url="S/S5400012.aspx" sortNo="5412"></menu>
+		</menu>
+		<menu id="S59" name="資料上傳" url="S/S5900000.aspx" sortNo="5900">
+			<menu id="S5400006" name="D38資料上傳"           url="S/S5400006.aspx" sortNo="5406"></menu>
+			<menu id="S5400009" name="上傳D00I70檔案"        url="S/S5400009.aspx" sortNo="5409"></menu>
+		</menu>
+	</menu>
+	<menu id="S6" name="聯徵KP3維護" url="" sortNo="6000">
+		<menu id="S6100001" name="KP3資料登錄"   url="S/S6100001.aspx" sortNo="6101"></menu>
+		<menu id="S6200001" name="KP3預設值維護" url="S/S6200001.aspx" sortNo="6201"></menu>
+	</menu>
+	<menu id="P7100001" name="更改密碼" url="P/P7100001.aspx" sortNo="7101"></menu>
+	<menu id="X1100001" name="學生繳費單查詢" url="student/student001.aspx" sortNo="1101"></menu>
+</root>

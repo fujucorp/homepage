@@ -1,0 +1,303 @@
+﻿//------------------------------------------------------------------------------
+// <自動產生的>
+//     這段程式碼是由工具產生的。
+//
+//     對這個檔案所做的變更可能會造成錯誤的行為，而且如果重新產生程式碼，
+//     所做的變更將會遺失。 
+// </自動產生的>
+//------------------------------------------------------------------------------
+
+namespace eSchoolWeb.D {
+    
+    
+    public partial class D1700001 {
+        
+        /// <summary>
+        /// ScriptManager1 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
+        /// ucFilter1 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::eSchoolWeb.Filter1 ucFilter1;
+        
+        /// <summary>
+        /// UpdatePanel1 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
+        /// ddlYearId1 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlYearId1;
+        
+        /// <summary>
+        /// ddlYearId2 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlYearId2;
+        
+        /// <summary>
+        /// ddlTermId1 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTermId1;
+        
+        /// <summary>
+        /// ddlTermId2 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTermId2;
+        
+        /// <summary>
+        /// panList 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel panList;
+        
+        /// <summary>
+        /// chkDeptList 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkDeptList;
+        
+        /// <summary>
+        /// chkCollegeList 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkCollegeList;
+        
+        /// <summary>
+        /// chkMajorList 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkMajorList;
+        
+        /// <summary>
+        /// chkClassList 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkClassList;
+        
+        /// <summary>
+        /// chkReduceList 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkReduceList;
+        
+        /// <summary>
+        /// chkDormList 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkDormList;
+        
+        /// <summary>
+        /// chkLoanList 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkLoanList;
+        
+        /// <summary>
+        /// chkReturnList 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkReturnList;
+        
+        /// <summary>
+        /// chkIdentifyList 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkIdentifyList;
+        
+        /// <summary>
+        /// chkReceiveList 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkReceiveList;
+        
+        /// <summary>
+        /// chkSchoolRid 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkSchoolRid;
+        
+        /// <summary>
+        /// panStandard 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel panStandard;
+        
+        /// <summary>
+        /// chkGeneralStandard 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkGeneralStandard;
+        
+        /// <summary>
+        /// chkCredit2Standard 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkCredit2Standard;
+        
+        /// <summary>
+        /// chkCreditStandard 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkCreditStandard;
+        
+        /// <summary>
+        /// chkDormStandard 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkDormStandard;
+        
+        /// <summary>
+        /// chkCreditbStandard 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkCreditbStandard;
+        
+        /// <summary>
+        /// chkIdentifyStandard 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkIdentifyStandard;
+        
+        /// <summary>
+        /// chkClassStandard 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkClassStandard;
+        
+        /// <summary>
+        /// chkReduceStandard 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkReduceStandard;
+        
+        /// <summary>
+        /// chkLoanStandard 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkLoanStandard;
+        
+        /// <summary>
+        /// chkReturnStandard 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkReturnStandard;
+        
+        /// <summary>
+        /// labResultMsg 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labResultMsg;
+        
+        /// <summary>
+        /// ccbtnOK 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::eSchoolWeb.MyOKButton ccbtnOK;
+    }
+}

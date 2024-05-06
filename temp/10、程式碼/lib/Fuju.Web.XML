@@ -1,0 +1,2490 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Fuju.Web</name>
+    </assembly>
+    <members>
+        <member name="T:Fuju.Web.Configuration.ProxyConfigElement">
+            <summary>
+            網站設定區段的服務代理 (Proxy) 組態項目類別
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Configuration.ProxyConfigElement.Key">
+            <summary>
+            項目索引鍵 (項目名稱)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Configuration.ProxyConfigElement.Name">
+            <summary>
+            項目名稱 (非必要項)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Configuration.ProxyConfigElement.ServiceUrl">
+            <summary>
+            呼叫服務的網址 (必要項)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Configuration.ProxyConfigElement.ApSCode">
+            <summary>
+            呼叫服務的應用程式的系統代碼 (必要項)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Configuration.ProxyConfigElement.ApMCode">
+            <summary>
+            呼叫服務的應用程式的機台代碼 (必要項)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Configuration.ProxyConfigElement.ApACode">
+            <summary>
+            呼叫服務的應用程式的授權代碼 (必要項)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Configuration.ProxyConfigElement.WaitTimeout">
+            <summary>
+            呼叫服務的應用程式的等待逾時時間，單位秒 (非必要項，預設值 0)
+            </summary>
+        </member>
+        <member name="T:Fuju.Web.Configuration.ServiceConfigElement">
+            <summary>
+            網站設定區段的服務 (Service) 組態項目類別
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Configuration.ServiceConfigElement.KeySeparator">
+            <summary>
+            項目索引鍵分隔符號
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Configuration.ServiceConfigElement.Key">
+            <summary>
+            項目索引鍵 (格式：項目群組 + 項目索引鍵分隔符號 + 呼叫服務的應用程式的代碼)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Configuration.ServiceConfigElement.Group">
+            <summary>
+            項目群組 (非必要項)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Configuration.ServiceConfigElement.Name">
+            <summary>
+            項目名稱 (非必要項)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Configuration.ServiceConfigElement.ApSCode">
+            <summary>
+            呼叫服務的應用程式的系統代碼 (必要項)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Configuration.ServiceConfigElement.ApName">
+            <summary>
+            呼叫服務的應用程式的名稱 (非必要項)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Configuration.ServiceConfigElement.ApMCode">
+            <summary>
+            呼叫服務的應用程式的機台代碼 (必要項)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Configuration.ServiceConfigElement.ApACode">
+            <summary>
+            呼叫服務的應用程式的授權代碼 (必要項)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Configuration.ServiceConfigElement.AllowIPPattern">
+            <summary>
+            允許 IP 的規則運算式 Pattern (非必要項)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Configuration.ServiceConfigElement.DBConfigNames">
+            <summary>
+            使用資料庫組態項目名稱集 (以逗號區隔) (非必要項)
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Configuration.ServiceConfigElement.CombineKey(System.String,System.String)">
+            <summary>
+            組合項目索引鍵
+            </summary>
+            <param name="group">項目群組</param>
+            <param name="name">項目名稱</param>
+            <returns>傳回項目索引鍵</returns>
+        </member>
+        <member name="M:Fuju.Web.Configuration.ServiceConfigElement.SplitKey(System.String,System.String@,System.String@)">
+            <summary>
+            拆解項目索引鍵
+            </summary>
+            <param name="key">項目索引鍵</param>
+            <param name="group">傳回項目群組，失敗傳回 null</param>
+            <param name="name">傳回項目名稱，失敗傳回 null</param>
+            <returns>成功傳回 true，否則傳回 false</returns>
+        </member>
+        <member name="M:Fuju.Web.Configuration.ServiceConfigElement.IsMyGroup(System.String,System.String)">
+            <summary>
+            檢查項目索引鍵是否為指定的項目群組
+            </summary>
+            <param name="key">項目索引鍵</param>
+            <param name="group">指定項目群組</param>
+            <returns>是傳回 ture，否則傳回 false</returns>
+        </member>
+        <member name="M:Fuju.Web.Configuration.ServiceConfigElement.IsMyGroup(System.String,System.String,System.StringComparison)">
+            <summary>
+            檢查項目索引鍵是否為指定的項目群組
+            </summary>
+            <param name="key">項目索引鍵</param>
+            <param name="group">指定項目群組</param>
+            <param name="comparisonType">指定比較方式</param>
+            <returns>是傳回 ture，否則傳回 false</returns>
+        </member>
+        <member name="T:Fuju.Web.Configuration.WebConfigManager">
+            <summary>
+            網站組態管理器
+            </summary>
+            <example>
+            <![CDATA[
+            <fujuConfig>
+                <webSection>
+                    <services>
+                        <add apSCode="" apMCode="" apACode="" allowIPPattern="" dbConfigNames="" />
+                        <add group="" apSCode="" apMCode="" apACode="" allowIPPattern="" dbConfigNames="" />
+                        <add group="" apSCode="" apName="" apMCode="" apACode="" allowIPPattern="" dbConfigNames="" />
+                        <add group="" name="" apSCode="" apName="" apMCode="" apACode="" allowIPPattern="" dbConfigNames="" />
+                    </services>
+                    <proxys>
+                        <add serviceUrl="" apSCode="" apMCode="" apACode="" />
+                        <add name="" serviceUrl="" apSCode="" apMCode="" apACode="" />
+                        <add name="" serviceUrl="" apSCode="" apMCode="" apACode="" waitTimeout="" />
+                    </proxys>
+                </webSection>
+                <dbSection>
+                    <dbs>
+                        <add dbType="" connectionString="" />
+                        <add name="" dbType="" connectionString="" />
+                        <add name="" dbType="" connectionString="@ENCODE=Common.GetBase64Encode()" />
+                    </dbs>
+                </dbSection>
+                <systemSection>
+                    <systems>
+                        <add name="" value="" />
+                        <add group="" name="" value="" />
+                    </systems>
+                </systemSection>
+                <projectSection>
+                    <projects>
+                        <add name="" value="" />
+                        <add group="" name="" value="" />
+                    </projects>
+                </projectSection>
+            </fujuConfig>
+            ]]>
+            </example>
+        </member>
+        <member name="F:Fuju.Web.Configuration.WebConfigManager.WEB_SECTION">
+            <summary>
+            網站設定區段名稱 (網站設定專用)
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Configuration.WebConfigManager.SERVICES">
+            <summary>
+            網站設定區段 Service 組態項目集合名稱 (Tag)
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Configuration.WebConfigManager.PROXYS">
+            <summary>
+            網站設定區段服務代理 (Proxy) 組態項目集合名稱 (Tag)
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Configuration.WebConfigManager.#ctor">
+            <summary>
+            建構網站組態管理器
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Configuration.WebConfigManager._Services">
+            <summary>
+            儲存 ServiceSetting 的成員變數
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Configuration.WebConfigManager._Proxies">
+            <summary>
+            儲存 ProxySetting 的成員變數
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Configuration.WebConfigManager.IsServiceConfigOK">
+            <summary>
+            取得網站設定區段 Service 組態是否正常
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Configuration.WebConfigManager.IsProxyConfigOK">
+            <summary>
+            取得網站設定區段服務代理 (Proxy) 組態是否正常
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Configuration.WebConfigManager.Current">
+            <summary>
+            取得目前的網站組態管理器
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Configuration.WebConfigManager.InitialServiceConfigs">
+            <summary>
+            初始化 ServiceConfigs (取得組態擋中網站設定區段 Service 組態項目)
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Configuration.WebConfigManager.InitialProxyConfigs">
+            <summary>
+            初始化 ProxyConfigs (取得組態擋中網站設定區段服務代理 (Proxy) 組態項目)
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Configuration.WebConfigManager.GetServiceSettingCount">
+            <summary>
+            取得網站設定區段中 Service 組態項目數量
+            </summary>
+            <returns>傳回組態項目數量</returns>
+        </member>
+        <member name="M:Fuju.Web.Configuration.WebConfigManager.GetAllServiceSettings">
+            <summary>
+            取得網站設定區段中所有 服務設定 陣列
+            </summary>
+            <returns>如有資料則傳回 服務設定 陣列，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.Web.Configuration.WebConfigManager.GetServiceSetting(System.Int32)">
+            <summary>
+            取得網站設定區段中指定索引值的 索引鍵與服務設定 泛型
+            </summary>
+            <param name="index">指定索引值</param>
+            <returns>成功傳回 索引鍵與服務設定 泛型，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.Web.Configuration.WebConfigManager.GetServiceSettings(System.String)">
+            <summary>
+            取得網站設定區段中指定項目群組的 索引鍵與服務設定 泛型集合
+            </summary>
+            <param name="group">指定項目群組</param>
+            <returns>成功則傳回 索引鍵與服務設定 泛型集合，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.Web.Configuration.WebConfigManager.GetServiceSettings(System.String,System.StringComparison)">
+            <summary>
+            取得網站設定區段中指定項目群組的 索引鍵與服務設定 泛型集合
+            </summary>
+            <param name="group">指定項目群組</param>
+            <param name="comparisonType">指定比較方式</param>
+            <returns>成功則傳回 索引鍵與服務設定 泛型集合，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.Web.Configuration.WebConfigManager.GetServiceSetting(System.String,System.String)">
+            <summary>
+            取得網站設定區段中指定項目索引鍵的 服務設定
+            </summary>
+            <param name="group">指定項目群組</param>
+            <param name="name">指定項目名稱</param>
+            <returns>如有找到則傳回 服務設定，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.Web.Configuration.WebConfigManager.GetServiceSetting(System.String,System.String,System.StringComparison)">
+            <summary>
+            取得網站設定區段中指定項目索引鍵的 服務設定
+            </summary>
+            <param name="group">指定項目群組</param>
+            <param name="name">指定項目名稱</param>
+            <param name="comparisonType">指定比較方式</param>
+            <returns>如有找到則傳回 服務設定，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.Web.Configuration.WebConfigManager.GetServiceSetting(System.String)">
+            <summary>
+            取得網站設定區段中指定項目索引鍵的 服務設定
+            </summary>
+            <param name="key">指定項目索引鍵</param>
+            <returns>如有找到則傳回 服務設定，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.Web.Configuration.WebConfigManager.GetServiceSetting(System.String,System.StringComparison)">
+            <summary>
+            取得網站設定區段中指定項目索引鍵的 服務設定
+            </summary>
+            <param name="key">指定項目索引鍵</param>
+            <param name="comparisonType">指定比較方式</param>
+            <returns>如有找到則傳回 服務設定，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.Web.Configuration.WebConfigManager.GetProxySettingCount">
+            <summary>
+            取得網站設定區段中服務代理 (Proxy) 組態項目數量
+            </summary>
+            <returns>傳回組態項目數量</returns>
+        </member>
+        <member name="M:Fuju.Web.Configuration.WebConfigManager.GetAllProxySettings">
+            <summary>
+            取得網站設定區段中所有服務代理設定 (ProxySetting) 陣列
+            </summary>
+            <returns>如有資料則傳回 ProxySetting 陣列，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.Web.Configuration.WebConfigManager.GetProxySetting(System.Int32)">
+            <summary>
+            取得網站設定區段中指定索引值的服務代理 (Proxy) 組態項目
+            </summary>
+            <param name="index">指定索引值</param>
+            <returns>成功傳回組態項目，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.Web.Configuration.WebConfigManager.GetProxySetting(System.String)">
+             <summary>
+            取得網站設定區段中指定項目名稱的服務代理設定 (ProxySetting)
+             </summary>
+             <param name="name">指定項目名稱 (項目索引鍵)</param>
+             <returns>如有找到則傳回 ProxySetting，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.Web.Configuration.WebConfigManager.GetProxySetting(System.String,System.StringComparison)">
+             <summary>
+            取得網站設定區段中指定項目名稱的服務代理設定 (ProxySetting)
+             </summary>
+             <param name="name">指定項目名稱 (項目索引鍵)</param>
+             <param name="comparisonType">指定比較方式</param>
+             <returns>如有找到則傳回 ProxySetting，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.Web.Configuration.WebConfigManager.GetMyMachineProxySetting(System.String,System.Nullable{System.StringComparison})">
+            <summary>
+            取得網站設定區段中指定項目名稱的 Proxy 組態設定
+            </summary>
+            <param name="name">指定項目名稱 (項目索引鍵)</param>
+            <param name="comparisonType">指定比較方式，預設 null</param>
+            <returns>如有找到則傳回 資料連線設定，否則傳回 null</returns>
+        </member>
+        <member name="T:Fuju.Web.Configuration.WebConfigSection">
+            <summary>
+            網站設定區段類別
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Configuration.WebConfigSection.ServiceConfigCollection">
+            <summary>
+            網站設定 Service 組態項目集合
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Configuration.WebConfigSection.ProxyConfigCollection">
+            <summary>
+            網站設定 Proxy 組態項目集合
+            </summary>
+        </member>
+        <member name="T:Fuju.Web.ProxySetting">
+            <summary>
+            服務代理設定類別
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.ProxySetting.ServiceUrl">
+            <summary>
+            呼叫服務的網址 (必要項)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.ProxySetting.ApSCode">
+            <summary>
+            呼叫服務的應用程式的系統代碼
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.ProxySetting.ApMCode">
+            <summary>
+            呼叫服務的應用程式的機台代碼
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.ProxySetting.ApACode">
+            <summary>
+            呼叫服務的應用程式的授權代碼
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.ProxySetting.WaitTimeout">
+            <summary>
+            呼叫服務的應用程式的等待逾時時間，單位秒 (預設 0，小於等於 0 表示使用預設值)
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.ProxySetting.#ctor(System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            建構服務代理設定
+            </summary>
+            <param name="serviceUrl">呼叫服務的網址</param>
+            <param name="apSCode">呼叫服務的應用程式的系統代碼</param>
+            <param name="apMCode">呼叫服務的應用程式的機台代碼</param>
+            <param name="apACode">呼叫服務的應用程式的授權代碼</param>
+            <param name="waitTimeout">呼叫服務的應用程式的等待逾時時間，單位秒 (預設 0，小於等於 0 表示使用預設值)</param>
+        </member>
+        <member name="M:Fuju.Web.ProxySetting.IsReady">
+            <summary>
+            取得服務代理是否已準備好 (ServiceUrl 有資料)
+            </summary>
+        </member>
+        <member name="T:Fuju.Web.Proxy.BaseProxy">
+            <summary>
+            後端服務代理類別
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Proxy.BaseProxy._ProxySetting">
+            <summary>
+            服務代理設定
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Proxy.BaseProxy.ServiceUrl">
+            <summary>
+            取得後端服務的網址
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Proxy.BaseProxy.ApSCode">
+            <summary>
+            取得呼叫後端服務的應用程式的系統代碼
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Proxy.BaseProxy.ApMCode">
+            <summary>
+            取得呼叫後端服務的應用程式的機台代碼
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Proxy.BaseProxy.ApACode">
+            <summary>
+            取得呼叫後端服務的應用程式的授權代碼
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Proxy.BaseProxy.#ctor">
+            <summary>
+            建構 後端服務代理類別
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Proxy.BaseProxy.#ctor(System.String)">
+            <summary>
+            建構 指定服務代理組態名稱 的後端服務代理類別
+            </summary>
+            <param name="configName">指定服務代理組態名稱。</param>
+        </member>
+        <member name="M:Fuju.Web.Proxy.BaseProxy.#ctor(System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            指定資料存取服務設定的建構式
+            </summary>
+            <param name="serviceUrl">指定後端服務的網址</param>
+            <param name="apSCode">指定呼叫後端服務的應用程式的系統代碼</param>
+            <param name="apMCode">指定呼叫後端服務的應用程式的機台代碼</param>
+            <param name="apACode">指定呼叫後端服務的應用程式的授權代碼</param>
+            <param name="waitTimeout">指定呼叫服務的應用程式的等待逾時時間，單位秒 (預設 0，小於等於 0 表示使用預設值)</param>
+        </member>
+        <member name="M:Fuju.Web.Proxy.BaseProxy.IsReady">
+            <summary>
+            取得此服務代理是否已準備好
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Proxy.BaseProxy.GetDataService">
+            <summary>
+            取得後端服務
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Web.Proxy.BaseProxy.ExecuteCommand(Fuju.Web.Services.IServiceCommand)">
+            <summary>
+            呼叫後端服務的 ExecuteCommand 方法
+            </summary>
+            <param name="command">指定執行的服務命令。</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Web.Proxy.BaseProxy.ExecuteCommand(Fuju.Web.Services.IServiceCommand,System.String,Fuju.Web.Services.ServiceAsker)">
+            <summary>
+            呼叫後端服務的 ExecuteCommand 方法
+            </summary>
+            <param name="command">指定執行的服務命令。</param>
+            <param name="apItem">指定呼叫後端服務的應用程式項目。</param>
+            <param name="asker">指定服務請求者。(暨登入者)</param>
+            <returns></returns>
+        </member>
+        <member name="T:Fuju.Web.Proxy.DataService">
+            <remarks/>
+        </member>
+        <member name="M:Fuju.Web.Proxy.DataService.#ctor">
+            <remarks/>
+        </member>
+        <member name="E:Fuju.Web.Proxy.DataService.ExecuteCommandCompleted">
+            <remarks/>
+        </member>
+        <member name="M:Fuju.Web.Proxy.DataService.ExecuteCommand(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Fuju.Web.Proxy.DataService.ExecuteCommandAsync(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Fuju.Web.Proxy.DataService.ExecuteCommandAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Fuju.Web.Proxy.DataService.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="T:Fuju.Web.Proxy.ExecuteCommandCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Fuju.Web.Proxy.ExecuteCommandCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Fuju.Web.Proxy.ExecuteCommandCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Fuju.Web.Services.BaseServiceCommand">
+            <summary>
+            基本服務命令類別
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Services.BaseServiceCommand.ActionType">
+            <summary>
+            服務命令的操作類型，預設值為 LogActionTypeOption.EXECUTE_CODE (可參考 LogActionTypeOption 定義)
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceCommand.#ctor">
+            <summary>
+            建構基本服務命令
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceCommand.#ctor(System.String,Fuju.Web.Services.ServiceParameter[])">
+            <summary>
+            建構基本服務命令
+            </summary>
+            <param name="commandName">指定命令名稱。</param>
+            <param name="parameters">指定命令參數陣列。</param>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceCommand.#ctor(System.String,Fuju.Web.Services.ServiceParameterList)">
+            <summary>
+            建構基本服務命令
+            </summary>
+            <param name="commandName">指定命令名稱。</param>
+            <param name="parameters">指定命令參數集合。</param>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceCommand.#ctor(Fuju.Web.Services.IServiceCommand,System.String)">
+            <summary>
+            建構基本服務命令
+            </summary>
+            <param name="command">指定服務命令 (基底) 類別。</param>
+            <param name="actionType">指定服務命令的操作類型。</param>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceCommand.GetActionType">
+            <summary>
+            取得操作的類型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceCommand.GetActionName">
+            <summary>
+            取得操作的名稱
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceCommand.GetActionData">
+            <summary>
+            取得操作的資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceCommand.GetActionJobID">
+            <summary>
+            取得操作的作業代碼
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceCommand.Create(System.String)">
+            <summary>
+            建立反 XML 序列化字串的 BaseServiceCommand 實體物件，繼承者必需 override 此方法
+            </summary>
+            <param name="xml">指定反 XML 序列化字串。</param>
+            <returns>成功傳回反 XML 序列化後的 BaseServiceCommand 物件，否則傳回 null。</returns>
+        </member>
+        <member name="T:Fuju.Web.Services.ExecuteAfterHandler">
+            <summary>
+            服務執行後處理委派
+            </summary>
+            <param name="logWriter">日誌寫入器</param>
+            <param name="jobID">作業代碼</param>
+            <param name="command">執行的服務命令</param>
+            <param name="asker">執行的服務請求者</param>
+            <param name="result">執行結果</param>
+            <param name="resultData">執行結果回傳資料</param>
+            <returns>傳回委派執行結果</returns>
+        </member>
+        <member name="T:Fuju.Web.Services.ExecuteBeforeHandler">
+            <summary>
+            服務執行前處理委派
+            </summary>
+            <param name="logWriter">日誌寫入器</param>
+            <param name="command">執行的服務命令</param>
+            <param name="asker">執行的服務請求者</param>
+            <returns>傳回委派執行結果</returns>
+        </member>
+        <member name="T:Fuju.Web.Services.IServiceCommand">
+            <summary>
+            資料處理服務命令介面
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Services.IServiceCommand.CommandName">
+            <summary>
+            命令名稱
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Services.IServiceCommand.Parameters">
+            <summary>
+            命令參數集合
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Services.IServiceCommand.IsEmpty">
+            <summary>
+            取得此物件是否為空的
+            </summary>
+            <returns>是則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.IServiceCommand.IsReady">
+            <summary>
+            取得此物件是否準備好
+            </summary>
+            <returns>是則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.IServiceCommand.ToCommandXml">
+            <summary>
+            取得命令 XML 字串 (傳送資料用)
+            </summary>
+            <returns>成功傳回命令 XML 字串。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.IServiceCommand.GetParameterText">
+            <summary>
+            取得命令參數文字表示字串
+            </summary>
+            <returns>傳回文字表示字串。</returns>
+        </member>
+        <member name="T:Fuju.Web.Services.ServiceClient">
+            <summary>
+            服務用戶端 (基底) 類別
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Services.ServiceClient.ApSCode">
+            <summary>
+            應用程式系統代碼
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Services.ServiceClient.ApName">
+            <summary>
+            應用程式名稱
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Services.ServiceClient.ApItem">
+            <summary>
+            應用程式項目
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Services.ServiceClient.ApMCode">
+            <summary>
+            應用程式機台代碼
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Services.ServiceClient.ApACode">
+            <summary>
+            應用程式授權代碼
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Services.ServiceClient.IP">
+            <summary>
+            IP
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceClient.#ctor">
+            <summary>
+            建構服務用戶端
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceClient.#ctor(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            建構服務用戶端
+            </summary>
+            <param name="apSCode">指定應用程式系統代碼。</param>
+            <param name="apName">指定應用程式名稱。</param>
+            <param name="apItem">指定應用程式項目。</param>
+            <param name="apMCode">指定應用程式機台代碼</param>
+            <param name="apACode">指定應用程式授權代碼。</param>
+            <param name="ip">指定IP。</param>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceClient.LoadXml(System.String)">
+            <summary>
+            載入反 XML 序列化字串，繼承者必需 override 此方法 (此方法已過期)
+            </summary>
+            <param name="xml">指定要反 XML 序列化字串。</param>
+            <returns>成功傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceClient.ToXml">
+            <summary>
+            取得 XML 序列化字串
+            </summary>
+            <returns>成功傳回序列化後的 XML 字串，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceClient.Create``1(System.String)">
+            <summary>
+            建立指定型別與反 XML 序列化字串的 ServiceClient (含繼承類別) 實體物件
+            </summary>
+            <typeparam name="T">指定型別。</typeparam>
+            <param name="xml">指定反 XML 序列化字串。</param>
+            <returns>成功傳回反 XML 序列化後的 T 物件，否則傳回 default(T)。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceClient.Create(System.String)">
+            <summary>
+            建立反 XML 序列化字串的 ServiceClient 實體物件，繼承者必需 override 此方法
+            </summary>
+            <param name="xml">指定反 XML 序列化字串。</param>
+            <returns>成功傳回反 XML 序列化後的 ServiceClient 物件，否則傳回 null。</returns>
+        </member>
+        <member name="T:Fuju.Web.Services.ServiceExecutor">
+            <summary>
+            (基底)服務執行器抽象類別
+            </summary>
+        </member>
+        <member name="E:Fuju.Web.Services.ServiceExecutor.ExecuteBeforeLog">
+            <summary>
+            執行服務命令前日誌處理
+            </summary>
+        </member>
+        <member name="E:Fuju.Web.Services.ServiceExecutor.ExecuteAfterLog">
+            <summary>
+            執行服務命令後日誌處理
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceExecutor.IsDefinedCommandName(System.String)">
+            <summary>
+            取得服務命令名稱是否已定義
+            </summary>
+            <param name="commandName">服務命令名稱</param>
+            <returns>已定義傳回 true，否則傳回 false</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceExecutor.TryGetCommand(System.String,Fuju.Web.Services.IServiceCommand@)">
+            <summary>
+            嘗試取得 指定服務命令序列化 Xml 的 服務命令物件，並檢查是否為已定義的命令名稱
+            </summary>
+            <param name="commandXml">指定要反序列的服務命令序列化 Xml 字串。</param>
+            <param name="command">成功則服務命令物件，否則傳回 null。</param>
+            <returns>傳回處理結果。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceExecutor.Execute(Fuju.Web.Services.ServiceClient,Fuju.Web.Services.IServiceCommand,Fuju.Web.Services.ServiceAsker)">
+            <summary>
+            執行請求的服務命令
+            </summary>
+            <param name="client">指定服務用戶端。</param>
+            <param name="command">指定執行服務的命令。</param>
+            <param name="asker">指定執行服務的請求者。</param>
+            <returns>傳回執行結果。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceExecutor.ExecuteCommand(Fuju.Web.Services.IServiceCommand,Fuju.Web.Services.ServiceAsker,System.Object@,System.String@)">
+            <summary>
+            執行服務命令
+            </summary>
+            <param name="command">指定服務命令。</param>
+            <param name="asker">指定執行服務的請求者。</param>
+            <param name="data">成功則傳回執行結果的回傳資料，失敗或無資料則傳回 null。</param>
+            <param name="log">傳回要記錄的交易日誌，不記錄則傳回 null 或空字串 (由繼承者決定)。</param>
+            <returns>傳回執行處理結果。</returns>
+        </member>
+        <member name="T:Fuju.Web.Services.ServiceAsker">
+            <summary>
+            服務請求者 (基底) 類別
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Services.ServiceAsker.UserToken">
+            <summary>
+            使用者標記 (使用者登入資料 PKey 或 使用者 PKey 或 不使用 或 ....)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Services.ServiceAsker.UserKind">
+            <summary>
+            使用者類別
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Services.ServiceAsker.UserUnit">
+            <summary>
+            使用者單位
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Services.ServiceAsker.UserID">
+            <summary>
+            使用者帳號
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Services.ServiceAsker.UserName">
+            <summary>
+            使用者名稱
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceAsker.#ctor">
+            <summary>
+            建構服務請求者
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceAsker.#ctor(System.String)">
+            <summary>
+            建構服務請求者
+            </summary>
+            <param name="userToken">指定使用者標記</param>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceAsker.#ctor(System.String,System.String,System.String)">
+            <summary>
+            建構服務請求者
+            </summary>
+            <param name="userToken">指定使用者標記。</param>
+            <param name="userID">使用者帳號。</param>
+            <param name="userName">使用者名稱。</param>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceAsker.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            建構服務請求者
+            </summary>
+            <param name="userToken">指定使用者標記。</param>
+            <param name="userKind">使用者類別。</param>
+            <param name="userUnit">使用者單位。</param>
+            <param name="userID">使用者帳號。</param>
+            <param name="userName">使用者名稱。</param>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceAsker.IsEmpty">
+            <summary>
+            取得此物件是否無資料
+            </summary>
+            <returns>使用者標記、使用者帳號、使用者名稱皆未設定則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceAsker.LoadXml(System.String)">
+            <summary>
+            載入反 XML 序列化字串，繼承者必需 override 此方法 (此方法已過期)
+            </summary>
+            <param name="xml">指定要反 XML 序列化字串。</param>
+            <returns>成功傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceAsker.ToXml">
+            <summary>
+            將自己序列化成 XML
+            </summary>
+            <returns>成功傳回序列化後的 XML 字串，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceAsker.Create``1(System.String)">
+            <summary>
+            建立指定型別與反 XML 序列化字串的 ServiceAsker (含繼承類別) 實體物件
+            </summary>
+            <typeparam name="T">指定型別。</typeparam>
+            <param name="xml">指定反 XML 序列化字串。</param>
+            <returns>成功傳回反 XML 序列化後的 T 物件，否則傳回 default(T)。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceAsker.Create(System.String)">
+            <summary>
+            建立反 XML 序列化字串的 ServiceAsker 實體物件，繼承者必需 override 此方法
+            </summary>
+            <param name="xml">指定反 XML 序列化字串。</param>
+            <returns>成功傳回反 XML 序列化後的 ServiceAsker 物件，否則傳回 null。</returns>
+        </member>
+        <member name="T:Fuju.Web.Services.BaseService">
+            <summary>
+            (基底)網站服務抽象類別
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Services.BaseService.ServiceSettings">
+            <summary>
+            服務設定集合
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Services.BaseService.ConnectionSettings">
+            <summary>
+            資料庫連線設定集合
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Services.BaseService.IsReadConfigOK">
+            <summary>
+            取得讀取組態設定檔是否成功
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Services.BaseService.IsReady">
+            <summary>
+            取得服務是否已準備好
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseService.#ctor">
+            <summary>
+            建構基礎服務類別 (使用預設的組態設定)
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseService.#ctor(System.String)">
+            <summary>
+            建構基礎服務類別 (指定服務組態項目群組)
+            </summary>
+            <param name="configGroup">指定服務組態項目群組。</param>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseService.#ctor(System.String,System.String)">
+            <summary>
+            建構基礎服務類別 (指定服務組態項目索引鍵與資料庫組態項目名稱)
+            </summary>
+            <param name="configGroup">指定服務組態項目群組，傳入 null 表示不指定，則使用預設的項目群組 (空字串)。</param>
+            <param name="configName">指定服務組態項目名稱，傳入 null 表示不指定，則使用預設的項目名稱 (空字串)。</param>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseService.#ctor(System.String,System.String,System.String)">
+            <summary>
+            建構基礎服務類別 (指定服務組態項目群組、名稱與資料庫組態項目名稱)
+            </summary>
+            <param name="serviceConfigGroup">指定服務組態項目群組，傳入 null 表示不指定，則使用預設的項目群組 (空字串)。</param>
+            <param name="serviceConfigName">指定服務組態項目名稱，傳入 null 表示不指定，則使用預設的項目名稱 (空字串)。</param>
+            <param name="dbConfigName">指定服務組態項目名稱，傳入 null 表示不指定，則使用預設的項目名稱 (空字串)。</param>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseService.#ctor(System.String,System.String,System.String,System.String,System.String,Fuju.DB.DBTypeEnum,System.String)">
+            <summary>
+            建構基礎服務類別 (使用指定的設定參數)
+            </summary>
+            <param name="apSCode">呼叫服務的應用程式的系統代碼。</param>
+            <param name="apName">呼叫服務的應用程式的名稱。</param>
+            <param name="apMCode">呼叫服務的應用程式的機台代碼。</param>
+            <param name="apACode">呼叫服務的應用程式的授權代碼。</param>
+            <param name="allowIPPattern">允許 IP 的規則運算式 Pattern。</param>
+            <param name="dbType">資料庫類別。</param>
+            <param name="connectionString">資料庫連線字串。</param>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseService.Initial">
+            <summary>
+            初始化，並載入組態檔預設的設定
+            </summary>
+            <returns>成功傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseService.Initial(System.String)">
+            <summary>
+            初始化，並載入組態檔指定服務組態項目群組的設定
+            </summary>
+            <param name="configGroup">指定服務組態項目群組。</param>
+            <returns>成功傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseService.Initial(System.String,System.String)">
+            <summary>
+            初始化，並載入組態檔指定服務組態項目群組、名稱的設定
+            </summary>
+            <param name="configGroup">指定服務組態項目群組，傳入 null 表示不指定，則使用預設的項目群組 (空字串)。</param>
+            <param name="configName">指定服務組態項目名稱，傳入 null 表示不指定，則使用預設的項目名稱 (空字串)。</param>
+            <returns>成功傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseService.Initial(System.String,System.String,System.String)">
+            <summary>
+            初始化，並載入組態檔指定服務組態項目群組、名稱與資料庫組態項目名稱的設定
+            </summary>
+            <param name="serviceConfigGroup">指定服務組態項目群組，傳入 null 表示不指定，則使用預設的項目群組 (空字串)。</param>
+            <param name="serviceConfigName">指定服務組態項目名稱，傳入 null 表示不指定，則使用預設的項目名稱 (空字串)。</param>
+            <param name="dbConfigName">指定服務組態項目名稱，傳入 null 表示不指定，則使用預設的項目名稱 (空字串)。</param>
+            <returns>成功傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseService.Initial(System.String,System.String,System.String,System.String,System.String,Fuju.DB.DBTypeEnum,System.String)">
+            <summary>
+            初始化 (使用指定的設定參數)
+            </summary>
+            <param name="apSCode">呼叫服務的應用程式的系統代碼。</param>
+            <param name="apName">呼叫服務的應用程式的名稱。</param>
+            <param name="apMCode">呼叫服務的應用程式的機台代碼。</param>
+            <param name="apACode">呼叫服務的應用程式的授權代碼。</param>
+            <param name="allowIPPattern">允許 IP 的規則運算式 Pattern。</param>
+            <param name="dbType">資料庫類別。</param>
+            <param name="connectionString">資料庫連線字串。</param>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseService.GetConnectionSettings(Fuju.Web.ServiceSetting[],System.Int32@)">
+            <summary>
+            取得服務設定陣列中所有資料庫組態項目名稱對應的資料庫連線設定
+            </summary>
+            <param name="services">服務設定陣列</param>
+            <param name="dbConfigCount">傳回不重複的資料庫組態項目名稱數量</param>
+            <returns>傳回 索引鍵與資料庫連線設定 泛型集合</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseService.CheckClient(System.String,System.String,System.String,System.String,Fuju.Web.Services.ServiceClient@)">
+            <summary>
+            檢查呼叫服務用戶端是否正確 (應用程式的系統代碼與機台代碼不分大小寫)
+            </summary>
+            <param name="apSCode">呼叫服務的應用程式的系統代碼。</param>
+            <param name="apMCode">呼叫服務的應用程式的機台代碼。</param>
+            <param name="apACode">呼叫服務的應用程式的授權代碼。</param>
+            <param name="apItem">呼叫服務的指定應用程式項目。</param>
+            <param name="serviceClient">傳回服務用戶端。</param>
+            <returns>傳回處理結果 Result</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseService.CheckCommand(System.String,Fuju.Web.Services.IServiceExecutor,Fuju.Web.Services.IServiceCommand@)">
+            <summary>
+            檢查服務命令參數是否正確
+            </summary>
+            <param name="commandXml">要檢查的服務命令參數 (序列化 Xml 字串)</param>
+            <param name="executor">服務執行器</param>
+            <param name="command">反序列化成功則傳回返序列化後的 服務命令，否則傳回 null</param>
+            <returns>傳回處理結果</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseService.CheckAsker(System.String,Fuju.Web.Services.ServiceAsker@)">
+            <summary>
+            檢查服務請求者參數是否正確 (非必要資料)
+            </summary>
+            <param name="askerXml">要檢查的服務請求者參數 (序列化 Xml 字串)</param>
+            <param name="asker">反序列化成功則傳回返序列化後的 服務請求者，否則傳回 null</param>
+            <returns>傳回處理結果</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseService.CheckAsker(System.String,System.Boolean,Fuju.Web.Services.ServiceAsker@)">
+            <summary>
+            檢查服務請求者參數是否正確
+            </summary>
+            <param name="askerXml">要檢查的服務請求者參數 (序列化 Xml 字串)</param>
+            <param name="isMust">指定是否為必要資料</param>
+            <param name="asker">反序列化成功則傳回返序列化後的 服務請求者，否則傳回 null</param>
+            <returns>傳回處理結果</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseService.GetReturnXml(Fuju.Web.XmlResult)">
+            <summary>
+            轉換處理結果類別成為要回傳的序列化 Xml (繼承者如需轉換訊息為多語系、友善訊息，應 orverride 此方法)
+            </summary>
+            <param name="xmlResult">要轉換的處理結果</param>
+            <returns>傳回序列化後的 XMl 字串</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseService.GetServiceExecutor">
+            <summary>
+            取得服務執行器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseService.ExecuteCommand(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            執行服務命令
+            </summary>
+            <param name="apSCode">呼叫服務的應用程式的系統代碼。</param>
+            <param name="apMCode">呼叫服務的應用程式的機台代碼。</param>
+            <param name="apACode">呼叫服務的應用程式的授權代碼。</param>
+            <param name="apItem">呼叫服務的指定應用程式項目。</param>
+            <param name="commandXml">服務命令序列化 Xml。</param>
+            <param name="askerXml">服務請求者序列化 Xml。</param>
+            <returns>傳回服務執行結果 (序列化 Xml 資料的處理結果類別) 的序列化 Xml</returns>
+        </member>
+        <member name="T:Fuju.Web.Services.BaseCommandManager">
+            <summary>
+            基本服務命令類別管理器
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseCommandManager.#ctor">
+            <summary>
+            建構基本服務命令類別管理器
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseCommandManager.CreateInsertCommand``1(``0)">
+            <summary>
+            建立新增服務命令物件
+            </summary>
+            <typeparam name="T">新增資料泛型類別，限 IEntity 類別。</typeparam>
+            <param name="instance">新增資料物件。此參數傳入 null 則方法傳回 null。</param>
+            <returns>成功傳回 ServiceCommand，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseCommandManager.CreateInsertCommand(Fuju.DB.Data.IEntity)">
+            <summary>
+            建立新增服務命令物件
+            </summary>
+            <param name="instance">新增資料物件。此參數傳入 null 則方法傳回 null。</param>
+            <returns>成功傳回 ServiceCommand，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseCommandManager.CreateUpdateCommand``1(``0)">
+            <summary>
+            建立更新服務命令物件
+            </summary>
+            <typeparam name="T">更新資料泛型類別，限 IEntity 類別。</typeparam>
+            <param name="instance">更新資料物件。此參數傳入 null 則方法傳回 null。</param>
+            <returns>成功傳回 ServiceCommand，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseCommandManager.CreateUpdateCommand(Fuju.DB.Data.IEntity)">
+            <summary>
+            建立更新服務命令物件
+            </summary>
+            <param name="instance">更新資料物件。此參數傳入 null 則方法傳回 null。</param>
+            <returns>成功傳回 ServiceCommand，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseCommandManager.CreateDeleteCommand``1(``0)">
+            <summary>
+            建立刪除服務命令物件
+            </summary>
+            <typeparam name="T">刪除資料泛型類別，限 IEntity 類別。</typeparam>
+            <param name="instance">刪除資料物件。此參數傳入 null 則方法傳回 null。</param>
+            <returns>成功傳回 ServiceCommand，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseCommandManager.CreateDeleteCommand(Fuju.DB.Data.IEntity)">
+            <summary>
+            建立刪除服務命令物件
+            </summary>
+            <param name="instance">刪除資料物件。此參數傳入 null 則方法傳回 null。</param>
+            <returns>成功傳回 ServiceCommand，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseCommandManager.CreateSelectCommand(System.String,Fuju.DB.Expression,Fuju.KeyValueList{Fuju.DB.OrderByEnum},System.Int32,System.Int32)">
+            <summary>
+            建立查詢服務命令物件
+            </summary>
+            <param name="entityTypeFullName">查詢 Entity 型別全名。此參數傳入空白則方法傳回 null。</param>
+            <param name="expression">查詢條件。</param>
+            <param name="orderbys">排序條件。</param>
+            <param name="startIndex">查詢結果回傳資料起始索引。</param>
+            <param name="maxRecords">詢結果回傳資料最大筆數。</param>
+            <returns>成功傳回 ServiceCommand，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseCommandManager.CreateSelectCommand(System.Type,Fuju.DB.Expression,Fuju.KeyValueList{Fuju.DB.OrderByEnum},System.Int32,System.Int32)">
+            <summary>
+            建立查詢服務命令物件
+            </summary>
+            <param name="entityType">查詢 Entity 型別。此參數傳入 null 則方法傳回 null。</param>
+            <param name="expression">查詢條件。</param>
+            <param name="orderbys">排序條件。</param>
+            <param name="startIndex">查詢結果回傳資料起始索引。</param>
+            <param name="maxRecords">詢結果回傳資料最大筆數。</param>
+            <returns>成功傳回 ServiceCommand，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseCommandManager.CreateSelectCommand(System.Type,Fuju.DB.Expression,Fuju.KeyValue{Fuju.DB.OrderByEnum}[],System.Int32,System.Int32)">
+            <summary>
+            建立查詢服務命令物件
+            </summary>
+            <param name="entityType">查詢 Entity 型別。此參數傳入 null 則方法傳回 null。</param>
+            <param name="expression">查詢條件。</param>
+            <param name="orderbys">排序條件。</param>
+            <param name="startIndex">查詢結果回傳資料起始索引。</param>
+            <param name="maxRecords">詢結果回傳資料最大筆數。</param>
+            <returns>成功傳回 ServiceCommand，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseCommandManager.CreateSelectCommand``1(Fuju.DB.Expression,Fuju.KeyValueList{Fuju.DB.OrderByEnum},System.Int32,System.Int32)">
+            <summary>
+            建立查詢服務命令物件
+            </summary>
+            <typeparam name="T">查詢 Entity 型別，限制 Entity 型別。</typeparam>
+            <param name="expression">查詢條件。</param>
+            <param name="orderbys">排序條件。</param>
+            <param name="startIndex">查詢結果回傳資料起始索引。</param>
+            <param name="maxRecords">詢結果回傳資料最大筆數。</param>
+            <returns>成功傳回 ServiceCommand，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseCommandManager.CreateBatchInsertCommand``1(``0[],System.Boolean)">
+            <summary>
+            建立批次新增服務命令物件
+            </summary>
+            <typeparam name="T">新增資料泛型類別，限 IEntity 類別。</typeparam>
+            <param name="instances">新增資料陣列，必須每個元素都是相同型別。此參數傳入 null 或空陣列，則方法傳回 null。</param>
+            <param name="isBatch">是否批次交易處理。</param>
+            <returns>成功傳回 ServiceCommand，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseCommandManager.CreateBatchInsertCommand(Fuju.DB.Data.IEntity[],System.Boolean)">
+            <summary>
+            建立批次新增服務命令物件
+            </summary>
+            <param name="instances">新增資料陣列，必須每個元素都是相同型別。此參數傳入 null 或空陣列，則方法傳回 null。</param>
+            <param name="isBatch">是否批次交易處理。</param>
+            <returns>成功傳回 ServiceCommand，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseCommandManager.CreateBatchUpdateCommand``1(``0[],System.Boolean)">
+            <summary>
+            建立批次更新服務命令物件
+            </summary>
+            <typeparam name="T">更新資料泛型類別，限 IEntity 類別。</typeparam>
+            <param name="instances">更新資料陣列，必須每個元素都是相同型別。此參數傳入 null 或空陣列，則方法傳回 null。</param>
+            <param name="isBatch">是否批次交易處理。</param>
+            <returns>成功傳回 ServiceCommand，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseCommandManager.CreateBatchUpdateCommand(Fuju.DB.Data.IEntity[],System.Boolean)">
+            <summary>
+            建立批次更新服務命令物件
+            </summary>
+            <param name="instances">更新資料陣列，必須每個元素都是相同型別。此參數傳入 null 或空陣列，則方法傳回 null。</param>
+            <param name="isBatch">是否批次交易處理。</param>
+            <returns>成功傳回 ServiceCommand，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseCommandManager.CreateBatchDeleteCommand``1(``0[],System.Boolean)">
+            <summary>
+            建立批次刪除服務命令物件
+            </summary>
+            <typeparam name="T">刪除資料泛型類別，限 IEntity 類別。</typeparam>
+            <param name="instances">刪除資料陣列，必須每個元素都是相同型別。此參數傳入 null 或空陣列，則方法傳回 null。</param>
+            <param name="isBatch">是否批次交易處理。</param>
+            <returns>成功傳回 ServiceCommand，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseCommandManager.CreateBatchDeleteCommand(Fuju.DB.Data.IEntity[],System.Boolean)">
+            <summary>
+            建立批次刪除服務命令物件
+            </summary>
+            <param name="instances">刪除資料陣列，必須每個元素都是相同型別。此參數傳入 null 或空陣列，則方法傳回 null。</param>
+            <param name="isBatch">是否批次交易處理。</param>
+            <returns>成功傳回 ServiceCommand，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseCommandManager.CreateSelectFirstCommand(System.String,Fuju.DB.Expression,Fuju.KeyValueList{Fuju.DB.OrderByEnum})">
+            <summary>
+            建立查詢第一筆服務命令物件
+            </summary>
+            <param name="entityTypeFullName">查詢 Entity 型別全名。此參數傳入空白則方法傳回 null。</param>
+            <param name="expression">查詢條件。</param>
+            <param name="orderbys">排序條件。</param>
+            <returns>成功傳回 ServiceCommand，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseCommandManager.CreateSelectFirstCommand(System.Type,Fuju.DB.Expression,Fuju.KeyValueList{Fuju.DB.OrderByEnum})">
+            <summary>
+            建立查詢第一筆服務命令物件
+            </summary>
+            <param name="entityType">查詢 Entity 型別。此參數傳入空白則方法傳回 null。</param>
+            <param name="expression">查詢條件。</param>
+            <param name="orderbys">排序條件。</param>
+            <returns>成功傳回 ServiceCommand，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseCommandManager.CreateSelectFirstCommand(System.Type,Fuju.DB.Expression,Fuju.KeyValue{Fuju.DB.OrderByEnum}[])">
+            <summary>
+            建立查詢第一筆服務命令物件
+            </summary>
+            <param name="entityType">查詢 Entity 型別。此參數傳入空白則方法傳回 null。</param>
+            <param name="expression">查詢條件。</param>
+            <param name="orderbys">排序條件。</param>
+            <returns>成功傳回 ServiceCommand，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseCommandManager.CreateSelectCountCommand(System.String,Fuju.DB.Expression)">
+            <summary>
+            建立查詢筆數服務命令物件
+            </summary>
+            <param name="entityTypeFullName">查詢 Entity 型別全名。此參數傳入空白則方法傳回 null。</param>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseCommandManager.CreateSelectCountCommand(System.Type,Fuju.DB.Expression)">
+            <summary>
+            建立查詢筆數服務命令物件
+            </summary>
+            <param name="entityType">查詢 Entity 型別。此參數傳入空白則方法傳回 null。</param>
+            <param name="expression">查詢條件。</param>
+            <returns>成功傳回 ServiceCommand，否則傳回 null。</returns>
+        </member>
+        <member name="T:Fuju.Web.Services.BaseServiceExecutor">
+            <summary>
+            基本命令(增修刪查)服務執行器類別
+            </summary>
+        </member>
+        <member name="T:Fuju.Web.Services.BaseServiceExecutor.COMMAND_NAME">
+            <summary>
+            基本 新增、更新、刪除、查詢 命令名稱定義抽象類別 (繼承者如有新的服務命令，必須 New 此抽象類別)
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.COMMAND_NAME.INSERT">
+            <summary>
+            「新增」命令名稱定義
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.COMMAND_NAME.UPDATE">
+            <summary>
+            「更新」命令名稱定義
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.COMMAND_NAME.DELETE">
+            <summary>
+            「刪除」命令名稱定義
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.COMMAND_NAME.SELECT">
+            <summary>
+            「查詢」命令名稱定義
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.COMMAND_NAME.BATCH_INSERT">
+            <summary>
+            「整批或多筆新增」命令名稱定義
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.COMMAND_NAME.BATCH_UPDATE">
+            <summary>
+            「整批或多筆更新」命令名稱定義
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.COMMAND_NAME.BATCH_DELETE">
+            <summary>
+            「整批或多筆刪除」命令名稱定義
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.COMMAND_NAME.SELECT_FIRST">
+            <summary>
+            「查詢首筆資料」命令名稱定義
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.COMMAND_NAME.SELECT_COUNT">
+            <summary>
+            「查詢資料筆數」命令名稱定義
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.COMMAND_NAME.SELECT_ALL">
+            <summary>
+            「查詢所有資料」命令名稱定義
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceExecutor.COMMAND_NAME.IsDefined(System.String)">
+            <summary>
+            取得是否為已定義的命令名稱
+            </summary>
+            <param name="commandName">指定要檢查的命令名稱。</param>
+            <returns>是則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceExecutor.COMMAND_NAME.GetActionType(System.String)">
+            <summary>
+            取得指定命令名稱的操作類型
+            </summary>
+            <param name="commandName">指定命令名稱。</param>
+            <returns>傳回操作類型 (未定義的命令名稱傳回 LogActionTypeOption.EXECUTE_CODE)。</returns>
+        </member>
+        <member name="T:Fuju.Web.Services.BaseServiceExecutor.INSERT_PARAMETER_NAME">
+            <summary>
+            「新增」命令參數定義抽象類別
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.INSERT_PARAMETER_NAME.ENTITY_TYPE_FULL_NAME">
+            <summary>
+            要新增的 Entity 型別全名參數名稱
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.INSERT_PARAMETER_NAME.INSTANCE">
+            <summary>
+            要新增的 Entity 物件參數名稱
+            </summary>
+        </member>
+        <member name="T:Fuju.Web.Services.BaseServiceExecutor.UPDATE_PARAMETER_NAME">
+            <summary>
+            「更新」命令參數定義抽象類別
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.UPDATE_PARAMETER_NAME.ENTITY_TYPE_FULL_NAME">
+            <summary>
+            要更新的 Entity 型別全名參數名稱
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.UPDATE_PARAMETER_NAME.INSTANCE">
+            <summary>
+            要更新的 Entity 物件參數名稱
+            </summary>
+        </member>
+        <member name="T:Fuju.Web.Services.BaseServiceExecutor.DELETE_PARAMETER_NAME">
+            <summary>
+            「刪除」命令參數定義抽象類別
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.DELETE_PARAMETER_NAME.ENTITY_TYPE_FULL_NAME">
+            <summary>
+            要刪除的 Entity 型別全名參數名稱
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.DELETE_PARAMETER_NAME.INSTANCE">
+            <summary>
+            要刪除的 Entity 物件參數名稱
+            </summary>
+        </member>
+        <member name="T:Fuju.Web.Services.BaseServiceExecutor.SELECT_PARAMETER_NAME">
+            <summary>
+            「查詢」命令參數定義抽象類別
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.SELECT_PARAMETER_NAME.ENTITY_TYPE_FULL_NAME">
+            <summary>
+            要查詢的 Entity 型別全名參數名稱
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.SELECT_PARAMETER_NAME.EXPRESSION">
+            <summary>
+            查詢條件參數名稱
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.SELECT_PARAMETER_NAME.ORDER_BYS">
+            <summary>
+            資料排序參數名稱
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.SELECT_PARAMETER_NAME.START_INDEX">
+            <summary>
+            查詢結果資料讀取起始索引參數名稱
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.SELECT_PARAMETER_NAME.MAX_RECORDS">
+            <summary>
+            查詢結果資料讀取最大筆數參數名稱
+            </summary>
+        </member>
+        <member name="T:Fuju.Web.Services.BaseServiceExecutor.BATCH_INSERT_PARAMETER_NAME">
+            <summary>
+            「整批或多筆新增」命令參數定義抽象類別
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.BATCH_INSERT_PARAMETER_NAME.ENTITY_TYPE_FULL_NAME">
+            <summary>
+            要新增的 Entity 型別全名參數名稱
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.BATCH_INSERT_PARAMETER_NAME.INSTANCES">
+            <summary>
+            要新增的 Entity 陣列參數名稱
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.BATCH_INSERT_PARAMETER_NAME.ISBATCH">
+            <summary>
+            指定整批或多筆處理參數名稱
+            </summary>
+        </member>
+        <member name="T:Fuju.Web.Services.BaseServiceExecutor.BATCH_UPDATE_PARAMETER_NAME">
+            <summary>
+            「整批或多筆更新」命令參數定義抽象類別
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.BATCH_UPDATE_PARAMETER_NAME.ENTITY_TYPE_FULL_NAME">
+            <summary>
+            要更新的 Entity 型別全名參數名稱
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.BATCH_UPDATE_PARAMETER_NAME.INSTANCES">
+            <summary>
+            要更新的 Entity 陣列參數名稱
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.BATCH_UPDATE_PARAMETER_NAME.ISBATCH">
+            <summary>
+            指定整批或多筆處理參數名稱
+            </summary>
+        </member>
+        <member name="T:Fuju.Web.Services.BaseServiceExecutor.BATCH_DELETE_PARAMETER_NAME">
+            <summary>
+            「整批或多筆刪除」命令參數定義抽象類別
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.BATCH_DELETE_PARAMETER_NAME.ENTITY_TYPE_FULL_NAME">
+            <summary>
+            要刪除的 Entity 型別全名參數名稱
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.BATCH_DELETE_PARAMETER_NAME.INSTANCES">
+            <summary>
+            要刪除的 Entity 陣列參數名稱
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.BATCH_DELETE_PARAMETER_NAME.ISBATCH">
+            <summary>
+            指定整批或多筆處理參數名稱
+            </summary>
+        </member>
+        <member name="T:Fuju.Web.Services.BaseServiceExecutor.SELECT_FIRST_PARAMETER_NAME">
+            <summary>
+            「查詢首筆資料」命令參數定義抽象類別
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.SELECT_FIRST_PARAMETER_NAME.ENTITY_TYPE_FULL_NAME">
+            <summary>
+            要查詢的 Entity 型別全名參數名稱
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.SELECT_FIRST_PARAMETER_NAME.EXPRESSION">
+            <summary>
+            查詢條件參數名稱
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.SELECT_FIRST_PARAMETER_NAME.ORDER_BYS">
+            <summary>
+            資料排序參數名稱
+            </summary>
+        </member>
+        <member name="T:Fuju.Web.Services.BaseServiceExecutor.SELECT_COUNT_PARAMETER_NAME">
+            <summary>
+            「查詢資料筆數」命令參數定義抽象類別
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.SELECT_COUNT_PARAMETER_NAME.ENTITY_TYPE_FULL_NAME">
+            <summary>
+            要查詢的 Entity 型別全名參數名稱
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.SELECT_COUNT_PARAMETER_NAME.EXPRESSION">
+            <summary>
+            查詢條件參數名稱
+            </summary>
+        </member>
+        <member name="T:Fuju.Web.Services.BaseServiceExecutor.SELECT_ALL_PARAMETER_NAME">
+            <summary>
+            「查詢所有資料」命令參數定義抽象類別
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.SELECT_ALL_PARAMETER_NAME.ENTITY_TYPE_FULL_NAME">
+            <summary>
+            要查詢的 Entity 型別全名參數名稱
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.SELECT_ALL_PARAMETER_NAME.EXPRESSION">
+            <summary>
+            查詢條件參數名稱
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor.SELECT_ALL_PARAMETER_NAME.ORDER_BYS">
+            <summary>
+            資料排序參數名稱
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.BaseServiceExecutor._ConnectionSettings">
+            <summary>
+            資料庫連線設定集合
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceExecutor.#ctor">
+            <summary>
+            建構服務執行器 (使用組態檔中資料庫區段的預設設定)
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceExecutor.#ctor(Fuju.KeyValueList{Fuju.DB.ConnectionSetting})">
+            <summary>
+            建構服務執行器 (使用指定資料庫連線設定集合)
+            </summary>
+            <param name="settings">指定資料庫連線設定集合。</param>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceExecutor.#ctor(Fuju.DB.ConnectionSetting)">
+            <summary>
+            建構服務執行器 (使用指定資料庫連線設定)
+            </summary>
+            <param name="setting">指定資料庫連線設定。</param>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceExecutor.TryGetCommand(System.String,Fuju.Web.Services.IServiceCommand@)">
+            <summary>
+            嘗試取得 指定服務命令序列化 Xml 的 服務命令物件，並檢查是否為已定義的命令名稱
+            </summary>
+            <param name="commandXml">指定要反序列的服務命令序列化 Xml 字串。</param>
+            <param name="command">成功則服務命令物件，否則傳回 null。</param>
+            <returns>傳回處理結果。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceExecutor.IsDefinedCommandName(System.String)">
+            <summary>
+            取得服務命令名稱是否已定義 (繼承者如有新的服務命令，必須 Override 此方法)
+            </summary>
+            <param name="commandName">指定服務命令名稱。</param>
+            <returns>是則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceExecutor.ExecuteCommand(Fuju.Web.Services.IServiceCommand,Fuju.Web.Services.ServiceAsker,System.Object@,System.String@)">
+            <summary>
+            執行服務命令 (繼承者如有新的服務命令，必須 Override 此方法)
+            </summary>
+            <param name="command">指定要執行的服務命令。</param>
+            <param name="asker">指定執行命令的服務請求者。</param>
+            <param name="data">傳回命令執行結果的回傳資料。</param>
+            <param name="log">傳回日誌資料。(預設 null，繼承者自行處理)</param>
+            <returns>傳回處理結果。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceExecutor.GetDataFactory(System.String,System.Boolean,Fuju.DB.Data.EntityFactory@)">
+            <summary>
+            取得資料存取工廠
+            </summary>
+            <param name="key">指定資料庫連線設定索引鍵，未指定 (null 或空字串) 則使用預設或第一個資料庫連線設定。</param>
+            <param name="isUseTransaction">指定是否使用交易。</param>
+            <param name="factory">成功傳回資料存取工廠，否則傳回 null。</param>
+            <returns>傳回處理結果，無連線設定則傳回失敗。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceExecutor.GetDataFactory(System.Boolean,Fuju.DB.Data.EntityFactory@)">
+            <summary>
+            取得資料存取工廠 (使用預設資料庫連線設定)
+            </summary>
+            <param name="isUseTransaction">指定是否使用交易。</param>
+            <param name="factory">成功傳回資料存取工廠，否則傳回 null。</param>
+            <returns>傳回處理結果，無連線設定則傳回失敗。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceExecutor.ExecuteInsert(Fuju.Web.Services.ServiceParameterList,System.Int32@)">
+            <summary>
+            執行「新增」命令
+            </summary>
+            <param name="parameters">指定執行的命令參數集合。</param>
+            <param name="count">傳回受影響的資料列數目。</param>
+            <returns>傳回處理結果。(無資料被新增則 Result.IsSuccess 為 false，Result.Code 為 CoreStatusCode.D_NOT_DATA_INSERT)</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceExecutor.ExecuteUpdate(Fuju.Web.Services.ServiceParameterList,System.Int32@)">
+            <summary>
+            執行「更新」命令
+            </summary>
+            <param name="parameters">指定執行的命令參數集合。</param>
+            <param name="count">傳回受影響的資料列數目。</param>
+            <returns>傳回處理結果。(無資料被新增則 Result.IsSuccess 為 false，Result.Code 為 CoreStatusCode.D_NOT_DATA_UPDATE)</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceExecutor.ExecuteDelete(Fuju.Web.Services.ServiceParameterList,System.Int32@)">
+            <summary>
+            執行「刪除」命令
+            </summary>
+            <param name="parameters">指定執行的命令參數集合。</param>
+            <param name="count">傳回受影響的資料列數目。</param>
+            <returns>傳回處理結果。(無資料被新增則 Result.IsSuccess 為 false，Result.Code 為 CoreStatusCode.D_NOT_DATA_DELETE)</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceExecutor.ExecuteSelect(Fuju.Web.Services.ServiceParameterList,System.Object@)">
+            <summary>
+            執行「查詢」命令
+            </summary>
+            <param name="parameters">指定執行的命令參數集合。</param>
+            <param name="data">成功則傳回查詢結果的資料物件 (會嘗試轉型成 Entity 陣列)，否則傳回 null。</param>
+            <returns>傳回處理結果。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceExecutor.ExecuteBatchInsert(Fuju.Web.Services.ServiceParameterList,System.Int32@)">
+            <summary>
+            執行「整批或多筆新增」命令
+            </summary>
+            <param name="parameters">指定執行的命令參數集合。</param>
+            <param name="count">傳回受影響的資料列數目。</param>
+            <returns>傳回處理結果。(整批新增會使用交易，任一筆失敗就算失敗，非整批新增不使用交易，所有資料都失敗才算失敗)</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceExecutor.ExecuteBatchUpdate(Fuju.Web.Services.ServiceParameterList,System.Int32@)">
+            <summary>
+            執行「整批或多筆更新」命令
+            </summary>
+            <param name="parameters">指定執行的命令參數集合。</param>
+            <param name="count">傳回受影響的資料列數目。</param>
+            <returns>傳回處理結果。(整批更新會使用交易，任一筆失敗就算失敗，非整批更新不使用交易，所有資料都失敗才算失敗)</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceExecutor.ExecuteBatchDelete(Fuju.Web.Services.ServiceParameterList,System.Int32@)">
+            <summary>
+            執行「整批或多筆刪除」命令
+            </summary>
+            <param name="parameters">指定執行的命令參數集合。</param>
+            <param name="count">傳回受影響的資料列數目。</param>
+            <returns>傳回處理結果。(整批刪除會使用交易，任一筆失敗就算失敗，非整批刪除不使用交易，所有資料都失敗才算失敗)</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceExecutor.ExecuteSelectFirst(Fuju.Web.Services.ServiceParameterList,System.Object@)">
+            <summary>
+            執行「查詢首筆資料」命令
+            </summary>
+            <param name="parameters">指定執行的命令參數集合。</param>
+            <param name="data">成功則傳回查詢結果的資料物件 (會嘗試轉型成 Entity 物件)，否則傳回 null。</param>
+            <returns>傳回處理結果。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceExecutor.ExecuteSelectCount(Fuju.Web.Services.ServiceParameterList,System.Int32@)">
+            <summary>
+            執行「查詢資料筆數」命令
+            </summary>
+            <param name="parameters">指定執行的命令參數集合。</param>
+            <param name="count">成功則傳回查詢資料筆數，否則傳回 0。</param>
+            <returns>傳回處理結果。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceExecutor.ExecuteSelectAll(Fuju.Web.Services.ServiceParameterList,System.Object@)">
+            <summary>
+            執行「查詢所有資料」命令
+            </summary>
+            <param name="parameters">指定執行的命令參數集合。</param>
+            <param name="data">成功則傳回查詢結果的資料物件 (會嘗試轉型成 Entity 陣列)，否則傳回 null。</param>
+            <returns>傳回處理結果。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceExecutor.LogOperate(Fuju.Log.LogWriter,Fuju.Web.Services.IServiceCommand,Fuju.Web.Services.ServiceAsker)">
+            <summary>
+            記錄操作日誌
+            </summary>
+            <param name="logWriter">指定日誌寫入器物件。</param>
+            <param name="command">指定要記錄的服務命令。</param>
+            <param name="asker">指定要記錄的服務請求者。</param>
+            <returns>成功傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceExecutor.LogTrade(Fuju.Log.LogWriter,System.String,Fuju.Web.Services.IServiceCommand,Fuju.Web.Services.ServiceAsker,Fuju.Result,System.Object)">
+            <summary>
+            記錄交易日誌
+            </summary>
+            <param name="logWriter">指定日誌寫入器物件。</param>
+            <param name="jobID">指定作業代碼，如指定值 (不為Null 或空白字串) 則傳回操作的作業代碼為此值。</param>
+            <param name="command">指定要記錄的服務命令。</param>
+            <param name="asker">指定要記錄的服務請求者。</param>
+            <param name="result">指定要記錄的處理結果。</param>
+            <param name="resultData">指定要記錄的執行結果回傳資料。</param>
+            <returns>成功傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceExecutor.GetResultDataText(System.Object)">
+            <summary>
+            取得 執行結果回傳資料 的文字表示
+            </summary>
+            <param name="resultData">指定執行結果回傳資料。</param>
+            <returns>傳回文字表示字串。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceExecutor.GetActionInfoData(Fuju.Web.Services.IServiceCommand,System.String,System.String@,System.String@,System.String@,System.String@)">
+            <summary>
+            取得 指定服務命令的 操作資訊 資料
+            </summary>
+            <param name="command">指定服務命令。</param>
+            <param name="jobID">指定作業代碼，如指定值 (不為Null 或空白字串) 則傳回操作的作業代碼為此值。</param>
+            <param name="actionType">傳回操作的類型。</param>
+            <param name="actionName">傳回操作的名稱。</param>
+            <param name="actionData">傳回操作的資料。</param>
+            <param name="actionJobID">傳回操作的作業代碼。</param>
+        </member>
+        <member name="M:Fuju.Web.Services.BaseServiceExecutor.GetActionInfoData(Fuju.Web.Services.IServiceCommand,System.String@,System.String@,System.String@)">
+            <summary>
+            取得 指定服務命令的 操作資訊 資料 (不含 ActionJobID)
+            </summary>
+            <param name="command">指定服務命令。</param>
+            <param name="actionType">傳回操作的類型。</param>
+            <param name="actionName">傳回操作的名稱。</param>
+            <param name="actionData">傳回操作的資料。</param>
+        </member>
+        <member name="T:Fuju.Web.Services.IServiceExecutor">
+            <summary>
+            服務執行器介面
+            </summary>
+        </member>
+        <member name="E:Fuju.Web.Services.IServiceExecutor.ExecuteBeforeLog">
+            <summary>
+            執行服務命令前日誌處理
+            </summary>
+        </member>
+        <member name="E:Fuju.Web.Services.IServiceExecutor.ExecuteAfterLog">
+            <summary>
+            執行服務命令後日誌處理
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Services.IServiceExecutor.IsDefinedCommandName(System.String)">
+            <summary>
+            取得服務命令名稱是否已定義
+            </summary>
+            <param name="commandName">服務命令名稱</param>
+            <returns>已定義傳回 true，否則傳回 false</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.IServiceExecutor.TryGetCommand(System.String,Fuju.Web.Services.IServiceCommand@)">
+            <summary>
+            嘗試取得 指定服務命令序列化 Xml 的 服務命令物件
+            </summary>
+            <param name="commandXml">指定服務命令序列化 Xml</param>
+            <param name="command">成功傳回服務命令物件，否則傳回 null</param>
+            <returns>傳回處理結果</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.IServiceExecutor.Execute(Fuju.Web.Services.ServiceClient,Fuju.Web.Services.IServiceCommand,Fuju.Web.Services.ServiceAsker)">
+            <summary>
+            執行服務命令
+            </summary>
+            <param name="client">呼叫服務的用戶端資料</param>
+            <param name="command">執行服務的命令</param>
+            <param name="asker">執行服務的請求者</param>
+            <returns>傳回執行結果</returns>
+        </member>
+        <member name="T:Fuju.Web.Services.ServiceCommand`1">
+            <summary>
+            資料處理服務命令抽象類別
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Services.ServiceCommand`1.CommandName">
+            <summary>
+            命令名稱，預設空字串
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Services.ServiceCommand`1.Parameters">
+            <summary>
+            命令參數集合
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceCommand`1.#ctor">
+            <summary>
+            建構服務命令
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceCommand`1.#ctor(System.String,Fuju.Web.Services.ServiceParameter[])">
+            <summary>
+            建構服務命令
+            </summary>
+            <param name="commandName">指定命令名稱。</param>
+            <param name="parameters">指定命令參數陣列。</param>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceCommand`1.#ctor(System.String,Fuju.Web.Services.ServiceParameterList)">
+            <summary>
+            建構服務命令
+            </summary>
+            <param name="commandName">指定命令名稱。</param>
+            <param name="parameters">指定命令參數陣列。</param>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceCommand`1.IsEmpty">
+            <summary>
+            取得此物件是否為空的
+            </summary>
+            <returns>是則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceCommand`1.IsReady">
+            <summary>
+            取得此物件是否準備好
+            </summary>
+            <returns>是則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceCommand`1.ToCommandXml">
+            <summary>
+            取得命令 XML 字串 (傳送資料用)
+            </summary>
+            <returns>成功傳回命令 XML 字串，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceCommand`1.GetParameterText">
+            <summary>
+            取得命令參數文字表示字串
+            </summary>
+            <returns>傳回文字表示字串。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceCommand`1.GetParameterText(System.String)">
+            <summary>
+            取得命令參數文字表示字串
+            </summary>
+            <param name="separator">指定每組參數分隔字串，預設為 "\r\n"。</param>
+            <returns>傳回文字表示字串。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceCommand`1.LoadXml(System.String)">
+            <summary>
+            載入反 XML 序列化字串 (此方法已過期)
+            </summary>
+            <param name="xml">指定要反 XML 序列化字串。</param>
+            <returns>成功傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceCommand`1.ToXml">
+            <summary>
+            取得 XML 序列化字串
+            </summary>
+            <returns>成功傳回序列化後的 XML 字串，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceCommand`1.Create(System.String)">
+            <summary>
+            建立反 XML 序列化字串的 ServiceCommand 實體物件，繼承者必需 override 此方法
+            </summary>
+            <param name="xml">指定反 XML 序列化字串。</param>
+            <returns>成功傳回反 XML 序列化後的 ServiceCommand 物件，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceCommand`1.CreateByCommandXml(System.String)">
+            <summary>
+            建立指定命令 XML 字串的資料處理服務命令類別物件
+            </summary>
+            <param name="commandXml">指定命令 XML 字串。</param>
+            <returns>成功則傳回資料處理服務命令類別物件，否則傳回 default(T)。</returns>
+        </member>
+        <member name="T:Fuju.Web.Services.ServiceCommand">
+            <summary>
+            資料處理服務命令(基底)類別
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceCommand.#ctor">
+            <summary>
+            建構服務命令
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceCommand.#ctor(System.String,Fuju.Web.Services.ServiceParameter[])">
+            <summary>
+            建構服務命令
+            </summary>
+            <param name="commandName">指定命令名稱。</param>
+            <param name="parameters">指定命令參數陣列。</param>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceCommand.#ctor(System.String,Fuju.Web.Services.ServiceParameterList)">
+            <summary>
+            建構服務命令
+            </summary>
+            <param name="commandName">指定命令名稱。</param>
+            <param name="parameters">指定命令參數陣列。</param>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceCommand.Create(Fuju.Web.Services.IServiceCommand)">
+            <summary>
+            建立查詢命令類別物件
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Fuju.Web.Services.ServiceParameter">
+            <summary>
+            服務命令參數類別
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Services.ServiceParameter.Key">
+            <summary>
+            參數索引鍵，預設值為空字串
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Services.ServiceParameter.IsArray">
+            <summary>
+            參數資料是否為陣列，預設值為 false (請盡可能使用 TrySetData 方法來變更此屬性)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Services.ServiceParameter.DataTypeFullName">
+            <summary>
+            參數資料的實體型別全名，預設值為 null (請盡可能使用 TrySetData 方法來變更此屬性)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Services.ServiceParameter.ExtraTypeFullNames">
+            <summary>
+            參數資料的序列化用額外型別全名，預設值為 null (請盡可能使用 TrySetData 方法來變更此屬性)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Services.ServiceParameter.DataXml">
+            <summary>
+            參數資料的序列化 Xml，預設值為 null (請盡可能使用 TrySetData 方法來變更此屬性)
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceParameter.#ctor">
+            <summary>
+            建構服務命令參數
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceParameter.#ctor(System.String,System.Boolean,System.String,System.String[],System.String)">
+            <summary>
+            建構服務命令參數
+            </summary>
+            <param name="key">指定參數索引鍵。</param>
+            <param name="isArray">指定參數資料是否為陣列。</param>
+            <param name="typeFullName">指定參數資料的實體型別全名。</param>
+            <param name="extraTypeFullNames">指定參數資料的序列化用額外型別全名。</param>
+            <param name="dataXml">指定參數資料的序列化 Xml</param>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceParameter.#ctor(System.String,System.Object)">
+            <summary>
+            建構服務命令參數
+            </summary>
+            <param name="key">指定參數索引鍵。</param>
+            <param name="data">指定參數參數資料。</param>
+            <exception cref="T:System.ArgumentException">回傳資料序列化失敗時，會丟出此列外。</exception>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceParameter.#ctor(System.String,System.Object,System.Type)">
+            <summary>
+            建構服務命令參數 (使用明確型別 XML 序列化)
+            </summary>
+            <param name="key">指定參數索引鍵。</param>
+            <param name="data">指定參數參數資料。</param>
+            <param name="dataType">指定參數資料的實體型別。不可為 null、object、介面、抽象、繼承 IDictionary 型別、未宣告 Serializable 屬性、有宣告 XmlIgnore、Obsolete 屬性。</param>
+            <exception cref="T:System.ArgumentException">回傳資料序列化失敗時，會丟出此列外。</exception>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceParameter.#ctor(System.String,System.Object,System.Type,System.Type[])">
+            <summary>
+            建構服務命令參數 (使用明確型別 XML 序列化)
+            </summary>
+            <param name="key">指定參數索引鍵。</param>
+            <param name="data">指定參數參數資料。</param>
+            <param name="dataType">指定參數資料的實體型別。不可為 null、object、介面、抽象、繼承 IDictionary 型別、未宣告 Serializable 屬性、有宣告 XmlIgnore、Obsolete 屬性。</param>
+            <param name="extraTypes">指定回傳資料的序列化用額外型別，不可包含 null、實值、字串、object、介面、抽象、object、繼承 IDictionary 型別、未宣告 Serializable 屬性、有宣告 XmlIgnore、Obsolete 屬性。</param>
+            <exception cref="T:System.ArgumentException">回傳資料序列化失敗時，會丟出此列外。</exception>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceParameter.IsReady">
+            <summary>
+            取得服務命令參數是否已準備好
+            </summary>
+            <returns>Key 與 TypeFullName 有資料則傳回 true，否則傳回 false</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceParameter.TrySetData(System.Object)">
+            <summary>
+            設定參數資料 (XML 序列化)
+            </summary>
+            <param name="data">指定參數資料。傳入 null 時，DataTypeFullName 為 typeof(object).FullName，方法傳回 true。</param>
+            <returns>成功 (可序列化) 傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceParameter.TrySetDataExplicitly(System.Object,System.Type)">
+            <summary>
+            設定參數資料 (使用明確型別 XML 序列化)
+            </summary>
+            <param name="data">指定參數資料。</param>
+            <param name="dataType">指定參數資料的實體型別。不可為 null、object、介面、抽象、繼承 IDictionary 型別、未宣告 Serializable 屬性、有宣告 XmlIgnore、Obsolete 屬性。</param>
+            <returns>成功 (可序列化) 傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceParameter.TrySetDataExplicitly(System.Object,System.Type,System.Type[])">
+            <summary>
+            設定參數資料 (使用明確型別 XML 序列化)
+            </summary>
+            <param name="data">指定參數資料。</param>
+            <param name="dataType">指定參數資料的實體型別。不可為 null、object、介面、抽象、繼承 IDictionary 型別、未宣告 Serializable 屬性、有宣告 XmlIgnore、Obsolete 屬性。</param>
+            <param name="extraTypes">指定參數資料的序列化用額外型別，不可包含 null、實值、字串、object、介面、抽象、object、繼承 IDictionary 型別、未宣告 Serializable 屬性、有宣告 XmlIgnore、Obsolete 屬性。</param>
+            <returns>成功 (可序列化) 傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceParameter.TrySetDataExplicitly``1(``0)">
+            <summary>
+            設定參數資料 (使用明確型別 XML 序列化)
+            </summary>
+            <typeparam name="T">指定參數資料的實體型別。不可為 null、object、介面、抽象、繼承 IDictionary 型別、未宣告 Serializable 屬性、有宣告 XmlIgnore、Obsolete 屬性。</typeparam>
+            <param name="data">指定參數資料。</param>
+            <returns>成功 (可序列化) 傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceParameter.TryGetData(System.Object@)">
+            <summary>
+            取得設定參數資料 (反 XML 序列化)
+            </summary>
+            <param name="data">成功傳回參數資料，否則傳回 null。</param>
+            <returns>成功 (可反序列化) 傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceParameter.TryGetData``1(``0@)">
+            <summary>
+            取得設定參數資料 (反 XML 序列化)，並轉成指定型別 (注意：null 可轉成任何參考型別，但實際型別可能不能轉型)
+            </summary>
+            <typeparam name="T">指定轉型型別。</typeparam>
+            <param name="data">成功傳回轉型後參數資料，否則傳回 default(T)。</param>
+            <returns>成功 (可反序列化且可轉型) 傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceParameter.TryGetData``1(``0[]@)">
+            <summary>
+            取得設定參數資料 (反 XML 序列化)，並轉成指定型別的陣列 (注意：null 可轉成任何型別的陣列，但實際型別可能不能轉型)
+            </summary>
+            <typeparam name="T">指定轉型型別。</typeparam>
+            <param name="datas">成功傳回轉型後參數資料，否則傳回 default(T[])。</param>
+            <returns>成功 (可反序列化且可轉型) 傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="T:Fuju.Web.Services.ServiceParameterList">
+            <summary>
+            服務命令參數集合類別
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceParameterList.#ctor">
+            <summary>
+            建構服務命令參數集合
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceParameterList.#ctor(System.Int32)">
+            <summary>
+            建構服務命令參數集合，並指定集合初始容量大小
+            </summary>
+            <param name="capacity">指定集合初始容量大小</param>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceParameterList.#ctor(System.Collections.Generic.IEnumerable{Fuju.Web.Services.ServiceParameter})">
+            <summary>
+            建構服務命令參數集合，並指定集合包含的元素
+            </summary>
+            <param name="collection">指定集合包含的元素</param>
+        </member>
+        <member name="P:Fuju.Web.Services.ServiceParameterList.Item(System.String)">
+            <summary>
+            取得指定參數 Key的元素
+            </summary>
+            <param name="key">指定參數 Key</param>
+            <returns>如有該索引鍵則傳回元素，否則傳回 null</returns>
+        </member>
+        <member name="P:Fuju.Web.Services.ServiceParameterList.Keys">
+            <summary>
+            取得所有參數 Key (請注意避免在迴圈中直接使用)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Services.ServiceParameterList.DataTypeFullNames">
+            <summary>
+            取得所有參數資料型別 (請注意避免在迴圈中直接使用)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.Services.ServiceParameterList.DataXmls">
+            <summary>
+            取得所有參數資料 (請注意避免在迴圈中直接使用)
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceParameterList.GetKeyFirstIndex(System.String)">
+            <summary>
+            取得指定參數 Key的索引值
+            </summary>
+            <param name="key">指定參數 Key</param>
+            <returns>如有該索引鍵則傳回索引值，否則傳回 -1</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceParameterList.GetKeyFirstIndex(System.String,System.StringComparison)">
+            <summary>
+            取得指定參數 Key的索引值
+            </summary>
+            <param name="key">指定參數 Key</param>
+            <param name="comparisonType">比較參數 Key的規則</param>
+            <returns>如有該索引鍵則傳回索引值，否則傳回 -1</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceParameterList.Add(System.String,System.Object)">
+            <summary>
+            加入指定參數 Key、參數資料至集合結尾
+            </summary>
+            <param name="key">指定參數 Key</param>
+            <param name="data">指定參數資料</param>
+            <returns>傳回集合自己</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceParameterList.Add(System.String,System.Object,System.Type)">
+            <summary>
+            加入指定參數 Key、參數資料與參數資料型別至集合結尾
+            </summary>
+            <param name="key">指定參數 Key</param>
+            <param name="data">指定參數資料</param>
+            <param name="dataType">指定參數資料型別</param>
+            <returns>傳回集合自己</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceParameterList.TryGetData(System.String,System.Object)">
+            <summary>
+            嘗試取得指定參數 Key的參數資料
+            </summary>
+            <param name="key">指定參數 Key</param>
+            <param name="defaultValue">指定預設值，如果無該參數 Key或參數資料的型別不相同則傳回此參數</param>
+            <returns>成功傳回指定參數 Key的參數資料，否則傳回指定預設值</returns>
+        </member>
+        <member name="M:Fuju.Web.Services.ServiceParameterList.TryGetData``1(System.String,``0)">
+            <summary>
+            嘗試取得指定參數 Key的參數資料，並轉成指定型別
+            </summary>
+            <typeparam name="T">指定轉成型別</typeparam>
+            <param name="key">指定參數 Key</param>
+            <param name="defaultValue">指定預設值，如果無該參數 Key或參數資料的型別不相同則傳回此參數</param>
+            <returns>成功傳回指定參數 Key的參數資料，否則傳回指定預設值</returns>
+        </member>
+        <member name="T:Fuju.Web.Services.ServiceStatusCode">
+            <summary>
+            Web Service 層狀態代碼定義抽象類別 (未整理完)
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.ServiceStatusCode.P_LOST_SERVICE_ACCOUNT">
+            <summary>
+            缺少或無效的服務帳密
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.ServiceStatusCode.P_LOST_COMMAND">
+            <summary>
+            缺少或無效的服務命令
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.ServiceStatusCode.P_LOST_PARAMETER">
+            <summary>
+            缺少或無效的服務命令參數
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.ServiceStatusCode.P_LOST_ASKER">
+            <summary>
+            缺少或無效的服務請求者參數
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.ServiceStatusCode.P_DISALLOW_IP">
+            <summary>
+            不允許的 IP
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.ServiceStatusCode.S_SERVICE_NOT_READY">
+            <summary>
+            服務還未準備好 (組態設定不正確、服務命令未實作 ...)
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.ServiceStatusCode.S_SERVICE_SERIALIZED_FAILURE">
+            <summary>
+            序列化服務資料失敗
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.Services.ServiceStatusCode.S_SERVICE_DESERIALIZED_FAILURE">
+            <summary>
+            反序列化服務資料失敗
+            </summary>
+        </member>
+        <member name="T:Fuju.Web.ServiceSetting">
+            <summary>
+            服務設定
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.ServiceSetting.ApSCode">
+            <summary>
+            呼叫服務的應用程式的系統代碼
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.ServiceSetting.ApName">
+            <summary>
+            呼叫服務的應用程式的名稱
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.ServiceSetting.ApMCode">
+            <summary>
+            呼叫服務的應用程式的機台代碼
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.ServiceSetting.ApACode">
+            <summary>
+            呼叫服務的應用程式的授權代碼
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.ServiceSetting.AllowIPRegex">
+            <summary>
+            允許 IP 的規則運算式 (預設 localhost)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.ServiceSetting.DBConfigNames">
+            <summary>
+            使用資料庫組態項目名稱
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.ServiceSetting.#ctor(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            建構服務設定
+            </summary>
+            <param name="apSCode">呼叫服務的應用程式的系統代碼，如果系統代碼不指定，表示不檢查代碼</param>
+            <param name="apName">呼叫服務的應用程式的名稱</param>
+            <param name="apMCode">呼叫服務的應用程式的機台代碼，如果系統代碼與機台代碼皆不指定，表示不檢查機台代碼</param>
+            <param name="apACode">呼叫服務的應用程式的授權代碼，如果機台代碼與授權代碼皆不指定，表示不檢查授權代碼</param>
+            <param name="allowIPPattern">允許 IP 的規則運算式 Pattern，如果不指定表示只允許 localhost，如果傳入 "*" 表示不檢查 IP</param>
+            <param name="dbConfigNames">使用資料庫組態項目名稱集，各項目名稱以逗號區隔</param>
+        </member>
+        <member name="M:Fuju.Web.ServiceSetting.IsEmpty">
+            <summary>
+            取得服務設定是否無資料
+            </summary>
+            <returns>呼叫服務的應用程式的系統代碼、名稱、機台代碼、授權代碼與允許 IP、資料庫組態項目名稱皆未設定則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.ServiceSetting.CheckIP(System.String)">
+            <summary>
+            檢查呼叫服務的IP是否允許
+            </summary>
+            <param name="ip">呼叫服務的IP</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Web.ServiceSetting.CheckAccount(System.String,System.String,System.String)">
+            <summary>
+            檢查呼叫服務的應用程式系統代碼、機台代碼與授權代碼是否正確 (應用程式的系統代碼與機台代碼不分大小寫)
+            </summary>
+            <param name="apSCode">呼叫服務的應用程式的系統代碼</param>
+            <param name="apMCode">呼叫服務的應用程式的機台代碼</param>
+            <param name="apACode">呼叫服務的應用程式的授權代碼</param>
+            <returns>正確傳回 true，否則傳回 false</returns>
+        </member>
+        <member name="M:Fuju.Web.ServiceSetting.IPToIPPattern(System.String)">
+            <summary>
+            將 IP 轉成 IP 檢查規則運算式 Pattern
+            </summary>
+            <param name="ip">要轉換的 IP</param>
+            <returns>傳回 IP 檢查規則運算式 Pattern</returns>
+        </member>
+        <member name="T:Fuju.Web.WebCommon">
+            <summary>
+            Web 共用方法類別
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.WebCommon.GetClientIP">
+            <summary>
+            取得客戶端 (瀏覽器) IP
+            </summary>
+            <returns>成功則傳回客戶端 IP，否則傳回空字串。</returns>
+        </member>
+        <member name="F:Fuju.Web.WebCommon._HasJSSingleQuotesRegex">
+            <summary>
+            儲存驗證「(JavaScript 格式化用)包含單引號字元」的規則運算式 的變數
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.WebCommon._HasJSDoubleQuotesRegex">
+            <summary>
+            儲存驗證「(JavaScript 格式化用)包含雙引號字元」的規則運算式 的變數
+            </summary>
+        </member>
+        <member name="F:Fuju.Web.WebCommon._HasJSNewLineRegex">
+            <summary>
+            儲存驗證「(JavaScript 格式化用)包含換行字元」的規則運算式 的變數
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.WebCommon.GetHasJSSingleQuotesRegex">
+            <summary>
+            取得驗證「(JavaScript 格式化用)包含單引號字元」的規則運算式
+            </summary>
+            <returns>傳回「(JavaScript 格式化用)包含單引號字元」的規則運算式。</returns>
+        </member>
+        <member name="M:Fuju.Web.WebCommon.GetHasJSDoubleQuotesRegex">
+            <summary>
+            取得驗證「(JavaScript 格式化用)包含雙引號字元」的規則運算式
+            </summary>
+            <returns>傳回「(JavaScript 格式化用)包含雙引號字元」的規則運算式。</returns>
+        </member>
+        <member name="M:Fuju.Web.WebCommon.GetHasJSNewLineRegex">
+            <summary>
+            取得驗證「包含 JavaScript 用換行字元」的規則運算式
+            </summary>
+            <returns>傳回「包含 JavaScript 用換行字元」的規則運算式。</returns>
+        </member>
+        <member name="M:Fuju.Web.WebCommon.FormatJSSingleQuotes(System.String)">
+            <summary>
+            替換單引號與換行字元成 JavaScript 用的字串
+            </summary>
+            <param name="text">指定要處理的字串。(傳入 null 則傳回空字串)</param>
+            <returns>傳回處理後的字串。</returns>
+        </member>
+        <member name="M:Fuju.Web.WebCommon.FormatJSDoubleQuotes(System.String)">
+            <summary>
+            替換雙引號與換行字元成 JavaScript 用的字串
+            </summary>
+            <param name="text">指定要處理的字串。(傳入 null 則傳回空字串)</param>
+            <returns>傳回處理後的字串。</returns>
+        </member>
+        <member name="M:Fuju.Web.WebCommon.SetListControlSelectedValue(System.Web.UI.WebControls.ListControl,System.String)">
+            <summary>
+            設定清單型別控制項 (ListControl) 的選取項目值 (SelectedValue)
+            </summary>
+            <param name="control">指定清單型別控制項。</param>
+            <param name="selectedValue">指定選取項目值。</param>
+        </member>
+        <member name="M:Fuju.Web.WebCommon.SetDropDownListSelectedValue(System.Web.UI.WebControls.DropDownList,System.String)">
+            <summary>
+            設定下拉式清單控制項 (DropDownList) 的選取項目值 (SelectedValue)
+            </summary>
+            <param name="control">指定的下拉式清單控制項。</param>
+            <param name="selectedValue">指定選取項目值。</param>
+        </member>
+        <member name="M:Fuju.Web.WebCommon.SetRadioButtonListSelectedValue(System.Web.UI.WebControls.RadioButtonList,System.String)">
+            <summary>
+            設定選項按鈕控制項 (RadioButtonList) 的選取項目值 (SelectedValue)
+            </summary>
+            <param name="control">指定的下拉式清單控制項。</param>
+            <param name="selectedValue">指定選取項目值。</param>
+        </member>
+        <member name="T:Fuju.Web.XmlResult">
+            <summary>
+            XML 序列化資料處理結果類別 (請盡可能不要直接指定屬性值)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.XmlResult.IsSuccess">
+            <summary>
+            處理結果是否成功，預設值請參考建構式 (請盡可能在建構物件時指定參數)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.XmlResult.Message">
+            <summary>
+            處理結果訊息，預設值請參考建構式 (請盡可能在建構物件時指定參數)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.XmlResult.Code">
+            <summary>
+            處理結果代碼，預設值請參考建構式 (請盡可能在建構物件時指定參數)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.XmlResult.IsArray">
+            <summary>
+            回傳資料是否為陣列，預設值為 false (請盡可能使用 TrySetData 方法來變更此屬性)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.XmlResult.DataTypeFullName">
+            <summary>
+            回傳資料的實體型別全名，預設值為 null (請盡可能使用 TrySetData 方法來變更此屬性)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.XmlResult.ExtraTypeFullNames">
+            <summary>
+            回傳資料的序列化用額外型別全名，預設值為 null (請盡可能使用 TrySetData 方法來變更此屬性)
+            </summary>
+        </member>
+        <member name="P:Fuju.Web.XmlResult.DataXml">
+            <summary>
+            回傳資料的序列化 Xml，預設值為 null (請盡可能使用 TrySetData 方法來變更此屬性)
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.XmlResult.#ctor">
+            <summary>
+            建構 XML 序列化資料處理結果 
+            (預設值：IsSuccess 為 false，Message 為 空字串，Code 為 CoreStatusCode.UNKNOWN_ERROR)
+            </summary>
+        </member>
+        <member name="M:Fuju.Web.XmlResult.#ctor(System.Boolean)">
+            <summary>
+            建構 XML 序列化資料處理結果
+            (預設值：Message 為 空字串，isSuccess 為 true 時 Code 為  CoreStatusCode.NORMAL_STATUS 否則為 CoreStatusCode.UNKNOWN_ERROR)
+            </summary>
+            <param name="isSuccess">指定處理結果是否成功。</param>
+        </member>
+        <member name="M:Fuju.Web.XmlResult.#ctor(System.Boolean,System.String)">
+            <summary>
+            建構序列化 Xml 資料的處理結果
+            (預設值：isSuccess 為 true 時 Code 為  CoreStatusCode.NORMAL_STATUS 否則為 CoreStatusCode.UNKNOWN_ERROR)
+            </summary>
+            <param name="isSuccess">指定處理結果是否成功。</param>
+            <param name="message">指定處理結果訊息。</param>
+        </member>
+        <member name="M:Fuju.Web.XmlResult.#ctor(System.Boolean,System.String,System.String)">
+            <summary>
+            建構序列化 Xml 資料的處理結果
+            </summary>
+            <param name="isSuccess">指定處理結果是否成功。</param>
+            <param name="message">指定處理結果訊息。</param>
+            <param name="code">指定處理結果代碼。</param>
+        </member>
+        <member name="M:Fuju.Web.XmlResult.#ctor(System.Boolean,System.String,System.String,System.Boolean,System.String,System.String[],System.String)">
+            <summary>
+            建構序列化 Xml 資料的處理結果
+            </summary>
+            <param name="isSuccess">指定處理結果是否成功。</param>
+            <param name="message">指定處理結果訊息。</param>
+            <param name="code">指定處理結果代碼。</param>
+            <param name="isArray">指定回傳資料是否為陣列。</param>
+            <param name="dataTypeFullName">指定回傳資料的實體型別全名。</param>
+            <param name="extraTypeFullNames">指定回傳資料的序列化用額外型別全名。</param>
+            <param name="dataxml">指定回傳資料的序列化 Xml。</param>
+        </member>
+        <member name="M:Fuju.Web.XmlResult.#ctor(System.Boolean,System.String,System.String,System.Object)">
+            <summary>
+            建構序列化 Xml 資料的處理結果
+            </summary>
+            <param name="isSuccess">指定處理結果是否成功。</param>
+            <param name="message">指定處理結果訊息。</param>
+            <param name="code">指定處理結果代碼。</param>
+            <param name="data">指定回傳資料。</param>
+            <exception cref="T:System.ArgumentNullException">回傳資料序列化失敗時，會丟出此列外。</exception>
+        </member>
+        <member name="M:Fuju.Web.XmlResult.#ctor(Fuju.Result)">
+            <summary>
+            建構序列化 Xml 資料的處理結果
+            </summary>
+            <param name="result">指定處理結果。</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Fuju.Web.XmlResult.#ctor(Fuju.Result,System.Object)">
+            <summary>
+            建構序列化 Xml 資料的處理結果
+            </summary>
+            <param name="result">指定處理結果。</param>
+            <param name="data">指定回傳資料。</param>
+            <exception cref="T:System.ArgumentNullException">回傳資料序列化失敗時，會丟出此列外。</exception>
+        </member>
+        <member name="M:Fuju.Web.XmlResult.#ctor(Fuju.Result,System.Object,System.Type)">
+            <summary>
+            建構序列化 Xml 資料的處理結果 (使用明確型別 XML 序列化)
+            </summary>
+            <param name="result">指定處理結果。</param>
+            <param name="data">指定回傳資料。</param>
+            <param name="dataType">指定回傳資料的實體型別。不可為 null、object、介面、抽象、繼承 IDictionary 型別、未宣告 Serializable 屬性、有宣告 XmlIgnore、Obsolete 屬性。</param>
+            <exception cref="T:System.ArgumentNullException">回傳資料序列化失敗時，會丟出此列外。</exception>
+        </member>
+        <member name="M:Fuju.Web.XmlResult.#ctor(Fuju.Result,System.Object,System.Type,System.Type[])">
+            <summary>
+            建構序列化 Xml 資料的處理結果 (使用明確型別 XML 序列化)
+            </summary>
+            <param name="result">指定處理結果。</param>
+            <param name="data">指定回傳資料。</param>
+            <param name="dataType">指定回傳資料的實體型別。不可為 null、object、介面、抽象、繼承 IDictionary 型別、未宣告 Serializable 屬性、有宣告 XmlIgnore、Obsolete 屬性。</param>
+            <param name="extraTypes">指定回傳資料的序列化用額外型別，不可包含 null、實值、字串、object、介面、抽象、object、繼承 IDictionary 型別、未宣告 Serializable 屬性、有宣告 XmlIgnore、Obsolete 屬性。</param>
+            <exception cref="T:System.ArgumentNullException">回傳資料序列化失敗時，會丟出此列外。</exception>
+        </member>
+        <member name="M:Fuju.Web.XmlResult.HasData">
+            <summary>
+            取得是否有資料
+            </summary>
+            <returns>_DataXml 與 _DataTypeFullName 皆有資料 傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.XmlResult.IsDataNull">
+            <summary>
+            取得料是否為 Null
+            </summary>
+            <returns>_DataXml 無資料 且 _DataTypeFullName 有資料 傳回 true，否則傳回 false</returns>
+        </member>
+        <member name="M:Fuju.Web.XmlResult.TrySetData(System.Object)">
+            <summary>
+            設定回傳資料 (XML 序列化)
+            </summary>
+            <param name="data">指定回傳資料。傳入 null 時，DataTypeFullName 為 typeof(object).FullName，方法傳回 true。</param>
+            <returns>成功 (可序列化) 傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.XmlResult.TrySetDataExplicitly(System.Object,System.Type)">
+            <summary>
+            設定回傳資料 (使用明確型別 XML 序列化)
+            </summary>
+            <param name="data">指定回傳資料。</param>
+            <param name="dataType">指定回傳資料的實體型別。不可為 null、object、介面、抽象、繼承 IDictionary 型別、未宣告 Serializable 屬性、有宣告 XmlIgnore、Obsolete 屬性。</param>
+            <returns>成功 (可序列化) 傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.XmlResult.TrySetDataExplicitly(System.Object,System.Type,System.Type[])">
+            <summary>
+            設定回傳資料 (使用明確型別 XML 序列化)
+            </summary>
+            <param name="data">指定回傳資料。</param>
+            <param name="dataType">指定回傳資料的實體型別。不可為 null、object、介面、抽象、繼承 IDictionary 型別、未宣告 Serializable 屬性、有宣告 XmlIgnore、Obsolete 屬性。</param>
+            <param name="extraTypes">指定回傳資料的序列化用額外型別，不可包含 null、實值、字串、object、介面、抽象、object、繼承 IDictionary 型別、未宣告 Serializable 屬性、有宣告 XmlIgnore、Obsolete 屬性。</param>
+            <returns>成功 (可序列化) 傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.XmlResult.TrySetDataExplicitly``1(``0)">
+            <summary>
+            設定回傳資料 (使用明確型別 XML 序列化)
+            </summary>
+            <typeparam name="T">指定回傳資料的實體型別。不可為 null、object、介面、抽象、繼承 IDictionary 型別、未宣告 Serializable 屬性、有宣告 XmlIgnore、Obsolete 屬性。</typeparam>
+            <param name="data">指定回傳資料。</param>
+            <returns>成功 (可序列化) 傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.XmlResult.TryGetData(System.Object@)">
+            <summary>
+            取得回傳資料 (反 XML 序列化)
+            </summary>
+            <param name="data">成功傳回回傳資料，否則傳回 null。</param>
+            <returns>成功 (可反序列化) 傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.XmlResult.TryGetData``1(``0@)">
+            <summary>
+            取得回傳資料 (反 XML 序列化)，並轉成指定型別 (注意：null 可轉成任何參考型別，但實際型別可能不能轉型)
+            </summary>
+            <typeparam name="T">指定轉型型別。</typeparam>
+            <param name="data">成功傳回轉型後回傳資料，否則傳回 default(T)。</param>
+            <returns>成功 (可反序列化且可轉型) 傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.XmlResult.TryGetData``1(``0[]@)">
+            <summary>
+            取得回傳資料 (反 XML 序列化)，並轉成指定型別的陣列 (注意：null 可轉成任何型別的陣列，但實際型別可能不能轉型)
+            </summary>
+            <typeparam name="T">指定轉型型別。</typeparam>
+            <param name="datas">成功傳回轉型後資料，否則傳回 default(T[])。</param>
+            <returns>成功 (可反序列化且可轉型) 傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.XmlResult.LoadXml(System.String)">
+            <summary>
+            載入反 XML 序列化字串 (此方法已過期)
+            </summary>
+            <param name="xml">指定要反 XML 序列化字串。</param>
+            <returns>成功傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Web.XmlResult.ToXml">
+            <summary>
+            取得 XML 序列化字串
+            </summary>
+            <returns>成功傳回序列化後的 XML 字串，否則傳回 null。</returns>
+        </member>
+        <member name="M:Fuju.Web.XmlResult.Create``1(System.String)">
+            <summary>
+            建立指定型別與反 XML 序列化字串的 XmlResult (含繼承類別) 實體物件
+            </summary>
+            <typeparam name="T">指定型別。</typeparam>
+            <param name="xml">指定反 XML 序列化字串。</param>
+            <returns>成功傳回反 XML 序列化後的 T 物件，否則傳回 default(T)。</returns>
+        </member>
+        <member name="M:Fuju.Web.XmlResult.Create(System.String)">
+            <summary>
+            建立反 XML 序列化字串的 XmlResult 實體物件，繼承者必需 override 此方法
+            </summary>
+            <param name="xml">指定反 XML 序列化字串。</param>
+            <returns>成功傳回反 XML 序列化後的 XmlResult 物件，否則傳回 null。</returns>
+        </member>
+    </members>
+</doc>

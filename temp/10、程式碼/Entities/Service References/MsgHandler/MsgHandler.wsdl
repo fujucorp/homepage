@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.cedar.com.tw/bluestar/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.cedar.com.tw/bluestar/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.cedar.com.tw/bluestar/">
+      <s:element name="SubmitXmlSync">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="1" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitXmlSyncResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="1" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitXml">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="1" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitXmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SubmitXmlResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="response">
+              <s:complexType>
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitXmlStringRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sRequest" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitXmlStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SubmitXmlStringResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponse" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitFlatFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="msgName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitFlatFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SubmitFlatFileResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="response" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FlatFile2XmlString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MsgName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tota" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FlatFile2XmlStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FlatFile2XmlStringResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="XmlString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FlatFile2XmlElement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MsgName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tota" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FlatFile2XmlElementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FlatFile2XmlElementResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RequestXmlElement">
+              <s:complexType>
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XmlString2FlatFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlRequest" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XmlString2FlatFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="XmlString2FlatFileResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="tita" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SubmitXmlSyncSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitXmlSync" />
+  </wsdl:message>
+  <wsdl:message name="SubmitXmlSyncSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitXmlSyncResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubmitXmlSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitXml" />
+  </wsdl:message>
+  <wsdl:message name="SubmitXmlSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubmitXmlStringSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitXmlStringRequest" />
+  </wsdl:message>
+  <wsdl:message name="SubmitXmlStringSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitXmlStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubmitFlatFileSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitFlatFile" />
+  </wsdl:message>
+  <wsdl:message name="SubmitFlatFileSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitFlatFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="FlatFile2XmlStringSoapIn">
+    <wsdl:part name="parameters" element="tns:FlatFile2XmlString" />
+  </wsdl:message>
+  <wsdl:message name="FlatFile2XmlStringSoapOut">
+    <wsdl:part name="parameters" element="tns:FlatFile2XmlStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="FlatFile2XmlElementSoapIn">
+    <wsdl:part name="parameters" element="tns:FlatFile2XmlElement" />
+  </wsdl:message>
+  <wsdl:message name="FlatFile2XmlElementSoapOut">
+    <wsdl:part name="parameters" element="tns:FlatFile2XmlElementResponse" />
+  </wsdl:message>
+  <wsdl:message name="XmlString2FlatFileSoapIn">
+    <wsdl:part name="parameters" element="tns:XmlString2FlatFile" />
+  </wsdl:message>
+  <wsdl:message name="XmlString2FlatFileSoapOut">
+    <wsdl:part name="parameters" element="tns:XmlString2FlatFileResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MsgHandlerSoap">
+    <wsdl:operation name="SubmitXmlSync">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">SubmitXml Message to BlueStar</wsdl:documentation>
+      <wsdl:input message="tns:SubmitXmlSyncSoapIn" />
+      <wsdl:output message="tns:SubmitXmlSyncSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitXml">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Submit Xml Message to BlueStar return statusCode</wsdl:documentation>
+      <wsdl:input message="tns:SubmitXmlSoapIn" />
+      <wsdl:output message="tns:SubmitXmlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitXmlString">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Submit Xml String</wsdl:documentation>
+      <wsdl:input message="tns:SubmitXmlStringSoapIn" />
+      <wsdl:output message="tns:SubmitXmlStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitFlatFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Submit FlatFile TG to BlueStar</wsdl:documentation>
+      <wsdl:input message="tns:SubmitFlatFileSoapIn" />
+      <wsdl:output message="tns:SubmitFlatFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FlatFile2XmlString">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">FlatFile to Xml</wsdl:documentation>
+      <wsdl:input message="tns:FlatFile2XmlStringSoapIn" />
+      <wsdl:output message="tns:FlatFile2XmlStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FlatFile2XmlElement">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">FlatFile to Xml Element</wsdl:documentation>
+      <wsdl:input message="tns:FlatFile2XmlElementSoapIn" />
+      <wsdl:output message="tns:FlatFile2XmlElementSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="XmlString2FlatFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">XmlString to flatfile tita</wsdl:documentation>
+      <wsdl:input message="tns:XmlString2FlatFileSoapIn" />
+      <wsdl:output message="tns:XmlString2FlatFileSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MsgHandlerSoap" type="tns:MsgHandlerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SubmitXmlSync">
+      <soap:operation soapAction="http://www.cedar.com.tw/bluestar/SubmitXmlSync" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitXml">
+      <soap:operation soapAction="http://www.cedar.com.tw/bluestar/submitXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitXmlString">
+      <soap:operation soapAction="http://www.cedar.com.tw/bluestar/SubmitXmlString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitFlatFile">
+      <soap:operation soapAction="http://www.cedar.com.tw/bluestar/submitFlatFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FlatFile2XmlString">
+      <soap:operation soapAction="http://www.cedar.com.tw/bluestar/FlatFile2XmlString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FlatFile2XmlElement">
+      <soap:operation soapAction="http://www.cedar.com.tw/bluestar/FlatFile2XmlElement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XmlString2FlatFile">
+      <soap:operation soapAction="http://www.cedar.com.tw/bluestar/XmlStringToFlatFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MsgHandlerSoap12" type="tns:MsgHandlerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SubmitXmlSync">
+      <soap12:operation soapAction="http://www.cedar.com.tw/bluestar/SubmitXmlSync" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitXml">
+      <soap12:operation soapAction="http://www.cedar.com.tw/bluestar/submitXml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitXmlString">
+      <soap12:operation soapAction="http://www.cedar.com.tw/bluestar/SubmitXmlString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitFlatFile">
+      <soap12:operation soapAction="http://www.cedar.com.tw/bluestar/submitFlatFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FlatFile2XmlString">
+      <soap12:operation soapAction="http://www.cedar.com.tw/bluestar/FlatFile2XmlString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FlatFile2XmlElement">
+      <soap12:operation soapAction="http://www.cedar.com.tw/bluestar/FlatFile2XmlElement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XmlString2FlatFile">
+      <soap12:operation soapAction="http://www.cedar.com.tw/bluestar/XmlStringToFlatFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MsgHandler">
+    <wsdl:port name="MsgHandlerSoap" binding="tns:MsgHandlerSoap">
+      <soap:address location="https://cpportal.landbankt.com.tw/BlueStar/MsgHandler.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MsgHandlerSoap12" binding="tns:MsgHandlerSoap12">
+      <soap12:address location="https://cpportal.landbankt.com.tw/BlueStar/MsgHandler.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

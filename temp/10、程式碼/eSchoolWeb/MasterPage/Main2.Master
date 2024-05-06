@@ -1,0 +1,90 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main2.Master.cs" Inherits="eSchoolWeb.Main2" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>土地銀行 - 代收學雜費服務網</title>
+    <link type="text/css" rel="stylesheet" href="/css/whole.css" />
+    <link type="text/css" rel="stylesheet" href="/css/content.css" />
+    <link type="text/css" rel="stylesheet" href="/css/verticalmenu.css" />
+    <link type="text/css" rel="stylesheet" href="/css/jquery-ui.css" />
+
+    <script type="text/javascript" language="javascript" src="/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" language="javascript" src="/js/jquery-ui.js"></script>
+    <script type="text/javascript" language="javascript" src="/js/datepicker-zh-TW.js"></script>
+    <script type="text/javascript" language="javascript" src="/js/common.js"></script>
+
+    <style type="text/css">
+        #webTitle a, .title p, .masthead p, .button  {
+            font-family: 蘋果儷中黑, 微軟正黑體, 新細明體, Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            display: none;
+        }
+    </style>
+    <script type="text/javascript" language="javascript">
+        //if (top != self) {
+        //    top.location = self.location
+        //}
+        if (self === top) {
+            document.documentElement.style.display = 'initial';
+        }
+        else {
+            top.location = decodeURIComponent(self.location);
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="HeadPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <div id="container">
+            <!--begin of header------------------------------------------------------------------------>
+            <uc:UCPageHeader runat="server" ID="UCPageHeader" />
+            <!--end of header-->
+
+            <!--begin of bg---------------------------------------------------------------------------->
+            <div id="bg">
+                <!--begin of content------------------------------------------------------------------->
+                <div id="content">
+                    <!--begin of menu------------------------------------------------------------------>
+                    <uc:UCPageMenu ID="ucPageMenu" runat="server" />
+                    <!--end of menu-->
+
+                    <!--begin of main------------------------------------------------------------------>
+                    <div id="main" class="pbox">
+                        <br />
+
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+
+                        <asp:Literal ID="litMessage" runat="server" ViewStateMode="Disabled"></asp:Literal>
+                    </div>
+                    <!--end of main-->
+
+                </div>
+                <!--end of content-->
+            </div>
+            <!--end of bg-->
+            <!--begin of footer---------------------------------------------------------------->
+            <uc:UCFooter ID="ucFooter1" runat="server" />
+            <!--end of footer-->
+        </div>
+    </form>
+</body>
+
+<script type="text/javascript" language="javascript">
+    $(function () {
+        var opt = {
+            showButtonPanel: false,
+            dateFormat: "yy/mm/dd",
+            changeYear: true,
+            changeMonth: true,
+        }
+        $(".datepicker").datepicker(opt);
+    });
+</script>
+</html>

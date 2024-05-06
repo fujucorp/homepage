@@ -1,0 +1,799 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CTL_BTN_GoFirstPage" xml:space="preserve">
+    <value>最前頁</value>
+  </data>
+  <data name="CTL_BTN_GoLastPage" xml:space="preserve">
+    <value>最後頁</value>
+  </data>
+  <data name="CTL_BTN_GoNextPage" xml:space="preserve">
+    <value>下一頁</value>
+  </data>
+  <data name="CTL_BTN_GoPreviousPage" xml:space="preserve">
+    <value>上一頁</value>
+  </data>
+  <data name="CTL_BTN_修改" xml:space="preserve">
+    <value>修改</value>
+  </data>
+  <data name="CTL_BTN_停用" xml:space="preserve">
+    <value>停用</value>
+  </data>
+  <data name="CTL_BTN_列印" xml:space="preserve">
+    <value>列印</value>
+  </data>
+  <data name="CTL_BTN_刪除" xml:space="preserve">
+    <value>刪除</value>
+  </data>
+  <data name="CTL_BTN_啟用" xml:space="preserve">
+    <value>啟用</value>
+  </data>
+  <data name="CTL_BTN_回上一頁" xml:space="preserve">
+    <value>回上一頁</value>
+  </data>
+  <data name="CTL_BTN_新增" xml:space="preserve">
+    <value>新增</value>
+  </data>
+  <data name="CTL_BTN_查詢" xml:space="preserve">
+    <value>查詢</value>
+  </data>
+  <data name="CTL_BTN_確定" xml:space="preserve">
+    <value>確定</value>
+  </data>
+  <data name="CTL_BTN_確認" xml:space="preserve">
+    <value>確認</value>
+  </data>
+  <data name="CTL_BTN_複製" xml:space="preserve">
+    <value>複製</value>
+  </data>
+  <data name="重填" xml:space="preserve">
+    <value>重填</value>
+  </data>
+  <data name="CTL_BTN_離開" xml:space="preserve">
+    <value>離開</value>
+  </data>
+  <data name="CTL_DeleteConfirm" xml:space="preserve">
+    <value>確定刪除此資料</value>
+  </data>
+  <data name="CTL_DisableConfirm" xml:space="preserve">
+    <value>確定停用此資料</value>
+  </data>
+  <data name="CTL_EnableConfirm" xml:space="preserve">
+    <value>確定啟用此資料</value>
+  </data>
+  <data name="CTL_Footer" xml:space="preserve">
+    <value>&lt;p&gt;營業時間：週一至週五  9:00至15:30 總行地址：10047臺北市中正區館前路46號   總行電話： 02-2348-3456  24小時服務電話：  客服中心:02-2314-6633    免費客訴電話：0800-231-590&lt;/p&gt;
+&lt;p&gt;COPYRIGHT© LANDBANK 版權所有:土地銀行 最佳瀏覽效果請使用 Internet Explorer7.0以上 1024x768 解析度&lt;/p&gt;</value>
+  </data>
+  <data name="CTL_MaxPageNo" xml:space="preserve">
+    <value>共&lt;span&gt;{0}&lt;/span&gt;頁</value>
+  </data>
+  <data name="CTL_NoMaintainAuth" xml:space="preserve">
+    <value>無維護權限</value>
+  </data>
+  <data name="CTL_NoPageSize" xml:space="preserve">
+    <value>不分頁</value>
+  </data>
+  <data name="CTL_NoQueryAuth" xml:space="preserve">
+    <value>無查詢權限</value>
+  </data>
+  <data name="CTL_PageNo" xml:space="preserve">
+    <value>第&lt;span&gt;{0}&lt;/span&gt;頁</value>
+  </data>
+  <data name="CTL_RemindChangePWD1" xml:space="preserve">
+    <value>提醒您～您已經6個月未更改密碼。</value>
+  </data>
+  <data name="CTL_RemindChangePWD2" xml:space="preserve">
+    <value>立即更改密碼</value>
+  </data>
+  <data name="CTL_WebTitle" xml:space="preserve">
+    <value>代收學雜費服務網</value>
+  </data>
+  <data name="CTL_Welcome" xml:space="preserve">
+    <value>&lt;p&gt;歡迎光臨！&lt;/p&gt;&lt;p&gt;您已經成功登入代收學雜費服務網站。&lt;/p&gt;</value>
+  </data>
+  <data name="MENU_維護代碼檔" xml:space="preserve">
+    <value>維護代碼檔</value>
+  </data>
+  <data name="上傳" xml:space="preserve">
+    <value>上傳</value>
+  </data>
+  <data name="上傳批號" xml:space="preserve">
+    <value>上傳批號</value>
+  </data>
+  <data name="上傳日期時間" xml:space="preserve">
+    <value>上傳日期時間</value>
+  </data>
+  <data name="上傳檔案格式" xml:space="preserve">
+    <value>上傳檔案格式</value>
+  </data>
+  <data name="上課時數" xml:space="preserve">
+    <value>上課時數</value>
+  </data>
+  <data name="業務別碼" xml:space="preserve">
+    <value>業務別碼</value>
+  </data>
+  <data name="住址" xml:space="preserve">
+    <value>住址</value>
+  </data>
+  <data name="住宿代碼" xml:space="preserve">
+    <value>住宿代碼</value>
+  </data>
+  <data name="住宿名稱" xml:space="preserve">
+    <value>住宿名稱</value>
+  </data>
+  <data name="使用者帳號" xml:space="preserve">
+    <value>使用者帳號</value>
+  </data>
+  <data name="功能" xml:space="preserve">
+    <value>功能</value>
+  </data>
+  <data name="功能名稱" xml:space="preserve">
+    <value>功能名稱</value>
+  </data>
+  <data name="匯款帳號" xml:space="preserve">
+    <value>匯款帳號</value>
+  </data>
+  <data name="匯款銀行代碼" xml:space="preserve">
+    <value>匯款銀行代碼</value>
+  </data>
+  <data name="可貸金額" xml:space="preserve">
+    <value>可貸金額</value>
+  </data>
+  <data name="姓名" xml:space="preserve">
+    <value>姓名</value>
+  </data>
+  <data name="學分基準" xml:space="preserve">
+    <value>學分基準</value>
+  </data>
+  <data name="學分基準代碼" xml:space="preserve">
+    <value>學分基準代碼</value>
+  </data>
+  <data name="學分基準或課程學分數" xml:space="preserve">
+    <value>學分基準(或課程)學分數</value>
+  </data>
+  <data name="學年" xml:space="preserve">
+    <value>學年</value>
+  </data>
+  <data name="學期" xml:space="preserve">
+    <value>學期</value>
+  </data>
+  <data name="學期代碼" xml:space="preserve">
+    <value>學期代碼</value>
+  </data>
+  <data name="學期名稱" xml:space="preserve">
+    <value>學期名稱</value>
+  </data>
+  <data name="學生扣款轉帳銀行代碼" xml:space="preserve">
+    <value>學生扣款轉帳銀行代碼</value>
+  </data>
+  <data name="學生扣款轉帳銀行帳號" xml:space="preserve">
+    <value>學生扣款轉帳銀行帳號</value>
+  </data>
+  <data name="學號" xml:space="preserve">
+    <value>學號</value>
+  </data>
+  <data name="實際所修的學分" xml:space="preserve">
+    <value>實際所修的學分</value>
+  </data>
+  <data name="對照表名稱" xml:space="preserve">
+    <value>對照表名稱</value>
+  </data>
+  <data name="就學貸款可貸金額" xml:space="preserve">
+    <value>就學貸款可貸金額</value>
+  </data>
+  <data name="就貸代碼" xml:space="preserve">
+    <value>就貸代碼</value>
+  </data>
+  <data name="就貸名稱" xml:space="preserve">
+    <value>就貸名稱</value>
+  </data>
+  <data name="就貸金額項目" xml:space="preserve">
+    <value>就貸金額項目</value>
+  </data>
+  <data name="年級" xml:space="preserve">
+    <value>年級</value>
+  </data>
+  <data name="座號" xml:space="preserve">
+    <value>座號</value>
+  </data>
+  <data name="批號" xml:space="preserve">
+    <value>批號</value>
+  </data>
+  <data name="每課程學分單價" xml:space="preserve">
+    <value>每課程學分單價</value>
+  </data>
+  <data name="注意" xml:space="preserve">
+    <value>注意</value>
+  </data>
+  <data name="減免代碼" xml:space="preserve">
+    <value>減免代碼</value>
+  </data>
+  <data name="減免名稱" xml:space="preserve">
+    <value>減免名稱</value>
+  </data>
+  <data name="減免金額項目" xml:space="preserve">
+    <value>減免金額項目</value>
+  </data>
+  <data name="減免類別代碼" xml:space="preserve">
+    <value>減免類別代碼</value>
+  </data>
+  <data name="減免類別名稱" xml:space="preserve">
+    <value>減免類別名稱</value>
+  </data>
+  <data name="狀態" xml:space="preserve">
+    <value>狀態</value>
+  </data>
+  <data name="班別代碼" xml:space="preserve">
+    <value>班別代碼</value>
+  </data>
+  <data name="班別名稱" xml:space="preserve">
+    <value>班別名稱</value>
+  </data>
+  <data name="生日" xml:space="preserve">
+    <value>生日</value>
+  </data>
+  <data name="科系代碼" xml:space="preserve">
+    <value>科系代碼</value>
+  </data>
+  <data name="科系名稱" xml:space="preserve">
+    <value>科系名稱</value>
+  </data>
+  <data name="總學分數" xml:space="preserve">
+    <value>總學分數</value>
+  </data>
+  <data name="繳費金額" xml:space="preserve">
+    <value>繳費金額</value>
+  </data>
+  <data name="複製" xml:space="preserve">
+    <value>複製</value>
+  </data>
+  <data name="要退的學分數" xml:space="preserve">
+    <value>要退的學分數</value>
+  </data>
+  <data name="要退金額" xml:space="preserve">
+    <value>要退金額</value>
+  </data>
+  <data name="說明" xml:space="preserve">
+    <value>說明</value>
+  </data>
+  <data name="課程代碼" xml:space="preserve">
+    <value>課程代碼</value>
+  </data>
+  <data name="課程名稱" xml:space="preserve">
+    <value>課程名稱</value>
+  </data>
+  <data name="課程學分數" xml:space="preserve">
+    <value>課程學分數</value>
+  </data>
+  <data name="身分註記01代碼" xml:space="preserve">
+    <value>身分註記01代碼</value>
+  </data>
+  <data name="身分註記01名稱" xml:space="preserve">
+    <value>身分註記01名稱</value>
+  </data>
+  <data name="身分註記02代碼" xml:space="preserve">
+    <value>身分註記02代碼</value>
+  </data>
+  <data name="身分註記02名稱" xml:space="preserve">
+    <value>身分註記02名稱</value>
+  </data>
+  <data name="身分註記03代碼" xml:space="preserve">
+    <value>身分註記03代碼</value>
+  </data>
+  <data name="身分註記03名稱" xml:space="preserve">
+    <value>身分註記03名稱</value>
+  </data>
+  <data name="身分註記04代碼" xml:space="preserve">
+    <value>身分註記04代碼</value>
+  </data>
+  <data name="身分註記04名稱" xml:space="preserve">
+    <value>身分註記04名稱</value>
+  </data>
+  <data name="身分註記05代碼" xml:space="preserve">
+    <value>身分註記05代碼</value>
+  </data>
+  <data name="身分註記05名稱" xml:space="preserve">
+    <value>身分註記05名稱</value>
+  </data>
+  <data name="身分註記06代碼" xml:space="preserve">
+    <value>身分註記06代碼</value>
+  </data>
+  <data name="身分註記06名稱" xml:space="preserve">
+    <value>身分註記06名稱</value>
+  </data>
+  <data name="身分證字號" xml:space="preserve">
+    <value>身分證字號</value>
+  </data>
+  <data name="輸入工作表名稱" xml:space="preserve">
+    <value>輸入工作表名稱</value>
+  </data>
+  <data name="退費方式標準代碼" xml:space="preserve">
+    <value>退費方式標準代碼</value>
+  </data>
+  <data name="退費金額" xml:space="preserve">
+    <value>退費金額</value>
+  </data>
+  <data name="選擇上傳對照檔" xml:space="preserve">
+    <value>選擇上傳對照檔</value>
+  </data>
+  <data name="選擇上傳檔案所在位置" xml:space="preserve">
+    <value>選擇上傳檔案所在位置</value>
+  </data>
+  <data name="選擇上傳檔案類型" xml:space="preserve">
+    <value>選擇上傳檔案類型</value>
+  </data>
+  <data name="部別" xml:space="preserve">
+    <value>部別</value>
+  </data>
+  <data name="郵遞區號" xml:space="preserve">
+    <value>郵遞區號</value>
+  </data>
+  <data name="院別代碼" xml:space="preserve">
+    <value>院別代碼</value>
+  </data>
+  <data name="院別名稱" xml:space="preserve">
+    <value>院別名稱</value>
+  </data>
+  <data name="離開" xml:space="preserve">
+    <value>離開</value>
+  </data>
+  <data name="電子郵件" xml:space="preserve">
+    <value>電子郵件</value>
+  </data>
+  <data name="電話" xml:space="preserve">
+    <value>電話</value>
+  </data>
+  <data name="項" xml:space="preserve">
+    <value>項</value>
+  </data>
+  <data name="CTL_BTN_中國信託平台信用卡繳款" xml:space="preserve">
+    <value>中國信託平台信用卡繳款</value>
+  </data>
+  <data name="CTL_BTN_土地銀行個人網路銀行繳款" xml:space="preserve">
+    <value>土地銀行個人網路銀行繳款</value>
+  </data>
+  <data name="CTL_BTN_產生PDF憑單" xml:space="preserve">
+    <value>產生PDF憑單</value>
+  </data>
+  <data name="CTL_BTN_產生PDF收據" xml:space="preserve">
+    <value>產生PDF收據</value>
+  </data>
+  <data name="CTL_BTN_產生PDF繳費單" xml:space="preserve">
+    <value>產生PDF繳費單</value>
+  </data>
+  <data name="CTL_BTN_網路ATM繳款" xml:space="preserve">
+    <value>網路ATM繳款</value>
+  </data>
+  <data name="CTL_BTN_財金平台信用卡繳款" xml:space="preserve">
+    <value>財金平台信用卡繳款</value>
+  </data>
+  <data name="CTL_BTN_銀聯卡繳款" xml:space="preserve">
+    <value>銀聯卡繳款</value>
+  </data>
+  <data name="上傳就學貸款金額" xml:space="preserve">
+    <value>上傳就學貸款金額</value>
+  </data>
+  <data name="代收日" xml:space="preserve">
+    <value>代收日</value>
+  </data>
+  <data name="代收費用別資料不存在" xml:space="preserve">
+    <value>代收費用別資料不存在</value>
+  </data>
+  <data name="代收銀行分行" xml:space="preserve">
+    <value>代收銀行/分行</value>
+  </data>
+  <data name="備註" xml:space="preserve">
+    <value>備註</value>
+  </data>
+  <data name="入帳日" xml:space="preserve">
+    <value>入帳日</value>
+  </data>
+  <data name="列印收據" xml:space="preserve">
+    <value>列印收據</value>
+  </data>
+  <data name="列印繳費單" xml:space="preserve">
+    <value>列印繳費單</value>
+  </data>
+  <data name="助貸" xml:space="preserve">
+    <value>助貸</value>
+  </data>
+  <data name="原就學貸款金額" xml:space="preserve">
+    <value>原就學貸款金額</value>
+  </data>
+  <data name="商家代號" xml:space="preserve">
+    <value>商家代號</value>
+  </data>
+  <data name="如要採用實體ATM超商臨櫃方式繳款請點此按鈕" xml:space="preserve">
+    <value>(如要採用實體ATM、超商、臨櫃方式繳款，請點此按鈕)</value>
+  </data>
+  <data name="學校" xml:space="preserve">
+    <value>學校</value>
+  </data>
+  <data name="學校選擇有誤請重新選擇學校" xml:space="preserve">
+    <value>學校選擇有誤，請重新選擇學校</value>
+  </data>
+  <data name="學生基本資料不存在" xml:space="preserve">
+    <value>學生基本資料不存在</value>
+  </data>
+  <data name="學生繳費資料不存在" xml:space="preserve">
+    <value>學生繳費資料不存在</value>
+  </data>
+  <data name="已入帳" xml:space="preserve">
+    <value>已入帳</value>
+  </data>
+  <data name="已繳款" xml:space="preserve">
+    <value>已繳款</value>
+  </data>
+  <data name="已過中信平台管道繳費期限" xml:space="preserve">
+    <value>已過中信平台管道繳費期限。</value>
+  </data>
+  <data name="已過財金平台管道繳費期限" xml:space="preserve">
+    <value>已過財金平台管道繳費期限。</value>
+  </data>
+  <data name="支付寶繳費" xml:space="preserve">
+    <value>支付寶繳費</value>
+  </data>
+  <data name="收入明細" xml:space="preserve">
+    <value>收入明細</value>
+  </data>
+  <data name="收入科目" xml:space="preserve">
+    <value>收入科目</value>
+  </data>
+  <data name="收據" xml:space="preserve">
+    <value>收據</value>
+  </data>
+  <data name="明細" xml:space="preserve">
+    <value>明細</value>
+  </data>
+  <data name="未提供中信平台管道繳費" xml:space="preserve">
+    <value>未提供中信平台管道繳費。</value>
+  </data>
+  <data name="未提供財金平台管道繳費" xml:space="preserve">
+    <value>未提供財金平台管道繳費。 </value>
+  </data>
+  <data name="未繳款" xml:space="preserve">
+    <value>未繳款</value>
+  </data>
+  <data name="未開放" xml:space="preserve">
+    <value>未開放</value>
+  </data>
+  <data name="查詢" xml:space="preserve">
+    <value>查詢</value>
+  </data>
+  <data name="此繳費單未開放或是無效的繳費單" xml:space="preserve">
+    <value>此繳費單未開放或是無效的繳費單</value>
+  </data>
+  <data name="無法取得登入者資訊" xml:space="preserve">
+    <value>無法取得登入者資訊</value>
+  </data>
+  <data name="無法取得要處理資料的參數" xml:space="preserve">
+    <value>無法取得要處理資料的參數</value>
+  </data>
+  <data name="網站導覽" xml:space="preserve">
+    <value>網站導覽</value>
+  </data>
+  <data name="網頁參數不正確" xml:space="preserve">
+    <value>網頁參數不正確</value>
+  </data>
+  <data name="繳款" xml:space="preserve">
+    <value>繳款</value>
+  </data>
+  <data name="繳費單" xml:space="preserve">
+    <value>繳費單</value>
+  </data>
+  <data name="繳費方式" xml:space="preserve">
+    <value>繳費方式</value>
+  </data>
+  <data name="繳費管道" xml:space="preserve">
+    <value>繳費管道</value>
+  </data>
+  <data name="繳費銷帳資料" xml:space="preserve">
+    <value>繳費/銷帳資料</value>
+  </data>
+  <data name="缺少網頁參數" xml:space="preserve">
+    <value>缺少網頁參數</value>
+  </data>
+  <data name="請輸入學號" xml:space="preserve">
+    <value>請輸入學號</value>
+  </data>
+  <data name="請輸入密碼" xml:space="preserve">
+    <value>請輸入密碼</value>
+  </data>
+  <data name="請選擇學校" xml:space="preserve">
+    <value>請選擇學校</value>
+  </data>
+  <data name="費用別" xml:space="preserve">
+    <value>費用別</value>
+  </data>
+  <data name="銷帳狀態" xml:space="preserve">
+    <value>銷帳狀態</value>
+  </data>
+  <data name="驗證碼錯誤請重新輸入" xml:space="preserve">
+    <value>驗證碼錯誤，請重新輸入</value>
+  </data>
+  <data name="使用者密碼_Mobile" xml:space="preserve">
+    <value>使用者密碼</value>
+  </data>
+  <data name="例如生日為2015年1月20日請輸入20150120" xml:space="preserve">
+    <value>例如生日為2015年1月20日，請輸入20150120</value>
+  </data>
+  <data name="圖型驗證碼" xml:space="preserve">
+    <value>圖型驗證碼</value>
+  </data>
+  <data name="圖型驗證碼_Mobile" xml:space="preserve">
+    <value>圖型驗證碼</value>
+  </data>
+  <data name="學校名稱_Mobile" xml:space="preserve">
+    <value>學　　　校</value>
+  </data>
+  <data name="學生專區登入" xml:space="preserve">
+    <value>學生專區登入</value>
+  </data>
+  <data name="學生專區登入_Mobile" xml:space="preserve">
+    <value>學生登入</value>
+  </data>
+  <data name="學號_Mobile" xml:space="preserve">
+    <value>學　　　號</value>
+  </data>
+  <data name="生日_Mobile" xml:space="preserve">
+    <value>生　　　日</value>
+  </data>
+  <data name="身份證字號_Mobile" xml:space="preserve">
+    <value>身份證字號</value>
+  </data>
+  <data name="點上圖可更新驗證碼" xml:space="preserve">
+    <value>點上圖可更新驗證碼</value>
+  </data>
+  <data name="點上圖可更新驗證碼_Mobile" xml:space="preserve">
+    <value>點上圖可更新驗證碼</value>
+  </data>
+  <data name="繳費狀態查詢" xml:space="preserve">
+    <value>繳費狀態查詢</value>
+  </data>
+  <data name="下載" xml:space="preserve">
+    <value>下載</value>
+  </data>
+  <data name="下載ODS" xml:space="preserve">
+    <value>下載 ODS</value>
+  </data>
+  <data name="下載XLS" xml:space="preserve">
+    <value>下載 XLS</value>
+  </data>
+  <data name="下載範本ODS" xml:space="preserve">
+    <value>下載 ODS 範本</value>
+  </data>
+  <data name="下載範本XLS" xml:space="preserve">
+    <value>下載 XLS 範本</value>
+  </data>
+  <data name="便利商店收據請保留六個月" xml:space="preserve">
+    <value>便利商店收據請保留六個月</value>
+  </data>
+  <data name="便利商店繳款" xml:space="preserve">
+    <value>便利商店繳款（7-ELEVEN, 全家, 萊爾富, ＯＫ）</value>
+  </data>
+  <data name="匯出ODS" xml:space="preserve">
+    <value>匯出 ODS</value>
+  </data>
+  <data name="匯出XLS" xml:space="preserve">
+    <value>匯出 XLS</value>
+  </data>
+  <data name="報表ODS" xml:space="preserve">
+    <value>ODS 報表</value>
+  </data>
+  <data name="報表XLS" xml:space="preserve">
+    <value>XLS 報表</value>
+  </data>
+  <data name="產生媒體檔ODS" xml:space="preserve">
+    <value>產生 ODS 媒體檔</value>
+  </data>
+  <data name="產生媒體檔XLS" xml:space="preserve">
+    <value>產生 XLS 媒體檔</value>
+  </data>
+  <data name="產生檔案ODS" xml:space="preserve">
+    <value>產生 ODS 檔案</value>
+  </data>
+  <data name="產生檔案XLS" xml:space="preserve">
+    <value>產生 XLS 檔案</value>
+  </data>
+  <data name="產生清冊ODS" xml:space="preserve">
+    <value>產生 ODS 清冊</value>
+  </data>
+  <data name="產生清冊XLS" xml:space="preserve">
+    <value>產生 XLS 清冊</value>
+  </data>
+  <data name="繳費期限" xml:space="preserve">
+    <value>繳費期限</value>
+  </data>
+  <data name="繳費金額合計" xml:space="preserve">
+    <value>繳費金額合計</value>
+  </data>
+  <data name="虛擬帳號" xml:space="preserve">
+    <value>虛擬帳號</value>
+  </data>
+  <data name="CTL_BTN_繳費" xml:space="preserve">
+    <value>繳費</value>
+  </data>
+  <data name="CTL_BTN_產生超商行動條碼" xml:space="preserve">
+    <value>產生超商行動條碼</value>
+  </data>
+  <data name="啟用國際信用卡繳費" xml:space="preserve">
+    <value>啟用國際信用卡繳費</value>
+  </data>
+  <data name="國際信用卡" xml:space="preserve">
+    <value>國際信用卡</value>
+  </data>
+  <data name="國際信用卡繳費" xml:space="preserve">
+    <value>國際信用卡繳費</value>
+  </data>
+  <data name="查無指定的繳款資料" xml:space="preserve">
+    <value>查無指定的繳款資料</value>
+  </data>
+  <data name="查詢繳款資料失敗" xml:space="preserve">
+    <value>查詢繳款資料失敗</value>
+  </data>
+  <data name="此繳費單限定使用國際信用卡繳費" xml:space="preserve">
+    <value>此繳費單限定使用『國際信用卡繳費』</value>
+  </data>
+  <data name="代收銀行/分行" xml:space="preserve">
+    <value>代收銀行/分行</value>
+  </data>
+  <data name="已繳待銷" xml:space="preserve">
+    <value>已繳待銷</value>
+  </data>
+  <data name="最後修改日期" xml:space="preserve">
+    <value>最後修改日期</value>
+  </data>
+  <data name="繳費/銷帳資料" xml:space="preserve">
+    <value>繳費/銷帳資料</value>
+  </data>
+  <data name="資料建立日期" xml:space="preserve">
+    <value>資料建立日期</value>
+  </data>
+  <data name="中文版" xml:space="preserve">
+    <value>中文版</value>
+  </data>
+  <data name="英文版" xml:space="preserve">
+    <value>英文版</value>
+  </data>
+  <data name="上傳的可貸金額" xml:space="preserve">
+    <value>上傳的可貸金額</value>
+  </data>
+  <data name="合計項目" xml:space="preserve">
+    <value>合計項目</value>
+  </data>
+  <data name="學生就貸" xml:space="preserve">
+    <value>學生就貸</value>
+  </data>
+  <data name="計算後的可貸金額" xml:space="preserve">
+    <value>計算後的可貸金額</value>
+  </data>
+  <data name="MENU_S6" xml:space="preserve">
+    <value>聯徵KP3維護</value>
+  </data>
+  <data name="MENU_S6100001" xml:space="preserve">
+    <value>KP3資料登錄</value>
+  </data>
+  <data name="MENU_S6200001" xml:space="preserve">
+    <value>KP3預設值維護</value>
+  </data>
+  <data name="新增查詢學生退費資料" xml:space="preserve">
+    <value>新增╱查詢學生退費資料</value>
+  </data>
+</root>

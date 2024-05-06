@@ -1,0 +1,335 @@
+/*不------------------*/	
+#lion {
+	position: absolute;
+	z-index: 11;
+	right: 85px;
+	top: 0px;
+	width:89px; 
+	height:92px;
+	border:none;
+	background: transparent url(../img/icon/lion_top.gif) no-repeat top right; 
+	}
+	
+
+
+/*菌隔畖-----------------*/
+.history {
+	float: left;
+	padding: 5px 0 0px 0;
+	color: #999999;
+	}
+	
+/*loginID-------------------*/	
+.loginID {
+	float: right;
+	padding: 0 0 0px 0;
+	color: #999999;
+	font-weight: bold;
+	}
+
+/*琩高ら戳-------------------*/
+.date {
+	clear:both;
+	float: right;
+	padding: 5px 0 10px 0;
+	text-align: right;
+	color: #999999;
+	}
+
+/*-------------------*/
+.function {
+	float: right;
+	padding: 7px 0 0 0;
+	color: #8c8c8c;
+	}
+	
+
+/*戈癟--------------------------------------------------------------------------*/
+.information {
+	width: 100%;
+	clear: both;
+	background-color: #dfd5c2;
+	border-top: 1px solid #d0b480;
+	border-bottom: 1px solid #d0b480;
+	}
+	
+.information td {
+	padding: 8px 0px 8px 20px;
+	line-height: 14pt;
+	color:#000000;
+	font-weight:bold;
+	}
+
+/*ま--------------------------------------------------------------------------*/
+.index {
+	margin-top: 20px;
+	width: 100%;
+
+	}
+
+.index td {
+	padding: 10px 0px 10px 20px;
+	line-height: 18pt;
+	color:#000000;
+	font-weight:bold;
+	border-bottom: 1px dashed #e6e6e6;
+	}
+
+.index td a  {
+	padding: 0px 0px 0px 18px;
+	background: transparent url(../img/icon/arrow_index.gif) no-repeat center left;	
+	}
+
+.index td a:hover  {
+	background: transparent url(../img/icon/arrow_index.gif) no-repeat center left;	
+	}
+
+
+
+/*╰参莱--------------------------------------------------------------------------------------------*/
+.respond {
+	clear: both;
+	margin: 10px 0 10px 0;
+	padding: 3px 5px 4px 0px;
+	color:#FF0000;
+	border: 0px solid #FF0000;
+}	
+
+.respond span {
+	margin:0 10px 0 0;
+	padding: 2px 4px 4px 4px;
+	font-size: 11pt;
+	color:#FFFFFF;
+	font-weight: bold;	
+	background-color:#CC0000; 
+
+}	
+
+
+/*_琩高兵ン------------------------------------------------------------------------------------------------*/
+table.condition {
+	width: 100%;
+	clear: both;
+	margin: 20px 0 20px 0;
+	text-align: left;
+	}
+	
+table.condition th {
+	padding: 10px 5px;
+	color: #926002;
+	font-weight: bold;
+	text-align: right;
+	border-bottom: 1px dashed #e6e6e6;
+
+	}
+
+table.condition td {
+	padding: 10px 5px;
+	color: #000000;
+	border-bottom: 1px dashed #e6e6e6;
+	}
+	
+table.condition th span, table.condition td span {
+	padding: 0 8px;
+	}
+	
+table.condition th span.notice, table.condition td span.notice {
+	padding: 0 8px;
+	color: #FF0000;;
+	}
+			
+
+/*_琩高挡狦------------------------------------------------------------------------------------------------*/
+table.result {
+	width: 100%;
+	clear: both;
+	margin: 20px 0 20px 0;
+	text-align: left;
+	}
+	
+table.result th {
+	padding: 10px 5px;
+	color: #926002;
+	font-weight: bold;
+	text-align: right;
+	border-bottom: 1px dashed #e6e6e6;
+	}
+
+table.result td {
+	padding: 10px 5px;
+	color: #000000;
+	border-bottom: 1px dashed #e6e6e6;
+	}
+	
+table.result th span, table.result td span {
+	padding: 0 8px;
+	}
+	
+table.result th span.notice, table.result td span.notice {
+	padding: 0 8px;
+	color: #FF0000;;
+	}			
+
+
+/*_э------------------------------------------------------------------------------------------------*/
+table.modify {
+	width: 100%;
+	clear: both;
+	margin: 2px 0 10px 0;
+	text-align: left;
+	}
+	
+table.modify th {
+	padding: 5px 5px;
+	color: #FFFFFF;
+	font-weight: bold;
+	text-align: center;
+	border: 1px solid #e6e6e6;
+	background-color: #877349;
+	}
+
+table.modify td {
+	padding: 10px 5px;
+	color: #000000;
+	border: 1px solid #FFFFFF;
+	}
+	
+table.modify tr.light {
+	background-color: #f6f3ea;
+	}
+	
+table.modify tr.dark {
+	background-color: #efe9d8;
+	}
+	
+table.modify th span, table.modify td span {
+	padding: 0 8px;
+	}
+	
+table.modify th span.notice, table.modify td span.notice {
+	padding: 0 8px;
+	color: #FF0000;;
+	}			
+	
+
+/*だ北------------------------------------------------------------------------------------------------*/
+.pageControl {
+	margin: 0 auto 0 auto ;
+	padding: 0; 
+	text-align: center;
+	border: 0px solid #e6e6e6;
+	border-bottom: 0px solid #e5e5e5;
+	overflow: auto;
+	}
+
+.pageControl span { 
+	padding:0 3px 0 3px; 
+	margin:0; 
+	color:#990000;
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+.pageControl a {
+	padding:0 2px 0 2px; 
+	margin:0; 
+	text-decoration:underline;
+	color:#546078;
+	font-size: 12pt;
+	font-weight: normal;
+}
+.pageControl a:hover {
+	color:#FF0000;
+}
+
+.pageControl .pageControl_Left {
+	float: left;
+	}
+
+.pageControl .pageControl_right {
+	float: right;
+	}
+
+
+
+
+/**/
+a.forwardPage{
+	padding:0 0 0 12px; 
+	margin:0 10px 0 0; 
+	color:#546078;
+	font-size: 11pt;
+	background: transparent url(../img/button/forwardPage_off.gif) no-repeat center left;
+}
+a.forwardPage:hover {
+	color:#FF0000;
+	background: transparent url(../img/button/forwardPage_on.gif) no-repeat center left;
+}
+
+/**/
+a.nextPage{
+	padding:0 0 0 12px; 
+	margin:0 10px 0 0; 
+	color:#546078;
+	font-size: 11pt;
+	background: transparent url(../img/button/nextPage_off.gif) no-repeat center left;
+}
+a.nextPage:hover {
+	color:#FF0000; 
+	background: transparent url(../img/button/nextPage_on.gif) no-repeat center left;
+}
+
+/*程玡*/
+a.firstPage{
+	padding:0 0 0 12px; 
+	margin:0 10px 0 0; 
+	color:#546078;
+	font-size: 11pt; 
+	background: transparent url(../img/button/firstPage_off.gif) no-repeat center left;
+}
+a.firstPage:hover {
+	color:#FF0000;
+	background: transparent url(../img/button/firstPage_on.gif) no-repeat center left;
+}
+
+/*程*/
+a.lasttPage{
+	padding:0 0 0 12px; 
+	margin:0 10px 0 0; 
+	color:#546078;
+	font-size: 11pt;
+	background: transparent url(../img/button/lastPage_off.gif) no-repeat center left;
+}
+a.lasttPage:hover {
+	color:#FF0000;
+	background: transparent url(../img/button/lastPage_on.gif) no-repeat center left;
+}
+
+/* more*/
+a.more{
+	padding:0 0 0 12px; 
+	margin:0 10px 0 0; 
+	color:#546078;
+	font-size: 11pt; 
+	background: transparent url(../img/button/more_off.gif) no-repeat top left;
+}
+a.more:hover {
+	color:#FF0000;
+	background: transparent url(../img/button/more_on.gif) no-repeat top left;
+}
+
+/*穝糤*/
+a.add{
+	padding:0 0 0 18px; 
+	margin:0 0 0 5px; 
+	color:#0066CC; 
+	font-size: 11pt;
+	background: transparent url(../img/button/add_off.gif) no-repeat top left;
+	text-decoration:none; 
+}
+a.add:hover {
+	color:#FF0000;
+	background: transparent url(../img/button/add_on.gif) no-repeat top left;
+	text-decoration:none;
+}
+

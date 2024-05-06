@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<settings>
+  <logPath>D:\AP\LOG</logPath>
+  <setting>
+    <folder_path>D:\TMP1</folder_path>
+    <file_filter>*</file_filter>
+    <sub_folder_filter>*</sub_folder_filter>
+    <sub_file_filter>*</sub_file_filter>
+    <keep_days>1</keep_days>
+  </setting>
+  <setting>
+    <folder_path>D:\TMP2</folder_path>
+    <file_filter>*.txt</file_filter>
+    <sub_folder_filter>DATA</sub_folder_filter>
+    <sub_file_filter>*.txt</sub_file_filter>
+    <keep_days>1</keep_days>
+  </setting>
+  <setting>
+    <folder_path>D:\TMP3</folder_path>
+    <file_filter>*.LOG</file_filter>
+    <sub_folder_filter>[REGEX:^\d{8}$]</sub_folder_filter>
+    <sub_file_filter>*.LOG</sub_file_filter>
+    <keep_days>1</keep_days>
+  </setting>
+</settings>

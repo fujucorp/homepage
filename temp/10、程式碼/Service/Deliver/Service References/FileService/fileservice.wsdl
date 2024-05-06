@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="FTPUpload">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apData" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="jobNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="jobTypeId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileKind" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="zipContents" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FTPUploadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FTPUploadResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="FTPUploadSoapIn">
+    <wsdl:part name="parameters" element="tns:FTPUpload" />
+  </wsdl:message>
+  <wsdl:message name="FTPUploadSoapOut">
+    <wsdl:part name="parameters" element="tns:FTPUploadResponse" />
+  </wsdl:message>
+  <wsdl:portType name="FileServiceSoap">
+    <wsdl:operation name="FTPUpload">
+      <wsdl:input message="tns:FTPUploadSoapIn" />
+      <wsdl:output message="tns:FTPUploadSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FileServiceSoap" type="tns:FileServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FTPUpload">
+      <soap:operation soapAction="http://tempuri.org/FTPUpload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FileServiceSoap12" type="tns:FileServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FTPUpload">
+      <soap12:operation soapAction="http://tempuri.org/FTPUpload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FileService">
+    <wsdl:port name="FileServiceSoap" binding="tns:FileServiceSoap">
+      <soap:address location="https://eschooltest.landbankt.com.tw/fileservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FileServiceSoap12" binding="tns:FileServiceSoap12">
+      <soap12:address location="https://eschooltest.landbankt.com.tw/fileservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

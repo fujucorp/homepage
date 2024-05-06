@@ -1,0 +1,1428 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Fuju.Log</name>
+    </assembly>
+    <members>
+        <member name="T:Fuju.Log.FileLogWriter">
+            <summary>
+            檔案日誌檔寫入器類別
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.FileLogWriter._FileName">
+            <summary>
+            預設的日誌檔案名稱
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.FileLogWriter.FileWriter">
+            <summary>
+            檔案寫入串流物件
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.FileLogWriter.FileName">
+            <summary>
+            檔案名稱
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.FileLogWriter.DebugPattern">
+            <summary>
+            日誌除錯訊息格式樣板
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.FileLogWriter.OperatePattern">
+            <summary>
+            日誌操作訊息格式樣板
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.FileLogWriter.TradePattern">
+            <summary>
+            日誌交易訊息格式樣板
+            </summary>
+        </member>
+        <member name="M:Fuju.Log.FileLogWriter.Initial(System.String)">
+            <summary>
+            初始化
+            </summary>
+            <param name="fileName">日誌檔檔案名稱</param>
+        </member>
+        <member name="M:Fuju.Log.FileLogWriter.#ctor(System.String,System.Boolean,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            建構檔案日誌檔寫入器類別
+            </summary>
+            <param name="fileName"></param>
+            <param name="debugEnabled"></param>
+            <param name="logAP"></param>
+            <param name="logItem"></param>
+            <param name="logTrackNo"></param>
+            <param name="clientAP"></param>
+            <param name="clientID"></param>
+            <param name="clientPW"></param>
+            <param name="clientApItem"></param>
+            <param name="clientIP"></param>
+            <param name="userKind"></param>
+            <param name="userUnit"></param>
+            <param name="userID"></param>
+            <param name="userData"></param>
+        </member>
+        <member name="M:Fuju.Log.FileLogWriter.#ctor(System.String,System.Boolean,System.String,System.String)">
+            <summary>
+            建構檔案日誌檔寫入器類別
+            </summary>
+            <param name="fileName"></param>
+            <param name="debugEnabled"></param>
+            <param name="logAP"></param>
+            <param name="logItem"></param>
+        </member>
+        <member name="M:Fuju.Log.FileLogWriter.Finalize">
+            <summary>
+            解構式
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.FileLogWriter.LogType">
+            <summary>
+            日誌檔類別
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.FileLogWriter.IsReady">
+            <summary>
+            寫入器是否已準備好
+            </summary>
+        </member>
+        <member name="M:Fuju.Log.FileLogWriter.Dispose(System.Boolean)">
+            <summary>
+            釋放資源
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:Fuju.Log.FileLogWriter.Write(Fuju.Log.LogKindEnum,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Decimal@)">
+            <summary>
+            寫入日誌資料
+            </summary>
+            <param name="logKind">指定日誌類別</param>
+            <param name="logAP">日誌的記錄者應用程式 (應用程式的代碼或名稱，實作記錄者自行定義)</param>
+            <param name="logItem">日誌的記錄者項目 (LogAP 的下一層的代碼或名稱，實作記錄者自行定義)</param>
+            <param name="logTrackNo">日誌的軌跡號碼 (單次的操作、交易、除錯使用同一個軌跡號碼)</param>
+            <param name="actionType">操作的類型 (I:新增、U:修改、D:刪除、S:查詢、P:列印、E:執行(混合多種操作)，匯入(視為新增 I)、匯出/產生檔案/產生報表(視為執行 E)、X:除錯日誌)</param>
+            <param name="actionName">操作的名稱 (實作記錄者自行定義。例如 Web 服務記錄服務命令名稱，Win 服務記錄方法名稱，作業服務記錄作業名稱，除錯日誌的索引鍵1)</param>
+            <param name="actionData">操作的資料 (實作記錄者自行定義。例如 Web 服務記錄服務命令參數，Win 服務記錄方法參數，作業服務記錄作業參數，除錯日誌的索引鍵2)</param>
+            <param name="actionJobID">操作的作業代碼 (實作記錄者自行定義)</param>
+            <param name="resultStatus">結果的狀態 (實作記錄者自行定義。例如操作日誌記錄空白，Web 服務記錄 XmlResult.Code，Win 服務記錄 Result.Code，除錯日誌記錄空白)</param>
+            <param name="resultData">結果的資料 (實作記錄者自行定義，預設為空字串。例如操作日誌記錄空白，Web 服務記錄 XmlResult.Message 或 XmlResult.Data，Win 服務記錄 Result.Message，除錯日誌的除錯訊息)</param>
+            <param name="clientAP">用戶端(應用程式)代碼或名稱 (用在 Web 服務中，記錄呼叫服務的應用程式代碼或名稱)</param>
+            <param name="clientID">用戶端帳號 (用在 Web 服務中，記錄呼叫服務的應用程式帳號)</param>
+            <param name="clientPW">用戶端密碼 (用在 Web 服務中，記錄呼叫服務的應用程式密碼)</param>
+            <param name="clientApItem">用戶端(應用程式)項目 (用在 Web 服務中，記錄呼叫服務的應用程式項目(下一層))</param>
+            <param name="clientIP">用戶端 IP (用在 Web 服務中，記錄呼叫服務的應用程式 IP)</param>
+            <param name="userKind">使用者的類別 (實作記錄者自行定義。依專案的使用者設計而異，用來區別銀行人員、企業人員、企業繳款人，或系統服務)</param>
+            <param name="userUnit">使用者的單位代碼 (實作記錄者自行定義。依專案的使用者設計而異，用來區別人員歸屬那家分行或企業，或系統服務)</param>
+            <param name="userID">使用者的代碼或帳號 (實作記錄者自行定義。依專案的使用者設計而異，用來區別同一單位的使用者，或系統服務)</param>
+            <param name="userData">使用者的額外資料 (實作記錄者自行定義，預設為空字串)</param>
+            <param name="logSN">成功則傳回日誌流水號，否則傳回 0</param>
+            <returns>成功傳回 true，否則傳回 false</returns>
+        </member>
+        <member name="T:Fuju.Log.LogActionTypeOption">
+            <summary>
+            操作類型代碼名稱對照集合類別
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogActionTypeOption.INSERT_CODE">
+            <summary>
+            I : 新增
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogActionTypeOption.UPDATE_CODE">
+            <summary>
+            U : 修改
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogActionTypeOption.DELETE_CODE">
+            <summary>
+            D : 刪除
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogActionTypeOption.SELECT_CODE">
+            <summary>
+            S : 查詢
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogActionTypeOption.PRINT_CODE">
+            <summary>
+            P : 列印
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogActionTypeOption.EXECUTE_CODE">
+            <summary>
+            E : 執行
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogActionTypeOption.DEBUG_CODE">
+            <summary>
+            X : 除錯
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogActionTypeOption.INSERT_TEXT">
+            <summary>
+            I : 新增
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogActionTypeOption.UPDATE_TEXT">
+            <summary>
+            U : 修改
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogActionTypeOption.DELETE_TEXT">
+            <summary>
+            D : 刪除
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogActionTypeOption.SELECT_TEXT">
+            <summary>
+            S : 查詢
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogActionTypeOption.PRINT_TEXT">
+            <summary>
+            P : 列印
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogActionTypeOption.EXECUTE_TEXT">
+            <summary>
+            E : 執行
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogActionTypeOption.DEBUG_TEXT">
+            <summary>
+            X : 除錯
+            </summary>
+        </member>
+        <member name="M:Fuju.Log.LogActionTypeOption.#ctor">
+            <summary>
+            建構 操作類型代碼名稱對照集合類別
+            </summary>
+        </member>
+        <member name="M:Fuju.Log.LogActionTypeOption.GetText(System.String)">
+            <summary>
+            取得指定操作類型代碼的名稱
+            </summary>
+            <param name="code">指定操作類型代碼。</param>
+            <returns>成功則傳回代碼的名稱，否則傳回空字串。</returns>
+        </member>
+        <member name="M:Fuju.Log.LogActionTypeOption.IsDefine(System.String)">
+            <summary>
+            取得指定操作類型代碼是否為已定義
+            </summary>
+            <param name="code">指定操作類型代碼。</param>
+            <returns>是則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="T:Fuju.Log.DBLogWriter">
+            <summary>
+            資料庫日誌檔寫入器類別
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.DBLogWriter._TableName">
+            <summary>
+            預設的日誌資料表名稱
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.DBLogWriter._FieldNames">
+            <summary>
+            預設的日誌資料表欄位名稱陣列
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.DBLogWriter.DBFactory">
+            <summary>
+            資料庫存取物件
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.DBLogWriter.TableName">
+            <summary>
+            資料表名稱
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.DBLogWriter.FieldParameterNames">
+            <summary>
+            欄位名稱與命令參數名稱集合
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.DBLogWriter.InsertSql">
+            <summary>
+            新增日誌 Sql 指令
+            </summary>
+        </member>
+        <member name="M:Fuju.Log.DBLogWriter.Initial(Fuju.DB.ConnectionSetting,System.String)">
+            <summary>
+            初始化
+            </summary>
+            <param name="setting">日誌檔資料庫連線設定</param>
+            <param name="tableName">日誌檔資料表名稱</param>
+        </member>
+        <member name="M:Fuju.Log.DBLogWriter.GetParameters(Fuju.Log.LogKindEnum,System.String,System.String,System.String,System.DateTime,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            取得新增日誌參數集合
+            </summary>
+            <param name="logKind"></param>
+            <param name="logAP"></param>
+            <param name="logItem"></param>
+            <param name="logTrackNo"></param>
+            <param name="logTime"></param>
+            <param name="actionType"></param>
+            <param name="actionName"></param>
+            <param name="actionData"></param>
+            <param name="actionJobID"></param>
+            <param name="resultStatus"></param>
+            <param name="resultData"></param>
+            <param name="clientAP"></param>
+            <param name="clientID"></param>
+            <param name="clientPW"></param>
+            <param name="clientApItem"></param>
+            <param name="clientIP"></param>
+            <param name="userKind"></param>
+            <param name="userUnit"></param>
+            <param name="userID"></param>
+            <param name="userData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Log.DBLogWriter.#ctor(Fuju.DB.ConnectionSetting,System.String,System.Boolean,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            建構資料庫日誌檔寫入器
+            </summary>
+            <param name="setting">資料庫連線設定</param>
+            <param name="tableName">資料表名稱</param>
+            <param name="debugEnabled">是否記錄除錯類別日誌</param>
+            <param name="logAP">日誌的記錄者應用程式 (應用程式的代碼或名稱，實作記錄者自行定義)</param>
+            <param name="logItem">日誌的記錄者項目 (LogAP 的下一層的代碼或名稱，實作記錄者自行定義)</param>
+            <param name="logTrackNo">日誌的軌跡號碼 (單次的操作、交易、除錯使用同一個軌跡號碼)</param>
+            <param name="clientAP">用戶端(應用程式)代碼或名稱 (用在 Web 服務中，記錄呼叫服務的應用程式代碼或名稱)</param>
+            <param name="clientID">用戶端帳號 (用在 Web 服務中，記錄呼叫服務的應用程式帳號)</param>
+            <param name="clientPW">用戶端密碼 (用在 Web 服務中，記錄呼叫服務的應用程式密碼)</param>
+            <param name="clientApItem">用戶端(應用程式)項目 (用在 Web 服務中，記錄呼叫服務的應用程式項目(下一層))</param>
+            <param name="clientIP">用戶端 IP (用在 Web 服務中，記錄呼叫服務的應用程式 IP)</param>
+            <param name="userKind">使用者的類別 (實作記錄者自行定義。依專案的使用者設計而異，用來區別銀行人員、企業人員、企業繳款人，或系統服務)</param>
+            <param name="userUnit">使用者的單位代碼 (實作記錄者自行定義。依專案的使用者設計而異，用來區別人員歸屬那家分行或企業，或系統服務)</param>
+            <param name="userID">使用者的代碼或帳號 (實作記錄者自行定義。依專案的使用者設計而異，用來區別同一單位的使用者，或系統服務)</param>
+            <param name="userData">使用者的額外資料 (實作記錄者自行定義，預設為空字串)</param>
+        </member>
+        <member name="M:Fuju.Log.DBLogWriter.#ctor(Fuju.DB.ConnectionSetting,System.String,System.Boolean,System.String,System.String)">
+            <summary>
+            建構資料庫日誌檔寫入器 (通常在Win服務中使用) 
+            LogTrackNo、clientAP、clientID、clientPW、clientApItem、clientIP、UserData 為空字串，
+            UserKind 為 "SYS"，
+            UserUnit、UserID 為 "System"。
+            </summary>
+            <param name="setting">資料庫連線設定</param>
+            <param name="tableName">資料表名稱</param>
+            <param name="debugEnabled">是否記錄除錯類別日誌</param>
+            <param name="logAP">日誌的記錄者應用程式 (應用程式的代碼或名稱，實作記錄者自行定義)</param>
+            <param name="logItem">日誌的記錄者項目 (LogAP 的下一層的代碼或名稱，實作記錄者自行定義)</param>
+        </member>
+        <member name="M:Fuju.Log.DBLogWriter.Finalize">
+            <summary>
+            結構式
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.DBLogWriter.LogType">
+            <summary>
+            日誌檔類別
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.DBLogWriter.IsReady">
+            <summary>
+            寫入器是否已準備好
+            </summary>
+        </member>
+        <member name="M:Fuju.Log.DBLogWriter.Dispose(System.Boolean)">
+            <summary>
+            釋放資源
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:Fuju.Log.DBLogWriter.Write(Fuju.Log.LogKindEnum,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Decimal@)">
+            <summary>
+            寫入日誌資料
+            </summary>
+            <param name="logKind">指定日誌類別</param>
+            <param name="logAP">日誌的記錄者應用程式 (應用程式的代碼或名稱，實作記錄者自行定義)</param>
+            <param name="logItem">日誌的記錄者項目 (LogAP 的下一層的代碼或名稱，實作記錄者自行定義)</param>
+            <param name="logTrackNo">日誌的軌跡號碼 (單次的操作、交易、除錯使用同一個軌跡號碼)</param>
+            <param name="actionType">操作的類型 (I:新增、U:修改、D:刪除、S:查詢、P:列印、E:執行(混合多種操作)，匯入(視為新增 I)、匯出/產生檔案/產生報表(視為執行 E)、X:除錯日誌)</param>
+            <param name="actionName">操作的名稱 (實作記錄者自行定義。例如 Web 服務記錄服務命令名稱，Win 服務記錄方法名稱，作業服務記錄作業名稱，除錯日誌的索引鍵1)</param>
+            <param name="actionData">操作的資料 (實作記錄者自行定義。例如 Web 服務記錄服務命令參數，Win 服務記錄方法參數，作業服務記錄作業參數，除錯日誌的索引鍵2)</param>
+            <param name="actionJobID">操作的作業代碼 (實作記錄者自行定義)</param>
+            <param name="resultStatus">結果的狀態 (實作記錄者自行定義。例如操作日誌記錄空白，Web 服務記錄 XmlResult.Code，Win 服務記錄 Result.Code，除錯日誌記錄空白)</param>
+            <param name="resultData">結果的資料 (實作記錄者自行定義，預設為空字串。例如操作日誌記錄空白，Web 服務記錄 XmlResult.Message 或 XmlResult.Data，Win 服務記錄 Result.Message，除錯日誌的除錯訊息)</param>
+            <param name="clientAP">用戶端(應用程式)代碼或名稱 (用在 Web 服務中，記錄呼叫服務的應用程式代碼或名稱)</param>
+            <param name="clientID">用戶端帳號 (用在 Web 服務中，記錄呼叫服務的應用程式帳號)</param>
+            <param name="clientPW">用戶端密碼 (用在 Web 服務中，記錄呼叫服務的應用程式密碼)</param>
+            <param name="clientApItem">用戶端(應用程式)項目 (用在 Web 服務中，記錄呼叫服務的應用程式項目(下一層))</param>
+            <param name="clientIP">用戶端 IP (用在 Web 服務中，記錄呼叫服務的應用程式 IP)</param>
+            <param name="userKind">使用者的類別 (實作記錄者自行定義。依專案的使用者設計而異，用來區別銀行人員、企業人員、企業繳款人，或系統服務)</param>
+            <param name="userUnit">使用者的單位代碼 (實作記錄者自行定義。依專案的使用者設計而異，用來區別人員歸屬那家分行或企業，或系統服務)</param>
+            <param name="userID">使用者的代碼或帳號 (實作記錄者自行定義。依專案的使用者設計而異，用來區別同一單位的使用者，或系統服務)</param>
+            <param name="userData">使用者的額外資料 (實作記錄者自行定義，預設為空字串)</param>
+            <param name="logSN">成功則傳回日誌流水號，否則傳回 0</param>
+            <returns>成功傳回 true，否則傳回 false</returns>
+        </member>
+        <member name="T:Fuju.Log.DB.SystemLogEntity">
+            <summary>
+            系統日誌檔類別
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.DB.SystemLogEntity.TABLE_NAME">
+            <summary>
+            資料表名稱
+            </summary>
+        </member>
+        <member name="T:Fuju.Log.DB.SystemLogEntity.Field">
+            <summary>
+            欄位名稱定義抽象類別
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.DB.SystemLogEntity.Field.SN">
+            <summary>
+            日誌流水號 (PKey)
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.DB.SystemLogEntity.Field.LogKind">
+            <summary>
+            日誌的類別 (D:除錯; O:操作; T:交易;)
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.DB.SystemLogEntity.Field.LogAP">
+            <summary>
+            日誌的記錄者應用程式 (應用程式的代碼或名稱，實作記錄者自行定義)
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.DB.SystemLogEntity.Field.LogItem">
+            <summary>
+            日誌的記錄者項目 (LogAP 的下一層的代碼或名稱，實作記錄者自行定義)
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.DB.SystemLogEntity.Field.LogTrackNo">
+            <summary>
+            日誌的軌跡號碼 (單次的操作、交易、除錯使用同一個軌跡號碼，預設為空字串)
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.DB.SystemLogEntity.Field.LogTime">
+            <summary>
+            日誌的記錄時間 (預設為 DateTime.Now)
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.DB.SystemLogEntity.Field.ActionType">
+            <summary>
+            操作的類型 (I:新增、U:修改、D:刪除、S:查詢、P:列印、E:執行(混合多種操作)，匯入(視為新增 I)、匯出/產生檔案/產生報表(視為執行 E)、X:除錯日誌)
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.DB.SystemLogEntity.Field.ActionName">
+            <summary>
+            操作的名稱 (實作記錄者自行定義。例如 Web 服務記錄服務命令名稱，Win 服務記錄方法名稱，作業服務記錄作業名稱，除錯日誌的索引鍵1)
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.DB.SystemLogEntity.Field.ActionData">
+            <summary>
+            操作的資料 (實作記錄者自行定義。例如 Web 服務記錄服務命令參數，Win 服務記錄方法參數，作業服務記錄作業參數，除錯日誌的索引鍵2)
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.DB.SystemLogEntity.Field.ActionJobID">
+            <summary>
+            操作的作業代碼 (實作記錄者自行定義，預設為空字串)
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.DB.SystemLogEntity.Field.ResultStatus">
+            <summary>
+            結果的狀態 (實作記錄者自行定義。例如操作日誌記錄空白，Web 服務記錄 XmlResult.Code，Win 服務記錄 Result.Code，除錯日誌記錄空白)
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.DB.SystemLogEntity.Field.ResultData">
+            <summary>
+            結果的資料 (實作記錄者自行定義，預設為空字串。例如操作日誌記錄空白，Web 服務記錄 XmlResult.Message 或 XmlResult.Data，Win 服務記錄 Result.Message，除錯日誌的除錯訊息)
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.DB.SystemLogEntity.Field.ClientAP">
+            <summary>
+            用戶端的(應用程式)代碼或名稱 (用在 Web 服務中，記錄呼叫服務的應用程式代碼或名稱，預設為空字串)
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.DB.SystemLogEntity.Field.ClientID">
+            <summary>
+            用戶端的帳號 (用在 Web 服務中，記錄呼叫服務的應用程式帳號，預設為空字串)
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.DB.SystemLogEntity.Field.ClientPW">
+            <summary>
+            用戶端的密碼 (用在 Web 服務中，記錄呼叫服務的應用程式密碼，預設為空字串)
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.DB.SystemLogEntity.Field.ClientApItem">
+            <summary>
+            用戶端的(應用程式)項目 (用在 Web 服務中，記錄呼叫服務的應用程式項目(下一層)，預設為空字串)
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.DB.SystemLogEntity.Field.ClientIP">
+            <summary>
+            用戶端的 IP (用在 Web 服務中，記錄呼叫服務的應用程式 IP，預設為空字串)
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.DB.SystemLogEntity.Field.UserKind">
+            <summary>
+            使用者的類別 (實作記錄者自行定義。依專案的使用者設計而異，用來區別銀行人員、企業人員、企業繳款人，或系統服務)
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.DB.SystemLogEntity.Field.UserUnit">
+            <summary>
+            使用者的單位代碼 (實作記錄者自行定義。依專案的使用者設計而異，用來區別人員歸屬那家分行或企業，或系統服務)
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.DB.SystemLogEntity.Field.UserID">
+            <summary>
+            使用者的代碼或帳號 (實作記錄者自行定義。依專案的使用者設計而異，用來區別同一單位的使用者，或系統服務)
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.DB.SystemLogEntity.Field.UserData">
+            <summary>
+            使用者的額外資料 (實作記錄者自行定義，預設為空字串)
+            </summary>
+        </member>
+        <member name="M:Fuju.Log.DB.SystemLogEntity.#ctor">
+            <summary>
+            建構系統日誌檔物件
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.DB.SystemLogEntity.SN">
+            <summary>
+            日誌流水號 (PKey)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.DB.SystemLogEntity.LogKind">
+            <summary>
+            日誌的類別 (D:除錯; O:操作; T:交易;)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.DB.SystemLogEntity.LogAP">
+            <summary>
+            日誌的記錄者應用程式 (應用程式的代碼或名稱，實作記錄者自行定義)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.DB.SystemLogEntity.LogItem">
+            <summary>
+            日誌的記錄者項目 (LogAP 的下一層的代碼或名稱，實作記錄者自行定義)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.DB.SystemLogEntity.LogTrackNo">
+            <summary>
+            日誌的軌跡號碼 (單次的操作、交易、除錯使用同一個軌跡號碼，預設為空字串)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.DB.SystemLogEntity.LogTime">
+            <summary>
+            日誌的記錄時間 (預設為 DateTime.Now)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.DB.SystemLogEntity.ActionType">
+            <summary>
+            操作的類型 (I:新增、U:修改、D:刪除、S:查詢、P:列印、E:執行(混合多種操作)，匯入(視為新增 I)、匯出/產生檔案/產生報表(視為執行 E)、X:除錯日誌)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.DB.SystemLogEntity.ActionName">
+            <summary>
+            操作的名稱 (實作記錄者自行定義。例如 Web 服務記錄服務命令名稱，Win 服務記錄方法名稱，作業服務記錄作業名稱，除錯日誌的索引鍵1)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.DB.SystemLogEntity.ActionData">
+            <summary>
+            操作的資料 (實作記錄者自行定義。例如 Web 服務記錄服務命令參數，Win 服務記錄方法參數，作業服務記錄作業參數，除錯日誌的索引鍵2)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.DB.SystemLogEntity.ActionJobID">
+            <summary>
+            操作的作業代碼 (實作記錄者自行定義，預設為空字串)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.DB.SystemLogEntity.ResultStatus">
+            <summary>
+            結果的狀態 (實作記錄者自行定義。例如操作日誌記錄空白，Web 服務記錄 XmlResult.Code，Win 服務記錄 Result.Code，除錯日誌記錄空白)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.DB.SystemLogEntity.ResultData">
+            <summary>
+            結果的資料 (實作記錄者自行定義，預設為空字串。例如操作日誌記錄空白，Web 服務記錄 XmlResult.Message 或 XmlResult.Data，Win 服務記錄 Result.Message，除錯日誌的除錯訊息)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.DB.SystemLogEntity.ClientAP">
+            <summary>
+            用戶端(應用程式)代碼或名稱 (用在 Web 服務中，記錄呼叫服務的應用程式代碼或名稱，預設為空字串)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.DB.SystemLogEntity.ClientID">
+            <summary>
+            用戶端帳號 (用在 Web 服務中，記錄呼叫服務的應用程式帳號，預設為空字串)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.DB.SystemLogEntity.ClientPW">
+            <summary>
+            用戶端密碼 (用在 Web 服務中，記錄呼叫服務的應用程式密碼，預設為空字串)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.DB.SystemLogEntity.ClientApItem">
+            <summary>
+            用戶端(應用程式)項目 (用在 Web 服務中，記錄呼叫服務的應用程式項目(下一層)，預設為空字串)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.DB.SystemLogEntity.ClientIP">
+            <summary>
+            用戶端 IP (用在 Web 服務中，記錄呼叫服務的應用程式 IP，預設為空字串)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.DB.SystemLogEntity.UserKind">
+            <summary>
+            使用者的類別 (實作記錄者自行定義。依專案的使用者設計而異，用來區別銀行人員、企業人員、企業繳款人，或系統服務)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.DB.SystemLogEntity.UserUnit">
+            <summary>
+            使用者的單位代碼 (實作記錄者自行定義。依專案的使用者設計而異，用來區別人員歸屬那家分行或企業，或系統服務)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.DB.SystemLogEntity.UserID">
+            <summary>
+            使用者的代碼或帳號 (實作記錄者自行定義。依專案的使用者設計而異，用來區別同一單位的使用者，或系統服務)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.DB.SystemLogEntity.UserData">
+            <summary>
+            使用者的額外資料 (實作記錄者自行定義，預設為空字串)
+            </summary>
+        </member>
+        <member name="T:Fuju.Log.ILogActionInfo">
+            <summary>
+            日誌的操作資訊 (基底) 介面
+            </summary>
+        </member>
+        <member name="M:Fuju.Log.ILogActionInfo.GetActionType">
+            <summary>
+            取得操作的類型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Log.ILogActionInfo.GetActionName">
+            <summary>
+            取得操作的名稱
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Log.ILogActionInfo.GetActionData">
+            <summary>
+            取得操作的資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Log.ILogActionInfo.GetActionJobID">
+            <summary>
+            取得操作的作業代碼
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Fuju.Log.ILogClientInfo">
+            <summary>
+            日誌的用戶端資訊 (基底) 介面
+            </summary>
+        </member>
+        <member name="M:Fuju.Log.ILogClientInfo.GetClientAP">
+            <summary>
+            取得用戶端的(應用程式)代碼或名稱
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Log.ILogClientInfo.GetClientID">
+            <summary>
+            取得用戶端的帳號
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Log.ILogClientInfo.GetClientPW">
+            <summary>
+            取得用戶端的密碼
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Log.ILogClientInfo.GetClientApItem">
+            <summary>
+            取得用戶端的(應用程式)項目
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Log.ILogClientInfo.GetClientIP">
+            <summary>
+            取得用戶端的 IP
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Fuju.Log.ILogResultInfo">
+            <summary>
+            日誌的結果資訊 (基底) 介面
+            </summary>
+        </member>
+        <member name="M:Fuju.Log.ILogResultInfo.GetResultStatus">
+            <summary>
+            取得結果的狀態
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Log.ILogResultInfo.GetResultData">
+            <summary>
+            取得結果的資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Fuju.Log.ILogUserInfo">
+            <summary>
+            日誌的使用者資訊 (基底) 介面
+            </summary>
+        </member>
+        <member name="M:Fuju.Log.ILogUserInfo.GetUserKind">
+            <summary>
+            使用者的類別
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Log.ILogUserInfo.GetUserUnit">
+            <summary>
+            使用者的單位代碼
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Log.ILogUserInfo.GetUserID">
+            <summary>
+            使用者的代碼或帳號
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Log.ILogUserInfo.GetUserData">
+            <summary>
+            使用者的額外資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Fuju.Log.LogManager">
+            <summary>
+            日誌檔管理器類別
+            </summary>
+            <example>
+            <![CDATA[
+            <fujuConfig>
+                <systemSection>
+                    <systems>
+                        <!-- // 系統日誌檔設定 - 開始 -->
+                        <!-- 指定日誌檔類別 (1或DB:資料庫日誌 / 2或File:檔案日誌) -->
+                        <add group="SystemLog" name="Type" value="" />
+                        <!-- 記錄是否記錄Debug訊息 (true或enable或y或1:表示啟用 / 其他值表示不啟用) -->
+                        <add group="SystemLog" name="Debug" value="" />
+                        <!-- 指定軌跡號碼的取法 ([GUID]:使用Guid.NewGuid / [TIMESPAN]:使用DateTime.Now.Ticks / 其他值則表示不使用) -->
+                        <add group="SystemLog" name="TrackNo" value="" />
+                        <!-- 使用資料庫日誌時，指定資料表名稱 -->
+                        <add group="SystemLog" name="Table" value="" />
+                        <!-- 使用資料庫日誌時，指定資料庫設定的 Config 名稱 -->
+                        <add group="SystemLog" name="DBConfig" value="" />
+                        <!-- 使用資料庫日誌時，不指定資料庫設定的  Config 名稱時，指定資料庫類別 (參考 Fuju.DBTypeEnum) -->
+                        <add group="SystemLog" name="DBType" value="" />
+                        <!-- 使用資料庫日誌時，不指定資料庫設定的 Config 名稱時，指定資料庫連線字串 -->
+                        <add group="SystemLog" name="ConnectionString" value="" />
+                        <!-- 使用檔案日誌時，指定日誌檔的完整路徑與檔名 (檔名可指定特殊日期格式，參考 Fuju.Common.ReplaceDateFormat) -->
+                        <add group="SystemLog" name="File" value="" />
+                        <!-- \\ 系統日誌檔設定 - 結束 -->
+                    </systems>
+                </systemSection>
+                <projectSection>
+                    <projects>
+                    </projects>
+                </projectSection>
+            </fujuConfig>
+            ]]>
+            </example>
+        </member>
+        <member name="F:Fuju.Log.LogManager.SystemLogConfigGroupName">
+            <summary>
+            系統日誌檔組態群組名稱
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogManager.ConfigTypeName">
+            <summary>
+            系統日誌檔組態的日誌檔類別 Tag
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogManager.ConfigDebugName">
+            <summary>
+            系統日誌檔組態的是否記錄Debug訊息 Tag
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogManager.ConfigTrackNoName">
+            <summary>
+            系統日誌檔組態的軌跡號碼取法 Tag
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogManager.ConfigTableName">
+            <summary>
+            系統日誌檔組態的資料表名稱 Tag
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogManager.ConfigDBConfigName">
+            <summary>
+            系統日誌檔組態的資料庫設定的組態名稱 Tag
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogManager.ConfigDBTypeName">
+            <summary>
+            系統日誌檔組態的資料庫類別 Tag
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogManager.ConfigConnectionStringName">
+            <summary>
+            系統日誌檔組態的資料庫連線字串 Tag
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogManager.ConfigFileName">
+            <summary>
+            系統日誌檔組態的日誌檔 Tag
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogManager._SystemLogManager">
+            <summary>
+            系統日誌檔管理器靜態變數
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogManager._ProjectLogManagers">
+            <summary>
+            專案自訂日誌檔管理器靜態變數
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.LogManager.ConfigGroupName">
+            <summary>
+            組態群組名稱
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.LogManager.LogType">
+            <summary>
+            日誌檔類別，預設為 LogTypeEnum.Unknown
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.LogManager.DebugEnabled">
+            <summary>
+            是否記錄除錯類別日誌
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.LogManager.LogTrackNo">
+            <summary>
+            軌跡號碼
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.LogManager.LogTableName">
+            <summary>
+            日誌檔資料表名稱
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.LogManager.LogConnectionSetting">
+            <summary>
+            日誌檔資料庫連線設定
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.LogManager.LogFileInfo">
+            <summary>
+            日誌檔檔案資訊
+            </summary>
+        </member>
+        <member name="M:Fuju.Log.LogManager.#ctor">
+            <summary>
+            建構系統日誌檔管理器
+            </summary>
+        </member>
+        <member name="M:Fuju.Log.LogManager.#ctor(System.String)">
+            <summary>
+            建構指定組態群組名稱的日誌檔管理器
+            </summary>
+            <param name="configGroupName"></param>
+        </member>
+        <member name="M:Fuju.Log.LogManager.LoadConfig(System.String)">
+            <summary>
+            載入組態檔
+            </summary>
+            <returns>成功傳回 true，否則傳回 false</returns>
+        </member>
+        <member name="M:Fuju.Log.LogManager.GetMyLogWriter(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            取得本日誌檔的寫入器
+            </summary>
+            <param name="logAP">日誌的記錄者應用程式 (應用程式的代碼或名稱，實作記錄者自行定義)</param>
+            <param name="logItem">日誌的記錄者項目 (LogAP 的下一層的代碼或名稱，實作記錄者自行定義)</param>
+            <param name="logTrackNo">日誌的軌跡號碼，傳入 null 表示使用組態中的設定</param>
+            <param name="clientApSCode">用戶端(應用程式)系統代碼或名稱 (用在 Web 服務中，記錄呼叫服務的應用程式系統代碼或名稱)</param>
+            <param name="clientApMCode">用戶端(應用程式)機台代碼 (用在 Web 服務中，記錄呼叫服務的應用程式機台代碼)</param>
+            <param name="clientApACode">用戶端(應用程式)授權代碼 (用在 Web 服務中，記錄呼叫服務的應用程式授權代碼)</param>
+            <param name="clientApItem">用戶端(應用程式)項目 (用在 Web 服務中，記錄呼叫服務的應用程式項目(下一層))</param>
+            <param name="clientIP">用戶端 IP (用在 Web 服務中，記錄呼叫服務的應用程式 IP)</param>
+            <param name="userKind">使用者的類別 (實作記錄者自行定義。依專案的使用者設計而異，用來區別銀行人員、企業人員、企業繳款人，或系統服務)</param>
+            <param name="userUnit">使用者的單位代碼 (實作記錄者自行定義。依專案的使用者設計而異，用來區別人員歸屬那家分行或企業，或系統服務)</param>
+            <param name="userID">使用者的代碼或帳號 (實作記錄者自行定義。依專案的使用者設計而異，用來區別同一單位的使用者，或系統服務)</param>
+            <param name="userData">使用者的額外資料 (實作記錄者自行定義，預設為空字串)</param>
+            <returns>成功傳回日誌檔寫入器，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.Log.LogManager.GetMyLogWriter(System.String,System.String)">
+            <summary>
+            取得本日誌檔的寫入器 (通常在Win服務中使用) (TrackNo、UserAP、UserData 為空字串，UserKind、UserUnit、UserID 為 "System")
+            </summary>
+            <param name="logAP">AP (用來記錄網站、服務、應用程式等資訊與 LogItem 配合使用)</param>
+            <param name="logItem">Item (用來記錄服務、功能、方法、項目等 AP 下一階的資訊與 LogItem 配合使用)</param>
+            <returns>成功傳回日誌檔寫入器，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.Log.LogManager.GetMyNewTrackNo">
+            <summary>
+            取得本日誌檔的下一個軌跡號碼
+            </summary>
+            <returns>傳回軌跡號碼。</returns>
+        </member>
+        <member name="M:Fuju.Log.LogManager.GetLogWriter(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            取得系統日誌檔的寫入器
+            </summary>
+            <param name="logAP">日誌的記錄者應用程式 (應用程式的代碼或名稱，實作記錄者自行定義)</param>
+            <param name="logItem">日誌的記錄者項目 (LogAP 的下一層的代碼或名稱，實作記錄者自行定義)</param>
+            <param name="logTrackNo">日誌的軌跡號碼，傳入 null 表示使用組態中的設定</param>
+            <param name="clientApSCode">用戶端(應用程式)系統代碼或名稱 (用在 Web 服務中，記錄呼叫服務的應用程式系統代碼或名稱)</param>
+            <param name="clientApMCode">用戶端(應用程式)機台代碼 (用在 Web 服務中，記錄呼叫服務的應用程式機台代碼)</param>
+            <param name="clientApACode">用戶端(應用程式)授權代碼 (用在 Web 服務中，記錄呼叫服務的應用程式授權代碼)</param>
+            <param name="clientApItem">用戶端(應用程式)項目 (用在 Web 服務中，記錄呼叫服務的應用程式項目(下一層))</param>
+            <param name="clientIP">用戶端 IP (用在 Web 服務中，記錄呼叫服務的應用程式 IP)</param>
+            <param name="userKind">使用者的類別 (實作記錄者自行定義。依專案的使用者設計而異，用來區別銀行人員、企業人員、企業繳款人，或系統服務)</param>
+            <param name="userUnit">使用者的單位代碼 (實作記錄者自行定義。依專案的使用者設計而異，用來區別人員歸屬那家分行或企業，或系統服務)</param>
+            <param name="userID">使用者的代碼或帳號 (實作記錄者自行定義。依專案的使用者設計而異，用來區別同一單位的使用者，或系統服務)</param>
+            <param name="userData">使用者的額外資料 (實作記錄者自行定義，預設為空字串)</param>
+            <returns>成功傳回日誌檔寫入器，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.Log.LogManager.GetLogWriter(System.String,System.String)">
+            <summary>
+            取得系統日誌檔的寫入器 (通常在Win服務中使用) (TrackNo、UserAP、UserData 為空字串，UserKind、UserUnit、UserID 為 "System")
+            </summary>
+            <param name="logAP">AP (用來記錄網站、服務、應用程式等資訊與 LogItem 配合使用)</param>
+            <param name="logItem">Item (用來記錄服務、功能、方法、項目等 AP 下一階的資訊與 LogItem 配合使用)</param>
+            <returns>成功傳回日誌檔寫入器，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.Log.LogManager.GetNewTrackNo">
+            <summary>
+            取得系統日誌檔的下一個軌跡號碼
+            </summary>
+            <returns>傳回軌跡號碼。</returns>
+        </member>
+        <member name="M:Fuju.Log.LogManager.GetProjectLogManager(System.String)">
+            <summary>
+            取得指定專案組態設定群組名稱的自訂日誌檔管理器
+            </summary>
+            <param name="configGroupName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Fuju.Log.LogManager.GetProjectLogWriter(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            取得指定專案組態設定群組名稱的自訂日誌檔的寫入器
+            </summary>
+            <param name="configGroupName">指定專案組態設定群組名稱。</param>
+            <param name="logAP">日誌的記錄者應用程式 (應用程式的代碼或名稱，實作記錄者自行定義)</param>
+            <param name="logItem">日誌的記錄者項目 (LogAP 的下一層的代碼或名稱，實作記錄者自行定義)</param>
+            <param name="logTrackNo">日誌的軌跡號碼，傳入 null 表示使用組態中的設定</param>
+            <param name="clientApSCode">用戶端(應用程式)系統代碼或名稱 (用在 Web 服務中，記錄呼叫服務的應用程式系統代碼或名稱)</param>
+            <param name="clientApMCode">用戶端(應用程式)機台代碼 (用在 Web 服務中，記錄呼叫服務的應用程式機台代碼)</param>
+            <param name="clientApACode">用戶端(應用程式)授權代碼 (用在 Web 服務中，記錄呼叫服務的應用程式授權代碼)</param>
+            <param name="clientApItem">用戶端(應用程式)項目 (用在 Web 服務中，記錄呼叫服務的應用程式項目(下一層))</param>
+            <param name="clientIP">用戶端 IP (用在 Web 服務中，記錄呼叫服務的應用程式 IP)</param>
+            <param name="userKind">使用者的類別 (實作記錄者自行定義。依專案的使用者設計而異，用來區別銀行人員、企業人員、企業繳款人，或系統服務)</param>
+            <param name="userUnit">使用者的單位代碼 (實作記錄者自行定義。依專案的使用者設計而異，用來區別人員歸屬那家分行或企業，或系統服務)</param>
+            <param name="userID">使用者的代碼或帳號 (實作記錄者自行定義。依專案的使用者設計而異，用來區別同一單位的使用者，或系統服務)</param>
+            <param name="userData">使用者的額外資料 (實作記錄者自行定義，預設為空字串)</param>
+            <returns>成功傳回日誌檔寫入器，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.Log.LogManager.GetProjectLogWriter(System.String,System.String,System.String)">
+            <summary>
+            取得指定專案組態設定群組名稱的自訂日誌檔的寫入器 (通常在Win服務中使用) (TrackNo、UserAP、UserData 為空字串，UserKind、UserUnit、UserID 為 "System")
+            </summary>
+            <param name="configGroupName">指定專案組態設定群組名稱。</param>
+            <param name="logAP">AP (用來記錄網站、服務、應用程式等資訊與 LogItem 配合使用)</param>
+            <param name="logItem">Item (用來記錄服務、功能、方法、項目等 AP 下一階的資訊與 LogItem 配合使用)</param>
+            <returns>成功傳回日誌檔寫入器，否則傳回 null</returns>
+        </member>
+        <member name="M:Fuju.Log.LogManager.GetNewTrackNo(System.String)">
+            <summary>
+            取得指定專案組態設定群組名稱的自訂日誌檔的下一個軌跡號碼
+            </summary>
+            <param name="configGroupName">指定專案組態設定群組名稱。</param>
+            <returns>傳回軌跡號碼。</returns>
+        </member>
+        <member name="T:Fuju.Log.LogWriter">
+            <summary>
+            日誌寫入器類別
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.LogWriter.LogType">
+            <summary>
+            日誌檔類別
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.LogWriter.IsReady">
+            <summary>
+            寫入器是否已準備好
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.LogWriter.DebugEnabled">
+            <summary>
+            是否記錄除錯類別日誌
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.LogWriter.LogAP">
+            <summary>
+            AP (用來記錄網站、服務、應用程式等資訊與 LogItem 配合使用。實作記錄者自行定義，預設為空字串)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.LogWriter.LogItem">
+            <summary>
+            Item (用來記錄服務、功能、方法、項目等 AP 下一階的資訊與 LogItem 配合使用。實作記錄者自行定義，預設為空字串)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.LogWriter.LogTrackNo">
+            <summary>
+            TrackNo (用來記錄軌跡號碼，同一次的處理程序 (操作、交易、除錯) 使用相同的軌跡號碼。預設為空字串)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.LogWriter.ClientAP">
+            <summary>
+            用戶端(應用程式)代碼或名稱 (用在 Web 服務中，記錄呼叫服務的應用程式代碼或名稱，預設為空字串)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.LogWriter.ClientID">
+            <summary>
+            用戶端帳號 (用在 Web 服務中，記錄呼叫服務的應用程式帳號，預設為空字串)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.LogWriter.ClientPW">
+            <summary>
+            用戶端密碼 (用在 Web 服務中，記錄呼叫服務的應用程式密碼，預設為空字串)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.LogWriter.ClientApItem">
+            <summary>
+            用戶端(應用程式)項目 (用在 Web 服務中，記錄呼叫服務的應用程式項目(下一層)，預設為空字串)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.LogWriter.ClientIP">
+            <summary>
+            用戶端 IP (用在 Web 服務中，記錄呼叫服務的應用程式 IP，預設為空字串)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.LogWriter.UserKind">
+            <summary>
+            使用者的類別 (用來記錄執行程序者的類別，例如行員、企業人員、企業繳款人、呼叫服務的AP帳號等。實作記錄者自行定義)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.LogWriter.UserUnit">
+            <summary>
+            使用者的單位代碼 (用來記錄使用者帳號歸屬的單位，例如分行代碼、企業統編。實作記錄者自行定義)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.LogWriter.UserID">
+            <summary>
+            使用者的代碼或帳號 (實作記錄者自行定義)
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.LogWriter.UserData">
+            <summary>
+            使用者的額外資料 (實作記錄者自行定義，預設為空字串)
+            </summary>
+        </member>
+        <member name="M:Fuju.Log.LogWriter.#ctor">
+            <summary>
+            建構日誌寫入器類別
+            </summary>
+        </member>
+        <member name="M:Fuju.Log.LogWriter.#ctor(System.Boolean,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            建構日誌寫入器
+            </summary>
+            <param name="debugEnabled">是否記錄除錯類別日誌</param>
+            <param name="logAP">日誌的記錄者應用程式 (應用程式的代碼或名稱，實作記錄者自行定義)</param>
+            <param name="logItem">日誌的記錄者項目 (LogAP 的下一層的代碼或名稱，實作記錄者自行定義)</param>
+            <param name="logTrackNo">日誌的軌跡號碼 (單次的操作、交易、除錯使用同一個軌跡號碼)</param>
+            <param name="clientAP">用戶端(應用程式)代碼或名稱 (用在 Web 服務中，記錄呼叫服務的應用程式代碼或名稱)</param>
+            <param name="clientID">用戶端帳號 (用在 Web 服務中，記錄呼叫服務的應用程式帳號)</param>
+            <param name="clientPW">用戶端密碼 (用在 Web 服務中，記錄呼叫服務的應用程式密碼)</param>
+            <param name="clientApItem">用戶端(應用程式)項目 (用在 Web 服務中，記錄呼叫服務的應用程式項目(下一層))</param>
+            <param name="clientIP">用戶端 IP (用在 Web 服務中，記錄呼叫服務的應用程式 IP)</param>
+            <param name="userKind">使用者的類別 (實作記錄者自行定義。依專案的使用者設計而異，用來區別銀行人員、企業人員、企業繳款人，或系統服務)</param>
+            <param name="userUnit">使用者的單位代碼 (實作記錄者自行定義。依專案的使用者設計而異，用來區別人員歸屬那家分行或企業，或系統服務)</param>
+            <param name="userID">使用者的代碼或帳號 (實作記錄者自行定義。依專案的使用者設計而異，用來區別同一單位的使用者，或系統服務)</param>
+            <param name="userData">使用者的額外資料 (實作記錄者自行定義，預設為空字串)</param>
+        </member>
+        <member name="M:Fuju.Log.LogWriter.#ctor(System.Boolean,System.String,System.String)">
+            <summary>
+            建構日誌寫入器 (通常在 Win 服務中使用) 
+            LogTrackNo、clientAP、clientID、clientPW、clientApItem、clientIP、UserData 為空字串，
+            UserKind 為 "SYS"，
+            UserUnit、UserID 為 "System"。
+            </summary>
+            <param name="debugEnabled">是否記錄除錯類別日誌</param>
+            <param name="logAP">日誌的記錄者應用程式 (應用程式的代碼或名稱，實作記錄者自行定義)</param>
+            <param name="logItem">日誌的記錄者項目 (LogAP 的下一層的代碼或名稱，實作記錄者自行定義)</param>
+        </member>
+        <member name="M:Fuju.Log.LogWriter.Finalize">
+            <summary>
+            解構式
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogWriter._Disposed">
+            <summary>
+            Track whether Dispose has been called.
+            </summary>
+        </member>
+        <member name="M:Fuju.Log.LogWriter.Dispose">
+            <summary>
+            釋放資源
+            </summary>
+        </member>
+        <member name="M:Fuju.Log.LogWriter.Dispose(System.Boolean)">
+            <summary>
+            釋放資源
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:Fuju.Log.LogWriter.Write(Fuju.Log.LogKindEnum,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Decimal@)">
+            <summary>
+            寫入日誌資料
+            </summary>
+            <param name="logKind">指定日誌類別</param>
+            <param name="logAP">日誌的記錄者應用程式 (應用程式的代碼或名稱，實作記錄者自行定義)</param>
+            <param name="logItem">日誌的記錄者項目 (LogAP 的下一層的代碼或名稱，實作記錄者自行定義)</param>
+            <param name="logTrackNo">日誌的軌跡號碼 (單次的操作、交易、除錯使用同一個軌跡號碼)</param>
+            <param name="actionType">操作的類型 (I:新增、U:修改、D:刪除、S:查詢、P:列印、E:執行(混合多種操作)，匯入(視為新增 I)、匯出/產生檔案/產生報表(視為執行 E)、X:除錯日誌)</param>
+            <param name="actionName">操作的名稱 (實作記錄者自行定義。例如 Web 服務記錄服務命令名稱，Win 服務記錄方法名稱，作業服務記錄作業名稱，除錯日誌的索引鍵1)</param>
+            <param name="actionData">操作的資料 (實作記錄者自行定義。例如 Web 服務記錄服務命令參數，Win 服務記錄方法參數，作業服務記錄作業參數，除錯日誌的索引鍵2)</param>
+            <param name="actionJobID">操作的作業代碼 (實作記錄者自行定義)</param>
+            <param name="resultStatus">結果的狀態 (實作記錄者自行定義。例如操作日誌記錄空白，Web 服務記錄 XmlResult.Code，Win 服務記錄 Result.Code，除錯日誌記錄空白)</param>
+            <param name="resultData">結果的資料 (實作記錄者自行定義，預設為空字串。例如操作日誌記錄空白，Web 服務記錄 XmlResult.Message 或 XmlResult.Data，Win 服務記錄 Result.Message，除錯日誌的除錯訊息)</param>
+            <param name="clientAP">用戶端(應用程式)代碼或名稱 (用在 Web 服務中，記錄呼叫服務的應用程式代碼或名稱)</param>
+            <param name="clientID">用戶端帳號 (用在 Web 服務中，記錄呼叫服務的應用程式帳號)</param>
+            <param name="clientPW">用戶端密碼 (用在 Web 服務中，記錄呼叫服務的應用程式密碼)</param>
+            <param name="clientApItem">用戶端(應用程式)項目 (用在 Web 服務中，記錄呼叫服務的應用程式項目(下一層))</param>
+            <param name="clientIP">用戶端 IP (用在 Web 服務中，記錄呼叫服務的應用程式 IP)</param>
+            <param name="userKind">使用者的類別 (實作記錄者自行定義。依專案的使用者設計而異，用來區別銀行人員、企業人員、企業繳款人，或系統服務)</param>
+            <param name="userUnit">使用者的單位代碼 (實作記錄者自行定義。依專案的使用者設計而異，用來區別人員歸屬那家分行或企業，或系統服務)</param>
+            <param name="userID">使用者的代碼或帳號 (實作記錄者自行定義。依專案的使用者設計而異，用來區別同一單位的使用者，或系統服務)</param>
+            <param name="userData">使用者的額外資料 (實作記錄者自行定義，預設為空字串)</param>
+            <param name="logSN">成功則傳回日誌流水號，否則傳回 0</param>
+            <returns>成功傳回 true，否則傳回 false</returns>
+        </member>
+        <member name="M:Fuju.Log.LogWriter.Write(Fuju.Log.LogKindEnum,System.String,System.String,System.String,System.String,System.String,System.String,System.Decimal@)">
+            <summary>
+            寫入日誌資料
+            </summary>
+            <param name="logKind">指定日誌類別</param>
+            <param name="actionType">操作的類型 (I:新增、U:修改、D:刪除、S:查詢、P:列印、E:執行(混合多種操作)，匯入(視為新增 I)、匯出/產生檔案/產生報表(視為執行 E)、X:除錯日誌)</param>
+            <param name="actionName">操作的名稱 (實作記錄者自行定義。例如 Web 服務記錄服務命令名稱，Win 服務記錄方法名稱，作業服務記錄作業名稱，除錯日誌的索引鍵1)</param>
+            <param name="actionData">操作的資料 (實作記錄者自行定義。例如 Web 服務記錄服務命令參數，Win 服務記錄方法參數，作業服務記錄作業參數，除錯日誌的索引鍵2)</param>
+            <param name="actionJobID">操作的作業代碼 (實作記錄者自行定義)</param>
+            <param name="resultStatus">結果的狀態 (實作記錄者自行定義。例如操作日誌記錄空白，Web 服務記錄 XmlResult.Code，Win 服務記錄 Result.Code，除錯日誌記錄空白)</param>
+            <param name="resultData">結果的資料 (實作記錄者自行定義，預設為空字串。例如操作日誌記錄空白，Web 服務記錄 XmlResult.Message 或 XmlResult.Data，Win 服務記錄 Result.Message，除錯日誌的除錯訊息)</param>
+            <param name="logSN">成功則傳回日誌流水號，否則傳回 0</param>
+            <returns>成功傳回 true，否則傳回 false</returns>
+        </member>
+        <member name="M:Fuju.Log.LogWriter.Write(Fuju.Log.LogKindEnum,Fuju.Log.ILogActionInfo,Fuju.Log.ILogResultInfo,System.Decimal@)">
+            <summary>
+            寫入日誌資料
+            </summary>
+            <param name="logKind">指定日誌類別</param>
+            <param name="iActionInfo">日誌的操作資訊</param>
+            <param name="iResultInfo">日誌的結果資訊</param>
+            <param name="logSN">成功則傳回日誌流水號，否則傳回 0</param>
+            <returns>成功傳回 true，否則傳回 false</returns>
+        </member>
+        <member name="M:Fuju.Log.LogWriter.Debug(System.String,System.String,System.Decimal@)">
+            <summary>
+            記錄 Debug 類別日誌
+            </summary>
+            <param name="key">除錯的索引鍵 (實作記錄者自行定義。例如類別或方法的名稱)</param>
+            <param name="message">除錯的訊息 (實作記錄者自行定義)</param>
+            <param name="logSN">成功則傳回日誌流水號，否則傳回 0</param>
+            <returns>成功傳回 true，否則傳回 false</returns>
+        </member>
+        <member name="M:Fuju.Log.LogWriter.Operate(System.String,System.String,System.String,System.Decimal@)">
+            <summary>
+            記錄 Operate 類別日誌
+            </summary>
+            <param name="actionType">操作的類型 (I:新增、U:修改、D:刪除、S:查詢、P:列印、E:執行(混合多種操作)，參考 ActionTypeOption 定義)</param>
+            <param name="actionName">操作的名稱 (實作記錄者自行定義。例如 Web 服務記錄服務命令名稱)</param>
+            <param name="actionData">操作的資料 (實作記錄者自行定義。例如 Web 服務記錄服務命令參數)</param>
+            <param name="logSN">成功則傳回日誌流水號，否則傳回 0</param>
+            <returns>成功傳回 true，否則傳回 false</returns>
+        </member>
+        <member name="M:Fuju.Log.LogWriter.Operate(Fuju.Log.ILogActionInfo,System.Decimal@)">
+            <summary>
+            記錄 Operate 類別日誌
+            </summary>
+            <param name="iActionInfo">日誌的操作資訊</param>
+            <param name="logSN">成功則傳回日誌流水號，否則傳回 0</param>
+            <returns>成功傳回 true，否則傳回 false</returns>
+        </member>
+        <member name="M:Fuju.Log.LogWriter.Trade(System.String,System.String,System.String,System.String,System.String,System.String,System.Decimal@)">
+            <summary>
+            記錄 Trade 類別日誌
+            </summary>
+            <param name="actionType">操作的類型 (I:新增、U:修改、D:刪除、S:查詢、P:列印、E:執行(混合多種操作)，參考 ActionTypeOption 定義)</param>
+            <param name="actionName">操作的名稱 (實作記錄者自行定義。例如 Web 服務記錄服務命令名稱，Win 服務記錄方法名稱，作業服務記錄作業名稱)</param>
+            <param name="actionData">操作的資料 (實作記錄者自行定義。例如 Web 服務記錄服務命令參數，Win 服務記錄方法參數，作業服務記錄作業參數)</param>
+            <param name="actionJobID">操作的作業代碼 (實作記錄者自行定義，預設為空字串)</param>
+            <param name="resultStatus">結果的狀態 (實作記錄者自行定義)</param>
+            <param name="resultData">結果的資料 (實作記錄者自行處理資料格式)</param>
+            <param name="logSN">成功則傳回日誌流水號，否則傳回 0</param>
+            <returns>成功傳回 true，否則傳回 false</returns>
+        </member>
+        <member name="M:Fuju.Log.LogWriter.Trade(Fuju.Log.ILogActionInfo,Fuju.Log.ILogResultInfo,System.Decimal@)">
+            <summary>
+            記錄 Trade 類別日誌
+            </summary>
+            <param name="iActionInfo">日誌的操作資訊</param>
+            <param name="iResultInfo">日誌的結果資訊</param>
+            <param name="logSN">成功則傳回日誌流水號，否則傳回 0</param>
+            <returns>成功傳回 true，否則傳回 false</returns>
+        </member>
+        <member name="M:Fuju.Log.LogWriter.SetNewTrackNo(System.String)">
+            <summary>
+            設定軌跡號碼
+            </summary>
+            <param name="trackNo">指定軌跡號碼，如果傳入 null，則使用 LogManager.GetNewTrackNo() 的值</param>
+        </member>
+        <member name="T:Fuju.Log.LogKindEnum">
+            <summary>
+            日誌類別列舉定義
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogKindEnum.Debug">
+            <summary>
+            除錯 : 0
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogKindEnum.Operate">
+            <summary>
+            操作 : 1
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogKindEnum.Trade">
+            <summary>
+            交易 : 2
+            </summary>
+        </member>
+        <member name="T:Fuju.Log.LogKindCheck">
+            <summary>
+            LogKindEnum 的判斷工具
+            </summary>
+        </member>
+        <member name="M:Fuju.Log.LogKindCheck.IsDefine(Fuju.Log.LogKindEnum)">
+            <summary>
+            判斷是否為 LogKindEnum 的定義值
+            </summary>
+            <param name="value">要判斷的日誌類別列舉值。</param>
+            <returns>是定義值則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Log.LogKindCheck.TryParse(System.Int32,Fuju.Log.LogKindEnum@)">
+            <summary>
+            轉換 數值 成 LogKindEnum 型別，非定義的數值傳回 LogKindEnum.Debug
+            </summary>
+            <param name="value">要轉換的數值。</param>
+            <param name="logKind">傳回轉換後的 LogKindEnum，非定義的數值傳回 LogKindEnum.Debug。</param>
+            <returns>是定義的數值則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Log.LogKindCheck.TryParse(System.String,Fuju.Log.LogKindEnum@)">
+            <summary>
+            轉換 名稱(區分大小寫) 成 LogKindEnum 型別，非定義的數值傳回 LogKindEnum.Debug
+            </summary>
+            <param name="name">要轉換的名稱。</param>
+            <param name="logKind">傳回轉換後的 LogKindEnum，非定義的名稱傳回 LogKindEnum.Debug。</param>
+            <returns>是定義的名稱則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Log.LogKindCheck.TryParse2(System.String,Fuju.Log.LogKindEnum@)">
+            <summary>
+            轉換 名稱(忽略大小寫與頭尾空白的差異) 成 LogKindEnum 型別，非定義的數值傳回 LogKindEnum.Debug
+            </summary>
+            <param name="name">要轉換的名稱。</param>
+            <param name="logKind">傳回轉換後的 LogKindEnum，非定義的名稱傳回 LogKindEnum.Debug。</param>
+            <returns>是定義的名稱則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Log.LogKindCheck.TryParse(System.String,System.Boolean,Fuju.Log.LogKindEnum@)">
+            <summary>
+            轉換 名稱 成 LogKindEnum
+            </summary>
+            <param name="name">要轉換的名稱。</param>
+            <param name="ignoreCase">是否忽略大小寫與頭尾空白的差異。</param>
+            <param name="logKind">傳回轉換後的 LogKindEnum，非定義的名稱傳回 LogKindEnum.Debug。</param>
+            <returns>是定義的名稱則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Log.LogKindCheck.IsDefineValue(System.Int32)">
+            <summary>
+            判斷是否為 LogKindEnum 定義的數值
+            </summary>
+            <param name="value">要判斷的數值。</param>
+            <returns>是定義的數值則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Log.LogKindCheck.IsDefineName(System.String,System.Boolean)">
+            <summary>
+            判斷是否為 LogKindEnum 定義的名稱
+            </summary>
+            <param name="name">要判斷的名稱。</param>
+            <param name="ignoreCase">是否忽略大小寫與頭尾空白的差異。</param>
+            <returns>是定義的名稱則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Log.LogKindCheck.GetShortName(Fuju.Log.LogKindEnum)">
+            <summary>
+            取得日誌類別列舉值的短名稱
+            </summary>
+            <param name="logKind">要處理的日誌類別列舉值。</param>
+            <returns>是定義值則傳回短名稱，否則傳回空字串。</returns>
+        </member>
+        <member name="M:Fuju.Log.LogKindCheck.TryParseName(System.String,Fuju.Log.LogKindEnum@)">
+            <summary>
+            轉換 名稱/短名稱(不區分大小寫) 成 LogKindEnum 型別，非定義的數值傳回 LogKindEnum.Debug
+            </summary>
+            <param name="name">要轉換的名稱/短名稱。</param>
+            <param name="logKind">傳回轉換後的 LogKindEnum，非定義的名稱傳回 LogKindEnum.Debug。</param>
+            <returns>是定義的名稱/短名稱則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="T:Fuju.Log.LogTypeEnum">
+            <summary>
+            日誌檔類別列舉定義
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogTypeEnum.Unknown">
+            <summary>
+            未知的日誌檔類別 : 0
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogTypeEnum.DB">
+            <summary>
+            資料庫日誌
+            </summary>
+        </member>
+        <member name="F:Fuju.Log.LogTypeEnum.File">
+            <summary>
+            檔案日誌
+            </summary>
+        </member>
+        <member name="T:Fuju.Log.LogTypeCheck">
+            <summary>
+            LogTypeEnum 的判斷工具
+            </summary>
+        </member>
+        <member name="M:Fuju.Log.LogTypeCheck.IsDefine(Fuju.Log.LogTypeEnum)">
+            <summary>
+            判斷是否為 LogTypeEnum 的定義值
+            </summary>
+            <param name="value">要判斷的日誌檔類別列舉值。</param>
+            <returns>是定義值則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Log.LogTypeCheck.TryParse(System.Int32,Fuju.Log.LogTypeEnum@)">
+            <summary>
+            轉換 數值 成 LogTypeEnum 型別，非定義的數值傳回 LogTypeEnum.Unknown
+            </summary>
+            <param name="value">要轉換的數值。</param>
+            <param name="logType">傳回轉換後的 LogTypeEnum，非定義的數值傳回 LogTypeEnum.Unknown。</param>
+            <returns>是定義的數值則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Log.LogTypeCheck.TryParse(System.String,Fuju.Log.LogTypeEnum@)">
+            <summary>
+            轉換 名稱(區分大小寫) 成 LogTypeEnum 型別，非定義的數值傳回 LogTypeEnum.Unknown
+            </summary>
+            <param name="name">要轉換的名稱。</param>
+            <param name="logType">傳回轉換後的 LogTypeEnum，非定義的名稱傳回 LogTypeEnum.Unknown。</param>
+            <returns>是定義的名稱則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Log.LogTypeCheck.TryParse2(System.String,Fuju.Log.LogTypeEnum@)">
+            <summary>
+            轉換 名稱(忽略大小寫與頭尾空白的差異) 成 LogTypeEnum 型別，非定義的數值傳回 LogTypeEnum.Unknown
+            </summary>
+            <param name="name">要轉換的名稱。</param>
+            <param name="logType">傳回轉換後的 LogTypeEnum，非定義的名稱傳回 LogTypeEnum.Unknown。</param>
+            <returns>是定義的名稱則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Log.LogTypeCheck.TryParse(System.String,System.Boolean,Fuju.Log.LogTypeEnum@)">
+            <summary>
+            轉換 名稱 成 LogTypeEnum 型別，非定義的數值傳回 LogTypeEnum.Unknown
+            </summary>
+            <param name="name">要轉換的名稱。</param>
+            <param name="ignoreCase">是否忽略大小寫與頭尾空白的差異。</param>
+            <param name="logType">傳回轉換後的 LogTypeEnum，非定義的名稱傳回 LogTypeEnum.Unknown。</param>
+            <returns>是定義的名稱則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Log.LogTypeCheck.IsDefineValue(System.Int32)">
+            <summary>
+            判斷是否為 LogTypeEnum 定義的數值
+            </summary>
+            <param name="value">要判斷的數值。</param>
+            <returns>是定義的數值則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="M:Fuju.Log.LogTypeCheck.IsDefineName(System.String,System.Boolean)">
+            <summary>
+            判斷是否為 LogTypeEnum 定義的名稱
+            </summary>
+            <param name="name">要判斷的名稱。</param>
+            <param name="ignoreCase">是否忽略大小寫與頭尾空白的差異。</param>
+            <returns>是定義的名稱則傳回 true，否則傳回 false。</returns>
+        </member>
+        <member name="T:Fuju.Log.VoidLogWriter">
+            <summary>
+            空的(無效的)日誌檔寫入器類別
+            </summary>
+        </member>
+        <member name="M:Fuju.Log.VoidLogWriter.#ctor">
+            <summary>
+            建構空的(無效的)日誌檔寫入器
+            </summary>
+        </member>
+        <member name="M:Fuju.Log.VoidLogWriter.Finalize">
+            <summary>
+            解構式
+            </summary>
+        </member>
+        <member name="M:Fuju.Log.VoidLogWriter.Dispose(System.Boolean)">
+            <summary>
+            釋放資源
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="P:Fuju.Log.VoidLogWriter.LogType">
+            <summary>
+            日誌檔類別
+            </summary>
+        </member>
+        <member name="P:Fuju.Log.VoidLogWriter.IsReady">
+            <summary>
+            寫入器是否已準備好
+            </summary>
+        </member>
+        <member name="M:Fuju.Log.VoidLogWriter.Write(Fuju.Log.LogKindEnum,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Decimal@)">
+            <summary>
+            寫入日誌資料
+            </summary>
+            <param name="logKind">指定日誌類別</param>
+            <param name="logAP">日誌的記錄者應用程式 (應用程式的代碼或名稱，實作記錄者自行定義)</param>
+            <param name="logItem">日誌的記錄者項目 (LogAP 的下一層的代碼或名稱，實作記錄者自行定義)</param>
+            <param name="logTrackNo">日誌的軌跡號碼 (單次的操作、交易、除錯使用同一個軌跡號碼)</param>
+            <param name="actionType">操作的類型 (I:新增、U:修改、D:刪除、S:查詢、P:列印、E:執行(混合多種操作)，匯入(視為新增 I)、匯出/產生檔案/產生報表(視為執行 E)、X:除錯日誌)</param>
+            <param name="actionName">操作的名稱 (實作記錄者自行定義。例如 Web 服務記錄服務命令名稱，Win 服務記錄方法名稱，作業服務記錄作業名稱，除錯日誌的索引鍵1)</param>
+            <param name="actionData">操作的資料 (實作記錄者自行定義。例如 Web 服務記錄服務命令參數，Win 服務記錄方法參數，作業服務記錄作業參數，除錯日誌的索引鍵2)</param>
+            <param name="actionJobID">操作的作業代碼 (實作記錄者自行定義)</param>
+            <param name="resultStatus">結果的狀態 (實作記錄者自行定義。例如操作日誌記錄空白，Web 服務記錄 XmlResult.Code，Win 服務記錄 Result.Code，除錯日誌記錄空白)</param>
+            <param name="resultData">結果的資料 (實作記錄者自行定義，預設為空字串。例如操作日誌記錄空白，Web 服務記錄 XmlResult.Message 或 XmlResult.Data，Win 服務記錄 Result.Message，除錯日誌的除錯訊息)</param>
+            <param name="clientAP">用戶端(應用程式)代碼或名稱 (用在 Web 服務中，記錄呼叫服務的應用程式代碼或名稱)</param>
+            <param name="clientID">用戶端帳號 (用在 Web 服務中，記錄呼叫服務的應用程式帳號)</param>
+            <param name="clientPW">用戶端密碼 (用在 Web 服務中，記錄呼叫服務的應用程式密碼)</param>
+            <param name="clientApItem">用戶端(應用程式)項目 (用在 Web 服務中，記錄呼叫服務的應用程式項目(下一層))</param>
+            <param name="clientIP">用戶端 IP (用在 Web 服務中，記錄呼叫服務的應用程式 IP)</param>
+            <param name="userKind">使用者的類別 (實作記錄者自行定義。依專案的使用者設計而異，用來區別銀行人員、企業人員、企業繳款人，或系統服務)</param>
+            <param name="userUnit">使用者的單位代碼 (實作記錄者自行定義。依專案的使用者設計而異，用來區別人員歸屬那家分行或企業，或系統服務)</param>
+            <param name="userID">使用者的代碼或帳號 (實作記錄者自行定義。依專案的使用者設計而異，用來區別同一單位的使用者，或系統服務)</param>
+            <param name="userData">使用者的額外資料 (實作記錄者自行定義，預設為空字串)</param>
+            <param name="logSN">永遠傳回 0</param>
+            <returns>永遠傳回 false</returns>
+        </member>
+    </members>
+</doc>

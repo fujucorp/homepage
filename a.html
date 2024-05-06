@@ -1,0 +1,19 @@
+<html>
+  <head>
+  </head>
+
+  <body>
+    <input type="button" value="open line" onclick="openLine();"/>
+    <input type="button" value="open line pay money" onclick="openLinePayMoney();"/>
+    <script>
+      function openLine(){
+        window.open("https://line.me/R/");
+      }
+      function openLinePayMoney(){
+        window.open("line://pay/openChannel/iPassTuitionBill?barcode1={110331AG1}&barcode2={9993229121000001}&barcode3={003216000000888}&invCarrier={/1}");
+        //window.open("line://pay/openChannel/iPassTuitionBill?barcode1=110331AG1&barcode2=9993229121000001&barcode3=003216000000888&invCarrier=1");
+      }
+    </script>
+  </body>
+
+</html>

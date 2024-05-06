@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{06CF4155-E863-4C98-916E-0E8A1C838DF5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Entities</RootNamespace>
+    <AssemblyName>Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Fuju.Core">
+      <HintPath>..\lib\Fuju.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Fuju.DB">
+      <HintPath>..\lib\Fuju.DB.dll</HintPath>
+    </Reference>
+    <Reference Include="Fuju.Log">
+      <HintPath>..\lib\Fuju.Log.dll</HintPath>
+    </Reference>
+    <Reference Include="Fuju.ODS">
+      <HintPath>..\lib\Fuju.ODS.dll</HintPath>
+    </Reference>
+    <Reference Include="Fuju.Type">
+      <HintPath>..\lib\Fuju.Type.dll</HintPath>
+    </Reference>
+    <Reference Include="Fuju.Web">
+      <HintPath>..\lib\Fuju.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\lib\NPOI2\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="msxml3managed">
+      <HintPath>..\lib\msxml3managed.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\lib\NPOI2\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\lib\NPOI2\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\lib\NPOI2\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\lib\NPOI2\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BankServiceHelper.cs" />
+    <Compile Include="BillAmountHelper.cs" />
+    <Compile Include="BSNSHelper.cs" />
+    <Compile Include="CancelHelper.cs" />
+    <Compile Include="CancelNoHelper.cs" />
+    <Compile Include="ChannelHelper.cs" />
+    <Compile Include="CodeTexts\AdCodeTexts.cs" />
+    <Compile Include="CodeTexts\AdKindCodeTexts.cs" />
+    <Compile Include="CodeTexts\ApplyKindCodeTexts.cs" />
+    <Compile Include="CodeTexts\BankADGroupCodeTexts.cs" />
+    <Compile Include="CodeTexts\BoardTypeCodeTexts.cs" />
+    <Compile Include="CodeTexts\CancelDebtsStatusCodeTexts.cs" />
+    <Compile Include="CodeTexts\CancelStatusCodeTexts.cs" />
+    <Compile Include="CodeTexts\CCardApCodeTexts.cs" />
+    <Compile Include="CodeTexts\CorpTypeCodeTexts.cs" />
+    <Compile Include="CodeTexts\D00I70ECMarkCodeTexts.cs" />
+    <Compile Include="CodeTexts\ExportConfigKindCodeTexts.cs" />
+    <Compile Include="CodeTexts\ExportFileKindCodeTexts.cs" />
+    <Compile Include="CodeTexts\ExportFileStatusCodeTexts.cs" />
+    <Compile Include="CodeTexts\FlowKindCodeTexts.cs" />
+    <Compile Include="CodeTexts\FlowStatusCodeTexts.cs" />
+    <Compile Include="CodeTexts\FormCodeTexts.cs" />
+    <Compile Include="CodeTexts\KP3StatusCodeTexts.cs" />
+    <Compile Include="CodeTexts\ProcessKindCodeTexts.cs" />
+    <Compile Include="CodeTexts\ReceiveKindCodeTexts.cs" />
+    <Compile Include="CodeTexts\WebLogRequestKindCodeTexts.cs" />
+    <Compile Include="Command\BankLogonCommand.cs" />
+    <Compile Include="Command\BankServiceCommand.cs" />
+    <Compile Include="Command\CallMethodCommand.cs" />
+    <Compile Include="Command\CheckLogonCommand.cs" />
+    <Compile Include="Command\CommandAsker.cs" />
+    <Compile Include="Command\DeleteAllCommand.cs" />
+    <Compile Include="Command\DeleteCommand.cs" />
+    <Compile Include="Command\EntityOptionCommand.cs" />
+    <Compile Include="Command\FilterOptionCommand.cs" />
+    <Compile Include="Command\InsertAllCommand.cs" />
+    <Compile Include="Command\InsertCommand.cs" />
+    <Compile Include="Command\SchoolServiceCommand.cs" />
+    <Compile Include="Command\SelectAllCommand.cs" />
+    <Compile Include="Command\SelectCommand.cs" />
+    <Compile Include="Command\SelectCountCommand.cs" />
+    <Compile Include="Command\SelectFirstCommand.cs" />
+    <Compile Include="Command\SSOLogonCommand.cs" />
+    <Compile Include="Command\StudentLogonCommand.cs" />
+    <Compile Include="Command\UpdateCommand.cs" />
+    <Compile Include="Command\UpdateFieldsCommand.cs" />
+    <Compile Include="Command\UserLogonCommand.cs" />
+    <Compile Include="Command\UserLogoutCommand.cs" />
+    <Compile Include="ConfigHelper.cs" />
+    <Compile Include="Cycle.cs" />
+    <Compile Include="D00I70.cs" />
+    <Compile Include="DataFormat.cs" />
+    <Compile Include="DBLogger.cs" />
+    <Compile Include="EAIHelper.cs" />
+    <Compile Include="Encryption.cs" />
+    <Compile Include="Entity\AdEntity.cs" />
+    <Compile Include="Entity\BankEntity.cs" />
+    <Compile Include="Entity\BankpmEntity.cs" />
+    <Compile Include="Entity\BankServiceAccountEntity.cs" />
+    <Compile Include="Entity\BankServiceLogEntity.cs" />
+    <Compile Include="Entity\BillFormEntity.cs" />
+    <Compile Include="Entity\BoardEntity.cs" />
+    <Compile Include="Entity\CancelDebtsEntity.cs" />
+    <Compile Include="Entity\CancelResultEntity.cs" />
+    <Compile Include="Entity\CCardBankIdDtlEntity.cs" />
+    <Compile Include="Entity\CCardTxnDtlEntity.cs" />
+    <Compile Include="Entity\ChannelSetEntity.cs" />
+    <Compile Include="Entity\ChannelWayEntity.cs" />
+    <Compile Include="Entity\ChtTxnDtlEntity.cs" />
+    <Compile Include="Entity\ClassListEntity.cs" />
+    <Compile Include="Entity\ClassStandardEntity.cs" />
+    <Compile Include="CodeTexts\BankPMStatusCodeTexts.cs" />
+    <Compile Include="CodeTexts\BillFormEditionCodeTexts.cs" />
+    <Compile Include="CodeTexts\BillFormTypeCodeTexts.cs" />
+    <Compile Include="CodeTexts\BillFormUserCodeTexts.cs" />
+    <Compile Include="CodeTexts\BillingTypeCodeTexts.cs" />
+    <Compile Include="CodeTexts\CancelFlagCodeTexts.cs" />
+    <Compile Include="CodeTexts\CheckLogonResultCodeTexts.cs" />
+    <Compile Include="CodeTexts\ConfigKeyCodeTexts.cs" />
+    <Compile Include="CodeTexts\DataStatusCodeTexts.cs" />
+    <Compile Include="CodeTexts\EAIDataStatusCodeTexts.cs" />
+    <Compile Include="CodeTexts\GradeCodeTexts.cs" />
+    <Compile Include="CodeTexts\JobCubeResultCodeTexts.cs" />
+    <Compile Include="CodeTexts\JobCubeStatusCodeTexts.cs" />
+    <Compile Include="CodeTexts\JobCubeTypeCodeTexts.cs" />
+    <Compile Include="CodeTexts\LoginKeyTypeCodeTexts.cs" />
+    <Compile Include="CodeTexts\LogTypeCodeTexts.cs" />
+    <Compile Include="CodeTexts\ManagerUnitCodeTexts.cs" />
+    <Compile Include="CodeTexts\ProblemFlagCodeTexts.cs" />
+    <Compile Include="CodeTexts\ReissueFlagCodeTexts.cs" />
+    <Compile Include="CodeTexts\RoleCodeTexts.cs" />
+    <Compile Include="CodeTexts\RoleTypeCodeTexts.cs" />
+    <Compile Include="CodeTexts\UserQualCodeTexts.cs" />
+    <Compile Include="Entity\CollegeListEntity.cs" />
+    <Compile Include="Entity\ConfigEntity.cs" />
+    <Compile Include="Entity\Credit2StandardEntity.cs" />
+    <Compile Include="Entity\CreditbStandardEntity.cs" />
+    <Compile Include="Entity\CreditStandardEntity.cs" />
+    <Compile Include="Entity\D38DataEntity.cs" />
+    <Compile Include="Entity\DepListEntity.cs" />
+    <Compile Include="Entity\DeptListEntity.cs" />
+    <Compile Include="Entity\DormListEntity.cs" />
+    <Compile Include="Entity\DormStandardEntity.cs" />
+    <Compile Include="Entity\EAILogEntity.cs" />
+    <Compile Include="Entity\EDPDataEntity.cs" />
+    <Compile Include="Entity\EmailDataEntity.cs" />
+    <Compile Include="Entity\ExportConfigEntity.cs" />
+    <Compile Include="Entity\ExportFileEntity.cs" />
+    <Compile Include="Entity\FilePoolEntity.cs" />
+    <Compile Include="Entity\FlowDataEntity.cs" />
+    <Compile Include="Entity\HistoryEntity.cs" />
+    <Compile Include="Entity\InboundTxnDtlEntity.cs" />
+    <Compile Include="Entity\KP3Entity.cs" />
+    <Compile Include="Entity\KP3RenderLogEntity.cs" />
+    <Compile Include="Entity\QnaEntity.cs" />
+    <Compile Include="Entity\QueueCTCBEntity.cs" />
+    <Compile Include="Entity\ReceiveSumEntity.cs" />
+    <Compile Include="Entity\SchoolServiceAccountEntity.cs" />
+    <Compile Include="Entity\SchoolServiceLogEntity.cs" />
+    <Compile Include="Entity\StudentReduceEntity.cs" />
+    <Compile Include="Entity\UsersRightEntity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\WebLogEntity.cs" />
+    <Compile Include="Enum\AuthCodeEnum.cs" />
+    <Compile Include="Entity\FuncMenuEntity.cs" />
+    <Compile Include="Entity\GeneralStandardEntity.cs" />
+    <Compile Include="Entity\GroupListEntity.cs" />
+    <Compile Include="Entity\GroupRightEntity.cs" />
+    <Compile Include="Entity\IdentifyList1Entity.cs" />
+    <Compile Include="Entity\IdentifyList2Entity.cs" />
+    <Compile Include="Entity\IdentifyList3Entity.cs" />
+    <Compile Include="Entity\IdentifyList4Entity.cs" />
+    <Compile Include="Entity\IdentifyList5Entity.cs" />
+    <Compile Include="Entity\IdentifyList6Entity.cs" />
+    <Compile Include="Entity\IdentifyStandard1Entity.cs" />
+    <Compile Include="Entity\IdentifyStandard2Entity.cs" />
+    <Compile Include="Entity\IdentifyStandard3Entity.cs" />
+    <Compile Include="Entity\IdentifyStandard4Entity.cs" />
+    <Compile Include="Entity\IdentifyStandard5Entity.cs" />
+    <Compile Include="Entity\IdentifyStandard6Entity.cs" />
+    <Compile Include="Entity\JobcubeEntity.cs" />
+    <Compile Include="Entity\LoanListEntity.cs" />
+    <Compile Include="Entity\LoanStandardEntity.cs" />
+    <Compile Include="Entity\LogonLogEntity.cs" />
+    <Compile Include="Entity\LogTableEntity.cs" />
+    <Compile Include="Entity\MajorListEntity.cs" />
+    <Compile Include="Entity\MappingcsTxtEntity.cs" />
+    <Compile Include="Entity\MappingcsXlsmdbEntity.cs" />
+    <Compile Include="Entity\MappingloTxtEntity.cs" />
+    <Compile Include="Entity\MappingloXlsmdbEntity.cs" />
+    <Compile Include="Entity\MappingreTxtEntity.cs" />
+    <Compile Include="Entity\MappingreXlsmdbEntity.cs" />
+    <Compile Include="Entity\MappingrrTxtEntity.cs" />
+    <Compile Include="Entity\MappingrrXlsmdbEntity.cs" />
+    <Compile Include="Entity\MappingrtTxtEntity.cs" />
+    <Compile Include="Entity\MappingrtXlsmdbEntity.cs" />
+    <Compile Include="Entity\ProblemListEntity.cs" />
+    <Compile Include="ErrorCode.cs" />
+    <Compile Include="ExportFileHelper.cs" />
+    <Compile Include="FilterOption.cs" />
+    <Compile Include="FiscQRCode.cs" />
+    <Compile Include="FlowDataHelper.cs" />
+    <Compile Include="GenPDFHelper.cs" />
+    <Compile Include="GenReportHelper.cs" />
+    <Compile Include="HistoryHelper.cs" />
+    <Compile Include="HourMinute.cs" />
+    <Compile Include="ImportFileHelper.cs" />
+    <Compile Include="JobCubeHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="KP3Config.cs" />
+    <Compile Include="LogonUser.cs" />
+    <Compile Include="MenuAuth.cs" />
+    <Compile Include="ODSHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entity\ReceiveChannelEntity.cs" />
+    <Compile Include="Entity\ReceiveConfigEntity.cs" />
+    <Compile Include="Entity\ReceiveListEntity.cs" />
+    <Compile Include="Entity\ReduceListEntity.cs" />
+    <Compile Include="Entity\ReduceStandardEntity.cs" />
+    <Compile Include="Entity\ReturnListEntity.cs" />
+    <Compile Include="Entity\ReturnStandardEntity.cs" />
+    <Compile Include="Entity\SchoolRidEntity.cs" />
+    <Compile Include="Entity\SchoolRTypeEntity.cs" />
+    <Compile Include="Entity\StudentCourseEntity.cs" />
+    <Compile Include="Entity\StudentLoanEntity.cs" />
+    <Compile Include="Entity\StudentMasterEntity.cs" />
+    <Compile Include="Entity\StudentReceiveEntity.cs" />
+    <Compile Include="Entity\StudentReturnEntity.cs" />
+    <Compile Include="Entity\TermListEntity.cs" />
+    <Compile Include="Entity\UsersEntity.cs" />
+    <Compile Include="SchoolServiceHelper.cs" />
+    <Compile Include="Service References\MsgHandler\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceConfig.cs" />
+    <Compile Include="SNoHelper.cs" />
+    <Compile Include="View\BillFormView.cs" />
+    <Compile Include="View\CancelDebtsView.cs" />
+    <Compile Include="View\ContactView.cs" />
+    <Compile Include="View\EDPDataView.cs" />
+    <Compile Include="View\ExportFileView.cs" />
+    <Compile Include="View\FilePoolView.cs" />
+    <Compile Include="View\FuncMenuView.cs" />
+    <Compile Include="View\FuncMenuView2.cs" />
+    <Compile Include="View\GeneralStandardView.cs" />
+    <Compile Include="View\GroupListFlowView.cs" />
+    <Compile Include="View\HistoryView.cs" />
+    <Compile Include="View\JobCubeView.cs" />
+    <Compile Include="View\LogTableView.cs" />
+    <Compile Include="View\ProblemListView.cs" />
+    <Compile Include="View\ReceiveChannelView.cs" />
+    <Compile Include="View\SchoolConfigView.cs" />
+    <Compile Include="View\SchoolRidView.cs" />
+    <Compile Include="View\SchoolRidView2.cs" />
+    <Compile Include="View\SchoolRidView3.cs" />
+    <Compile Include="View\StudentReceiveView5.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\StudentReceiveView.cs" />
+    <Compile Include="View\StudentReceiveView2.cs" />
+    <Compile Include="View\StudentReceiveView3.cs" />
+    <Compile Include="View\StudentReceiveView4.cs" />
+    <Compile Include="View\StudentReceiveView6.cs" />
+    <Compile Include="View\StudentReceiveView7.cs" />
+    <Compile Include="View\StudentReceiveView8.cs" />
+    <Compile Include="View\StudentReturnView.cs" />
+    <Compile Include="View\StudentView.cs" />
+    <Compile Include="View\UsersFlowView.cs" />
+    <Compile Include="View\UsersView.cs" />
+    <Compile Include="Entity\YearListEntity.cs" />
+    <Compile Include="View\WebLogView.cs" />
+    <Compile Include="XmlHelper.cs" />
+    <Compile Include="ZIPHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\System.Xml.XmlElement.datasource" />
+    <None Include="Service References\MsgHandler\Entities.MsgHandler.FlatFile2XmlElementResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MsgHandler\Entities.MsgHandler.FlatFile2XmlStringResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MsgHandler\Entities.MsgHandler.SubmitFlatFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MsgHandler\Entities.MsgHandler.SubmitXmlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MsgHandler\Entities.MsgHandler.SubmitXmlStringResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MsgHandler\Entities.MsgHandler.SubmitXmlSyncResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MsgHandler\Entities.MsgHandler.XmlString2FlatFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MsgHandler\MsgHandler.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\MsgHandler\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MsgHandler\MsgHandler.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MsgHandler\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MsgHandler\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MsgHandler\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

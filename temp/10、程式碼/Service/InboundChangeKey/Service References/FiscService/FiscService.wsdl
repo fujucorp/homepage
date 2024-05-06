@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="InboundChangeKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="jobNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="checkCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InboundChangeKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InboundChangeKeyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InboundChangeKeySoapIn">
+    <wsdl:part name="parameters" element="tns:InboundChangeKey" />
+  </wsdl:message>
+  <wsdl:message name="InboundChangeKeySoapOut">
+    <wsdl:part name="parameters" element="tns:InboundChangeKeyResponse" />
+  </wsdl:message>
+  <wsdl:portType name="FiscServiceSoap">
+    <wsdl:operation name="InboundChangeKey">
+      <wsdl:input message="tns:InboundChangeKeySoapIn" />
+      <wsdl:output message="tns:InboundChangeKeySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FiscServiceSoap" type="tns:FiscServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InboundChangeKey">
+      <soap:operation soapAction="http://tempuri.org/InboundChangeKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FiscServiceSoap12" type="tns:FiscServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InboundChangeKey">
+      <soap12:operation soapAction="http://tempuri.org/InboundChangeKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FiscService">
+    <wsdl:port name="FiscServiceSoap" binding="tns:FiscServiceSoap">
+      <soap:address location="http://localhost:49861/FiscService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FiscServiceSoap12" binding="tns:FiscServiceSoap12">
+      <soap12:address location="http://localhost:49861/FiscService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

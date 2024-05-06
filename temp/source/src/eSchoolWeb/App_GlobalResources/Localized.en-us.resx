@@ -1,0 +1,1290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CTL_BTN_GoFirstPage" xml:space="preserve">
+    <value>First</value>
+  </data>
+  <data name="CTL_BTN_GoLastPage" xml:space="preserve">
+    <value>Last</value>
+  </data>
+  <data name="CTL_BTN_GoNextPage" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="CTL_BTN_GoPreviousPage" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="CTL_BTN_修改" xml:space="preserve">
+    <value>Modify</value>
+  </data>
+  <data name="CTL_BTN_停用" xml:space="preserve">
+    <value>Disable</value>
+  </data>
+  <data name="CTL_BTN_刪除" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="CTL_BTN_啟用" xml:space="preserve">
+    <value>Enable</value>
+  </data>
+  <data name="CTL_BTN_回上一頁" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="CTL_BTN_新增" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="CTL_BTN_查詢" xml:space="preserve">
+    <value>Query</value>
+  </data>
+  <data name="CTL_BTN_核可" xml:space="preserve">
+    <value>Approve</value>
+  </data>
+  <data name="CTL_BTN_確定" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="CTL_BTN_複製" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="CTL_BTN_離開" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="CTL_Filter1_ReceiveType" xml:space="preserve">
+    <value>Business ID</value>
+  </data>
+  <data name="CTL_Filter1_Term" xml:space="preserve">
+    <value>Semester</value>
+  </data>
+  <data name="CTL_Filter1_Year" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="CTL_GoPageNo1" xml:space="preserve">
+    <value>Go To</value>
+  </data>
+  <data name="CTL_GoPageNo2" xml:space="preserve">
+    <value>Page</value>
+  </data>
+  <data name="CTL_NoPageSize" xml:space="preserve">
+    <value>keep lines together</value>
+  </data>
+  <data name="CTL_PageSize2" xml:space="preserve">
+    <value>records</value>
+  </data>
+  <data name="CTL_UCPageHeader_Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="CTL_UCPageHeader_ReCountDown" xml:space="preserve">
+    <value>Count Down</value>
+  </data>
+  <data name="CTL_UCPageMasthead_LogonUser" xml:space="preserve">
+    <value>Logon User</value>
+  </data>
+  <data name="CTL_UCPageMasthead_QueryDate" xml:space="preserve">
+    <value>Query Date</value>
+  </data>
+  <data name="CTL_Welcome" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="CTL_商家代號" xml:space="preserve">
+    <value>Business ID</value>
+  </data>
+  <data name="CTL_學校名稱" xml:space="preserve">
+    <value>School Name</value>
+  </data>
+  <data name="Maintain" xml:space="preserve">
+    <value>Maintain</value>
+  </data>
+  <data name="MENU_D1" xml:space="preserve">
+    <value>Bill Data Setting</value>
+  </data>
+  <data name="MENU_D11" xml:space="preserve">
+    <value>Setting Codes</value>
+  </data>
+  <data name="MENU_D1100001" xml:space="preserve">
+    <value>Semester</value>
+  </data>
+  <data name="MENU_D1100002" xml:space="preserve">
+    <value>Department</value>
+  </data>
+  <data name="RemindChangePWD1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RemindChangePWD2" xml:space="preserve">
+    <value>Please change password</value>
+  </data>
+  <data name="WebTitle" xml:space="preserve">
+    <value>tuitions and miscellaneous fees service</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="上傳就學貸款金額" xml:space="preserve">
+    <value>Upload Loan Amount</value>
+  </data>
+  <data name="上課時數" xml:space="preserve">
+    <value>Class Hours</value>
+  </data>
+  <data name="下載" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="主辦分行" xml:space="preserve">
+    <value>Bank</value>
+  </data>
+  <data name="住址" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="住宿" xml:space="preserve">
+    <value>stay</value>
+  </data>
+  <data name="使用者密碼" xml:space="preserve">
+    <value>Passwrod</value>
+  </data>
+  <data name="使用者帳號" xml:space="preserve">
+    <value>User ID</value>
+  </data>
+  <data name="例如生日為2015年1月20日請輸入20150120" xml:space="preserve">
+    <value>example :20150120</value>
+  </data>
+  <data name="信用卡繳費" xml:space="preserve">
+    <value>Credit Card</value>
+  </data>
+  <data name="修改" xml:space="preserve">
+    <value>Modify</value>
+  </data>
+  <data name="公告事項" xml:space="preserve">
+    <value>Announcement</value>
+  </data>
+  <data name="分" xml:space="preserve">
+    <value>min</value>
+  </data>
+  <data name="列印" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="列印收據" xml:space="preserve">
+    <value>Receipt</value>
+  </data>
+  <data name="刪除" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="剩餘" xml:space="preserve">
+    <value>Count Down</value>
+  </data>
+  <data name="友善列印" xml:space="preserve">
+    <value>print friendly</value>
+  </data>
+  <data name="可貸金額" xml:space="preserve">
+    <value>loan amount</value>
+  </data>
+  <data name="回上一頁" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="回首頁" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="國中小" xml:space="preserve">
+    <value>Elementary school</value>
+  </data>
+  <data name="圖型驗證碼" xml:space="preserve">
+    <value>Captcha</value>
+  </data>
+  <data name="基本資料作業" xml:space="preserve">
+    <value>Bill Data Setting</value>
+  </data>
+  <data name="大專院校" xml:space="preserve">
+    <value>College</value>
+  </data>
+  <data name="姓名" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="學分數" xml:space="preserve">
+    <value>credit</value>
+  </data>
+  <data name="學制" xml:space="preserve">
+    <value>eductional systmelength of schooling</value>
+  </data>
+  <data name="學期代碼" xml:space="preserve">
+    <value>Semester</value>
+  </data>
+  <data name="學期名稱" xml:space="preserve">
+    <value>Semester Name</value>
+  </data>
+  <data name="學校代碼" xml:space="preserve">
+    <value>School ID</value>
+  </data>
+  <data name="學校名稱" xml:space="preserve">
+    <value>School Name</value>
+  </data>
+  <data name="學校專區" xml:space="preserve">
+    <value>School Login</value>
+  </data>
+  <data name="學校專區登入" xml:space="preserve">
+    <value>School Login</value>
+  </data>
+  <data name="學生基本資料" xml:space="preserve">
+    <value>Student Information</value>
+  </data>
+  <data name="學生姓名" xml:space="preserve">
+    <value>Studnet Name</value>
+  </data>
+  <data name="學生專區" xml:space="preserve">
+    <value>Student Login</value>
+  </data>
+  <data name="學生專區登入" xml:space="preserve">
+    <value>Student Login</value>
+  </data>
+  <data name="學生扣款轉帳資料" xml:space="preserve">
+    <value>Debit Information</value>
+  </data>
+  <data name="學號" xml:space="preserve">
+    <value>Student ID</value>
+  </data>
+  <data name="家長名稱" xml:space="preserve">
+    <value>Parents</value>
+  </data>
+  <data name="就貸" xml:space="preserve">
+    <value>loan</value>
+  </data>
+  <data name="就貸代碼" xml:space="preserve">
+    <value>School Loans Code</value>
+  </data>
+  <data name="年級" xml:space="preserve">
+    <value>Grade</value>
+  </data>
+  <data name="幼兒園" xml:space="preserve">
+    <value>Kindergarten</value>
+  </data>
+  <data name="序號" xml:space="preserve">
+    <value>No.</value>
+  </data>
+  <data name="座號" xml:space="preserve">
+    <value>Seat number</value>
+  </data>
+  <data name="應繳金額" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="扣款轉帳銀行代碼" xml:space="preserve">
+    <value>Debit Bank</value>
+  </data>
+  <data name="扣款轉帳銀行帳戶ＩＤ" xml:space="preserve">
+    <value>Debit ID</value>
+  </data>
+  <data name="扣款轉帳銀行帳號" xml:space="preserve">
+    <value>Debit Account</value>
+  </data>
+  <data name="扣款轉帳銀行帳號戶名" xml:space="preserve">
+    <value>Debit Name</value>
+  </data>
+  <data name="批號" xml:space="preserve">
+    <value>Batch No.</value>
+  </data>
+  <data name="持卡人身分證字號" xml:space="preserve">
+    <value>Credit Card Owner ID</value>
+  </data>
+  <data name="收入明細" xml:space="preserve">
+    <value>Receive Item List</value>
+  </data>
+  <data name="收入科目" xml:space="preserve">
+    <value>Receive Item Name</value>
+  </data>
+  <data name="新增" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="最新消息" xml:space="preserve">
+    <value>News</value>
+  </data>
+  <data name="查無資料" xml:space="preserve">
+    <value>no data</value>
+  </data>
+  <data name="查詢列印繳費單" xml:space="preserve">
+    <value>Bill</value>
+  </data>
+  <data name="查詢繳費狀態" xml:space="preserve">
+    <value>Bill Query</value>
+  </data>
+  <data name="檔案下載" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="檔案說明" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="減免" xml:space="preserve">
+    <value>Reduce</value>
+  </data>
+  <data name="減免代碼" xml:space="preserve">
+    <value>Reduce Code</value>
+  </data>
+  <data name="減免名稱" xml:space="preserve">
+    <value>Reduce Name</value>
+  </data>
+  <data name="減免金額項目" xml:space="preserve">
+    <value>Reduce Item</value>
+  </data>
+  <data name="班別" xml:space="preserve">
+    <value>Class</value>
+  </data>
+  <data name="生日" xml:space="preserve">
+    <value>Birthday</value>
+  </data>
+  <data name="登入成功" xml:space="preserve">
+    <value>Login Success</value>
+  </data>
+  <data name="登出" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="發卡行" xml:space="preserve">
+    <value>Issuer</value>
+  </data>
+  <data name="發卡銀行" xml:space="preserve">
+    <value>Issuer</value>
+  </data>
+  <data name="科系" xml:space="preserve">
+    <value>Major</value>
+  </data>
+  <data name="秒" xml:space="preserve">
+    <value>sec</value>
+  </data>
+  <data name="維護代碼檔" xml:space="preserve">
+    <value>Maintain Code</value>
+  </data>
+  <data name="網路ATM" xml:space="preserve">
+    <value>Web ATM</value>
+  </data>
+  <data name="網路銀行" xml:space="preserve">
+    <value>Web Bank</value>
+  </data>
+  <data name="繳款期限" xml:space="preserve">
+    <value>Payment deadline</value>
+  </data>
+  <data name="CTL_BTN_繳費" xml:space="preserve">
+    <value>Payment</value>
+  </data>
+  <data name="繳費狀態" xml:space="preserve">
+    <value>status</value>
+  </data>
+  <data name="繳費資料" xml:space="preserve">
+    <value>Bill Information</value>
+  </data>
+  <data name="繳費金額合計" xml:space="preserve">
+    <value>Payment amount</value>
+  </data>
+  <data name="聯絡人" xml:space="preserve">
+    <value>Contact person</value>
+  </data>
+  <data name="聯絡人連絡電話" xml:space="preserve">
+    <value>Telephone of Contact person</value>
+  </data>
+  <data name="聯絡我們" xml:space="preserve">
+    <value>Contact US</value>
+  </data>
+  <data name="臨櫃虛擬帳號" xml:space="preserve">
+    <value>Bill No for Bank</value>
+  </data>
+  <data name="臨櫃金額合計" xml:space="preserve">
+    <value>Payment amount in the Bank</value>
+  </data>
+  <data name="虛擬帳號" xml:space="preserve">
+    <value>Bill NO</value>
+  </data>
+  <data name="補單註記" xml:space="preserve">
+    <value>Rebill</value>
+  </data>
+  <data name="計算方式" xml:space="preserve">
+    <value>method</value>
+  </data>
+  <data name="資料" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="超商繳費金額" xml:space="preserve">
+    <value>Payment amount in the convenience store</value>
+  </data>
+  <data name="超商虛擬帳號" xml:space="preserve">
+    <value>Bill No for convenience store</value>
+  </data>
+  <data name="身份註記一" xml:space="preserve">
+    <value>Identity1</value>
+  </data>
+  <data name="身份註記三" xml:space="preserve">
+    <value>Identity3</value>
+  </data>
+  <data name="身份註記二" xml:space="preserve">
+    <value>Identity2</value>
+  </data>
+  <data name="身份註記五" xml:space="preserve">
+    <value>Identity5</value>
+  </data>
+  <data name="身份註記六" xml:space="preserve">
+    <value>Identity6</value>
+  </data>
+  <data name="身份註記四" xml:space="preserve">
+    <value>Identity4</value>
+  </data>
+  <data name="身份證字號" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="身分證字號" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="部別" xml:space="preserve">
+    <value>Department</value>
+  </data>
+  <data name="郵遞區號" xml:space="preserve">
+    <value>POST CODE</value>
+  </data>
+  <data name="重填" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="重新計時" xml:space="preserve">
+    <value>recycle</value>
+  </data>
+  <data name="金額" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="銀聯卡繳費" xml:space="preserve">
+    <value>Unionpay</value>
+  </data>
+  <data name="銀行專區" xml:space="preserve">
+    <value>Staff Login</value>
+  </data>
+  <data name="銀行專區登入" xml:space="preserve">
+    <value>Staff Login</value>
+  </data>
+  <data name="銷帳" xml:space="preserve">
+    <value>Write Off</value>
+  </data>
+  <data name="關閉視窗" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="院別" xml:space="preserve">
+    <value>College</value>
+  </data>
+  <data name="電子郵件" xml:space="preserve">
+    <value>EMail</value>
+  </data>
+  <data name="電話" xml:space="preserve">
+    <value>Telephone NO.</value>
+  </data>
+  <data name="高中職" xml:space="preserve">
+    <value>High School</value>
+  </data>
+  <data name="點上圖可更新驗證碼" xml:space="preserve">
+    <value>click to refresh</value>
+  </data>
+  <data name="CTL_BTN_儲存資料" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="CTL_BTN_新增下一筆" xml:space="preserve">
+    <value>New Bill</value>
+  </data>
+  <data name="CTL_BTN_產生PDF繳費單" xml:space="preserve">
+    <value>Generate Bill PDF</value>
+  </data>
+  <data name="CTL_BTN_計算金額" xml:space="preserve">
+    <value>Calculate</value>
+  </data>
+  <data name="CTL_Filter2_Receive" xml:space="preserve">
+    <value>Expense</value>
+  </data>
+  <data name="MENU_B2" xml:space="preserve">
+    <value>Bill</value>
+  </data>
+  <data name="MENU_B21" xml:space="preserve">
+    <value>Maintain Bill</value>
+  </data>
+  <data name="MENU_B2100001" xml:space="preserve">
+    <value>Billing</value>
+  </data>
+  <data name="MENU_B2100002" xml:space="preserve">
+    <value>Maintain Bill</value>
+  </data>
+  <data name="MENU_B2100003" xml:space="preserve">
+    <value>Download Bill</value>
+  </data>
+  <data name="MENU_B2100004" xml:space="preserve">
+    <value>Delete Bill</value>
+  </data>
+  <data name="MENU_B2100005" xml:space="preserve">
+    <value>Generate Debit Data</value>
+  </data>
+  <data name="MENU_B2100006" xml:space="preserve">
+    <value>Download Bill</value>
+  </data>
+  <data name="MENU_B2100007" xml:space="preserve">
+    <value>Import debit result</value>
+  </data>
+  <data name="MENU_B22" xml:space="preserve">
+    <value>Bill Amount / No.</value>
+  </data>
+  <data name="MENU_B2200001" xml:space="preserve">
+    <value>Calculate Amount</value>
+  </data>
+  <data name="MENU_B2200002" xml:space="preserve">
+    <value>Generate Bill No.</value>
+  </data>
+  <data name="MENU_B2200003" xml:space="preserve">
+    <value>Query Result</value>
+  </data>
+  <data name="MENU_B2200004" xml:space="preserve">
+    <value>Clear Bill No.</value>
+  </data>
+  <data name="MENU_B23" xml:space="preserve">
+    <value>Demand Note</value>
+  </data>
+  <data name="MENU_B2300001" xml:space="preserve">
+    <value>Generate Note</value>
+  </data>
+  <data name="MENU_B2300003" xml:space="preserve">
+    <value>Notify</value>
+  </data>
+  <data name="MENU_B24" xml:space="preserve">
+    <value>Receipt</value>
+  </data>
+  <data name="MENU_B2400001" xml:space="preserve">
+    <value>Generate Receipt</value>
+  </data>
+  <data name="MENU_C3" xml:space="preserve">
+    <value>Enter Into Account</value>
+  </data>
+  <data name="MENU_C3100001" xml:space="preserve">
+    <value>Write Off </value>
+  </data>
+  <data name="MENU_C32" xml:space="preserve">
+    <value>Enter Into Account(Multiple)</value>
+  </data>
+  <data name="MENU_C3200001" xml:space="preserve">
+    <value>Enter Into Account(multiple)</value>
+  </data>
+  <data name="MENU_C3200002" xml:space="preserve">
+    <value>Enter Into Account(file)</value>
+  </data>
+  <data name="MENU_C3300001" xml:space="preserve">
+    <value>Manual To write off</value>
+  </data>
+  <data name="MENU_C34" xml:space="preserve">
+    <value>Daily Report</value>
+  </data>
+  <data name="MENU_C3400001" xml:space="preserve">
+    <value>Daily Report</value>
+  </data>
+  <data name="MENU_C35" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="MENU_C3500001" xml:space="preserve">
+    <value>Debts List</value>
+  </data>
+  <data name="MENU_C3500002" xml:space="preserve">
+    <value>Payment List</value>
+  </data>
+  <data name="MENU_C36" xml:space="preserve">
+    <value>Recorded</value>
+  </data>
+  <data name="MENU_C3600001" xml:space="preserve">
+    <value>Query Recorded</value>
+  </data>
+  <data name="MENU_C3600002" xml:space="preserve">
+    <value>Delete Recorded</value>
+  </data>
+  <data name="MENU_C3600003" xml:space="preserve">
+    <value>Download Recorded</value>
+  </data>
+  <data name="MENU_C37" xml:space="preserve">
+    <value>Query / Download</value>
+  </data>
+  <data name="MENU_C3700001" xml:space="preserve">
+    <value>Query Recorded</value>
+  </data>
+  <data name="MENU_C3700002" xml:space="preserve">
+    <value>Cancel Write Off</value>
+  </data>
+  <data name="MENU_C3700004" xml:space="preserve">
+    <value>Download Write Off Data</value>
+  </data>
+  <data name="MENU_C3700005" xml:space="preserve">
+    <value>Reversal</value>
+  </data>
+  <data name="MENU_C3700006" xml:space="preserve">
+    <value>Host Data Query</value>
+  </data>
+  <data name="MENU_C3700007" xml:space="preserve">
+    <value>Download Write Off Data(formatted)</value>
+  </data>
+  <data name="MENU_C3700008" xml:space="preserve">
+    <value>Generate Write Off File</value>
+  </data>
+  <data name="MENU_D1100003" xml:space="preserve">
+    <value>Expense ID</value>
+  </data>
+  <data name="MENU_D1100004" xml:space="preserve">
+    <value>College</value>
+  </data>
+  <data name="MENU_D1100005" xml:space="preserve">
+    <value>Major</value>
+  </data>
+  <data name="MENU_D1100006" xml:space="preserve">
+    <value>Class</value>
+  </data>
+  <data name="MENU_D1100007" xml:space="preserve">
+    <value>Reduce</value>
+  </data>
+  <data name="MENU_D1100008" xml:space="preserve">
+    <value>Stay</value>
+  </data>
+  <data name="MENU_D1100009" xml:space="preserve">
+    <value>Identity</value>
+  </data>
+  <data name="MENU_D1100010" xml:space="preserve">
+    <value>Loan</value>
+  </data>
+  <data name="MENU_D1100011" xml:space="preserve">
+    <value>Refunds</value>
+  </data>
+  <data name="MENU_D1100012" xml:space="preserve">
+    <value>Copy Codes</value>
+  </data>
+  <data name="MENU_D1100013" xml:space="preserve">
+    <value>Delete Codes</value>
+  </data>
+  <data name="MENU_D12" xml:space="preserve">
+    <value>Expense Setting</value>
+  </data>
+  <data name="MENU_D1200001" xml:space="preserve">
+    <value>Expense Setting</value>
+  </data>
+  <data name="MENU_D1200002" xml:space="preserve">
+    <value>SubTotal Setting</value>
+  </data>
+  <data name="MENU_D13" xml:space="preserve">
+    <value>Standard Setting</value>
+  </data>
+  <data name="MENU_D1300001" xml:space="preserve">
+    <value>General Setting</value>
+  </data>
+  <data name="MENU_D1300002" xml:space="preserve">
+    <value>Credit Setting</value>
+  </data>
+  <data name="MENU_D1300003" xml:space="preserve">
+    <value>Credit Base Setting</value>
+  </data>
+  <data name="MENU_D1300004" xml:space="preserve">
+    <value>Course Setting</value>
+  </data>
+  <data name="MENU_D1300005" xml:space="preserve">
+    <value>Loan Setting</value>
+  </data>
+  <data name="MENU_D1300006" xml:space="preserve">
+    <value>Other Setting</value>
+  </data>
+  <data name="MENU_D1300007" xml:space="preserve">
+    <value>Stay Setting</value>
+  </data>
+  <data name="MENU_D1300008" xml:space="preserve">
+    <value>Identity Seting</value>
+  </data>
+  <data name="MENU_D1300009" xml:space="preserve">
+    <value>Reduce Setting</value>
+  </data>
+  <data name="MENU_D1300010" xml:space="preserve">
+    <value>Refunds Setting</value>
+  </data>
+  <data name="MENU_D1300011" xml:space="preserve">
+    <value>Copy Standard Setting</value>
+  </data>
+  <data name="MENU_D1300012" xml:space="preserve">
+    <value>Delete Standard Setting</value>
+  </data>
+  <data name="MENU_D14" xml:space="preserve">
+    <value>Comparison Table</value>
+  </data>
+  <data name="MENU_D1400001" xml:space="preserve">
+    <value>Bill File</value>
+  </data>
+  <data name="MENU_D1400002" xml:space="preserve">
+    <value>Refunds File</value>
+  </data>
+  <data name="MENU_D1400003" xml:space="preserve">
+    <value>Course File</value>
+  </data>
+  <data name="MENU_D1400004" xml:space="preserve">
+    <value>Loan File</value>
+  </data>
+  <data name="MENU_D1400005" xml:space="preserve">
+    <value>Reduce File</value>
+  </data>
+  <data name="MENU_D15" xml:space="preserve">
+    <value>File Upload</value>
+  </data>
+  <data name="MENU_D1500001" xml:space="preserve">
+    <value>Formatted File Upload</value>
+  </data>
+  <data name="MENU_D1500002" xml:space="preserve">
+    <value>Bill File Upload</value>
+  </data>
+  <data name="MENU_D1500003" xml:space="preserve">
+    <value>refunds File Upload</value>
+  </data>
+  <data name="MENU_D1500004" xml:space="preserve">
+    <value>Course File Upload</value>
+  </data>
+  <data name="MENU_D1500005" xml:space="preserve">
+    <value>Loan File Upload</value>
+  </data>
+  <data name="MENU_D1500006" xml:space="preserve">
+    <value>Reduce File Upload</value>
+  </data>
+  <data name="MENU_D1500007" xml:space="preserve">
+    <value>Query Upload Status</value>
+  </data>
+  <data name="MENU_D1500008" xml:space="preserve">
+    <value>Student Data Upload</value>
+  </data>
+  <data name="MENU_D16" xml:space="preserve">
+    <value>CTCB</value>
+  </data>
+  <data name="MENU_D1600001" xml:space="preserve">
+    <value>Upload CTCB Data</value>
+  </data>
+  <data name="MENU_D1600002" xml:space="preserve">
+    <value>Query CTCB Data</value>
+  </data>
+  <data name="MENU_D1700001" xml:space="preserve">
+    <value>Copy Codes &amp; Standard</value>
+  </data>
+  <data name="MENU_D1800001" xml:space="preserve">
+    <value>Delete Codes &amp; Standard</value>
+  </data>
+  <data name="MENU_P7100001" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="MENU_R4" xml:space="preserve">
+    <value>Refunds</value>
+  </data>
+  <data name="MENU_R4100001" xml:space="preserve">
+    <value>Refunds</value>
+  </data>
+  <data name="MENU_R42" xml:space="preserve">
+    <value>Refunds Cover</value>
+  </data>
+  <data name="MENU_R4200001" xml:space="preserve">
+    <value>Refunds Cover</value>
+  </data>
+  <data name="MENU_R43" xml:space="preserve">
+    <value>Refunds File</value>
+  </data>
+  <data name="MENU_R4300001" xml:space="preserve">
+    <value>Refunds File</value>
+  </data>
+  <data name="MENU_S5" xml:space="preserve">
+    <value>System Configuration</value>
+  </data>
+  <data name="MENU_S5100001" xml:space="preserve">
+    <value>School Data</value>
+  </data>
+  <data name="MENU_S52" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="MENU_S5200001" xml:space="preserve">
+    <value>Functions</value>
+  </data>
+  <data name="MENU_S5200002" xml:space="preserve">
+    <value>Authorize</value>
+  </data>
+  <data name="MENU_S5200003" xml:space="preserve">
+    <value>Group</value>
+  </data>
+  <data name="MENU_S5300001" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="MENU_S54" xml:space="preserve">
+    <value>System Status</value>
+  </data>
+  <data name="MENU_S5400001" xml:space="preserve">
+    <value>Operation Log</value>
+  </data>
+  <data name="MENU_S5400002" xml:space="preserve">
+    <value>Transaction Log</value>
+  </data>
+  <data name="MENU_S5400003" xml:space="preserve">
+    <value>System Service</value>
+  </data>
+  <data name="MENU_S5400004" xml:space="preserve">
+    <value>Income Query</value>
+  </data>
+  <data name="MENU_S5400006" xml:space="preserve">
+    <value>D338 Upload</value>
+  </data>
+  <data name="MENU_S5400007" xml:space="preserve">
+    <value>D338 Query</value>
+  </data>
+  <data name="MENU_S55" xml:space="preserve">
+    <value>General Setting</value>
+  </data>
+  <data name="MENU_S5500001" xml:space="preserve">
+    <value>School Setting</value>
+  </data>
+  <data name="MENU_S5500005" xml:space="preserve">
+    <value>Make Tax File</value>
+  </data>
+  <data name="MENU_S5500006" xml:space="preserve">
+    <value>Tax File Download</value>
+  </data>
+  <data name="MENU_S56" xml:space="preserve">
+    <value>System Setting</value>
+  </data>
+  <data name="MENU_S5600001" xml:space="preserve">
+    <value>Year Setting</value>
+  </data>
+  <data name="MENU_S5600002" xml:space="preserve">
+    <value>Bank Code Setting</value>
+  </data>
+  <data name="MENU_S5600004" xml:space="preserve">
+    <value>Collection Channel Setting</value>
+  </data>
+  <data name="MENU_S5600006" xml:space="preserve">
+    <value>AD Setting</value>
+  </data>
+  <data name="MENU_S5600007" xml:space="preserve">
+    <value>Announcement Setting</value>
+  </data>
+  <data name="MENU_S5600008" xml:space="preserve">
+    <value>Credit Card Bank</value>
+  </data>
+  <data name="MENU_S5600009" xml:space="preserve">
+    <value>Service Setting</value>
+  </data>
+  <data name="MENU_S5600010" xml:space="preserve">
+    <value>Maintain Bill Template</value>
+  </data>
+  <data name="MENU_S5600011" xml:space="preserve">
+    <value>Charge Setting</value>
+  </data>
+  <data name="MENU_S5600012" xml:space="preserve">
+    <value>Maintain File Download</value>
+  </data>
+  <data name="MENU_S5600013" xml:space="preserve">
+    <value>Maintain Q &amp; A</value>
+  </data>
+  <data name="MENU_S5700001" xml:space="preserve">
+    <value>Maintain Bill Template</value>
+  </data>
+  <data name="MENU_X1100001" xml:space="preserve">
+    <value>Bill Query</value>
+  </data>
+  <data name="CTL_BTN_中國信託平台信用卡繳款" xml:space="preserve">
+    <value>Pay By Credit Cards at CTBC</value>
+  </data>
+  <data name="CTL_BTN_土地銀行個人網路銀行繳款" xml:space="preserve">
+    <value>Pay at Personal NetBank of Landbank</value>
+  </data>
+  <data name="CTL_BTN_產生PDF憑單" xml:space="preserve">
+    <value>Generate Voucher PDF</value>
+  </data>
+  <data name="CTL_BTN_產生PDF收據" xml:space="preserve">
+    <value>Generate Receipt PDF</value>
+  </data>
+  <data name="CTL_BTN_網路ATM繳款" xml:space="preserve">
+    <value>Pay at Web ATM of Landbank</value>
+  </data>
+  <data name="CTL_BTN_財金平台信用卡繳款" xml:space="preserve">
+    <value>Pay By Credit Cards at FISC</value>
+  </data>
+  <data name="CTL_BTN_銀聯卡繳款" xml:space="preserve">
+    <value>Pay By UnionPay Cards</value>
+  </data>
+  <data name="代收日" xml:space="preserve">
+    <value>Receive Date</value>
+  </data>
+  <data name="代收費用別資料不存在" xml:space="preserve">
+    <value>Expense information does not exist</value>
+  </data>
+  <data name="代收銀行分行" xml:space="preserve">
+    <value>Receive Bank</value>
+  </data>
+  <data name="備註" xml:space="preserve">
+    <value>Remarks</value>
+  </data>
+  <data name="入帳日" xml:space="preserve">
+    <value>Acount Date</value>
+  </data>
+  <data name="列印繳費單" xml:space="preserve">
+    <value>Bill</value>
+  </data>
+  <data name="助貸" xml:space="preserve">
+    <value>Loan</value>
+  </data>
+  <data name="原就學貸款金額" xml:space="preserve">
+    <value>Original Loan Amount</value>
+  </data>
+  <data name="商家代號" xml:space="preserve">
+    <value>Business ID</value>
+  </data>
+  <data name="如要採用實體ATM超商臨櫃方式繳款請點此按鈕" xml:space="preserve">
+    <value>(If you want to use physical ATM, super business, and counter to pay, please click this button)</value>
+  </data>
+  <data name="學年" xml:space="preserve">
+    <value>Academic Year</value>
+  </data>
+  <data name="學期" xml:space="preserve">
+    <value>Semester</value>
+  </data>
+  <data name="學校" xml:space="preserve">
+    <value>School</value>
+  </data>
+  <data name="學校選擇有誤請重新選擇學校" xml:space="preserve">
+    <value>The school choice is wrong, please re-select.</value>
+  </data>
+  <data name="學生基本資料不存在" xml:space="preserve">
+    <value>Student information does not exist</value>
+  </data>
+  <data name="學生繳費資料不存在" xml:space="preserve">
+    <value>Bill information does not exist</value>
+  </data>
+  <data name="已入帳" xml:space="preserve">
+    <value>Debited</value>
+  </data>
+  <data name="已繳款" xml:space="preserve">
+    <value>Paid</value>
+  </data>
+  <data name="已過中信平台管道繳費期限" xml:space="preserve">
+    <value>Exceeding the deadline for the CTBC platform. </value>
+  </data>
+  <data name="已過財金平台管道繳費期限" xml:space="preserve">
+    <value>Exceeding the deadline for the FISC platform. </value>
+  </data>
+  <data name="支付寶繳費" xml:space="preserve">
+    <value>Alipay</value>
+  </data>
+  <data name="收據" xml:space="preserve">
+    <value>Receipt</value>
+  </data>
+  <data name="明細" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="未提供中信平台管道繳費" xml:space="preserve">
+    <value>No CTBC platform payment is provided. </value>
+  </data>
+  <data name="未提供財金平台管道繳費" xml:space="preserve">
+    <value>No FISC platform payment is provided. </value>
+  </data>
+  <data name="未繳款" xml:space="preserve">
+    <value>Unpaid</value>
+  </data>
+  <data name="未開放" xml:space="preserve">
+    <value>Unopened</value>
+  </data>
+  <data name="查詢" xml:space="preserve">
+    <value>Query</value>
+  </data>
+  <data name="此繳費單未開放或是無效的繳費單" xml:space="preserve">
+    <value>This bill is not open or invalid.</value>
+  </data>
+  <data name="無法取得登入者資訊" xml:space="preserve">
+    <value>Unable to get login information</value>
+  </data>
+  <data name="無法取得要處理資料的參數" xml:space="preserve">
+    <value>Unable to get the parameters of the data to be processed</value>
+  </data>
+  <data name="狀態" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="網站導覽" xml:space="preserve">
+    <value>Site Map</value>
+  </data>
+  <data name="網頁參數不正確" xml:space="preserve">
+    <value>Web page parameters are incorrect</value>
+  </data>
+  <data name="繳款" xml:space="preserve">
+    <value>Payment</value>
+  </data>
+  <data name="繳費單" xml:space="preserve">
+    <value>Bill</value>
+  </data>
+  <data name="繳費方式" xml:space="preserve">
+    <value>Receive Way</value>
+  </data>
+  <data name="繳費管道" xml:space="preserve">
+    <value>Payment Way</value>
+  </data>
+  <data name="繳費銷帳資料" xml:space="preserve">
+    <value>Payment Information</value>
+  </data>
+  <data name="缺少網頁參數" xml:space="preserve">
+    <value>Missing page parameters</value>
+  </data>
+  <data name="請輸入學號" xml:space="preserve">
+    <value>Please enter student ID</value>
+  </data>
+  <data name="請輸入密碼" xml:space="preserve">
+    <value>Please enter your password</value>
+  </data>
+  <data name="請選擇學校" xml:space="preserve">
+    <value>Please choose a school</value>
+  </data>
+  <data name="費用別" xml:space="preserve">
+    <value>Expense</value>
+  </data>
+  <data name="銷帳狀態" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="驗證碼錯誤請重新輸入" xml:space="preserve">
+    <value>The verification code is incorrect. Please re-enter.</value>
+  </data>
+  <data name="使用者密碼_Mobile" xml:space="preserve">
+    <value>Passwrod</value>
+  </data>
+  <data name="圖型驗證碼_Mobile" xml:space="preserve">
+    <value>Captcha</value>
+  </data>
+  <data name="學校名稱_Mobile" xml:space="preserve">
+    <value>School</value>
+  </data>
+  <data name="學生專區登入_Mobile" xml:space="preserve">
+    <value>Student Login</value>
+  </data>
+  <data name="學號_Mobile" xml:space="preserve">
+    <value>Student ID</value>
+  </data>
+  <data name="生日_Mobile" xml:space="preserve">
+    <value>Birthday</value>
+  </data>
+  <data name="身份證字號_Mobile" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="點上圖可更新驗證碼_Mobile" xml:space="preserve">
+    <value>click to refresh</value>
+  </data>
+  <data name="繳費狀態查詢" xml:space="preserve">
+    <value>Bill Query</value>
+  </data>
+  <data name="下載ODS" xml:space="preserve">
+    <value>Download ODS</value>
+  </data>
+  <data name="下載XLS" xml:space="preserve">
+    <value>Download XLS</value>
+  </data>
+  <data name="下載範本ODS" xml:space="preserve">
+    <value>Download ODS Template</value>
+  </data>
+  <data name="下載範本XLS" xml:space="preserve">
+    <value>Download XLS Template</value>
+  </data>
+  <data name="便利商店收據請保留六個月" xml:space="preserve">
+    <value>Convenience store receipt please keep for six months</value>
+  </data>
+  <data name="便利商店繳款" xml:space="preserve">
+    <value>Convenience Store Payment (7-ELEVEN, FamilyMart, Hi-Life, OK·MART)</value>
+  </data>
+  <data name="匯出ODS" xml:space="preserve">
+    <value>Export as ODS File</value>
+  </data>
+  <data name="匯出XLS" xml:space="preserve">
+    <value>Export as XLS File</value>
+  </data>
+  <data name="報表ODS" xml:space="preserve">
+    <value>ODS Report</value>
+  </data>
+  <data name="報表XLS" xml:space="preserve">
+    <value>XLS Report</value>
+  </data>
+  <data name="產生媒體檔ODS" xml:space="preserve">
+    <value>Export as ODS File</value>
+  </data>
+  <data name="產生媒體檔XLS" xml:space="preserve">
+    <value>Export as XLS File</value>
+  </data>
+  <data name="產生檔案ODS" xml:space="preserve">
+    <value>Export as ODS File</value>
+  </data>
+  <data name="產生檔案XLS" xml:space="preserve">
+    <value>Export as XLS File</value>
+  </data>
+  <data name="產生清冊ODS" xml:space="preserve">
+    <value>Export as ODS File</value>
+  </data>
+  <data name="產生清冊XLS" xml:space="preserve">
+    <value>Export as XLS File</value>
+  </data>
+  <data name="繳費期限" xml:space="preserve">
+    <value>Payment Deadline</value>
+  </data>
+  <data name="繳費金額" xml:space="preserve">
+    <value>Payment Amount</value>
+  </data>
+  <data name="CTL_BTN_產生超商行動條碼" xml:space="preserve">
+    <value>Barcode For Convenience Store</value>
+  </data>
+  <data name="國際信用卡" xml:space="preserve">
+    <value>Overseas Credit Card</value>
+  </data>
+  <data name="國際信用卡繳費" xml:space="preserve">
+    <value>Overseas Credit Card</value>
+  </data>
+  <data name="是否啟用國際信用卡繳費" xml:space="preserve">
+    <value>Overseas Credit Card</value>
+  </data>
+  <data name="查無指定的繳款資料" xml:space="preserve">
+    <value>Data Not Found</value>
+  </data>
+  <data name="查詢繳款資料失敗" xml:space="preserve">
+    <value>Query Data Failed</value>
+  </data>
+  <data name="此繳費單限定使用國際信用卡繳費" xml:space="preserve">
+    <value>Please Pay With 『Overseas Credit Card 』</value>
+  </data>
+  <data name="代收銀行/分行" xml:space="preserve">
+    <value>Receive Bank/Branch</value>
+  </data>
+  <data name="已繳待銷" xml:space="preserve">
+    <value>Paid</value>
+  </data>
+  <data name="最後修改日期" xml:space="preserve">
+    <value>Last Modified Date</value>
+  </data>
+  <data name="繳費/銷帳資料" xml:space="preserve">
+    <value>Payment/Billing Information</value>
+  </data>
+  <data name="資料建立日期" xml:space="preserve">
+    <value>Creation Date</value>
+  </data>
+  <data name="中文版" xml:space="preserve">
+    <value>Chinese Version</value>
+  </data>
+  <data name="英文版" xml:space="preserve">
+    <value>English Version</value>
+  </data>
+  <data name="上傳的可貸金額" xml:space="preserve">
+    <value>Uploaded Loanable Amount</value>
+  </data>
+  <data name="合計項目" xml:space="preserve">
+    <value>Sub Total Items</value>
+  </data>
+  <data name="學生就貸" xml:space="preserve">
+    <value>Student Loan</value>
+  </data>
+  <data name="計算後的可貸金額" xml:space="preserve">
+    <value>Calculated Loanable Amount</value>
+  </data>
+  <data name="MENU_S6" xml:space="preserve">
+    <value>JCIC KP3 Maintain</value>
+  </data>
+  <data name="MENU_S6100001" xml:space="preserve">
+    <value>KP3 Data Entry</value>
+  </data>
+  <data name="MENU_S6200001" xml:space="preserve">
+    <value>KP3 Default Value</value>
+  </data>
+  <data name="新增查詢學生退費資料" xml:space="preserve">
+    <value>Insert / Query Student Refund Information</value>
+  </data>
+</root>

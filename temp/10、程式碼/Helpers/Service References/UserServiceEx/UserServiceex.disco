@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://adws.landbankt.com.tw/WebLdap/UserServiceex.asmx?wsdl" docRef="https://adws.landbankt.com.tw/WebLdap/UserServiceex.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://adws.landbankt.com.tw/WebLdap/UserServiceex.asmx" xmlns:q1="http://microsoft.com/taiwan/mcs" binding="q1:UserServiceExSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://adws.landbankt.com.tw/WebLdap/UserServiceex.asmx" xmlns:q2="http://microsoft.com/taiwan/mcs" binding="q2:UserServiceExSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>
